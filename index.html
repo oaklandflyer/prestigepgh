@@ -94,6 +94,39 @@
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink);scroll-behavior:smooth}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
+    .contact-form {
+      display: grid;
+      gap: 18px;
+      max-width: 600px;
+      margin: 24px auto;
+      background: var(--panel);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 22px rgba(0,0,0,.25);
+    }
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      margin-top: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--ink);
+      font-size: 1rem;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
 
     /* ================== HEADER ================== */
     .site-header{
@@ -317,15 +350,42 @@
 </section>
 
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="page-hero fade-section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:info@prestigepgh.com">info@prestigepgh.com</a> • Phone: <a href="tel:+14123159189">+1-(412)-315-9189</a></p>
-      <div class="footer-cta">
-        <a href="#contact" class="btn" aria-label="Request a project estimate">Request a Quote</a>
-      </div>
-    </section>
-  </main>
+<!-- ===== CONTACT / QUOTE ===== -->
+<section id="contact" class="page-hero fade-section">
+  <h2>Request a Quote</h2>
+  <p>Fill out the form below and we’ll get back to you with a personalized estimate.</p>
+
+  <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form">
+    <label>
+      Name *
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email *
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Phone
+      <input type="tel" name="phone">
+    </label>
+    <label>
+      Project Type *
+      <select name="project" required>
+        <option value="">-- Select --</option>
+        <option>Custom Cabinetry</option>
+        <option>Finish Carpentry</option>
+        <option>Kitchen / Living Spaces</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label>
+      Message *
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+    <button type="submit" class="btn">Send Request</button>
+  </form>
+</section>
+
 
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
