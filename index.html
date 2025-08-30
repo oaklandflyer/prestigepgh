@@ -1,151 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Pittsburgh Prestige Remodeling – Craftsmanship in Black & Gold</title>
-  <meta name="description" content="Pittsburgh Prestige Remodeling — kitchens, baths, basements, and full-home renovations across the Pittsburgh area." />
-  <meta name="keywords" content="remodeling, kitchen remodel, bathroom remodel, basement finishing, Pittsburgh remodeler" />
-  <meta name="theme-color" content="#101820" />
+  <meta name="description" content="Pittsburgh Prestige Remodeling — kitchens, bathrooms, basements, decks, and full-home renovations across Allegheny County. Licensed & insured general contractor delivering Pittsburgh-proud quality." />
+  <meta name="keywords" content="Pittsburgh remodeling, Pittsburgh general contractor, kitchen remodel Pittsburgh, bathroom remodel Pittsburgh, basement finishing Pittsburgh, home renovation Pittsburgh, deck builder Pittsburgh, licensed insured remodeler, Allegheny County contractor, black and gold remodeling" />
+  <meta name="theme-color" content="#0b0f17" />
   <link rel="canonical" href="https://prestigepgh.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pittsburgh Prestige Remodeling – Craftsmanship in Black & Gold">
+  <meta property="og:description" content="Kitchens, baths, basements & full-home renovations. Pittsburgh-proud quality.">
+  <meta property="og:url" content="https://prestigepgh.com/">
+  <meta property="og:image" content="https://prestigepgh.com/assets/og-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pittsburgh Prestige Remodeling">
+  <meta name="twitter:description" content="Quality remodeling across the Pittsburgh area.">
+  <meta name="twitter:image" content="https://prestigepgh.com/assets/og-preview.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Fancybox (for lightbox if/when you add project photos) -->
+  <!-- Fancybox (for lightbox) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
-  <!-- Google tag (gtag.js) – replace with client's property when ready -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script> -->
+  <!-- JSON-LD: Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Pittsburgh Prestige Remodeling",
+    "url": "https://prestigepgh.com/",
+    "image": "https://prestigepgh.com/assets/ppr_logo.png",
+    "logo": "https://prestigepgh.com/assets/ppr_logo.png",
+    "areaServed": "Pittsburgh, Allegheny County, Pennsylvania",
+    "telephone": "+1-412-555-1234",
+    "email": "info@prestigepgh.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pittsburgh",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.instagram.com/",
+      "https://www.linkedin.com/"
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "servesCuisine": "",
+    "description": "Licensed & insured general contractor specializing in kitchen, bathroom, basement, and full-home remodeling in Pittsburgh."
+  }
+  </script>
 
   <style>
-    :root{
-      /* Pittsburgh Black & Gold */
-      --primary:#101820;   /* black */
-      --accent:#FFB612;    /* gold */
-      --ink:#0e1420;       /* deep ink for body text */
-      --bg:#fafafa;        /* soft light background */
-      --panel:rgba(255,255,255,.94);
-      --shadow:0 10px 40px rgba(0,0,0,.10);
+    /* ================== THEME (Dark-first, with toggle) ================== */
+    :root {
+      --primary:#101820;   /* deep black */
+      --accent:#FFB612;    /* Steelers gold */
+      --ink:#d6deff;       /* light text on dark */
+      --muted:#9fb0d0;
+      --bg:#0b0f17;        /* page background */
+      --panel:#111926;     /* cards */
+      --panel-2:#0d1522;
+      --line:#1b2533;
       --radius:18px;
-      --cta:#101820;
-      --cta-hover:#FFB612;
+      --shadow:0 10px 40px rgba(0,0,0,.30);
+      --cta:#FFB612;
+      --cta-ink:#0b0f17;
     }
+    [data-theme="light"]{
+      --ink:#0e1420;
+      --muted:#47556e;
+      --bg:#fafafa;
+      --panel:#ffffff;
+      --panel-2:#f4f7fb;
+      --line:#e6ebf2;
+      --cta:#101820;
+      --cta-ink:#ffffff;
+    }
+
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink);scroll-behavior:smooth}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
 
-    /* ======= HEADER ======= */
+    /* ================== HEADER ================== */
     .site-header{
       position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
-      padding:14px clamp(16px,4vw,64px);background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);
-      box-shadow:0 1px 12px rgba(16,24,32,.08);transition:transform .32s ease, top .32s ease
+      padding:14px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
+      box-shadow:0 1px 12px rgba(0,0,0,.35);transition:transform .32s ease, top .32s ease, background .2s;
+      border-bottom:1px solid var(--line)
     }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em;color:var(--primary)}
-    .brand-mark{width:38px;height:38px;border-radius:9px;background:conic-gradient(from 0deg, var(--accent) 0 60%, transparent 60% 100%), var(--primary);box-shadow:0 2px 10px rgba(0,0,0,.15)}
-    .brand span{font-size:1.05rem;text-transform:uppercase}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
+    .brand img{height:40px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+    .brand span{font-size:1.02rem;text-transform:uppercase}
+
     .site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0}
-    .site-nav a{font-weight:700;padding:8px 14px;border-radius:999px;color:var(--primary);transition:background .2s,color .2s}
-    .site-nav a:hover,.site-nav a.active,[aria-current="page"]{background:var(--accent);color:#111}
+    .site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;color:var(--ink);transition:background .2s,color .2s, border-color .2s;border:1px solid transparent}
+    .site-nav a:hover,.site-nav a.active,[aria-current="page"]{background:var(--accent);color:var(--cta-ink);border-color:transparent}
     .menu-toggle{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer}
-    .menu-toggle .bar{display:block;width:26px;height:3px;margin:5px auto;background:var(--primary);border-radius:2px;transition:.3s}
+    .menu-toggle .bar{display:block;width:26px;height:3px;margin:5px auto;background:var(--ink);border-radius:2px;transition:.3s}
     .menu-toggle.open .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
     .menu-toggle.open .bar:nth-child(2){opacity:0}
     .menu-toggle.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-    @media (max-width:860px){
+    .theme-toggle{margin-left:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
+    @media (max-width:960px){
       .menu-toggle{display:block}
-      .site-nav{position:fixed;right:0;top:74px;width:min(68vw,360px);height:calc(100dvh - 74px);background:#fff;transform:translateX(100%);
-        transition:transform .24s cubic-bezier(.4,2.2,.3,1);box-shadow:-2px 0 18px rgba(0,0,0,.18)}
+      .site-nav{position:fixed;right:0;top:74px;width:min(72vw,380px);height:calc(100dvh - 74px);background:var(--panel);transform:translateX(100%);
+        transition:transform .24s cubic-bezier(.4,2.2,.3,1);box-shadow:-2px 0 18px rgba(0,0,0,.38);border-left:1px solid var(--line)}
       .site-nav.open{transform:translateX(0)}
       .site-nav ul{flex-direction:column;padding:26px;gap:12px}
       body.no-scroll{overflow:hidden}
     }
 
-    /* ======= HERO ======= */
+    /* ================== HERO ================== */
     .hero{
-      position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
-      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;background:linear-gradient(120deg, rgba(16,24,32,1) 0%, rgba(16,24,32,.85) 40%, rgba(255,182,18,.15) 100%);
+      position:relative;min-height:76vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
+      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;
+      background:
+        radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
+        radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%),
+        linear-gradient(120deg, #0b0f17 0%, #0d1522 50%, #101820 100%);
       isolation:isolate
     }
-    .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,182,18,.08) 1px, transparent 1px);background-size:3px 3px;opacity:.5}
+    .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,182,18,.08) 1px, transparent 1px);background-size:3px 3px;opacity:.35}
 
-    .glass-wrap{position:relative;z-index:1;width:min(780px,94vw);padding:0;filter:drop-shadow(0 20px 70px rgba(0,0,0,.35))}
-    .liquid-glass{position:relative;padding:28px 28px 24px;border-radius:28px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
-      border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 20px 50px rgba(0,0,0,.35);color:#ffffff;text-align:center;backdrop-filter: blur(22px) saturate(140%)}
-    .liquid-glass::before,.liquid-glass::after{content:"";position:absolute;inset:-40%;z-index:-1;background:radial-gradient(40% 40% at 20% 20%, rgba(255,182,18,.55) 0%, rgba(255,182,18,0) 60%),
-        radial-gradient(35% 45% at 80% 30%, rgba(16,24,32,.45) 0%, rgba(16,24,32,0) 60%),radial-gradient(45% 35% at 50% 80%, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 60%);
-      filter:blur(30px);animation:floatBlob 16s ease-in-out infinite alternate;opacity:.9}
+    .glass-wrap{position:relative;z-index:1;width:min(880px,94vw);padding:0;filter:drop-shadow(0 20px 70px rgba(0,0,0,.45))}
+    .liquid-glass{
+      position:relative;padding:30px 30px 26px;border-radius:28px;overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 20px 60px rgba(0,0,0,.55);
+      color:#ffffff;text-align:center;backdrop-filter: blur(22px) saturate(140%)
+    }
+    .liquid-glass::before,.liquid-glass::after{
+      content:"";position:absolute;inset:-40%;z-index:-1;
+      background:
+        radial-gradient(40% 40% at 20% 20%, rgba(255,182,18,.35) 0%, rgba(255,182,18,0) 60%),
+        radial-gradient(35% 45% at 80% 30%, rgba(10,15,25,.45) 0%, rgba(10,15,25,0) 60%),
+        radial-gradient(45% 35% at 50% 80%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 60%);
+      filter:blur(30px);animation:floatBlob 16s ease-in-out infinite alternate;opacity:.9
+    }
     .liquid-glass::after{animation-duration:22s;animation-delay:-4s;transform:scale(1.05);mix-blend-mode:screen;opacity:.7}
     @keyframes floatBlob{0%{transform:translate3d(-4%,-2%,0) rotate(0) scale(1)}100%{transform:translate3d(4%,3%,0) rotate(6deg) scale(1.06)}}
 
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3rem);font-weight:700;margin:0 0 12px;color:#fff;letter-spacing:.02em;text-shadow:0 2px 12px rgba(0,0,0,.35)}
-    .hero p{font-size:1.1rem;margin:0 0 18px;color:#f5f8ff}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;margin:0 0 12px;color:#fff;letter-spacing:.02em;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+    .hero p{font-size:1.1rem;margin:0 0 18px;color:#dfe8ff}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-    .btn{background:var(--cta);color:#fff;font-weight:800;padding:11px 28px;border-radius:999px;border:2px solid var(--accent);cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.20);
+    .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
       font-size:1rem;transition:transform .12s ease, background .2s,color .2s, border-color .2s;letter-spacing:.03em}
-    .btn:hover,.btn:focus{background:var(--cta-hover);color:#111;border-color:transparent;transform:translateY(-1px)}
+    .btn:hover,.btn:focus{background:#ffd059;color:#111;border-color:transparent;transform:translateY(-1px)}
 
-    /* ======= SECTIONS ======= */
+    /* ================== SECTION WRAPPERS ================== */
     .page-hero{padding:42px clamp(24px,6vw,64px) 10px}
-    .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:var(--primary);font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
-    .page-hero p{margin:0 0 24px;color:#2a2f3b}
+    .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
+    .page-hero p{margin:0 0 24px;color:var(--muted)}
 
+    /* ================== CARDS / STRIPS ================== */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px clamp(24px,6vw,64px) 50px}
+    @media (max-width:900px){.services{grid-template-columns:1fr}}
+    .service-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+    .service-card h3{margin:6px 0 6px;font-size:1.15rem;color:#fff}
+    .service-card p{margin:0;color:var(--muted)}
+
+    /* ================== GRID PLACEHOLDERS (projects) ================== */
     .controls{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 clamp(24px,6vw,64px) 14px}
-    .breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700;color:#2a2f3b}
-    .breadcrumbs a{color:var(--primary)}
+    .breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:800;color:var(--muted)}
+    .breadcrumbs a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,182,18,.6)}
     .crumb-sep{opacity:.5}
-    .back-btn{display:none;margin:0 clamp(24px,6vw,64px) 26px;align-items:center;gap:8px;background:#fff;border:2px solid var(--accent);border-radius:999px;padding:9px 14px;
-      font-weight:800;color:var(--primary);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+    .back-btn{display:none;margin:0 clamp(24px,6vw,64px) 26px;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 14px;
+      font-weight:800;color:#fff;box-shadow:0 1px 10px rgba(0,0,0,.35)}
     .back-btn:hover{background:var(--accent);color:#111;border-color:transparent}
 
     .album-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 38px;margin:0 clamp(24px,6vw,64px) 60px}
     @media (max-width:1100px){.album-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.album-grid{grid-template-columns:1fr;gap:28px}}
     .album-card{display:flex;flex-direction:column;gap:14px}
-    .album-cover{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #1a1f2a, #101820);box-shadow:0 4px 22px rgba(0,0,0,.10);transition:transform .28s ease, box-shadow .28s ease}
-    .album-card:hover .album-cover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(16,24,32,.25)}
+    .album-cover{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #0d1522, #101820);box-shadow:0 6px 26px rgba(0,0,0,.35);transition:transform .28s ease, box-shadow .28s ease, outline .2s}
+    .album-card:hover .album-cover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.55);outline:2px solid rgba(255,182,18,.45)}
 
     .album-caption{display:flex;flex-direction:column;align-items:center;text-align:center}
-    .album-title{font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#101820}
-    .album-sub{margin-top:6px;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:#6b778d}
+    .album-title{font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+    .album-sub{margin-top:6px;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px clamp(24px,6vw,64px) 60px}
     @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
-    .photo{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #262b36, #101820);box-shadow:0 3px 14px rgba(0,0,0,.06)}
+    .photo{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #0d1522, #101820);box-shadow:0 4px 18px rgba(0,0,0,.35)}
 
-    .empty{margin:24px clamp(24px,6vw,64px);opacity:.85;text-align:center;color:#2a2f3b}
+    .empty{margin:24px clamp(24px,6vw,64px);opacity:.9;text-align:center;color:var(--muted)}
 
-    /* ======= SERVICES STRIP ======= */
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px clamp(24px,6vw,64px) 50px}
-    @media (max-width:900px){.services{grid-template-columns:1fr}}
-    .service-card{background:#fff;border:1px solid #eceff5;border-radius:14px;padding:18px 18px 16px;box-shadow:0 8px 20px rgba(0,0,0,.05)}
-    .service-card h3{margin:6px 0 6px;font-size:1.15rem;color:var(--primary)}
-    .service-card p{margin:0;color:#2f3a4c}
-
-    /* ======= FOOTER ======= */
-    .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 6vw 36px;border-radius:var(--radius) var(--radius) 0 0;margin-top:80px;text-align:center}
+    /* ================== CTA / FOOTER ================== */
+    .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 6vw 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
     .footer-cta{display:flex;gap:16px;justify-content:center;margin-bottom:18px}
     .social-links{display:flex;gap:16px;justify-content:center;margin-top:16px}
-    .social-links a{font-weight:700;border-bottom:2px solid var(--accent)}
+    .social-links a{font-weight:800;border-bottom:2px solid var(--accent)}
 
+    /* ================== ACCESSIBILITY / ANIMATIONS ================== */
     @media (max-width:750px){
       .site-header{flex-direction:row}
-      .hero{min-height:60vh}
+      .hero{min-height:64vh}
       .glass-wrap{width:96vw}
       .footer-cta{flex-direction:column;gap:7px}
       .site-footer{padding:36px 2vw 24px}
     }
-
     @keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
     .fade-section{opacity:0;transform:translateY(40px);transition:all .7s cubic-bezier(.25,.8,.25,1)}
@@ -154,12 +223,12 @@
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:101;background:#fff;color:#103047;border-radius:0 0 10px 10px;padding:8px 22px}
     .skip-link:focus{left:12px;top:6px;width:auto;height:auto}
 
-    /* (Optional) Watermark deterrent – text only, no images */
+    /* Optional watermark deterrent (text only, no images) */
     .album-cover::before,.photo::before{
-      content:"PITTSBURGH PRESTIGE REMODELING";position:absolute;right:10px;bottom:8px;padding:4px 8px;font:700 12px/1.2 Montserrat, Arial, sans-serif;color:rgba(255,255,255,.96);
+      content:"PITTSBURGH PRESTIGE REMODELING";position:absolute;right:10px;bottom:8px;padding:4px 8px;font:800 12px/1.2 Montserrat, Arial, sans-serif;color:rgba(255,255,255,.96);
       background:rgba(0,0,0,.35);border-radius:6px;letter-spacing:.06em;pointer-events:none
     }
-    .album-cover::after,.photo::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 24px, rgba(0,0,0,.05) 24px, rgba(0,0,0,.05) 48px);mix-blend-mode:multiply;pointer-events:none}
+    .album-cover::after,.photo::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0, rgba(255,255,255,.02) 24px, rgba(0,0,0,.05) 24px, rgba(0,0,0,.05) 48px);mix-blend-mode:multiply;pointer-events:none}
   </style>
 </head>
 <body>
@@ -167,7 +236,8 @@
 
   <header class="site-header" id="header">
     <a href="#top" class="brand" aria-label="Pittsburgh Prestige Remodeling home">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <!-- Logo: uses web path first; falls back to your Downloads path if missing -->
+      <img id="brandLogo" src="assets/ppr_logo.png" alt="Pittsburgh Prestige Remodeling logo" />
       <span>Pittsburgh Prestige Remodeling</span>
     </a>
 
@@ -180,9 +250,13 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
+
+    <div style="display:flex;align-items:center;">
+      <button id="themeToggle" class="theme-toggle" aria-pressed="true" aria-label="Toggle dark mode">Dark</button>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
   </header>
 
   <main id="main">
@@ -191,7 +265,7 @@
       <div class="glass-wrap">
         <div class="liquid-glass">
           <h1>Quality Remodeling, Pittsburgh Proud</h1>
-          <p>Black & Gold craftsmanship for kitchens, bathrooms, basements, and full-home renovations across the region.</p>
+          <p>Black & Gold craftsmanship for kitchens, bathrooms, basements, decks, and full-home renovations across the region.</p>
           <div class="hero-btns">
             <a href="#services" class="btn">View Services</a>
             <a href="#contact" class="btn">Request a Quote</a>
@@ -203,27 +277,27 @@
     <!-- ===== SERVICES ===== -->
     <section id="services" class="page-hero fade-section">
       <h2>Services</h2>
-      <p>From concept to completion, we deliver detail-driven remodeling that lasts.</p>
+      <p>From concept to completion, we deliver detail-driven remodeling that lasts — kitchens, baths, basements, decks, exterior updates, and whole-home renovations.</p>
     </section>
     <div class="services">
       <div class="service-card">
         <h3>Kitchen Remodeling</h3>
-        <p>Modern layouts, custom cabinetry, countertops, lighting, and flooring upgrades.</p>
+        <p>Modern layouts, custom cabinetry, countertops, lighting, and flooring upgrades. Functional design with durable finishes for everyday life.</p>
       </div>
       <div class="service-card">
         <h3>Bathroom Remodeling</h3>
-        <p>Tile, fixtures, vanities, walk-in showers, and accessibility improvements.</p>
+        <p>Tile, fixtures, vanities, walk-in showers, and accessibility improvements. Waterproofing done right for long-term performance.</p>
       </div>
       <div class="service-card">
         <h3>Basements & More</h3>
-        <p>Finishing, wet bars, home offices, media rooms, and whole-home updates.</p>
+        <p>Finishing, wet bars, home offices, media rooms, egress solutions, and whole-home updates tailored to your space.</p>
       </div>
     </div>
 
-    <!-- ===== PROJECTS (Portfolio-ready structure; no images yet) ===== -->
+    <!-- ===== PROJECTS ===== -->
     <section id="projects" class="page-hero fade-section">
       <h2>Projects</h2>
-      <p>When you add photos, they’ll appear here by city and project using the manifest file.</p>
+      <p>When you add photos, they’ll appear here grouped by city and project using the manifest file. Optimized for fast loading and lightbox viewing.</p>
     </section>
 
     <div class="controls">
@@ -238,7 +312,7 @@
     <!-- ===== ABOUT ===== -->
     <section id="about" class="page-hero fade-section">
       <h2>About</h2>
-      <p>Pittsburgh Prestige Remodeling is a local contractor focused on precision, clear communication, and dependable timelines. Fully insured. Serving the greater Pittsburgh area.</p>
+      <p>Pittsburgh Prestige Remodeling is a licensed & insured contractor focused on precision craftsmanship, clear communication, and dependable timelines. We proudly serve the greater Pittsburgh area and surrounding neighborhoods throughout Allegheny County.</p>
     </section>
 
     <!-- ===== CONTACT ===== -->
@@ -254,15 +328,48 @@
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
     <div class="social-links">
-      <!-- No image icons; add links when ready -->
       <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </footer>
 
+  <!-- Fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
   <script>
+    /* ---------------- Logo fallback to your Downloads path (dev only) ---------------- */
+    (function logoFallback(){
+      const logo = document.getElementById('brandLogo');
+      if(!logo) return;
+      logo.addEventListener('error', () => {
+        // Windows local fallback (for your dev box). Will not work once deployed (and shouldn't be needed).
+        logo.src = 'file:///C:/Users/couti/Downloads/prestigepgh/assets/ppr_logo.png';
+      }, { once: true });
+    })();
+
+    /* ---------------- Theme: dark default, toggle available ---------------- */
+    (function themeInit(){
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      // Respect saved choice if available
+      const saved = localStorage.getItem('ppr-theme');
+      if(saved){ root.setAttribute('data-theme', saved); btn.textContent = saved === 'dark' ? 'Dark' : 'Light'; btn.setAttribute('aria-pressed', saved === 'dark'); }
+      else {
+        // Default to dark
+        root.setAttribute('data-theme', 'dark');
+        btn.textContent = 'Dark';
+        btn.setAttribute('aria-pressed', 'true');
+      }
+      btn.addEventListener('click', ()=>{
+        const current = root.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('ppr-theme', next);
+        btn.textContent = next === 'dark' ? 'Dark' : 'Light';
+        btn.setAttribute('aria-pressed', next === 'dark');
+      });
+    })();
+
     /* ---------------- Mobile nav + header hide + fade-in ---------------- */
     (function navInit(){
       const btn = document.getElementById('menuToggle');
@@ -272,10 +379,10 @@
           const open = nav.classList.toggle('open');
           btn.classList.toggle('open');
           btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-          if (window.innerWidth <= 860) document.body.classList.toggle('no-scroll', open);
+          if (window.innerWidth <= 960) document.body.classList.toggle('no-scroll', open);
         });
         nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>{
-          if (window.innerWidth <= 860){
+          if (window.innerWidth <= 960){
             nav.classList.remove('open'); btn.classList.remove('open');
             document.body.classList.remove('no-scroll'); btn.setAttribute('aria-expanded','false');
           }
@@ -297,7 +404,7 @@
       faders.forEach(f => io.observe(f));
     })();
 
-    /* ---------------- Data loading ---------------- */
+    /* ---------------- Data loading for Projects ---------------- */
     const MANIFEST_PATH = '/gallery/imagePaths.json'; // keep this path; start with an empty manifest
 
     async function loadManifest(){
@@ -357,11 +464,11 @@
 
       const countries = Array.from(byCountry.entries()).map(([country, cityMap])=>{
         const cities = Array.from(cityMap.entries()).map(([city, photos])=>{
-          const cover = photos[0]?.thumb; // no default image
+          const cover = photos[0]?.thumb;
           return { id: city, title: city, cover, photos, country };
         }).sort((a,b)=>a.title.localeCompare(b.title));
 
-        const cover = cities[0]?.cover; // no default image
+        const cover = cities[0]?.cover;
         return { id: country, title: country, cover, children: cities };
       }).sort((a,b)=>a.title.localeCompare(b.title));
 
@@ -430,14 +537,12 @@
 
         const cover = document.createElement('div');
         cover.className='album-cover';
-        // no image tag here to avoid any image usage until you add photos
 
         const cap = document.createElement('div'); cap.className='album-caption';
         const title = document.createElement('div'); title.className='album-title'; title.textContent = n.title;
-        const sub = document.createElement('div'); sub.className='album-sub'; sub.textContent = (n.children ? `${n.children.length} CITIES` : `${(n.photos||[]).length} PHOTOS`).toUpperCase();
+        const sub = document.createElement('div'); sub.className='album-sub'; sub.textContent = (n.children ? `${n.children.length} Cities` : `${(n.photos||[]).length} Photos`).toUpperCase();
 
         cap.appendChild(title); cap.appendChild(sub);
-
         card.appendChild(cover); card.appendChild(cap);
 
         card.addEventListener('click', e=>{
@@ -467,8 +572,6 @@
         if (p.title) a.setAttribute('data-caption', p.title);
 
         const tile = document.createElement('div'); tile.className='photo';
-        // intentionally no <img> until you add files
-
         a.appendChild(tile);
         photosView.appendChild(a);
       });
@@ -505,7 +608,7 @@
       window.ROOT = buildCountryCity(manifest);
       render();
       window.addEventListener('hashchange', render);
-      backBtn.addEventListener('click', ()=>{ const parts = getPath(); parts.pop(); setPath(parts); });
+      document.getElementById('backBtn').addEventListener('click', ()=>{ const parts = getPath(); parts.pop(); setPath(parts); });
     })();
   </script>
 </body>
