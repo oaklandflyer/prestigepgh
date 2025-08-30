@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Fancybox (for lightbox) -->
+  <!-- Fancybox -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
   <!-- JSON-LD: Local Business -->
@@ -64,8 +64,7 @@
   </script>
 
   <style>
-    /* ================== THEME ================== */
-    :root {
+    :root{
       --primary:#101820; --accent:#FFB612; --ink:#d6deff; --muted:#9fb0d0;
       --bg:#0b0f17; --panel:#111926; --panel-2:#0d1522; --line:#1b2533;
       --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30); --cta:#FFB612; --cta-ink:#0b0f17;
@@ -81,7 +80,7 @@
     section{scroll-margin-top:96px}
     .container{width:var(--container);margin-inline:auto}
 
-    /* ================== HEADER ================== */
+    /* Header */
     .site-header{
       position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
       padding:14px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
@@ -108,19 +107,14 @@
       body.no-scroll{overflow:hidden}
     }
 
-    /* ================== HERO ================== */
-    .hero{position:relative;min-height:76vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
+    /* Hero */
+    .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
       box-shadow:var(--shadow);overflow:hidden;margin-top:92px;background:radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
       radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%), linear-gradient(120deg, #0b0f17 0%, #0d1522 50%, #101820 100%);isolation:isolate}
     .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,182,18,.08) 1px, transparent 1px);background-size:3px 3px;opacity:.35}
     .glass-wrap{position:relative;z-index:1;width:min(880px,94vw);padding:0;filter:drop-shadow(0 20px 70px rgba(0,0,0,.45))}
     .liquid-glass{position:relative;padding:30px 30px 26px;border-radius:28px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 60px rgba(0,0,0,.55);color:#fff;text-align:center;backdrop-filter:blur(22px) saturate(140%)}
-    .liquid-glass::before,.liquid-glass::after{content:"";position:absolute;inset:-40%;z-index:-1;background:radial-gradient(40% 40% at 20% 20%, rgba(255,182,18,.35) 0%, rgba(255,182,18,0) 60%),
-      radial-gradient(35% 45% at 80% 30%, rgba(10,15,25,.45) 0%, rgba(10,15,25,0) 60%), radial-gradient(45% 35% at 50% 80%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 60%);
-      filter:blur(30px);animation:floatBlob 16s ease-in-out infinite alternate;opacity:.9}
-    .liquid-glass::after{animation-duration:22s;animation-delay:-4s;transform:scale(1.05);mix-blend-mode:screen;opacity:.7}
-    @keyframes floatBlob{0%{transform:translate3d(-4%,-2%,0) rotate(0) scale(1)}100%{transform:translate3d(4%,3%,0) rotate(6deg) scale(1.06)}}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;margin:0 0 12px;color:#fff;letter-spacing:.02em;text-shadow:0 2px 12px rgba(0,0,0,.55)}
     .hero p{font-size:1.1rem;margin:0 0 18px;color:#dfe8ff}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
@@ -128,69 +122,32 @@
       font-size:1rem;transition:transform .12s ease, background .2s,color .2s,border-color .2s;letter-spacing:.03em}
     .btn:hover,.btn:focus{background:#ffd059;color:#111;border-color:transparent;transform:translateY(-1px)}
 
-    /* ================== SECTIONS ================== */
+    /* Sections */
     .page-hero{padding:42px 0 10px}
-    .page-hero .container{display:block}
     .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
     .page-hero p{margin:0 0 24px;color:var(--muted)}
 
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px 0 50px}
-    @media (max-width:900px){.services{grid-template-columns:1fr}}
-    .service-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(0,0,0,.25)}
-    .service-card h3{margin:6px 0 6px;font-size:1.15rem;color:#fff}
-    .service-card p{margin:0;color:var(--muted)}
-
-    /* ================== CONTACT / QUOTE (modern) ================== */
-    .contact-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);box-shadow:0 15px 50px rgba(0,0,0,.35);padding:clamp(18px,2.8vw,28px)}
-    .contact-form{display:grid;gap:16px}
-    .form-grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media (min-width:720px){.form-grid{grid-template-columns:1fr 1fr}.form-grid .span-2{grid-column:1 / -1}}
-    .field{display:flex;flex-direction:column;gap:8px}
-    .field label{font-weight:700;letter-spacing:.02em}
-    .field input,.field select,.field textarea{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);font-size:1rem;transition:border-color .15s ease,box-shadow .15s ease,background .15s ease}
-    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,182,18,.15)}
-    .field input,.field select{height:46px}
-    .field textarea{min-height:140px;resize:vertical}
-    .form-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px}
-    .btn.primary{background:var(--accent);color:var(--cta-ink)}
-    .btn.primary:hover{background:#ffd059}
-    .help{color:var(--muted);font-size:.9rem}
-    @media (max-width:480px){.form-actions .btn{width:100%}}
-
-    /* ================== GALLERY ================== */
-    .controls{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 14px}
-    .breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:800;color:var(--muted)}
-    .breadcrumbs a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,182,18,.6)}
-    .crumb-sep{opacity:.5}
-    .back-btn{display:none;margin:0 0 26px;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 14px;
-      font-weight:800;color:#fff;box-shadow:0 1px 10px rgba(0,0,0,.35)}
-    .back-btn:hover{background:var(--accent);color:#111;border-color:transparent}
-
-    .album-grid{display:none} /* hidden in portfolio mode */
-    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px 0 60px}
+    /* Gallery */
+    .gallery-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
     .photo{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #0d1522, #101820);box-shadow:0 4px 18px rgba(0,0,0,.35)}
     .thumb{width:100%;height:100%;object-fit:cover;display:block}
     .empty{margin:24px 0;opacity:.9;text-align:center;color:var(--muted)}
 
-    /* ================== FOOTER ================== */
+    /* Footer */
     .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 0 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
     .social-links{display:flex;gap:16px;justify-content:center;margin-top:16px}
     .social-links a{font-weight:800;border-bottom:2px solid var(--accent)}
 
-    /* ================== ACCESSIBILITY / ANIMATIONS ================== */
-    @media (max-width:750px){
-      .site-header{flex-direction:row}
-      .hero{min-height:64vh}
-    }
+    /* A11y + motion */
     @keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
     .fade-section{opacity:0;transform:translateY(40px);transition:all .7s cubic-bezier(.25,.8,.25,1)}
     .fade-section.visible{opacity:1;transform:translateY(0)}
-
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:101;background:#fff;color:#103047;border-radius:0 0 10px 10px;padding:8px 22px}
     .skip-link:focus{left:12px;top:6px;width:auto;height:auto}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
@@ -207,7 +164,7 @@
         <ul>
           <li><a href="#top" class="active" aria-current="page">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -223,6 +180,7 @@
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero fade-section" id="top">
       <div class="glass-wrap container">
         <div class="liquid-glass">
@@ -230,7 +188,7 @@
           <p>Built-ins, kitchen cabinetry, trim, and woodwork crafted for Pittsburgh homes — quality that lasts.</p>
           <div class="hero-btns">
             <a href="#services" class="btn">View Services</a>
-            <a href="#contact" class="btn">Request a Quote</a>
+            <a href="#experience" class="btn">View Experience</a>
           </div>
         </div>
       </div>
@@ -241,37 +199,27 @@
       <div class="container">
         <h2>Services</h2>
         <p>We specialize in custom cabinetry and fine carpentry that elevates every space — kitchens, living rooms, home offices, and more.</p>
-        <div class="services">
-          <div class="service-card">
-            <h3>Custom Cabinetry</h3>
-            <p>Handcrafted cabinets, shelving, and built-ins tailored to your space. From kitchen storage to entertainment centers, we design and install with precision.</p>
-          </div>
-          <div class="service-card">
-            <h3>Finish Carpentry</h3>
-            <p>Detailed trim, crown molding, staircases, railings, and woodwork accents that bring character and lasting craftsmanship to your home.</p>
-          </div>
-          <div class="service-card">
-            <h3>Kitchen & Living Spaces</h3>
-            <p>Thoughtful layouts, wood finishes, and functional carpentry that combine style with everyday utility in the heart of your home.</p>
-          </div>
+        <div class="photo-grid" style="grid-template-columns:repeat(3,1fr);gap:18px">
+          <div class="photo"><img class="thumb" src="assets/tiles/cabinetry.jpg" alt="Custom Cabinetry" loading="lazy"></div>
+          <div class="photo"><img class="thumb" src="assets/tiles/finish.jpg" alt="Finish Carpentry" loading="lazy"></div>
+          <div class="photo"><img class="thumb" src="assets/tiles/kitchen.jpg" alt="Kitchen & Living Spaces" loading="lazy"></div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="page-hero fade-section">
+    <!-- EXPERIENCE (Gallery) -->
+    <section id="experience" class="page-hero fade-section" aria-label="Experience">
       <div class="container">
-        <h2>Projects</h2>
-        <p>Portfolio of past work.</p>
+        <h2>Experience</h2>
+        <p>Recent cabinetry and carpentry work. Click any image to view the full gallery.</p>
 
-        <div class="controls">
-          <nav class="breadcrumbs" aria-label="Breadcrumbs" id="breadcrumbs" style="display:none"></nav>
-          <button class="back-btn" id="backBtn" style="display:none">◀ Back</button>
+        <div class="gallery-controls">
+          <div class="breadcrumbs" style="font-weight:800;color:var(--muted)">/ Experience</div>
+          <button id="openLightbox" class="btn" type="button">Open Gallery</button>
         </div>
 
-        <section id="albumsView" class="album-grid" aria-label="Albums"></section>
-        <section id="photosView" class="photo-grid" aria-label="Photos"></section>
-        <p id="emptyState" class="empty" hidden>No photos added yet.</p>
+        <section id="galleryGrid" class="photo-grid" aria-label="Gallery"></section>
+        <p id="galleryEmpty" class="empty" hidden>Loading photos…</p>
       </div>
     </section>
 
@@ -283,27 +231,18 @@
       </div>
     </section>
 
-    <!-- CONTACT / QUOTE -->
+    <!-- CONTACT -->
     <section id="contact" class="page-hero fade-section">
       <div class="container">
         <h2>Request a Quote</h2>
         <p>Fill out the form below and we’ll get back to you with a personalized estimate.</p>
 
-        <div class="contact-card">
+        <div class="contact-card" style="background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);box-shadow:0 15px 50px rgba(0,0,0,.35);padding:clamp(18px,2.8vw,28px)">
           <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form">
-            <div class="form-grid">
-              <div class="field">
-                <label for="name">Name *</label>
-                <input id="name" type="text" name="name" required autocomplete="name">
-              </div>
-              <div class="field">
-                <label for="email">Email *</label>
-                <input id="email" type="email" name="email" required autocomplete="email">
-              </div>
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" type="tel" name="phone" inputmode="tel" autocomplete="tel">
-              </div>
+            <div class="form-grid" style="display:grid;gap:16px;grid-template-columns:1fr">
+              <div class="field"><label for="name">Name *</label><input id="name" type="text" name="name" required autocomplete="name"></div>
+              <div class="field"><label for="email">Email *</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" inputmode="tel" autocomplete="tel"></div>
               <div class="field">
                 <label for="project">Project Type *</label>
                 <select id="project" name="project" required>
@@ -314,16 +253,12 @@
                   <option>Other</option>
                 </select>
               </div>
-              <div class="field span-2">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your space, timeline, and budget."></textarea>
-              </div>
+              <div class="field"><label for="message">Message *</label><textarea id="message" name="message" rows="5" required placeholder="Tell us about your space, timeline, and budget."></textarea></div>
             </div>
-            <!-- Spam honeypot -->
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="form-actions">
-              <button type="submit" class="btn primary">Send Request</button>
-              <span class="help">We usually reply within 1 business day.</span>
+            <div class="form-actions" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px">
+              <button type="submit" class="btn">Send Request</button>
+              <span class="help" style="color:var(--muted);font-size:.9rem">We usually reply within 1 business day.</span>
             </div>
           </form>
         </div>
@@ -344,173 +279,171 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
   <script>
-    // ---------- Theme toggle ----------
+    /* ===== Theme ===== */
     (function themeInit(){
-      const root = document.documentElement;
-      const btn  = document.getElementById('themeToggle');
-      const saved = localStorage.getItem('ppr-theme');
-      if(saved){ root.setAttribute('data-theme', saved); btn.textContent = saved === 'dark' ? 'Dark' : 'Light'; btn.setAttribute('aria-pressed', saved === 'dark'); }
-      else { root.setAttribute('data-theme', 'dark'); btn.textContent = 'Dark'; btn.setAttribute('aria-pressed', 'true'); }
-      btn.addEventListener('click', ()=>{
-        const current = root.getAttribute('data-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        localStorage.setItem('ppr-theme', next);
-        btn.textContent = next === 'dark' ? 'Dark' : 'Light';
-        btn.setAttribute('aria-pressed', next === 'dark');
-      });
+      const root=document.documentElement,btn=document.getElementById('themeToggle');
+      const saved=localStorage.getItem('ppr-theme');
+      const set=(t)=>{root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'Dark':'Light';btn.setAttribute('aria-pressed',t==='dark')};
+      set(saved||'dark');
+      btn.addEventListener('click',()=>set(root.getAttribute('data-theme')==='dark'?'light':'dark'));
     })();
 
-    // ---------- Nav / header behavior ----------
+    /* ===== Nav/Header/Motion ===== */
     (function navInit(){
-      const btn = document.getElementById('menuToggle');
-      const nav = document.getElementById('navbar');
-      if (btn && nav){
-        btn.addEventListener('click', ()=>{
-          const open = nav.classList.toggle('open');
-          btn.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-          if (window.innerWidth <= 960) document.body.classList.toggle('no-scroll', open);
+      const btn=document.getElementById('menuToggle'),nav=document.getElementById('navbar');
+      if(btn&&nav){
+        btn.addEventListener('click',()=>{
+          const open=nav.classList.toggle('open');btn.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');
+          if(window.innerWidth<=960) document.body.classList.toggle('no-scroll',open);
         });
-        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>{
-          if (window.innerWidth <= 960){
-            nav.classList.remove('open'); btn.classList.remove('open');
-            document.body.classList.remove('no-scroll'); btn.setAttribute('aria-expanded','false');
-          }
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+          if(window.innerWidth<=960){nav.classList.remove('open');btn.classList.remove('open');document.body.classList.remove('no-scroll');btn.setAttribute('aria-expanded','false');}
         }));
       }
-      let lastY = window.scrollY; const header = document.getElementById('header');
-      window.addEventListener('scroll', ()=>{
-        const y = window.scrollY;
-        header.style.transform = (y > lastY && y > 120) ? 'translateY(-100%)' : 'translateY(0)';
-        lastY = y;
-      }, { passive:true });
-
-      // Section fade-ins
-      const faders = document.querySelectorAll('.fade-section');
-      const io = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-        });
-      }, { threshold: 0.17 });
-      faders.forEach(f => io.observe(f));
+      let lastY=window.scrollY; const header=document.getElementById('header');
+      window.addEventListener('scroll',()=>{const y=window.scrollY;header.style.transform=(y>lastY&&y>120)?'translateY(-100%)':'translateY(0)';lastY=y;},{passive:true});
+      const faders=document.querySelectorAll('.fade-section');
+      const io=new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target);}})},{threshold:.17});
+      faders.forEach(f=>io.observe(f));
+      const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
     })();
 
-    // ---------- GALLERY (Portfolio mode) ----------
-    // Your Windows path is fine locally. On the web host, the public folder is served at site root.
-    // We try multiple web paths so it "just works" regardless of host config.
-    const MANIFEST_PATHS = [
-      '/public/gallery/imagePaths.json', // matches your local structure
-      '/gallery/imagePaths.json',        // common static hosting
-      'gallery/imagePaths.json'          // relative
+    /* ===== Experience Gallery =====
+       Will attempt, in order:
+       1) /public/gallery/imagePaths.json
+       2) /gallery/imagePaths.json
+       3) gallery/imagePaths.json (relative)
+       Fallback: tries to GET /gallery/originals/files.json (list of filenames) and build the grid.
+       NOTE: A Windows path like C:\Users\... will NOT work on the web; files must be served from your site.
+    */
+    const MANIFEST_CANDIDATES = [
+      '/public/gallery/imagePaths.json',
+      '/gallery/imagePaths.json',
+      'gallery/imagePaths.json'
     ];
+    const ORIGINALS_DIR = '/gallery/originals/';
+    const FALLBACK_INDEX = ORIGINALS_DIR + 'files.json'; // optional JSON index: ["IMG_123.jpg","kitchen.webp",...]
 
-    // Load the first available manifest
-    async function loadManifest() {
-      for (const url of MANIFEST_PATHS) {
-        try {
-          const res = await fetch(url, { cache: 'no-cache' });
-          if (res.ok) { console.info('[gallery] manifest loaded from', url); return res.json(); }
-        } catch (_) {}
-      }
-      throw new Error('imagePaths.json not found at /public/gallery or /gallery');
-    }
+    const grid = document.getElementById('galleryGrid');
+    const emptyState = document.getElementById('galleryEmpty');
+    const openBtn = document.getElementById('openLightbox');
 
-    // Choose a thumbnail + full src from responsive variants (when present)
-    function pickThumbAndSrc(item){
-      // Support both "variants" shape and simple "path/url/src" fields
+    function shapeToPhotos(item){
+      // Accepts:
+      // 1) { path|url|src, alt? }
+      // 2) { base, variants: { jpg: { "1600": "/...jpg" }, avif? }, widths:[...] }
+      // 3) { originals: [ "/gallery/originals/IMG_1.jpg", ... ] } (fallback batch)
       const simple = item.path || item.url || item.src;
-      if (!item.variants && simple) return { thumb: simple, src: simple };
+      if (simple) return { thumb: simple, full: simple, title: item.alt || '' };
 
-      const widths = (item.widths || Object.keys(item?.variants?.jpg || {})).map(w => +w).sort((a,b)=>a-b);
-      const largest = widths.length ? widths[widths.length-1] : null;
-      const mid = widths.find(w => w >= 1280) || widths[0] || largest;
-      const avifMid     = item.variants?.avif?.[mid];
-      const jpgLargest  = item.variants?.jpg?.[largest];
-      const avifLargest = item.variants?.avif?.[largest];
-      const thumb = avifMid || jpgLargest || avifLargest || simple;
-      const src   = jpgLargest || avifLargest || avifMid || simple;
-      return { thumb, src };
-    }
-
-    // Flatten every photo in every category into one list for a single portfolio grid
-    function buildFlatPortfolio(manifest){
-      const photos = [];
-      const cats = manifest?.categories || {};
-      Object.values(cats).forEach(arr=>{
-        (arr || []).forEach(item=>{
-          const { thumb, src } = pickThumbAndSrc(item);
-          if (thumb || src){
-            photos.push({
-              title: item.alt || '',
-              thumb: thumb || src,
-              src:   src   || thumb
-            });
-          }
-        });
-      });
-      return photos;
-    }
-
-    // DOM refs
-    const photosView = document.getElementById('photosView');
-    const emptyState = document.getElementById('emptyState');
-
-    function renderPortfolio(photos){
-      photosView.innerHTML = '';
-      photosView.style.display = 'grid';
-
-      if (!photos.length){
-        emptyState.hidden = false;
-        emptyState.textContent = 'No photos added yet.';
-        return;
+      if (item.base || item.variants){
+        const widths = (item.widths || Object.keys(item?.variants?.jpg || {})).map(n=>+n).sort((a,b)=>a-b);
+        const largest = widths[widths.length-1];
+        const mid = widths.find(w=>w>=1280) || largest;
+        const avifMid = item.variants?.avif?.[mid];
+        const jpgLargest = item.variants?.jpg?.[largest];
+        const avifLargest = item.variants?.avif?.[largest];
+        const thumb = avifMid || jpgLargest || avifLargest;
+        const full  = jpgLargest || avifLargest || avifMid || thumb;
+        return { thumb, full, title: item.alt || item.base || '' };
       }
+      return null;
+    }
+
+    async function tryLoadManifest(){
+      for (const url of MANIFEST_CANDIDATES){
+        try{
+          const res = await fetch(url, { cache:'no-cache' });
+          if (res.ok){
+            console.info('[gallery] manifest loaded from', url);
+            return await res.json();
+          }
+        }catch(_){}
+      }
+      return null;
+    }
+
+    async function tryLoadFallbackIndex(){
+      try{
+        const res = await fetch(FALLBACK_INDEX, { cache:'no-cache' });
+        if (!res.ok) return null;
+        const files = await res.json();
+        if (!Array.isArray(files)) return null;
+        return files
+          .filter(f=>/\.(jpe?g|png|webp|avif)$/i.test(f))
+          .map(name => ({ path: ORIGINALS_DIR + name, alt: name.replace(/\.[a-z0-9]+$/i,'') }));
+      }catch(_){ return null; }
+    }
+
+    function renderPhotos(photos){
+      grid.innerHTML = '';
+      if (!photos.length){ emptyState.hidden = false; emptyState.textContent = 'No photos found.'; return; }
       emptyState.hidden = true;
 
-      photos.forEach(p=>{
+      let firstLightboxSelector = null;
+
+      photos.forEach((p, i) => {
         const a = document.createElement('a');
-        a.href = p.src;
-        a.setAttribute('data-fancybox', 'Portfolio');
+        a.href = p.full;
+        a.setAttribute('data-fancybox','Experience');
         if (p.title) a.setAttribute('data-caption', p.title);
+        if (i===0) firstLightboxSelector = a;
 
-        const tile = document.createElement('div');
-        tile.className = 'photo';
-
-        const img = document.createElement('img');
-        img.src = p.thumb || p.src;
-        img.alt = p.title || 'Project photo';
-        img.loading = 'lazy';
-        img.className = 'thumb';
-
-        tile.appendChild(img);
-        a.appendChild(tile);
-        photosView.appendChild(a);
+        const tile = document.createElement('div'); tile.className='photo';
+        const img = document.createElement('img'); img.className='thumb'; img.loading='lazy';
+        img.src = p.thumb; img.alt = p.title || 'Project photo';
+        tile.appendChild(img); a.appendChild(tile); grid.appendChild(a);
       });
 
-      // Lightbox
-      Fancybox.bind('[data-fancybox]', {
+      Fancybox.bind('[data-fancybox="Experience"]', {
+        Thumbs: { autoStart: false },
         Toolbar: { display: ['close'] },
-        Images:  { zoom: false, click: false, wheel: false },
-        Thumbs:  { autoStart: false }
+        Images: { zoom: false, click: false, wheel: false }
       });
+
+      if (openBtn && firstLightboxSelector){
+        openBtn.onclick = () => firstLightboxSelector.click();
+      }
     }
 
-    // Boot
-    window.addEventListener('DOMContentLoaded', async () => {
-      // year in footer
-      const y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-
-      try{
-        const manifest = await loadManifest();
-        const photos = buildFlatPortfolio(manifest);
-        renderPortfolio(photos);
-      }catch(err){
-        console.warn('[gallery]', err.message);
-        emptyState.hidden = false;
-        emptyState.textContent = 'Gallery manifest missing. Ensure imagePaths.json is deployed to /public/gallery or /gallery.';
+    function manifestToPhotoList(manifest){
+      if (!manifest) return [];
+      // Accept either { categories: {...} } or { photos: [...] }
+      if (manifest.photos && Array.isArray(manifest.photos)){
+        return manifest.photos.map(shapeToPhotos).filter(Boolean);
       }
-    });
+      const cats = manifest.categories || {};
+      const list = [];
+      Object.values(cats).forEach(arr=>{
+        (arr||[]).forEach(item=>{
+          const p = shapeToPhotos(item);
+          if (p) list.push(p);
+        });
+      });
+      return list;
+    }
+
+    async function bootGallery(){
+      emptyState.hidden = false; emptyState.textContent = 'Loading photos…';
+
+      const manifest = await tryLoadManifest();
+      if (manifest){
+        const photos = manifestToPhotoList(manifest);
+        if (photos.length){ renderPhotos(photos); return; }
+      }
+      // Fallback: attempt directory index at /gallery/originals/files.json
+      const fallback = await tryLoadFallbackIndex();
+      if (fallback && fallback.length){
+        const photos = fallback.map(it => ({ thumb: it.path, full: it.path, title: it.alt || '' }));
+        renderPhotos(photos);
+        return;
+      }
+
+      emptyState.hidden = false;
+      emptyState.textContent = 'Gallery not found. Make sure imagePaths.json exists at /public/gallery/ or /gallery/, or provide /gallery/originals/files.json.';
+    }
+
+    document.addEventListener('DOMContentLoaded', bootGallery);
   </script>
 </body>
 </html>

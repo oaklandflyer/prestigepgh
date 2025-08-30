@@ -1,28 +1,9 @@
-// build-manifest.js
-const fs = require('fs');
-const path = require('path');
-
-const originalsDir = path.join(__dirname, 'public', 'gallery', 'originals');
-const outPath      = path.join(__dirname, 'public', 'gallery', 'imagePaths.json');
-
-// file types to include
-const exts = new Set(['.jpg','.jpeg','.png','.webp','.avif','.JPG','.JPEG','.PNG','.WEBP','.AVIF']);
-
-// read originals
-const files = fs.readdirSync(originalsDir).filter(f => exts.has(path.extname(f)));
-
-// turn each file into a manifest entry that points directly to the original
-const items = files.map(f => {
-  const url = `/gallery/originals/${f}`;  // <-- this must match the file on the server exactly (case sensitive)
-  const alt = path.parse(f).name.replace(/[_-]+/g,' ').trim();
-  return {
-    alt,
-    widths: [0],
-    variants: { jpg: { 0: url } }
-  };
-});
-
-const manifest = { categories: { portfolio: items } };
-
-fs.writeFileSync(outPath, JSON.stringify(manifest, null, 2));
-console.log(`Wrote ${outPath} with ${items.length} items`);
+// build-image-manifest.mjs
+import { readdir, writeFile } from "node:fs/promises";
+const DIR = "./public/gallery/originals";       // adjust if needed
+const OUT = "./public/gallery/imagePaths.json"; // adjust if needed
+const files = (await readdir(DIR)).filter(f=>/\.(jpe?g|png|webp|avif)$/i.test(f));
+const photos = files.map(name => ({ path: `/gallery/originals/${name}`, alt: name.replace(/\.[a-z0-9]+$/i,'') }));
+const json = { photos };
+await writeFile(OUT, JSON.stringify(json, null, 2), "utf8");
+console.log(`Wrote ${OUT} with ${photos.length} photos`);
