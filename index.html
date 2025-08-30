@@ -301,8 +301,8 @@
     <section class="hero fade-section" id="top">
       <div class="glass-wrap">
         <div class="liquid-glass">
-          <h1>Custom Cabinetry & Fine Carpentry</h1>
-          <p>Built-ins, kitchen cabinetry, trim, and woodwork crafted for Pittsburgh homes — Black & Gold quality that lasts.</p>
+          <h1>Quality Remodeling, Pittsburgh Proud</h1>
+          <p>Built-ins, kitchen cabinetry, trim, and woodwork crafted for Pittsburgh homes — Quality that lasts.</p>
           <div class="hero-btns">
             <a href="#services" class="btn">View Services</a>
             <a href="#contact" class="btn">Request a Quote</a>
@@ -524,170 +524,78 @@
       return { title:'All Projects', children: countries };
     }
 
-    /* ---------------- Router / render (albums & photos) ---------------- */
-    function getPath(){
-      const hash = decodeURI(location.hash || '#/');
-      const cleaned = hash.replace(/^#\//,'');
-      if (!cleaned || cleaned.startsWith('top')) return [];
-      return cleaned.split('/').filter(Boolean);
-    }
-    function setPath(parts){ location.hash = '#/' + parts.map(encodeURI).join('/'); }
+function renderAlbums(nodes){
+  albumsView.innerHTML = '';
+  photosView.style.display = 'none';
+  albumsView.style.display = 'grid';
 
-    const breadcrumbsEl = document.getElementById('breadcrumbs');
-    const albumsView = document.getElementById('albumsView');
-    const photosView = document.getElementById('photosView');
-    const emptyState = document.getElementById('emptyState');
-    const backBtn = document.getElementById('backBtn');
+  if (!nodes.length){ emptyState.hidden = false; emptyState.textContent = 'No projects added yet.'; return; }
+  emptyState.hidden = true;
 
-    let ROOT = { title:'All Projects', children:[] };
+  nodes.forEach(n=>{
+    const card = document.createElement('a');
+    card.className='album-card';
+    card.href='#';
 
-    function findNode(parts){
-      if (!parts.length) return ROOT;
-      const country = ROOT.children.find(c => (c.id||c.title).toLowerCase() === parts[0].toLowerCase());
-      if (!country) return null;
-      if (parts.length === 1) return country;
-      const city = country.children.find(ci => (ci.id||ci.title).toLowerCase() === parts[1].toLowerCase());
-      return city || null;
-    }
+    const cover = document.createElement('div');
+    cover.className='album-cover';
 
-    function buildCrumbs(parts){
-      const frag = document.createDocumentFragment();
-      const mkLink = (label, toParts)=>{
-        const a = document.createElement('a');
-        a.href = '#/' + toParts.map(encodeURI).join('/');
-        a.textContent = label;
-        a.addEventListener('click', e=>{ e.preventDefault(); setPath(toParts); });
-        return a;
-      };
-      frag.appendChild(mkLink('All Projects', []));
-      if (parts[0]){
-        const sep = document.createElement('span'); sep.textContent='›'; sep.className='crumb-sep'; sep.style.margin='0 6px';
-        frag.appendChild(sep); frag.appendChild(mkLink(parts[0], [parts[0]]));
-      }
-      if (parts[1]){
-        const sep2 = document.createElement('span'); sep2.textContent='›'; sep2.className='crumb-sep'; sep2.style.margin='0 6px';
-        frag.appendChild(sep2); frag.appendChild(mkLink(parts[1], [parts[0], parts[1]]));
-      }
-      breadcrumbsEl.innerHTML = ''; breadcrumbsEl.appendChild(frag);
+    // NEW: show a thumbnail if we have one
+    if (n.cover){
+      const img = document.createElement('img');
+      img.src = n.cover;
+      img.alt = `${n.title} cover`;
+      img.loading = 'lazy';
+      img.className = 'thumb';
+      cover.appendChild(img);
     }
 
-    function renderAlbums(nodes){
-      albumsView.innerHTML = '';
-      photosView.style.display = 'none';
-      albumsView.style.display = 'grid';
+    const cap = document.createElement('div'); cap.className='album-caption';
+    const title = document.createElement('div'); title.className='album-title'; title.textContent = n.title;
+    const sub = document.createElement('div'); sub.className='album-sub'; sub.textContent = (n.children ? `${n.children.length} Cities` : `${(n.photos||[]).length} Photos`).toUpperCase();
+    cap.appendChild(title); cap.appendChild(sub);
 
-      if (!nodes.length){ emptyState.hidden = false; emptyState.textContent = 'No projects added yet.'; return; }
-      emptyState.hidden = true;
+    card.appendChild(cover); card.appendChild(cap);
 
-      nodes.forEach(n=>{
-        const card = document.createElement('a');
-        card.className='album-card';
-        card.href='#';
-
-        const cover = document.createElement('div');
-        cover.className='album-cover';
-
-        // Visible cover thumbnail (if available)
-        if (n.cover) {
-          const img = document.createElement('img');
-          img.src = n.cover;
-          img.alt = (n.title || 'Album') + ' cover';
-          img.className = 'thumb';
-          img.loading = 'lazy';
-          img.decoding = 'async';
-          cover.appendChild(img);
-        }
-
-        const cap = document.createElement('div'); cap.className='album-caption';
-        const title = document.createElement('div'); title.className='album-title'; title.textContent = n.title;
-        const sub = document.createElement('div'); sub.className='album-sub'; sub.textContent =
-          (n.children ? `${n.children.length} Cities` : `${(n.photos||[]).length} Photos`).toUpperCase();
-
-        cap.appendChild(title); cap.appendChild(sub);
-        card.appendChild(cover); card.appendChild(cap);
-
-        card.addEventListener('click', e=>{
-          e.preventDefault();
-          const parts = getPath();
-          parts.push(n.id || n.title);
-          setPath(parts);
-        });
-
-        albumsView.appendChild(card);
-      });
-    }
-
-    function renderPhotos(node){
-      photosView.innerHTML = '';
-      albumsView.style.display='none';
-      photosView.style.display='grid';
-
-      const photos = node.photos || [];
-      if (!photos.length){ emptyState.hidden=false; emptyState.textContent='No photos added for this project yet.'; return; }
-      emptyState.hidden = true;
-
-      photos.forEach((p)=>{
-        const a = document.createElement('a');
-        a.href = p.src;
-        a.setAttribute('data-fancybox', node.title || 'project');
-        if (p.title) a.setAttribute('data-caption', p.title);
-
-        const tile = document.createElement('div'); tile.className='photo';
-
-        // Visible thumbnail
-        if (p.thumb) {
-          const img = document.createElement('img');
-          img.src = p.thumb;
-          img.alt = p.title || 'Photo';
-          img.className = 'thumb';
-          img.loading = 'lazy';
-          img.decoding = 'async';
-          tile.appendChild(img);
-        }
-
-        a.appendChild(tile);
-        photosView.appendChild(a);
-      });
-
-      bindFancybox();
-    }
-
-    function render(){
+    card.addEventListener('click', e=>{
+      e.preventDefault();
       const parts = getPath();
-      buildCrumbs(parts);
-      backBtn.style.display = parts.length ? 'inline-flex' : 'none';
+      parts.push(n.id || n.title);
+      setPath(parts);
+    });
 
-      const node = findNode(parts);
-      if (!node){ setPath([]); return; }
+    albumsView.appendChild(card);
+  });
+}
 
-      if (node.children) renderAlbums(node.children);
-      else renderPhotos(node);
-    }
+function renderPhotos(node){
+  photosView.innerHTML = '';
+  albumsView.style.display='none';
+  photosView.style.display='grid';
 
-    function bindFancybox(){
-      Fancybox.bind('[data-fancybox]', {
-        Toolbar: { display: ['close'] },
-        Images:  { zoom: false, click: false, wheel: false },
-        Thumbs:  { autoStart: false }
-      });
-    }
+  const photos = node.photos || [];
+  if (!photos.length){ emptyState.hidden=false; emptyState.textContent='No photos added for this project yet.'; return; }
+  emptyState.hidden = true;
 
-    (async function init(){
-      // Set year
-      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+  photos.forEach((p)=>{
+    const a = document.createElement('a');
+    a.href = p.src; // opens in Fancybox
+    a.setAttribute('data-fancybox', node.title || 'project');
+    if (p.title) a.setAttribute('data-caption', p.title);
 
-      // Build gallery structure & render (empty until you add manifest/photos)
-      const manifest = await loadManifest();
-      window.ROOT = buildCountryCity(manifest);
-      render();
-      window.addEventListener('hashchange', render);
-      document.getElementById('backBtn').addEventListener('click', ()=>{ const parts = getPath(); parts.pop(); setPath(parts); });
-    })();
-  </script>
+    const tile = document.createElement('div'); tile.className='photo';
+    // NEW: put a visible thumbnail inside the tile
+    const img = document.createElement('img');
+    img.src = p.thumb || p.src;
+    img.alt = p.title || node.title || 'Project photo';
+    img.loading = 'lazy';
+    img.className = 'thumb';
+    tile.appendChild(img);
 
-  <noscript>
-    <style>.fade-section{opacity:1;transform:none}</style>
-    Please enable JavaScript to view the gallery and form enhancements.
-  </noscript>
-</body>
-</html>
+    a.appendChild(tile);
+    photosView.appendChild(a);
+  });
+
+  bindFancybox();
+}
+
