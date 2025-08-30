@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Experience – Pittsburgh Prestige Remodeling</title>
+  <link rel="icon" href="assets/ppr_icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <style>
+    :root{--accent:#FFB612;--ink:#d6deff;--muted:#9fb0d0;--bg:#0b0f17;--panel:#111926;--line:#1b2533;--container:min(1200px,92vw)}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+    .container{width:var(--container);margin:32px auto}
+    a{color:inherit;text-decoration:none}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0}
+    .btn{display:inline-block;background:var(--accent);color:#0b0f17;font-weight:900;padding:10px 20px;border-radius:999px}
+    h1{margin:12px 0 8px}
+    p{color:var(--muted)}
+    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:24px 0 60px}
+    @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
+    .photo{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg,#0d1522,#101820);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+    .thumb{width:100%;height:100%;object-fit:cover;display:block}
+    .empty{margin:24px 0;opacity:.9;text-align:center;color:var(--muted)}
+    .crumbs{font-weight:800;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="crumbs">/ Experience</div>
+      <a class="btn" href="/">← Back</a>
+    </div>
+    <header>
+      <h1>Experience</h1>
+      <p>Click any image to open the lightbox.</p>
+    </header>
+
+    <section id="galleryGrid" class="photo-grid" aria-label="Gallery"></section>
+    <p id="galleryEmpty" class="empty" hidden>Loading photos…</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script>
+    const MANIFEST_CANDIDATES = [
+      '/gallery/imagePaths.json',
+      '/public/gallery/imagePaths.json',
+      'gallery/imagePaths.json'
+    ];
+    const grid = document.getElementById('galleryGrid');
+    const emptyState = document.getElementById('galleryEmpty');
+
+    function shapeToPhotos(item){
+      const simple = item.path || item.url || item.src;
+      if (simple) return { thumb: simple, full: simple, title: item.alt || '' };
+      if (item.base || item.variants){
+        const widths = (item.widths || Object.keys(item?.variants?.jpg || {})).map(n=>+n).sort((a,b)=>a-b);
+        const largest = widths[widths.length-1];
+        const mid = widths.find(w=>w>=1280) || largest;
+        const avifMid = item.variants?.avif?.[mid];
+        const jpgLargest = item.variants?.jpg?.[largest];
+        const avifLargest = item.variants?.avif?.[largest];
+        const thumb = avifMid || jpgLargest || avifLargest;
+        const full  = jpgLargest || avifLargest || avifMid || thumb;
+        return { thumb, full, title: item.alt || item.base || '' };
+      }
+      return null;
+    }
+
+    async function loadManifest(){
+      for (const url of MANIFEST_CANDIDATES){
+        try{
+          const res = await fetch(url, { cache:'no-cache' });
+          if (res.ok) { return await res.json(); }
+        }catch(_){}
+      }
+      return null;
+    }
+
+    function manifestToPhotos(man){
+      if (!man) return [];
+      if (Array.isArray(man.photos)) return man.photos.map(shapeToPhotos).filter(Boolean);
+      const out=[]; const cats=man.categories||{};
+      Object.values(cats).forEach(arr=>{
+        (arr||[]).forEach(item=>{ const p=shapeToPhotos(item); if(p) out.push(p); });
+      });
+      return out;
+    }
+
+    function render(photos){
+      grid.innerHTML='';
+      if(!photos.length){ emptyState.hidden=false; emptyState.textContent='No photos found.'; return; }
+      emptyState.hidden=true;
+
+      photos.forEach(p=>{
+        const a=document.createElement('a'); a.href=p.full; a.setAttribute('data-fancybox','Experience');
+        if(p.title) a.setAttribute('data-caption', p.title);
+        const tile=document.createElement('div'); tile.className='photo';
+        const img=document.createElement('img'); img.className='thumb'; img.loading='lazy'; img.src=p.thumb; img.alt=p.title||'Project photo';
+        tile.appendChild(img); a.appendChild(tile); grid.appendChild(a);
+      });
+
+      Fancybox.bind('[data-fancybox="Experience"]', {
+        Thumbs:{autoStart:false}, Toolbar:{display:['close']}, Images:{zoom:false, click:false, wheel:false}
+      });
+    }
+
+    (async function boot(){
+      emptyState.hidden=false; emptyState.textContent='Loading photos…';
+      const manifest = await loadManifest();
+      const photos = manifestToPhotos(manifest);
+      render(photos);
+      if (!photos.length){
+        emptyState.hidden=false;
+        emptyState.textContent='Gallery not found. Ensure /gallery/imagePaths.json and /gallery/originals/* are deployed.';
+      }
+    })();
+  </script>
+</body>
+</html>
