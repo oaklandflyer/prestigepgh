@@ -1,0 +1,2779 @@
+{
+  "generatedAt": "2025-08-30T20:43:54.342Z",
+  "categories": {
+    "Projects": [
+      {
+        "base": "originals/20211014_175434",
+        "alt": "20211014_175434",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20211014_175434_480.avif",
+            "960": "/gallery/originals/20211014_175434_960.avif",
+            "1600": "/gallery/originals/20211014_175434_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20211014_175434_480.jpg",
+            "960": "/gallery/originals/20211014_175434_960.jpg",
+            "1600": "/gallery/originals/20211014_175434_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20211029_164000",
+        "alt": "20211029_164000",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20211029_164000_480.avif",
+            "960": "/gallery/originals/20211029_164000_960.avif",
+            "1600": "/gallery/originals/20211029_164000_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20211029_164000_480.jpg",
+            "960": "/gallery/originals/20211029_164000_960.jpg",
+            "1600": "/gallery/originals/20211029_164000_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20211101_151923",
+        "alt": "20211101_151923",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20211101_151923_480.avif",
+            "960": "/gallery/originals/20211101_151923_960.avif",
+            "1600": "/gallery/originals/20211101_151923_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20211101_151923_480.jpg",
+            "960": "/gallery/originals/20211101_151923_960.jpg",
+            "1600": "/gallery/originals/20211101_151923_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20211101_151934",
+        "alt": "20211101_151934",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20211101_151934_480.avif",
+            "960": "/gallery/originals/20211101_151934_960.avif",
+            "1600": "/gallery/originals/20211101_151934_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20211101_151934_480.jpg",
+            "960": "/gallery/originals/20211101_151934_960.jpg",
+            "1600": "/gallery/originals/20211101_151934_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20211104_095016",
+        "alt": "20211104_095016",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20211104_095016_480.avif",
+            "960": "/gallery/originals/20211104_095016_960.avif",
+            "1600": "/gallery/originals/20211104_095016_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20211104_095016_480.jpg",
+            "960": "/gallery/originals/20211104_095016_960.jpg",
+            "1600": "/gallery/originals/20211104_095016_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220218_122448",
+        "alt": "20220218_122448",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220218_122448_480.avif",
+            "960": "/gallery/originals/20220218_122448_960.avif",
+            "1600": "/gallery/originals/20220218_122448_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220218_122448_480.jpg",
+            "960": "/gallery/originals/20220218_122448_960.jpg",
+            "1600": "/gallery/originals/20220218_122448_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220317_143912",
+        "alt": "20220317_143912",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220317_143912_480.avif",
+            "960": "/gallery/originals/20220317_143912_960.avif",
+            "1600": "/gallery/originals/20220317_143912_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220317_143912_480.jpg",
+            "960": "/gallery/originals/20220317_143912_960.jpg",
+            "1600": "/gallery/originals/20220317_143912_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220317_143928",
+        "alt": "20220317_143928",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220317_143928_480.avif",
+            "960": "/gallery/originals/20220317_143928_960.avif",
+            "1600": "/gallery/originals/20220317_143928_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220317_143928_480.jpg",
+            "960": "/gallery/originals/20220317_143928_960.jpg",
+            "1600": "/gallery/originals/20220317_143928_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220317_143935",
+        "alt": "20220317_143935",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220317_143935_480.avif",
+            "960": "/gallery/originals/20220317_143935_960.avif",
+            "1600": "/gallery/originals/20220317_143935_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220317_143935_480.jpg",
+            "960": "/gallery/originals/20220317_143935_960.jpg",
+            "1600": "/gallery/originals/20220317_143935_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220317_143948",
+        "alt": "20220317_143948",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220317_143948_480.avif",
+            "960": "/gallery/originals/20220317_143948_960.avif",
+            "1600": "/gallery/originals/20220317_143948_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220317_143948_480.jpg",
+            "960": "/gallery/originals/20220317_143948_960.jpg",
+            "1600": "/gallery/originals/20220317_143948_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220317_144018",
+        "alt": "20220317_144018",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220317_144018_480.avif",
+            "960": "/gallery/originals/20220317_144018_960.avif",
+            "1600": "/gallery/originals/20220317_144018_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220317_144018_480.jpg",
+            "960": "/gallery/originals/20220317_144018_960.jpg",
+            "1600": "/gallery/originals/20220317_144018_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220416_163754",
+        "alt": "20220416_163754",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220416_163754_480.avif",
+            "960": "/gallery/originals/20220416_163754_960.avif",
+            "1600": "/gallery/originals/20220416_163754_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220416_163754_480.jpg",
+            "960": "/gallery/originals/20220416_163754_960.jpg",
+            "1600": "/gallery/originals/20220416_163754_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220416_163759",
+        "alt": "20220416_163759",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220416_163759_480.avif",
+            "960": "/gallery/originals/20220416_163759_960.avif",
+            "1600": "/gallery/originals/20220416_163759_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220416_163759_480.jpg",
+            "960": "/gallery/originals/20220416_163759_960.jpg",
+            "1600": "/gallery/originals/20220416_163759_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220614_150000",
+        "alt": "20220614_150000",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220614_150000_480.avif",
+            "960": "/gallery/originals/20220614_150000_960.avif",
+            "1600": "/gallery/originals/20220614_150000_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220614_150000_480.jpg",
+            "960": "/gallery/originals/20220614_150000_960.jpg",
+            "1600": "/gallery/originals/20220614_150000_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220614_150146",
+        "alt": "20220614_150146",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220614_150146_480.avif",
+            "960": "/gallery/originals/20220614_150146_960.avif",
+            "1600": "/gallery/originals/20220614_150146_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220614_150146_480.jpg",
+            "960": "/gallery/originals/20220614_150146_960.jpg",
+            "1600": "/gallery/originals/20220614_150146_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220614_150206",
+        "alt": "20220614_150206",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220614_150206_480.avif",
+            "960": "/gallery/originals/20220614_150206_960.avif",
+            "1600": "/gallery/originals/20220614_150206_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220614_150206_480.jpg",
+            "960": "/gallery/originals/20220614_150206_960.jpg",
+            "1600": "/gallery/originals/20220614_150206_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220614_150301",
+        "alt": "20220614_150301",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220614_150301_480.avif",
+            "960": "/gallery/originals/20220614_150301_960.avif",
+            "1600": "/gallery/originals/20220614_150301_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220614_150301_480.jpg",
+            "960": "/gallery/originals/20220614_150301_960.jpg",
+            "1600": "/gallery/originals/20220614_150301_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220825_085401",
+        "alt": "20220825_085401",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220825_085401_480.avif",
+            "960": "/gallery/originals/20220825_085401_960.avif",
+            "1600": "/gallery/originals/20220825_085401_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220825_085401_480.jpg",
+            "960": "/gallery/originals/20220825_085401_960.jpg",
+            "1600": "/gallery/originals/20220825_085401_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220926_134803",
+        "alt": "20220926_134803",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220926_134803_480.avif",
+            "960": "/gallery/originals/20220926_134803_960.avif",
+            "1600": "/gallery/originals/20220926_134803_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220926_134803_480.jpg",
+            "960": "/gallery/originals/20220926_134803_960.jpg",
+            "1600": "/gallery/originals/20220926_134803_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20220928_133555",
+        "alt": "20220928_133555",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20220928_133555_480.avif",
+            "960": "/gallery/originals/20220928_133555_960.avif",
+            "1600": "/gallery/originals/20220928_133555_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20220928_133555_480.jpg",
+            "960": "/gallery/originals/20220928_133555_960.jpg",
+            "1600": "/gallery/originals/20220928_133555_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20221020_165648",
+        "alt": "20221020_165648",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20221020_165648_480.avif",
+            "960": "/gallery/originals/20221020_165648_960.avif",
+            "1600": "/gallery/originals/20221020_165648_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20221020_165648_480.jpg",
+            "960": "/gallery/originals/20221020_165648_960.jpg",
+            "1600": "/gallery/originals/20221020_165648_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20230307_155946",
+        "alt": "20230307_155946",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20230307_155946_480.avif",
+            "960": "/gallery/originals/20230307_155946_960.avif",
+            "1600": "/gallery/originals/20230307_155946_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20230307_155946_480.jpg",
+            "960": "/gallery/originals/20230307_155946_960.jpg",
+            "1600": "/gallery/originals/20230307_155946_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20230307_155950",
+        "alt": "20230307_155950",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20230307_155950_480.avif",
+            "960": "/gallery/originals/20230307_155950_960.avif",
+            "1600": "/gallery/originals/20230307_155950_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20230307_155950_480.jpg",
+            "960": "/gallery/originals/20230307_155950_960.jpg",
+            "1600": "/gallery/originals/20230307_155950_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20230307_160002",
+        "alt": "20230307_160002",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20230307_160002_480.avif",
+            "960": "/gallery/originals/20230307_160002_960.avif",
+            "1600": "/gallery/originals/20230307_160002_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20230307_160002_480.jpg",
+            "960": "/gallery/originals/20230307_160002_960.jpg",
+            "1600": "/gallery/originals/20230307_160002_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20230307_160017",
+        "alt": "20230307_160017",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20230307_160017_480.avif",
+            "960": "/gallery/originals/20230307_160017_960.avif",
+            "1600": "/gallery/originals/20230307_160017_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20230307_160017_480.jpg",
+            "960": "/gallery/originals/20230307_160017_960.jpg",
+            "1600": "/gallery/originals/20230307_160017_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20230307_160021",
+        "alt": "20230307_160021",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20230307_160021_480.avif",
+            "960": "/gallery/originals/20230307_160021_960.avif",
+            "1600": "/gallery/originals/20230307_160021_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20230307_160021_480.jpg",
+            "960": "/gallery/originals/20230307_160021_960.jpg",
+            "1600": "/gallery/originals/20230307_160021_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/20230307_160106",
+        "alt": "20230307_160106",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/20230307_160106_480.avif",
+            "960": "/gallery/originals/20230307_160106_960.avif",
+            "1600": "/gallery/originals/20230307_160106_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/20230307_160106_480.jpg",
+            "960": "/gallery/originals/20230307_160106_960.jpg",
+            "1600": "/gallery/originals/20230307_160106_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12",
+        "alt": "73455026468__F212B2A7-4147-4279-A88A-5A344675FD12",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12_480.avif",
+            "960": "/gallery/originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12_960.avif",
+            "1600": "/gallery/originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12_480.jpg",
+            "960": "/gallery/originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12_960.jpg",
+            "1600": "/gallery/originals/73455026468__F212B2A7-4147-4279-A88A-5A344675FD12_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E",
+        "alt": "73740340343__85726363-6967-4910-B7F5-E2AD9580589E",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E_480.avif",
+            "960": "/gallery/originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E_960.avif",
+            "1600": "/gallery/originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E_480.jpg",
+            "960": "/gallery/originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E_960.jpg",
+            "1600": "/gallery/originals/73740340343__85726363-6967-4910-B7F5-E2AD9580589E_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B",
+        "alt": "FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B_480.avif",
+            "960": "/gallery/originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B_960.avif",
+            "1600": "/gallery/originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B_480.jpg",
+            "960": "/gallery/originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B_960.jpg",
+            "1600": "/gallery/originals/FD3AB465-E93D-435D-BEF7-B1AAEE4FA16B_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_5654",
+        "alt": "IMG_5654",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_5654_480.avif",
+            "960": "/gallery/originals/IMG_5654_960.avif",
+            "1600": "/gallery/originals/IMG_5654_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_5654_480.jpg",
+            "960": "/gallery/originals/IMG_5654_960.jpg",
+            "1600": "/gallery/originals/IMG_5654_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_5655",
+        "alt": "IMG_5655",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_5655_480.avif",
+            "960": "/gallery/originals/IMG_5655_960.avif",
+            "1600": "/gallery/originals/IMG_5655_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_5655_480.jpg",
+            "960": "/gallery/originals/IMG_5655_960.jpg",
+            "1600": "/gallery/originals/IMG_5655_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_5657",
+        "alt": "IMG_5657",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_5657_480.avif",
+            "960": "/gallery/originals/IMG_5657_960.avif",
+            "1600": "/gallery/originals/IMG_5657_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_5657_480.jpg",
+            "960": "/gallery/originals/IMG_5657_960.jpg",
+            "1600": "/gallery/originals/IMG_5657_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7191",
+        "alt": "IMG_7191",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7191_480.avif",
+            "960": "/gallery/originals/IMG_7191_960.avif",
+            "1600": "/gallery/originals/IMG_7191_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7191_480.jpg",
+            "960": "/gallery/originals/IMG_7191_960.jpg",
+            "1600": "/gallery/originals/IMG_7191_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7343",
+        "alt": "IMG_7343",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7343_480.avif",
+            "960": "/gallery/originals/IMG_7343_960.avif",
+            "1600": "/gallery/originals/IMG_7343_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7343_480.jpg",
+            "960": "/gallery/originals/IMG_7343_960.jpg",
+            "1600": "/gallery/originals/IMG_7343_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7530",
+        "alt": "IMG_7530",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7530_480.avif",
+            "960": "/gallery/originals/IMG_7530_960.avif",
+            "1600": "/gallery/originals/IMG_7530_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7530_480.jpg",
+            "960": "/gallery/originals/IMG_7530_960.jpg",
+            "1600": "/gallery/originals/IMG_7530_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7531",
+        "alt": "IMG_7531",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7531_480.avif",
+            "960": "/gallery/originals/IMG_7531_960.avif",
+            "1600": "/gallery/originals/IMG_7531_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7531_480.jpg",
+            "960": "/gallery/originals/IMG_7531_960.jpg",
+            "1600": "/gallery/originals/IMG_7531_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7532",
+        "alt": "IMG_7532",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7532_480.avif",
+            "960": "/gallery/originals/IMG_7532_960.avif",
+            "1600": "/gallery/originals/IMG_7532_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7532_480.jpg",
+            "960": "/gallery/originals/IMG_7532_960.jpg",
+            "1600": "/gallery/originals/IMG_7532_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7535",
+        "alt": "IMG_7535",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7535_480.avif",
+            "960": "/gallery/originals/IMG_7535_960.avif",
+            "1600": "/gallery/originals/IMG_7535_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7535_480.jpg",
+            "960": "/gallery/originals/IMG_7535_960.jpg",
+            "1600": "/gallery/originals/IMG_7535_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7536",
+        "alt": "IMG_7536",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7536_480.avif",
+            "960": "/gallery/originals/IMG_7536_960.avif",
+            "1600": "/gallery/originals/IMG_7536_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7536_480.jpg",
+            "960": "/gallery/originals/IMG_7536_960.jpg",
+            "1600": "/gallery/originals/IMG_7536_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7537",
+        "alt": "IMG_7537",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7537_480.avif",
+            "960": "/gallery/originals/IMG_7537_960.avif",
+            "1600": "/gallery/originals/IMG_7537_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7537_480.jpg",
+            "960": "/gallery/originals/IMG_7537_960.jpg",
+            "1600": "/gallery/originals/IMG_7537_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7539",
+        "alt": "IMG_7539",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7539_480.avif",
+            "960": "/gallery/originals/IMG_7539_960.avif",
+            "1600": "/gallery/originals/IMG_7539_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7539_480.jpg",
+            "960": "/gallery/originals/IMG_7539_960.jpg",
+            "1600": "/gallery/originals/IMG_7539_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7540",
+        "alt": "IMG_7540",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7540_480.avif",
+            "960": "/gallery/originals/IMG_7540_960.avif",
+            "1600": "/gallery/originals/IMG_7540_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7540_480.jpg",
+            "960": "/gallery/originals/IMG_7540_960.jpg",
+            "1600": "/gallery/originals/IMG_7540_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7541",
+        "alt": "IMG_7541",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7541_480.avif",
+            "960": "/gallery/originals/IMG_7541_960.avif",
+            "1600": "/gallery/originals/IMG_7541_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7541_480.jpg",
+            "960": "/gallery/originals/IMG_7541_960.jpg",
+            "1600": "/gallery/originals/IMG_7541_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7542",
+        "alt": "IMG_7542",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7542_480.avif",
+            "960": "/gallery/originals/IMG_7542_960.avif",
+            "1600": "/gallery/originals/IMG_7542_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7542_480.jpg",
+            "960": "/gallery/originals/IMG_7542_960.jpg",
+            "1600": "/gallery/originals/IMG_7542_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7660",
+        "alt": "IMG_7660",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7660_480.avif",
+            "960": "/gallery/originals/IMG_7660_960.avif",
+            "1600": "/gallery/originals/IMG_7660_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7660_480.jpg",
+            "960": "/gallery/originals/IMG_7660_960.jpg",
+            "1600": "/gallery/originals/IMG_7660_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7706",
+        "alt": "IMG_7706",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7706_480.avif",
+            "960": "/gallery/originals/IMG_7706_960.avif",
+            "1600": "/gallery/originals/IMG_7706_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7706_480.jpg",
+            "960": "/gallery/originals/IMG_7706_960.jpg",
+            "1600": "/gallery/originals/IMG_7706_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7707",
+        "alt": "IMG_7707",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7707_480.avif",
+            "960": "/gallery/originals/IMG_7707_960.avif",
+            "1600": "/gallery/originals/IMG_7707_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7707_480.jpg",
+            "960": "/gallery/originals/IMG_7707_960.jpg",
+            "1600": "/gallery/originals/IMG_7707_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7710",
+        "alt": "IMG_7710",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7710_480.avif",
+            "960": "/gallery/originals/IMG_7710_960.avif",
+            "1600": "/gallery/originals/IMG_7710_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7710_480.jpg",
+            "960": "/gallery/originals/IMG_7710_960.jpg",
+            "1600": "/gallery/originals/IMG_7710_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7728",
+        "alt": "IMG_7728",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7728_480.avif",
+            "960": "/gallery/originals/IMG_7728_960.avif",
+            "1600": "/gallery/originals/IMG_7728_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7728_480.jpg",
+            "960": "/gallery/originals/IMG_7728_960.jpg",
+            "1600": "/gallery/originals/IMG_7728_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7729",
+        "alt": "IMG_7729",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7729_480.avif",
+            "960": "/gallery/originals/IMG_7729_960.avif",
+            "1600": "/gallery/originals/IMG_7729_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7729_480.jpg",
+            "960": "/gallery/originals/IMG_7729_960.jpg",
+            "1600": "/gallery/originals/IMG_7729_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7730",
+        "alt": "IMG_7730",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7730_480.avif",
+            "960": "/gallery/originals/IMG_7730_960.avif",
+            "1600": "/gallery/originals/IMG_7730_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7730_480.jpg",
+            "960": "/gallery/originals/IMG_7730_960.jpg",
+            "1600": "/gallery/originals/IMG_7730_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7731",
+        "alt": "IMG_7731",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7731_480.avif",
+            "960": "/gallery/originals/IMG_7731_960.avif",
+            "1600": "/gallery/originals/IMG_7731_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7731_480.jpg",
+            "960": "/gallery/originals/IMG_7731_960.jpg",
+            "1600": "/gallery/originals/IMG_7731_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7732",
+        "alt": "IMG_7732",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7732_480.avif",
+            "960": "/gallery/originals/IMG_7732_960.avif",
+            "1600": "/gallery/originals/IMG_7732_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7732_480.jpg",
+            "960": "/gallery/originals/IMG_7732_960.jpg",
+            "1600": "/gallery/originals/IMG_7732_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7733",
+        "alt": "IMG_7733",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7733_480.avif",
+            "960": "/gallery/originals/IMG_7733_960.avif",
+            "1600": "/gallery/originals/IMG_7733_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7733_480.jpg",
+            "960": "/gallery/originals/IMG_7733_960.jpg",
+            "1600": "/gallery/originals/IMG_7733_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7734",
+        "alt": "IMG_7734",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7734_480.avif",
+            "960": "/gallery/originals/IMG_7734_960.avif",
+            "1600": "/gallery/originals/IMG_7734_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7734_480.jpg",
+            "960": "/gallery/originals/IMG_7734_960.jpg",
+            "1600": "/gallery/originals/IMG_7734_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7735",
+        "alt": "IMG_7735",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7735_480.avif",
+            "960": "/gallery/originals/IMG_7735_960.avif",
+            "1600": "/gallery/originals/IMG_7735_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7735_480.jpg",
+            "960": "/gallery/originals/IMG_7735_960.jpg",
+            "1600": "/gallery/originals/IMG_7735_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7757",
+        "alt": "IMG_7757",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7757_480.avif",
+            "960": "/gallery/originals/IMG_7757_960.avif",
+            "1600": "/gallery/originals/IMG_7757_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7757_480.jpg",
+            "960": "/gallery/originals/IMG_7757_960.jpg",
+            "1600": "/gallery/originals/IMG_7757_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7758",
+        "alt": "IMG_7758",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7758_480.avif",
+            "960": "/gallery/originals/IMG_7758_960.avif",
+            "1600": "/gallery/originals/IMG_7758_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7758_480.jpg",
+            "960": "/gallery/originals/IMG_7758_960.jpg",
+            "1600": "/gallery/originals/IMG_7758_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7759",
+        "alt": "IMG_7759",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7759_480.avif",
+            "960": "/gallery/originals/IMG_7759_960.avif",
+            "1600": "/gallery/originals/IMG_7759_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7759_480.jpg",
+            "960": "/gallery/originals/IMG_7759_960.jpg",
+            "1600": "/gallery/originals/IMG_7759_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7763",
+        "alt": "IMG_7763",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7763_480.avif",
+            "960": "/gallery/originals/IMG_7763_960.avif",
+            "1600": "/gallery/originals/IMG_7763_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7763_480.jpg",
+            "960": "/gallery/originals/IMG_7763_960.jpg",
+            "1600": "/gallery/originals/IMG_7763_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7918",
+        "alt": "IMG_7918",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7918_480.avif",
+            "960": "/gallery/originals/IMG_7918_960.avif",
+            "1600": "/gallery/originals/IMG_7918_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7918_480.jpg",
+            "960": "/gallery/originals/IMG_7918_960.jpg",
+            "1600": "/gallery/originals/IMG_7918_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7920",
+        "alt": "IMG_7920",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7920_480.avif",
+            "960": "/gallery/originals/IMG_7920_960.avif",
+            "1600": "/gallery/originals/IMG_7920_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7920_480.jpg",
+            "960": "/gallery/originals/IMG_7920_960.jpg",
+            "1600": "/gallery/originals/IMG_7920_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7921",
+        "alt": "IMG_7921",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7921_480.avif",
+            "960": "/gallery/originals/IMG_7921_960.avif",
+            "1600": "/gallery/originals/IMG_7921_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7921_480.jpg",
+            "960": "/gallery/originals/IMG_7921_960.jpg",
+            "1600": "/gallery/originals/IMG_7921_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7923",
+        "alt": "IMG_7923",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7923_480.avif",
+            "960": "/gallery/originals/IMG_7923_960.avif",
+            "1600": "/gallery/originals/IMG_7923_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7923_480.jpg",
+            "960": "/gallery/originals/IMG_7923_960.jpg",
+            "1600": "/gallery/originals/IMG_7923_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7978",
+        "alt": "IMG_7978",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7978_480.avif",
+            "960": "/gallery/originals/IMG_7978_960.avif",
+            "1600": "/gallery/originals/IMG_7978_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7978_480.jpg",
+            "960": "/gallery/originals/IMG_7978_960.jpg",
+            "1600": "/gallery/originals/IMG_7978_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7979",
+        "alt": "IMG_7979",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7979_480.avif",
+            "960": "/gallery/originals/IMG_7979_960.avif",
+            "1600": "/gallery/originals/IMG_7979_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7979_480.jpg",
+            "960": "/gallery/originals/IMG_7979_960.jpg",
+            "1600": "/gallery/originals/IMG_7979_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7980",
+        "alt": "IMG_7980",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7980_480.avif",
+            "960": "/gallery/originals/IMG_7980_960.avif",
+            "1600": "/gallery/originals/IMG_7980_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7980_480.jpg",
+            "960": "/gallery/originals/IMG_7980_960.jpg",
+            "1600": "/gallery/originals/IMG_7980_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_7987",
+        "alt": "IMG_7987",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_7987_480.avif",
+            "960": "/gallery/originals/IMG_7987_960.avif",
+            "1600": "/gallery/originals/IMG_7987_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_7987_480.jpg",
+            "960": "/gallery/originals/IMG_7987_960.jpg",
+            "1600": "/gallery/originals/IMG_7987_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8373",
+        "alt": "IMG_8373",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8373_480.avif",
+            "960": "/gallery/originals/IMG_8373_960.avif",
+            "1600": "/gallery/originals/IMG_8373_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8373_480.jpg",
+            "960": "/gallery/originals/IMG_8373_960.jpg",
+            "1600": "/gallery/originals/IMG_8373_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8374",
+        "alt": "IMG_8374",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8374_480.avif",
+            "960": "/gallery/originals/IMG_8374_960.avif",
+            "1600": "/gallery/originals/IMG_8374_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8374_480.jpg",
+            "960": "/gallery/originals/IMG_8374_960.jpg",
+            "1600": "/gallery/originals/IMG_8374_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8376",
+        "alt": "IMG_8376",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8376_480.avif",
+            "960": "/gallery/originals/IMG_8376_960.avif",
+            "1600": "/gallery/originals/IMG_8376_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8376_480.jpg",
+            "960": "/gallery/originals/IMG_8376_960.jpg",
+            "1600": "/gallery/originals/IMG_8376_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8383",
+        "alt": "IMG_8383",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8383_480.avif",
+            "960": "/gallery/originals/IMG_8383_960.avif",
+            "1600": "/gallery/originals/IMG_8383_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8383_480.jpg",
+            "960": "/gallery/originals/IMG_8383_960.jpg",
+            "1600": "/gallery/originals/IMG_8383_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8385",
+        "alt": "IMG_8385",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8385_480.avif",
+            "960": "/gallery/originals/IMG_8385_960.avif",
+            "1600": "/gallery/originals/IMG_8385_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8385_480.jpg",
+            "960": "/gallery/originals/IMG_8385_960.jpg",
+            "1600": "/gallery/originals/IMG_8385_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8386",
+        "alt": "IMG_8386",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8386_480.avif",
+            "960": "/gallery/originals/IMG_8386_960.avif",
+            "1600": "/gallery/originals/IMG_8386_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8386_480.jpg",
+            "960": "/gallery/originals/IMG_8386_960.jpg",
+            "1600": "/gallery/originals/IMG_8386_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8388",
+        "alt": "IMG_8388",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8388_480.avif",
+            "960": "/gallery/originals/IMG_8388_960.avif",
+            "1600": "/gallery/originals/IMG_8388_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8388_480.jpg",
+            "960": "/gallery/originals/IMG_8388_960.jpg",
+            "1600": "/gallery/originals/IMG_8388_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8395",
+        "alt": "IMG_8395",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8395_480.avif",
+            "960": "/gallery/originals/IMG_8395_960.avif",
+            "1600": "/gallery/originals/IMG_8395_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8395_480.jpg",
+            "960": "/gallery/originals/IMG_8395_960.jpg",
+            "1600": "/gallery/originals/IMG_8395_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8396",
+        "alt": "IMG_8396",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8396_480.avif",
+            "960": "/gallery/originals/IMG_8396_960.avif",
+            "1600": "/gallery/originals/IMG_8396_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8396_480.jpg",
+            "960": "/gallery/originals/IMG_8396_960.jpg",
+            "1600": "/gallery/originals/IMG_8396_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8397",
+        "alt": "IMG_8397",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8397_480.avif",
+            "960": "/gallery/originals/IMG_8397_960.avif",
+            "1600": "/gallery/originals/IMG_8397_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8397_480.jpg",
+            "960": "/gallery/originals/IMG_8397_960.jpg",
+            "1600": "/gallery/originals/IMG_8397_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8399",
+        "alt": "IMG_8399",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8399_480.avif",
+            "960": "/gallery/originals/IMG_8399_960.avif",
+            "1600": "/gallery/originals/IMG_8399_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8399_480.jpg",
+            "960": "/gallery/originals/IMG_8399_960.jpg",
+            "1600": "/gallery/originals/IMG_8399_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8458",
+        "alt": "IMG_8458",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8458_480.avif",
+            "960": "/gallery/originals/IMG_8458_960.avif",
+            "1600": "/gallery/originals/IMG_8458_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8458_480.jpg",
+            "960": "/gallery/originals/IMG_8458_960.jpg",
+            "1600": "/gallery/originals/IMG_8458_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8459",
+        "alt": "IMG_8459",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8459_480.avif",
+            "960": "/gallery/originals/IMG_8459_960.avif",
+            "1600": "/gallery/originals/IMG_8459_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8459_480.jpg",
+            "960": "/gallery/originals/IMG_8459_960.jpg",
+            "1600": "/gallery/originals/IMG_8459_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8460",
+        "alt": "IMG_8460",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8460_480.avif",
+            "960": "/gallery/originals/IMG_8460_960.avif",
+            "1600": "/gallery/originals/IMG_8460_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8460_480.jpg",
+            "960": "/gallery/originals/IMG_8460_960.jpg",
+            "1600": "/gallery/originals/IMG_8460_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8462",
+        "alt": "IMG_8462",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8462_480.avif",
+            "960": "/gallery/originals/IMG_8462_960.avif",
+            "1600": "/gallery/originals/IMG_8462_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8462_480.jpg",
+            "960": "/gallery/originals/IMG_8462_960.jpg",
+            "1600": "/gallery/originals/IMG_8462_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8465",
+        "alt": "IMG_8465",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8465_480.avif",
+            "960": "/gallery/originals/IMG_8465_960.avif",
+            "1600": "/gallery/originals/IMG_8465_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8465_480.jpg",
+            "960": "/gallery/originals/IMG_8465_960.jpg",
+            "1600": "/gallery/originals/IMG_8465_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8466",
+        "alt": "IMG_8466",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8466_480.avif",
+            "960": "/gallery/originals/IMG_8466_960.avif",
+            "1600": "/gallery/originals/IMG_8466_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8466_480.jpg",
+            "960": "/gallery/originals/IMG_8466_960.jpg",
+            "1600": "/gallery/originals/IMG_8466_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8467",
+        "alt": "IMG_8467",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8467_480.avif",
+            "960": "/gallery/originals/IMG_8467_960.avif",
+            "1600": "/gallery/originals/IMG_8467_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8467_480.jpg",
+            "960": "/gallery/originals/IMG_8467_960.jpg",
+            "1600": "/gallery/originals/IMG_8467_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8468",
+        "alt": "IMG_8468",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8468_480.avif",
+            "960": "/gallery/originals/IMG_8468_960.avif",
+            "1600": "/gallery/originals/IMG_8468_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8468_480.jpg",
+            "960": "/gallery/originals/IMG_8468_960.jpg",
+            "1600": "/gallery/originals/IMG_8468_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8469",
+        "alt": "IMG_8469",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8469_480.avif",
+            "960": "/gallery/originals/IMG_8469_960.avif",
+            "1600": "/gallery/originals/IMG_8469_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8469_480.jpg",
+            "960": "/gallery/originals/IMG_8469_960.jpg",
+            "1600": "/gallery/originals/IMG_8469_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8470",
+        "alt": "IMG_8470",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8470_480.avif",
+            "960": "/gallery/originals/IMG_8470_960.avif",
+            "1600": "/gallery/originals/IMG_8470_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8470_480.jpg",
+            "960": "/gallery/originals/IMG_8470_960.jpg",
+            "1600": "/gallery/originals/IMG_8470_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8499",
+        "alt": "IMG_8499",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8499_480.avif",
+            "960": "/gallery/originals/IMG_8499_960.avif",
+            "1600": "/gallery/originals/IMG_8499_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8499_480.jpg",
+            "960": "/gallery/originals/IMG_8499_960.jpg",
+            "1600": "/gallery/originals/IMG_8499_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8500",
+        "alt": "IMG_8500",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8500_480.avif",
+            "960": "/gallery/originals/IMG_8500_960.avif",
+            "1600": "/gallery/originals/IMG_8500_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8500_480.jpg",
+            "960": "/gallery/originals/IMG_8500_960.jpg",
+            "1600": "/gallery/originals/IMG_8500_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8501",
+        "alt": "IMG_8501",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8501_480.avif",
+            "960": "/gallery/originals/IMG_8501_960.avif",
+            "1600": "/gallery/originals/IMG_8501_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8501_480.jpg",
+            "960": "/gallery/originals/IMG_8501_960.jpg",
+            "1600": "/gallery/originals/IMG_8501_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8502",
+        "alt": "IMG_8502",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8502_480.avif",
+            "960": "/gallery/originals/IMG_8502_960.avif",
+            "1600": "/gallery/originals/IMG_8502_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8502_480.jpg",
+            "960": "/gallery/originals/IMG_8502_960.jpg",
+            "1600": "/gallery/originals/IMG_8502_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8503",
+        "alt": "IMG_8503",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8503_480.avif",
+            "960": "/gallery/originals/IMG_8503_960.avif",
+            "1600": "/gallery/originals/IMG_8503_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8503_480.jpg",
+            "960": "/gallery/originals/IMG_8503_960.jpg",
+            "1600": "/gallery/originals/IMG_8503_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8504",
+        "alt": "IMG_8504",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8504_480.avif",
+            "960": "/gallery/originals/IMG_8504_960.avif",
+            "1600": "/gallery/originals/IMG_8504_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8504_480.jpg",
+            "960": "/gallery/originals/IMG_8504_960.jpg",
+            "1600": "/gallery/originals/IMG_8504_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8505",
+        "alt": "IMG_8505",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8505_480.avif",
+            "960": "/gallery/originals/IMG_8505_960.avif",
+            "1600": "/gallery/originals/IMG_8505_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8505_480.jpg",
+            "960": "/gallery/originals/IMG_8505_960.jpg",
+            "1600": "/gallery/originals/IMG_8505_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8506",
+        "alt": "IMG_8506",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8506_480.avif",
+            "960": "/gallery/originals/IMG_8506_960.avif",
+            "1600": "/gallery/originals/IMG_8506_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8506_480.jpg",
+            "960": "/gallery/originals/IMG_8506_960.jpg",
+            "1600": "/gallery/originals/IMG_8506_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8514",
+        "alt": "IMG_8514",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8514_480.avif",
+            "960": "/gallery/originals/IMG_8514_960.avif",
+            "1600": "/gallery/originals/IMG_8514_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8514_480.jpg",
+            "960": "/gallery/originals/IMG_8514_960.jpg",
+            "1600": "/gallery/originals/IMG_8514_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8515",
+        "alt": "IMG_8515",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8515_480.avif",
+            "960": "/gallery/originals/IMG_8515_960.avif",
+            "1600": "/gallery/originals/IMG_8515_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8515_480.jpg",
+            "960": "/gallery/originals/IMG_8515_960.jpg",
+            "1600": "/gallery/originals/IMG_8515_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8517",
+        "alt": "IMG_8517",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8517_480.avif",
+            "960": "/gallery/originals/IMG_8517_960.avif",
+            "1600": "/gallery/originals/IMG_8517_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8517_480.jpg",
+            "960": "/gallery/originals/IMG_8517_960.jpg",
+            "1600": "/gallery/originals/IMG_8517_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8518",
+        "alt": "IMG_8518",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8518_480.avif",
+            "960": "/gallery/originals/IMG_8518_960.avif",
+            "1600": "/gallery/originals/IMG_8518_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8518_480.jpg",
+            "960": "/gallery/originals/IMG_8518_960.jpg",
+            "1600": "/gallery/originals/IMG_8518_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8519",
+        "alt": "IMG_8519",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8519_480.avif",
+            "960": "/gallery/originals/IMG_8519_960.avif",
+            "1600": "/gallery/originals/IMG_8519_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8519_480.jpg",
+            "960": "/gallery/originals/IMG_8519_960.jpg",
+            "1600": "/gallery/originals/IMG_8519_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8521",
+        "alt": "IMG_8521",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8521_480.avif",
+            "960": "/gallery/originals/IMG_8521_960.avif",
+            "1600": "/gallery/originals/IMG_8521_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8521_480.jpg",
+            "960": "/gallery/originals/IMG_8521_960.jpg",
+            "1600": "/gallery/originals/IMG_8521_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8522",
+        "alt": "IMG_8522",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8522_480.avif",
+            "960": "/gallery/originals/IMG_8522_960.avif",
+            "1600": "/gallery/originals/IMG_8522_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8522_480.jpg",
+            "960": "/gallery/originals/IMG_8522_960.jpg",
+            "1600": "/gallery/originals/IMG_8522_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8660",
+        "alt": "IMG_8660",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8660_480.avif",
+            "960": "/gallery/originals/IMG_8660_960.avif",
+            "1600": "/gallery/originals/IMG_8660_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8660_480.jpg",
+            "960": "/gallery/originals/IMG_8660_960.jpg",
+            "1600": "/gallery/originals/IMG_8660_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8661",
+        "alt": "IMG_8661",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8661_480.avif",
+            "960": "/gallery/originals/IMG_8661_960.avif",
+            "1600": "/gallery/originals/IMG_8661_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8661_480.jpg",
+            "960": "/gallery/originals/IMG_8661_960.jpg",
+            "1600": "/gallery/originals/IMG_8661_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8662",
+        "alt": "IMG_8662",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8662_480.avif",
+            "960": "/gallery/originals/IMG_8662_960.avif",
+            "1600": "/gallery/originals/IMG_8662_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8662_480.jpg",
+            "960": "/gallery/originals/IMG_8662_960.jpg",
+            "1600": "/gallery/originals/IMG_8662_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8693",
+        "alt": "IMG_8693",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8693_480.avif",
+            "960": "/gallery/originals/IMG_8693_960.avif",
+            "1600": "/gallery/originals/IMG_8693_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8693_480.jpg",
+            "960": "/gallery/originals/IMG_8693_960.jpg",
+            "1600": "/gallery/originals/IMG_8693_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8694",
+        "alt": "IMG_8694",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8694_480.avif",
+            "960": "/gallery/originals/IMG_8694_960.avif",
+            "1600": "/gallery/originals/IMG_8694_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8694_480.jpg",
+            "960": "/gallery/originals/IMG_8694_960.jpg",
+            "1600": "/gallery/originals/IMG_8694_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8695",
+        "alt": "IMG_8695",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8695_480.avif",
+            "960": "/gallery/originals/IMG_8695_960.avif",
+            "1600": "/gallery/originals/IMG_8695_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8695_480.jpg",
+            "960": "/gallery/originals/IMG_8695_960.jpg",
+            "1600": "/gallery/originals/IMG_8695_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8803",
+        "alt": "IMG_8803",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8803_480.avif",
+            "960": "/gallery/originals/IMG_8803_960.avif",
+            "1600": "/gallery/originals/IMG_8803_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8803_480.jpg",
+            "960": "/gallery/originals/IMG_8803_960.jpg",
+            "1600": "/gallery/originals/IMG_8803_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8804",
+        "alt": "IMG_8804",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8804_480.avif",
+            "960": "/gallery/originals/IMG_8804_960.avif",
+            "1600": "/gallery/originals/IMG_8804_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8804_480.jpg",
+            "960": "/gallery/originals/IMG_8804_960.jpg",
+            "1600": "/gallery/originals/IMG_8804_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8805",
+        "alt": "IMG_8805",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8805_480.avif",
+            "960": "/gallery/originals/IMG_8805_960.avif",
+            "1600": "/gallery/originals/IMG_8805_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8805_480.jpg",
+            "960": "/gallery/originals/IMG_8805_960.jpg",
+            "1600": "/gallery/originals/IMG_8805_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8806",
+        "alt": "IMG_8806",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8806_480.avif",
+            "960": "/gallery/originals/IMG_8806_960.avif",
+            "1600": "/gallery/originals/IMG_8806_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8806_480.jpg",
+            "960": "/gallery/originals/IMG_8806_960.jpg",
+            "1600": "/gallery/originals/IMG_8806_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8807",
+        "alt": "IMG_8807",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8807_480.avif",
+            "960": "/gallery/originals/IMG_8807_960.avif",
+            "1600": "/gallery/originals/IMG_8807_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8807_480.jpg",
+            "960": "/gallery/originals/IMG_8807_960.jpg",
+            "1600": "/gallery/originals/IMG_8807_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8808",
+        "alt": "IMG_8808",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8808_480.avif",
+            "960": "/gallery/originals/IMG_8808_960.avif",
+            "1600": "/gallery/originals/IMG_8808_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8808_480.jpg",
+            "960": "/gallery/originals/IMG_8808_960.jpg",
+            "1600": "/gallery/originals/IMG_8808_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8835",
+        "alt": "IMG_8835",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8835_480.avif",
+            "960": "/gallery/originals/IMG_8835_960.avif",
+            "1600": "/gallery/originals/IMG_8835_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8835_480.jpg",
+            "960": "/gallery/originals/IMG_8835_960.jpg",
+            "1600": "/gallery/originals/IMG_8835_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_8916",
+        "alt": "IMG_8916",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_8916_480.avif",
+            "960": "/gallery/originals/IMG_8916_960.avif",
+            "1600": "/gallery/originals/IMG_8916_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_8916_480.jpg",
+            "960": "/gallery/originals/IMG_8916_960.jpg",
+            "1600": "/gallery/originals/IMG_8916_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9044",
+        "alt": "IMG_9044",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9044_480.avif",
+            "960": "/gallery/originals/IMG_9044_960.avif",
+            "1600": "/gallery/originals/IMG_9044_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9044_480.jpg",
+            "960": "/gallery/originals/IMG_9044_960.jpg",
+            "1600": "/gallery/originals/IMG_9044_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9045",
+        "alt": "IMG_9045",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9045_480.avif",
+            "960": "/gallery/originals/IMG_9045_960.avif",
+            "1600": "/gallery/originals/IMG_9045_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9045_480.jpg",
+            "960": "/gallery/originals/IMG_9045_960.jpg",
+            "1600": "/gallery/originals/IMG_9045_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9046",
+        "alt": "IMG_9046",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9046_480.avif",
+            "960": "/gallery/originals/IMG_9046_960.avif",
+            "1600": "/gallery/originals/IMG_9046_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9046_480.jpg",
+            "960": "/gallery/originals/IMG_9046_960.jpg",
+            "1600": "/gallery/originals/IMG_9046_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9047",
+        "alt": "IMG_9047",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9047_480.avif",
+            "960": "/gallery/originals/IMG_9047_960.avif",
+            "1600": "/gallery/originals/IMG_9047_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9047_480.jpg",
+            "960": "/gallery/originals/IMG_9047_960.jpg",
+            "1600": "/gallery/originals/IMG_9047_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9048",
+        "alt": "IMG_9048",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9048_480.avif",
+            "960": "/gallery/originals/IMG_9048_960.avif",
+            "1600": "/gallery/originals/IMG_9048_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9048_480.jpg",
+            "960": "/gallery/originals/IMG_9048_960.jpg",
+            "1600": "/gallery/originals/IMG_9048_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9049",
+        "alt": "IMG_9049",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9049_480.avif",
+            "960": "/gallery/originals/IMG_9049_960.avif",
+            "1600": "/gallery/originals/IMG_9049_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9049_480.jpg",
+            "960": "/gallery/originals/IMG_9049_960.jpg",
+            "1600": "/gallery/originals/IMG_9049_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9050",
+        "alt": "IMG_9050",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9050_480.avif",
+            "960": "/gallery/originals/IMG_9050_960.avif",
+            "1600": "/gallery/originals/IMG_9050_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9050_480.jpg",
+            "960": "/gallery/originals/IMG_9050_960.jpg",
+            "1600": "/gallery/originals/IMG_9050_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9310",
+        "alt": "IMG_9310",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9310_480.avif",
+            "960": "/gallery/originals/IMG_9310_960.avif",
+            "1600": "/gallery/originals/IMG_9310_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9310_480.jpg",
+            "960": "/gallery/originals/IMG_9310_960.jpg",
+            "1600": "/gallery/originals/IMG_9310_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9311",
+        "alt": "IMG_9311",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9311_480.avif",
+            "960": "/gallery/originals/IMG_9311_960.avif",
+            "1600": "/gallery/originals/IMG_9311_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9311_480.jpg",
+            "960": "/gallery/originals/IMG_9311_960.jpg",
+            "1600": "/gallery/originals/IMG_9311_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9313",
+        "alt": "IMG_9313",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9313_480.avif",
+            "960": "/gallery/originals/IMG_9313_960.avif",
+            "1600": "/gallery/originals/IMG_9313_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9313_480.jpg",
+            "960": "/gallery/originals/IMG_9313_960.jpg",
+            "1600": "/gallery/originals/IMG_9313_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9314",
+        "alt": "IMG_9314",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9314_480.avif",
+            "960": "/gallery/originals/IMG_9314_960.avif",
+            "1600": "/gallery/originals/IMG_9314_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9314_480.jpg",
+            "960": "/gallery/originals/IMG_9314_960.jpg",
+            "1600": "/gallery/originals/IMG_9314_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9315",
+        "alt": "IMG_9315",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9315_480.avif",
+            "960": "/gallery/originals/IMG_9315_960.avif",
+            "1600": "/gallery/originals/IMG_9315_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9315_480.jpg",
+            "960": "/gallery/originals/IMG_9315_960.jpg",
+            "1600": "/gallery/originals/IMG_9315_1600.jpg"
+          }
+        }
+      },
+      {
+        "base": "originals/IMG_9316",
+        "alt": "IMG_9316",
+        "widths": [
+          480,
+          960,
+          1600
+        ],
+        "variants": {
+          "avif": {
+            "480": "/gallery/originals/IMG_9316_480.avif",
+            "960": "/gallery/originals/IMG_9316_960.avif",
+            "1600": "/gallery/originals/IMG_9316_1600.avif"
+          },
+          "jpg": {
+            "480": "/gallery/originals/IMG_9316_480.jpg",
+            "960": "/gallery/originals/IMG_9316_960.jpg",
+            "1600": "/gallery/originals/IMG_9316_1600.jpg"
+          }
+        }
+      }
+    ]
+  }
+}

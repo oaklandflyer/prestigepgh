@@ -6,6 +6,19 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2"
-  }
+    "express": "^4.19.2",
+    "sharp": "^0.34.3"
+  },
+  "description": "This is the official website for **Pittsburgh Prestige Remodeling**, built as a clean, modern, one‑page portfolio and business site. It is designed for deployment on **GitHub Pages**.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oaklandflyer/prestigepgh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oaklandflyer/prestigepgh/issues"
+  },
+  "homepage": "https://github.com/oaklandflyer/prestigepgh#readme"
 }
