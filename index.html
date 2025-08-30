@@ -269,21 +269,119 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="page-hero fade-section">
-      <div class="container">
-        <h2>Projects</h2>
-        <p>Your photos will appear here grouped by city and project via the gallery manifest. Optimized for fast loading and lightbox viewing.</p>
+<script>
+  // ---------- Gallery: Portfolio mode (flat grid) ----------
+  const MANIFEST_PATH = '/gallery/imagePaths.json'; // ✅ correct path
 
-        <div class="controls">
-          <nav class="breadcrumbs" aria-label="Breadcrumbs" id="breadcrumbs"></nav>
-          <button class="back-btn" id="backBtn">◀ Back</button>
-        </div>
+  async function loadManifest(){
+    const res = await fetch(MANIFEST_PATH, { cache:'no-cache' });
+    if (!res.ok) throw new Error('imagePaths.json not found: ' + res.status);
+    return await res.json();
+  }
 
-        <section id="albumsView" class="album-grid" aria-label="Albums"></section>
-        <section id="photosView" class="photo-grid" aria-label="Photos" style="display:none;"></section>
-        <p id="emptyState" class="empty" hidden>No projects added yet.</p>
-      </div>
-    </section>
+  // Choose a thumbnail + full src from the responsive variants we generated
+  function pickThumbAndSrc(item){
+    const widths = (item.widths || []).slice().sort((a,b)=>a-b);
+    const largest = widths.length ? widths[widths.length-1] : null;
+    const mid = widths.find(w => w >= 1280) || widths[0] || largest;
+
+    const avifMid     = item.variants?.avif?.[mid];
+    const jpgLargest  = item.variants?.jpg?.[largest];
+    const avifLargest = item.variants?.avif?.[largest];
+
+    const thumb = avifMid || jpgLargest || avifLargest;
+    const src   = jpgLargest || avifLargest || avifMid;
+    return { thumb, src };
+  }
+
+  // Flatten every photo in every category into one list
+  function buildFlatPortfolio(manifest){
+    const photos = [];
+    const cats = manifest.categories || {};
+    Object.values(cats).forEach(arr=>{
+      (arr || []).forEach(item=>{
+        const { thumb, src } = pickThumbAndSrc(item);
+        if (thumb || src){
+          photos.push({
+            title: item.alt || '',
+            thumb: thumb || src,
+            src:   src   || thumb
+          });
+        }
+      });
+    });
+    return photos;
+  }
+
+  // DOM refs once (we'll reuse them)
+  const albumsViewFlat = document.getElementById('albumsView');
+  const photosViewFlat = document.getElementById('photosView');
+  const emptyStateFlat = document.getElementById('emptyState');
+  const crumbs     = document.getElementById('breadcrumbs');
+  const backBtnFlat    = document.getElementById('backBtn');
+
+  function renderPortfolio(photos){
+    // Hide album UI since we’re showing a single portfolio grid
+    if (crumbs)  crumbs.style.display = 'none';
+    if (backBtnFlat) backBtnFlat.style.display = 'none';
+    if (albumsViewFlat) albumsViewFlat.style.display = 'none';
+
+    photosViewFlat.innerHTML = '';
+    photosViewFlat.style.display = 'grid';
+
+    if (!photos.length){
+      emptyStateFlat.hidden = false;
+      emptyStateFlat.textContent = 'No photos added yet.';
+      return;
+    }
+    emptyStateFlat.hidden = true;
+
+    photos.forEach(p=>{
+      const a = document.createElement('a');
+      a.href = p.src;
+      a.setAttribute('data-fancybox', 'Portfolio');
+      if (p.title) a.setAttribute('data-caption', p.title);
+
+      const tile = document.createElement('div');
+      tile.className = 'photo';
+
+      const img = document.createElement('img');
+      img.src = p.thumb || p.src;
+      img.alt = p.title || 'Project photo';
+      img.loading = 'lazy';
+      img.className = 'thumb';
+
+      tile.appendChild(img);
+      a.appendChild(tile);
+      photosViewFlat.appendChild(a);
+    });
+
+    // Lightbox
+    Fancybox.bind('[data-fancybox]', {
+      Toolbar: { display: ['close'] },
+      Images:  { zoom: false, click: false, wheel: false },
+      Thumbs:  { autoStart: false }
+    });
+  }
+
+  // Boot
+  window.addEventListener('DOMContentLoaded', async () => {
+    // year in footer
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    try{
+      const manifest = await loadManifest();
+      const photos = buildFlatPortfolio(manifest);
+      renderPortfolio(photos);
+    }catch(err){
+      console.warn(err);
+      emptyStateFlat.hidden = false;
+      emptyStateFlat.textContent = 'Gallery manifest missing. Make sure /gallery/imagePaths.json is deployed.';
+    }
+  });
+</script>
+
 
     <!-- ABOUT -->
     <section id="about" class="page-hero fade-section">
