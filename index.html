@@ -65,87 +65,30 @@
   </script>
 
   <style>
-    /* ================== THEME (Dark-first, with toggle) ================== */
     :root {
-      --primary:#101820;   /* deep black */
-      --accent:#FFB612;    /* Steelers gold */
-      --ink:#d6deff;       /* light text on dark */
-      --muted:#9fb0d0;
-      --bg:#0b0f17;        /* page background */
-      --panel:#111926;     /* cards */
-      --panel-2:#0d1522;
-      --line:#1b2533;
-      --radius:18px;
-      --shadow:0 10px 40px rgba(0,0,0,.30);
-      --cta:#FFB612;
-      --cta-ink:#0b0f17;
+      --primary:#101820; --accent:#FFB612; --ink:#d6deff; --muted:#9fb0d0;
+      --bg:#0b0f17; --panel:#111926; --panel-2:#0d1522; --line:#1b2533;
+      --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30); --cta:#FFB612; --cta-ink:#0b0f17;
     }
     [data-theme="light"]{
-      --ink:#0e1420;
-      --muted:#47556e;
-      --bg:#fafafa;
-      --panel:#ffffff;
-      --panel-2:#f4f7fb;
-      --line:#e6ebf2;
-      --cta:#101820;
-      --cta-ink:#ffffff;
+      --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb; --line:#e6ebf2; --cta:#101820; --cta-ink:#ffffff;
     }
-
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink);scroll-behavior:smooth}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-
-    /* Small helper so thumbnails actually show */
     .thumb{width:100%;height:100%;object-fit:cover;display:block}
 
-    .contact-form {
-      display: grid;
-      gap: 18px;
-      max-width: 600px;
-      margin: 24px auto;
-      background: var(--panel);
-      padding: 24px;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 22px rgba(0,0,0,.25);
-    }
-    .contact-form label {
-      display: flex;
-      flex-direction: column;
-      font-weight: 600;
-      color: var(--ink);
-    }
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      margin-top: 6px;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      color: var(--ink);
-      font-size: 1rem;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-
-    /* ================== HEADER ================== */
     .site-header{
       position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
       padding:14px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
-      box-shadow:0 1px 12px rgba(0,0,0,.35);transition:transform .32s ease, top .32s ease, background .2s;
-      border-bottom:1px solid var(--line)
+      box-shadow:0 1px 12px rgba(0,0,0,.35);transition:transform .32s ease, top .32s ease, background .2s;border-bottom:1px solid var(--line)
     }
     .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
     .brand img{height:40px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
     .brand span{font-size:1.02rem;text-transform:uppercase}
-
     .site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0}
-    .site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;color:var(--ink);transition:background .2s,color .2s, border-color .2s;border:1px solid transparent}
+    .site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;color:var(--ink);transition:background .2s,color .2s,border-color .2s;border:1px solid transparent}
     .site-nav a:hover,.site-nav a.active,[aria-current="page"]{background:var(--accent);color:var(--cta-ink);border-color:transparent}
     .menu-toggle{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer}
     .menu-toggle .bar{display:block;width:26px;height:3px;margin:5px auto;background:var(--ink);border-radius:2px;transition:.3s}
@@ -162,7 +105,6 @@
       body.no-scroll{overflow:hidden}
     }
 
-    /* ================== HERO ================== */
     .hero{
       position:relative;min-height:76vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
       box-shadow:var(--shadow);overflow:hidden;margin-top:92px;
@@ -173,46 +115,33 @@
       isolation:isolate
     }
     .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,182,18,.08) 1px, transparent 1px);background-size:3px 3px;opacity:.35}
-
     .glass-wrap{position:relative;z-index:1;width:min(880px,94vw);padding:0;filter:drop-shadow(0 20px 70px rgba(0,0,0,.45))}
-    .liquid-glass{
-      position:relative;padding:30px 30px 26px;border-radius:28px;overflow:hidden;
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 20px 60px rgba(0,0,0,.55);
-      color:#ffffff;text-align:center;backdrop-filter: blur(22px) saturate(140%)
-    }
-    .liquid-glass::before,.liquid-glass::after{
-      content:"";position:absolute;inset:-40%;z-index:-1;
-      background:
-        radial-gradient(40% 40% at 20% 20%, rgba(255,182,18,.35) 0%, rgba(255,182,18,0) 60%),
-        radial-gradient(35% 45% at 80% 30%, rgba(10,15,25,.45) 0%, rgba(10,15,25,0) 60%),
-        radial-gradient(45% 35% at 50% 80%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 60%);
-      filter:blur(30px);animation:floatBlob 16s ease-in-out infinite alternate;opacity:.9
-    }
+    .liquid-glass{position:relative;padding:30px 30px 26px;border-radius:28px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 60px rgba(0,0,0,.55);color:#fff;text-align:center;backdrop-filter:blur(22px) saturate(140%)}
+    .liquid-glass::before,.liquid-glass::after{content:"";position:absolute;inset:-40%;z-index:-1;
+      background:radial-gradient(40% 40% at 20% 20%, rgba(255,182,18,.35) 0%, rgba(255,182,18,0) 60%),
+                 radial-gradient(35% 45% at 80% 30%, rgba(10,15,25,.45) 0%, rgba(10,15,25,0) 60%),
+                 radial-gradient(45% 35% at 50% 80%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 60%);
+      filter:blur(30px);animation:floatBlob 16s ease-in-out infinite alternate;opacity:.9}
     .liquid-glass::after{animation-duration:22s;animation-delay:-4s;transform:scale(1.05);mix-blend-mode:screen;opacity:.7}
     @keyframes floatBlob{0%{transform:translate3d(-4%,-2%,0) rotate(0) scale(1)}100%{transform:translate3d(4%,3%,0) rotate(6deg) scale(1.06)}}
-
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;margin:0 0 12px;color:#fff;letter-spacing:.02em;text-shadow:0 2px 12px rgba(0,0,0,.55)}
     .hero p{font-size:1.1rem;margin:0 0 18px;color:#dfe8ff}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
     .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
-      font-size:1rem;transition:transform .12s ease, background .2s,color .2s, border-color .2s;letter-spacing:.03em}
+      font-size:1rem;transition:transform .12s ease, background .2s,color .2s,border-color .2s;letter-spacing:.03em}
     .btn:hover,.btn:focus{background:#ffd059;color:#111;border-color:transparent;transform:translateY(-1px)}
 
-    /* ================== SECTION WRAPPERS ================== */
     .page-hero{padding:42px clamp(24px,6vw,64px) 10px}
     .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
     .page-hero p{margin:0 0 24px;color:var(--muted)}
 
-    /* ================== CARDS / STRIPS ================== */
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px clamp(24px,6vw,64px) 50px}
     @media (max-width:900px){.services{grid-template-columns:1fr}}
     .service-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(0,0,0,.25)}
     .service-card h3{margin:6px 0 6px;font-size:1.15rem;color:#fff}
     .service-card p{margin:0;color:var(--muted)}
 
-    /* ================== GRID (projects) ================== */
     .controls{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 clamp(24px,6vw,64px) 14px}
     .breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:800;color:var(--muted)}
     .breadcrumbs a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,182,18,.6)}
@@ -227,46 +156,19 @@
     .album-card{display:flex;flex-direction:column;gap:14px}
     .album-cover{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #0d1522, #101820);box-shadow:0 6px 26px rgba(0,0,0,.35);transition:transform .28s ease, box-shadow .28s ease, outline .2s}
     .album-card:hover .album-cover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.55);outline:2px solid rgba(255,182,18,.45)}
-
     .album-caption{display:flex;flex-direction:column;align-items:center;text-align:center}
     .album-title{font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#fff}
     .album-sub{margin-top:6px;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:10px clamp(24px,6vw,64px) 60px}
     @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
     .photo{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg, #0d1522, #101820);box-shadow:0 4px 18px rgba(0,0,0,.35)}
-
     .empty{margin:24px clamp(24px,6vw,64px);opacity:.9;text-align:center;color:var(--muted)}
 
-    /* ================== CTA / FOOTER ================== */
     .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 6vw 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
     .footer-cta{display:flex;gap:16px;justify-content:center;margin-bottom:18px}
     .social-links{display:flex;gap:16px;justify-content:center;margin-top:16px}
     .social-links a{font-weight:800;border-bottom:2px solid var(--accent)}
-
-    /* ================== ACCESSIBILITY / ANIMATIONS ================== */
-    @media (max-width:750px){
-      .site-header{flex-direction:row}
-      .hero{min-height:64vh}
-      .glass-wrap{width:96vw}
-      .footer-cta{flex-direction:column;gap:7px}
-      .site-footer{padding:36px 2vw 24px}
-    }
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-    .fade-section{opacity:0;transform:translateY(40px);transition:all .7s cubic-bezier(.25,.8,.25,1)}
-    .fade-section.visible{opacity:1;transform:translateY(0)}
-
-    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:101;background:#fff;color:#103047;border-radius:0 0 10px 10px;padding:8px 22px}
-    .skip-link:focus{left:12px;top:6px;width:auto;height:auto}
-
-    /* Optional watermark deterrent (text only, no images) */
-    .album-cover::before,.photo::before{
-      content:"PITTSBURGH PRESTIGE REMODELING";position:absolute;right:10px;bottom:8px;padding:4px 8px;font:800 12px/1.2 Montserrat, Arial, sans-serif;color:rgba(255,255,255,.96);
-      background:rgba(0,0,0,.35);border-radius:6px;letter-spacing:.06em;pointer-events:none
-    }
-    .album-cover::after,.photo::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0, rgba(255,255,255,.02) 24px, rgba(0,0,0,.05) 24px, rgba(0,0,0,.05) 48px);mix-blend-mode:multiply;pointer-events:none}
   </style>
 </head>
 <body>
@@ -297,7 +199,6 @@
   </header>
 
   <main id="main">
-    <!-- ===== HERO ===== -->
     <section class="hero fade-section" id="top">
       <div class="glass-wrap">
         <div class="liquid-glass">
@@ -311,7 +212,6 @@
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
     <section id="services" class="page-hero fade-section">
       <h2>Services</h2>
       <p>We specialize in custom cabinetry and fine carpentry that elevates every space — kitchens, living rooms, home offices, and more.</p>
@@ -331,7 +231,6 @@
       </div>
     </div>
 
-    <!-- ===== PROJECTS ===== -->
     <section id="projects" class="page-hero fade-section">
       <h2>Projects</h2>
       <p>Your photos will appear here grouped by city and project via the gallery manifest. Optimized for fast loading and lightbox viewing.</p>
@@ -346,32 +245,20 @@
     <section id="photosView" class="photo-grid" aria-label="Photos" style="display:none;"></section>
     <p id="emptyState" class="empty" hidden>No projects added yet.</p>
 
-    <!-- ===== ABOUT ===== -->
     <section id="about" class="page-hero fade-section">
       <h2>About</h2>
       <p>Pittsburgh Prestige Remodeling is a licensed & insured contractor with a focus on cabinetry and carpentry. We believe true craftsmanship lies in the details — from hand-built cabinets to finish carpentry that transforms entire rooms. Based in Pittsburgh, we take pride in delivering Black & Gold quality with clear communication and dependable timelines.</p>
     </section>
 
-    <!-- ===== CONTACT / QUOTE ===== -->
     <section id="contact" class="page-hero fade-section">
       <h2>Request a Quote</h2>
       <p>Fill out the form below and we’ll get back to you with a personalized estimate.</p>
-
       <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form">
+        <label> Name * <input type="text" name="name" required></label>
+        <label> Email * <input type="email" name="email" required></label>
+        <label> Phone <input type="tel" name="phone"></label>
         <label>
-          Name *
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email *
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Phone
-          <input type="tel" name="phone">
-        </label>
-        <label>
-          Project Type *
+          Project Type * 
           <select name="project" required>
             <option value="">-- Select --</option>
             <option>Custom Cabinetry</option>
@@ -380,10 +267,7 @@
             <option>Other</option>
           </select>
         </label>
-        <label>
-          Message *
-          <textarea name="message" rows="5" required></textarea>
-        </label>
+        <label> Message * <textarea name="message" rows="5" required></textarea></label>
         <button type="submit" class="btn">Send Request</button>
       </form>
     </section>
@@ -397,14 +281,12 @@
     </div>
   </footer>
 
-  <!-- Fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
   <script>
-    /* ---------------- Theme: dark default, toggle available ---------------- */
+    // ---------- Theme toggle ----------
     (function themeInit(){
       const root = document.documentElement;
-      const btn = document.getElementById('themeToggle');
+      const btn  = document.getElementById('themeToggle');
       const saved = localStorage.getItem('ppr-theme');
       if(saved){ root.setAttribute('data-theme', saved); btn.textContent = saved === 'dark' ? 'Dark' : 'Light'; btn.setAttribute('aria-pressed', saved === 'dark'); }
       else { root.setAttribute('data-theme', 'dark'); btn.textContent = 'Dark'; btn.setAttribute('aria-pressed', 'true'); }
@@ -418,7 +300,7 @@
       });
     })();
 
-    /* ---------------- Mobile nav + header hide + fade-in ---------------- */
+    // ---------- Nav / header behavior ----------
     (function navInit(){
       const btn = document.getElementById('menuToggle');
       const nav = document.getElementById('navbar');
@@ -442,18 +324,9 @@
         header.style.transform = (y > lastY && y > 120) ? 'translateY(-100%)' : 'translateY(0)';
         lastY = y;
       }, { passive:true });
-
-      const faders = document.querySelectorAll('.fade-section');
-      const io = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-        });
-      }, { threshold: 0.17 });
-      faders.forEach(f => io.observe(f));
     })();
 
-    /* ---------------- Data loading for Projects ---------------- */
-    // Relative path so it works whether you're at root or a subpath
+    // ---------- Gallery data ----------
     const MANIFEST_PATH = './gallery/imagePaths.json';
 
     async function loadManifest(){
@@ -462,12 +335,11 @@
         if (!res.ok) throw new Error('manifest not found');
         return await res.json();
       }catch(e){
-        console.warn('imagePaths.json not found yet – starting with an empty manifest.');
+        console.warn('imagePaths.json not found – starting with an empty manifest.', e);
         return { categories:{} };
       }
     }
 
-    /* ---------------- Helpers ---------------- */
     function pickThumbAndSrc(item){
       const widths = (item.widths || []).slice().sort((a,b)=>a-b);
       const largest = widths.length ? widths[widths.length-1] : null;
@@ -524,78 +396,161 @@
       return { title:'All Projects', children: countries };
     }
 
-function renderAlbums(nodes){
-  albumsView.innerHTML = '';
-  photosView.style.display = 'none';
-  albumsView.style.display = 'grid';
+    // ---------- Router + DOM refs ----------
+    function getPath(){
+      const hash = decodeURI(location.hash || '#/');
+      const cleaned = hash.replace(/^#\//,'');
+      if (!cleaned || cleaned.startsWith('top')) return [];
+      return cleaned.split('/').filter(Boolean);
+    }
+    function setPath(parts){ location.hash = '#/' + parts.map(encodeURI).join('/'); }
 
-  if (!nodes.length){ emptyState.hidden = false; emptyState.textContent = 'No projects added yet.'; return; }
-  emptyState.hidden = true;
+    const breadcrumbsEl = document.getElementById('breadcrumbs');
+    const albumsView = document.getElementById('albumsView');
+    const photosView = document.getElementById('photosView');
+    const emptyState = document.getElementById('emptyState');
+    const backBtn = document.getElementById('backBtn');
 
-  nodes.forEach(n=>{
-    const card = document.createElement('a');
-    card.className='album-card';
-    card.href='#';
+    let ROOT = { title:'All Projects', children:[] };
 
-    const cover = document.createElement('div');
-    cover.className='album-cover';
-
-    // NEW: show a thumbnail if we have one
-    if (n.cover){
-      const img = document.createElement('img');
-      img.src = n.cover;
-      img.alt = `${n.title} cover`;
-      img.loading = 'lazy';
-      img.className = 'thumb';
-      cover.appendChild(img);
+    function findNode(parts){
+      if (!parts.length) return ROOT;
+      const country = ROOT.children.find(c => (c.id||c.title).toLowerCase() === parts[0].toLowerCase());
+      if (!country) return null;
+      if (parts.length === 1) return country;
+      const city = country.children.find(ci => (ci.id||ci.title).toLowerCase() === parts[1].toLowerCase());
+      return city || null;
     }
 
-    const cap = document.createElement('div'); cap.className='album-caption';
-    const title = document.createElement('div'); title.className='album-title'; title.textContent = n.title;
-    const sub = document.createElement('div'); sub.className='album-sub'; sub.textContent = (n.children ? `${n.children.length} Cities` : `${(n.photos||[]).length} Photos`).toUpperCase();
-    cap.appendChild(title); cap.appendChild(sub);
+    function buildCrumbs(parts){
+      const frag = document.createDocumentFragment();
+      const mkLink = (label, toParts)=>{
+        const a = document.createElement('a');
+        a.href = '#/' + toParts.map(encodeURI).join('/');
+        a.textContent = label;
+        a.addEventListener('click', e=>{ e.preventDefault(); setPath(toParts); });
+        return a;
+      };
+      const rootL = mkLink('All Projects', []);
+      frag.appendChild(rootL);
+      if (parts[0]){
+        const sep1 = document.createElement('span'); sep1.textContent='›'; sep1.className='crumb-sep'; sep1.style.margin='0 6px';
+        frag.appendChild(sep1); frag.appendChild(mkLink(parts[0], [parts[0]]));
+      }
+      if (parts[1]){
+        const sep2 = document.createElement('span'); sep2.textContent='›'; sep2.className='crumb-sep'; sep2.style.margin='0 6px';
+        frag.appendChild(sep2); frag.appendChild(mkLink(parts[1], [parts[0], parts[1]]));
+      }
+      breadcrumbsEl.innerHTML = ''; breadcrumbsEl.appendChild(frag);
+    }
 
-    card.appendChild(cover); card.appendChild(cap);
+    function renderAlbums(nodes){
+      albumsView.innerHTML = '';
+      photosView.style.display = 'none';
+      albumsView.style.display = 'grid';
 
-    card.addEventListener('click', e=>{
-      e.preventDefault();
+      if (!nodes.length){ emptyState.hidden = false; emptyState.textContent = 'No projects added yet.'; return; }
+      emptyState.hidden = true;
+
+      nodes.forEach(n=>{
+        const card = document.createElement('a');
+        card.className='album-card';
+        card.href='#';
+
+        const cover = document.createElement('div');
+        cover.className='album-cover';
+
+        if (n.cover){
+          const img = document.createElement('img');
+          img.src = n.cover;
+          img.alt = `${n.title} cover`;
+          img.loading = 'lazy';
+          img.className = 'thumb';
+          cover.appendChild(img);
+        }
+
+        const cap = document.createElement('div'); cap.className='album-caption';
+        const title = document.createElement('div'); title.className='album-title'; title.textContent = n.title;
+        const sub = document.createElement('div'); sub.className='album-sub'; sub.textContent = (n.children ? `${n.children.length} Cities` : `${(n.photos||[]).length} Photos`).toUpperCase();
+        cap.appendChild(title); cap.appendChild(sub);
+
+        card.appendChild(cover); card.appendChild(cap);
+
+        card.addEventListener('click', e=>{
+          e.preventDefault();
+          const parts = getPath();
+          parts.push(n.id || n.title);
+          setPath(parts);
+        });
+
+        albumsView.appendChild(card);
+      });
+    }
+
+    function renderPhotos(node){
+      photosView.innerHTML = '';
+      albumsView.style.display='none';
+      photosView.style.display='grid';
+
+      const photos = node.photos || [];
+      if (!photos.length){ emptyState.hidden=false; emptyState.textContent='No photos added for this project yet.'; return; }
+      emptyState.hidden = true;
+
+      photos.forEach((p)=>{
+        const a = document.createElement('a');
+        a.href = p.src;
+        a.setAttribute('data-fancybox', node.title || 'project');
+        if (p.title) a.setAttribute('data-caption', p.title);
+
+        const tile = document.createElement('div'); tile.className='photo';
+        const img = document.createElement('img');
+        img.src = p.thumb || p.src;
+        img.alt = p.title || node.title || 'Project photo';
+        img.loading = 'lazy';
+        img.className = 'thumb';
+        tile.appendChild(img);
+
+        a.appendChild(tile);
+        photosView.appendChild(a);
+      });
+
+      Fancybox.bind('[data-fancybox]', {
+        Toolbar: { display: ['close'] },
+        Images:  { zoom: false, click: false, wheel: false },
+        Thumbs:  { autoStart: false }
+      });
+    }
+
+    function render(){
       const parts = getPath();
-      parts.push(n.id || n.title);
-      setPath(parts);
-    });
+      buildCrumbs(parts);
+      backBtn.style.display = parts.length ? 'inline-flex' : 'none';
 
-    albumsView.appendChild(card);
-  });
-}
+      const node = findNode(parts);
+      if (!node){ setPath([]); return; }
 
-function renderPhotos(node){
-  photosView.innerHTML = '';
-  albumsView.style.display='none';
-  photosView.style.display='grid';
+      if (node.children) renderAlbums(node.children);
+      else renderPhotos(node);
+    }
 
-  const photos = node.photos || [];
-  if (!photos.length){ emptyState.hidden=false; emptyState.textContent='No photos added for this project yet.'; return; }
-  emptyState.hidden = true;
+    async function init(){
+      // year
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 
-  photos.forEach((p)=>{
-    const a = document.createElement('a');
-    a.href = p.src; // opens in Fancybox
-    a.setAttribute('data-fancybox', node.title || 'project');
-    if (p.title) a.setAttribute('data-caption', p.title);
+      // load manifest and build model
+      const manifest = await loadManifest();
+      window.ROOT = buildCountryCity(manifest);
 
-    const tile = document.createElement('div'); tile.className='photo';
-    // NEW: put a visible thumbnail inside the tile
-    const img = document.createElement('img');
-    img.src = p.thumb || p.src;
-    img.alt = p.title || node.title || 'Project photo';
-    img.loading = 'lazy';
-    img.className = 'thumb';
-    tile.appendChild(img);
+      // first render + listeners
+      render();
+      window.addEventListener('hashchange', render);
+      backBtn.addEventListener('click', ()=>{
+        const parts = getPath(); parts.pop(); setPath(parts);
+      });
+    }
 
-    a.appendChild(tile);
-    photosView.appendChild(a);
-  });
-
-  bindFancybox();
-}
-
+    // kick things off after DOM is ready
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
