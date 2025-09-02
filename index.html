@@ -11,12 +11,11 @@
   <meta name="theme-color" content="#0b0f17" />
   <link rel="canonical" href="https://prestigepgh.com/" />
 
-  <!-- Favicons (helps Google show your favicon in search) -->
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/ppr_icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/ppr_icon.png">
   <link rel="apple-touch-icon" href="/assets/ppr_icon.png">
-  <link rel="mask-icon" href="/assets/ppr_icon.svg" color="#101820"> <!-- optional if you add an SVG -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -69,11 +68,18 @@
       border-bottom:1px solid var(--line)
     }
     .site-header .inner{width:var(--container);display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
-    .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;aspect-ratio:auto}
-    .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.04em;min-width:0}
+    .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;display:block}
+    .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    @media (max-width:560px){
+      .site-header{padding:10px 14px}
+      .brand img{max-height:32px}
+      .brand span{display:none} /* unclutter mobile */
+    }
+    @media (max-width:360px){
+      .brand img{max-height:28px}
+    }
 
-    /* desktop nav */
     nav.site-nav{display:flex}
     nav.site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0;align-items:center}
     nav.site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;border:1px solid transparent}
@@ -96,7 +102,6 @@
     .drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line)}
     .drawer nav ul{list-style:none;margin:0;padding:12px;display:flex;flex-direction:column;gap:8px}
     .drawer nav a{padding:12px 14px;border-radius:10px;font-weight:800}
-    .drawer nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .drawer[aria-hidden="false"]{visibility:visible}
 
     /* overlay */
@@ -111,6 +116,8 @@
       display:grid;place-items:center;cursor:pointer}
     .floating-theme:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     .floating-theme svg{width:22px;height:22px;display:block}
+    /* tiny visual nudge if your light logo’s canvas is different */
+    [data-theme="light"] .brand img{transform:translateY(1px)}
 
     /* Buttons */
     .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
@@ -165,7 +172,7 @@
       transition:opacity .2s ease, transform .2s ease;
     }
     .card:hover img{opacity:1;transform:scale(1.01)}
-    .card .meta{display:none} /* no filenames */
+    .card .meta{display:none}
 
     /* Fancybox true colors */
     .fancybox__container img{mix-blend-mode:normal !important;opacity:1 !important;}
@@ -226,7 +233,6 @@
     .t-quote{ margin:0 0 12px; color:var(--ink); line-height:1.55 }
     .t-quote:before{ content:"“"; font-family:serif; font-size:2rem; line-height:1; color:var(--accent); margin-right:6px }
     .t-author{ font-weight:800 }
-    .t-meta{ color:var(--muted); font-size:.95rem }
     .stars{ display:flex; gap:2px; margin:0 0 8px }
     .stars svg{ width:18px; height:18px; fill:var(--accent) }
 
@@ -234,7 +240,7 @@
     .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 0 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
   </style>
 
-  <!-- Schema: LocalBusiness (with logo) + WebSite + Organization (explicit logo for Google) -->
+  <!-- Schema (logo helps Google show it in search) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -248,16 +254,6 @@
     "address": { "@type": "PostalAddress", "addressLocality": "Pittsburgh", "addressRegion": "PA", "addressCountry": "US" },
     "areaServed": "Pittsburgh",
     "sameAs": []
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "@id":"https://prestigepgh.com/#website",
-    "name":"Pittsburgh Prestige Remodeling",
-    "url":"https://prestigepgh.com/",
-    "publisher": { "@id": "https://prestigepgh.com/#business" }
   }
   </script>
   <script type="application/ld+json">
@@ -281,7 +277,6 @@
   <header class="site-header" id="header">
     <div class="inner">
       <a href="#top" class="brand" aria-label="Pittsburgh Prestige Remodeling home">
-        <!-- theme-aware logo: provide a light variant if desired -->
         <img id="brandLogo"
              src="assets/ppr_logo.png"
              data-dark="assets/ppr_logo.png"
@@ -367,12 +362,50 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS (static, no-JS needed) -->
     <section id="testimonials" class="page-hero testimonials" aria-labelledby="testimonials-h">
       <div class="container">
         <h2 id="testimonials-h">Testimonials</h2>
         <p class="muted">A few words from recent Pittsburgh projects.</p>
-        <div id="tGrid" class="t-grid" aria-live="polite"></div>
+
+        <div id="tGrid" class="t-grid" aria-live="polite">
+          <article class="t-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+            </div>
+            <p class="t-quote">Mike and Iso were the best! We couldn’t be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!</p>
+            <div class="t-author">Matt Oxenreiter</div>
+          </article>
+
+          <article class="t-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+            </div>
+            <p class="t-quote">I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident. They even came up with better ways of doing things than I had thought. Trim looks great, outlets fixed, new outdoor railings—and they turned a basic chicken coop idea into a beautiful, rock-solid “chicken hotel.” Thank you Mike and Iso!!</p>
+            <div class="t-author">S.R. Duerr</div>
+          </article>
+
+          <article class="t-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
+            </div>
+            <p class="t-quote">I’ve worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. From start to finish: exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail—consistently beyond expectations.</p>
+            <div class="t-author">Jack Rice</div>
+          </article>
+        </div>
+
         <p id="tEmpty" class="muted hidden" role="status">No testimonials yet.</p>
       </div>
     </section>
@@ -439,10 +472,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
   <script>
-    /* ---------- Basics: year ---------- */
+    /* Year */
     (function(){ const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear(); })();
 
-    /* ---------- Floating theme toggle (also swaps logo) ---------- */
+    /* Theme toggle + logo swap */
     (function(){
       const root=document.documentElement;
       const btn=document.getElementById('floatingTheme');
@@ -450,21 +483,15 @@
 
       function icon(theme){
         return theme==='dark'
-          ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>' /* moon */
-          : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0 6v-3M12 3V0m9 12h3M0 12h3m15.364 6.364 2.121 2.121M3.515 3.515 5.636 5.636m0 12.728-2.121 2.121M20.485 3.515 18.364 5.636"/></svg>'; /* sun */
+          ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
+          : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0 6v-3M12 3V0m9 12h3M0 12h3m15.364 6.364 2.121 2.121M3.515 3.515 5.636 5.636m0 12.728-2.121 2.121M20.485 3.515 18.364 5.636"/></svg>';
       }
-
       function swapLogo(theme){
         if(!logo) return;
-        const target = theme==='dark' ? (logo.getAttribute('data-dark') || logo.src)
-                                      : (logo.getAttribute('data-light') || logo.src);
+        const target = theme==='dark' ? (logo.dataset.dark || logo.src) : (logo.dataset.light || logo.src);
         if(logo.src.endsWith(target)) return;
-        const testImg = new Image();
-        testImg.onload = ()=>{ logo.src = target; };
-        testImg.onerror = ()=>{ /* fallback to dark if light missing */ if(theme!=='dark'){ logo.src = logo.getAttribute('data-dark') || logo.src; } };
-        testImg.src = target;
+        const i=new Image(); i.onload=()=>{ logo.src=target; }; i.onerror=()=>{ if(theme!=='dark'){ logo.src=logo.dataset.dark||logo.src; } }; i.src=target;
       }
-
       function setTheme(t){
         root.setAttribute('data-theme',t);
         localStorage.setItem('ppr-theme',t);
@@ -473,14 +500,13 @@
         btn.title = t==='dark' ? 'Dark mode' : 'Light mode';
         swapLogo(t);
       }
-
       const saved = localStorage.getItem('ppr-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setTheme(saved || (prefersDark ? 'dark' : 'light'));
       btn.addEventListener('click', ()=> setTheme((root.getAttribute('data-theme')||'dark')==='dark'?'light':'dark'));
     })();
 
-    /* ---------- Mobile drawer + overlay + focus trap ---------- */
+    /* Mobile drawer + overlay + focus trap */
     (function(){
       const menuToggle = document.getElementById('menuToggle');
       const drawer = document.getElementById('mobileDrawer');
@@ -526,7 +552,7 @@
       window.addEventListener('resize', ()=>{ if(window.innerWidth>960 && drawer.classList.contains('open')) closeDrawer(); });
     })();
 
-    /* ------- Portfolio (category-only) + dynamic hero ------- */
+    /* Portfolio (category-only) + dynamic hero */
     const CANDIDATE_MANIFESTS = ["/dist/gallery.json","./dist/gallery.json"];
     const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"];
 
@@ -536,7 +562,6 @@
       }
       throw new Error("gallery.json not found at /dist or ./dist");
     }
-
     function el(t,attrs={},...kids){
       const n=document.createElement(t);
       Object.entries(attrs).forEach(([k,v])=>{
@@ -548,7 +573,6 @@
       return n;
     }
     const titleCase = k => k.replace(/(^.|-.)/g,s=>s.toUpperCase());
-
     function chooseBest(sources){
       if(!sources||!sources.length) return null;
       const vw = Math.min(1600, Math.max(window.innerWidth, 1000));
@@ -556,7 +580,6 @@
       const pick = (sorted.find(s=>s.width>=vw) || sorted[sorted.length-1]).webp;
       return `./dist/${pick}`;
     }
-
     function buildTabs(keys){
       const tabs=document.getElementById("workTabs");
       const order = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
@@ -566,7 +589,6 @@
       });
       return order[0] || null;
     }
-
     function drawCategory(manifest, cat){
       const grid = document.getElementById("grid");
       grid.innerHTML = "";
@@ -585,7 +607,6 @@
         grid.appendChild(a);
       });
     }
-
     function randomHeroFrom(manifest){
       const all = Object.values(manifest.categories||{}).flat();
       if(!all.length) return;
@@ -594,7 +615,6 @@
       const hero = document.querySelector(".hero");
       hero.style.backgroundImage = `url('${url}')`;
     }
-
     (async function bootstrapWork(){
       try{
         const manifest = await fetchFirst(CANDIDATE_MANIFESTS);
@@ -602,7 +622,6 @@
         const keys = Object.keys(manifest.categories||{});
         const firstCat = buildTabs(keys);
         if(firstCat) drawCategory(manifest, firstCat);
-
         const tabs=document.getElementById("workTabs");
         tabs.addEventListener("click",(e)=>{
           const btn=e.target.closest(".tab"); if(!btn) return;
@@ -617,78 +636,6 @@
         msg.textContent = "Gallery not built yet. Run: node process-gallery.mjs \"./gallery\" \"./dist\"";
         msg.classList.remove("hidden");
       }
-    })();
-
-    /* ---------- Testimonials: fixed top 3 (no duplicates, no remote fetch) ---------- */
-    (function testimonials(){
-      const GRID = document.getElementById('tGrid');
-      const EMPTY = document.getElementById('tEmpty');
-
-      const REVIEWS = [
-        {
-          author: "Matt",
-          rating: 5,
-          text: "Mike and Iso were the best! We couldn’t be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!"
-        },
-        {
-          author: "S.R.",
-          rating: 5,
-          text: "I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident. They even came up with better ways of doing things than I had thought. Trim looks great, outlets fixed, new outdoor railings—and they turned a basic chicken coop idea into a beautiful, rock-solid “chicken hotel.” Thank you Mike and Iso!!"
-        },
-        {
-          author: "Jack",
-          rating: 5,
-          text: "I’ve worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. From start to finish: exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail—consistently beyond expectations."
-        }
-      ];
-
-      function starSvg(){ return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>'; }
-
-      function render(reviews){
-        GRID.innerHTML = "";
-        if(!reviews.length){ EMPTY.classList.remove('hidden'); return; }
-        EMPTY.classList.add('hidden');
-
-        reviews.forEach(r=>{
-          const card = document.createElement('article');
-          card.className = 't-card';
-          const stars = document.createElement('div');
-          stars.className = 'stars';
-          stars.innerHTML = Array.from({length:Math.round(Math.max(0,Math.min(5,Number(r.rating||5))))}, starSvg).map(fn=>fn()).join('');
-          const q = document.createElement('p'); q.className='t-quote'; q.textContent = r.text;
-          const a = document.createElement('div'); a.className='t-author'; a.textContent = r.author || 'Client';
-          card.append(stars, q, a);
-          GRID.appendChild(card);
-        });
-
-        // JSON-LD (AggregateRating + Reviews)
-        try{
-          const avg = (reviews.reduce((s,r)=>s+(Number(r.rating||5)),0)/reviews.length).toFixed(2);
-          const ld = {
-            "@context":"https://schema.org",
-            "@type":"Product",
-            "name":"Custom cabinetry & carpentry services",
-            "brand": { "@type":"Brand", "name":"Pittsburgh Prestige Remodeling" },
-            "aggregateRating":{
-              "@type":"AggregateRating",
-              "ratingValue": avg,
-              "reviewCount": reviews.length
-            },
-            "review": reviews.map(r=>({
-              "@type":"Review",
-              "reviewBody": r.text,
-              "reviewRating": { "@type":"Rating", "ratingValue": r.rating || 5, "bestRating":"5" },
-              "author": { "@type":"Person", "name": r.author || "Client" }
-            }))
-          };
-          const s = document.createElement('script');
-          s.type = "application/ld+json";
-          s.textContent = JSON.stringify(ld);
-          document.head.appendChild(s);
-        }catch(e){ console.warn("LD JSON error", e); }
-      }
-
-      render(REVIEWS);
     })();
   </script>
 </body>
