@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Pittsburgh Prestige Remodeling – Custom Cabinetry & Fine Carpentry</title>
-  <meta name="description" content="Custom cabinetry, built-ins, and fine carpentry in Pittsburgh. Handcrafted cabinets, shelving, trim, and woodwork with Black & Gold craftsmanship." />
+  <meta name="description" content="Pittsburgh Prestige Remodeling specializes in custom cabinetry, built-ins, kitchens, and fine carpentry across the Pittsburgh area. Licensed, insured, and Pittsburgh-proud craftsmanship." />
+  <meta name="keywords" content="Pittsburgh Prestige Remodeling, Pittsburgh cabinetry, custom cabinets Pittsburgh, Pittsburgh carpenter, kitchen cabinetry, built-ins, fine carpentry" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b0f17" />
   <link rel="canonical" href="https://prestigepgh.com/" />
   <link rel="icon" href="assets/ppr_icon.png" type="image/png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pittsburgh Prestige Remodeling – Custom Cabinetry & Fine Carpentry" />
+  <meta property="og:description" content="Custom cabinetry and fine carpentry in Pittsburgh: kitchens, built-ins, trim, offices, and more." />
+  <meta property="og:url" content="https://prestigepgh.com/" />
+  <meta property="og:image" content="https://prestigepgh.com/assets/og-preview.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pittsburgh Prestige Remodeling – Custom Cabinetry & Fine Carpentry" />
+  <meta name="twitter:description" content="Pittsburgh Prestige Remodeling: handcrafted cabinetry, kitchens, built-ins, and trim." />
+  <meta name="twitter:image" content="https://prestigepgh.com/assets/og-preview.jpg" />
 
   <!-- Fonts + Fancybox -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +76,7 @@
     }
 
     /* Hero */
-    .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
+    .hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
       box-shadow:var(--shadow);overflow:hidden;margin-top:92px;background:
       radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
       radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%),
@@ -80,25 +95,52 @@
     .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
     .page-hero p{margin:0 0 24px;color:var(--muted)}
 
-    /* Our Work */
+    /* Filters + Grid */
     .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}
     .tab{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
     .tab.active{background:var(--accent);color:#0b0f17}
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
-    .photo{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:linear-gradient(135deg,#0d1522,#101820);box-shadow:0 4px 18px rgba(0,0,0,.35)}
-    .thumb{width:100%;height:100%;object-fit:cover}
-    .work-actions{display:flex;justify-content:center;margin:18px 0 0}
-    .muted{color:var(--muted)}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+    .card img{width:100%;height:240px;object-fit:cover;display:block}
+    .card .meta{padding:10px 12px;color:var(--muted);font-size:.9rem}
     .hidden{display:none!important}
 
     /* Footer */
     .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 0 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
   </style>
+
+  <!-- LocalBusiness + WebSite schema for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pittsburgh Prestige Remodeling",
+    "url": "https://prestigepgh.com/",
+    "image": "https://prestigepgh.com/assets/og-preview.jpg",
+    "description": "Custom cabinetry, built-ins, and fine carpentry serving the Pittsburgh area.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pittsburgh",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    },
+    "areaServed": "Pittsburgh",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Pittsburgh Prestige Remodeling",
+    "url":"https://prestigepgh.com/"
+  }
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 
   <header class="site-header" id="header">
     <div class="container" style="display:flex;align-items:center;justify-content:space-between">
@@ -131,8 +173,8 @@
     <section class="hero" id="top">
       <div class="container">
         <div class="liquid-glass">
-          <h1>Quality Remodeling, Pittsburgh Proud</h1>
-          <p>Built-ins, kitchen cabinetry, trim, and woodwork crafted for Pittsburgh homes — quality that lasts.</p>
+          <h1>Pittsburgh Prestige Remodeling</h1>
+          <p>Custom cabinetry, built-ins, and fine carpentry — Pittsburgh-proud craftsmanship that lasts.</p>
           <div class="hero-btns">
             <a href="#services" class="btn">View Services</a>
             <a href="#work" class="btn">See Our Work</a>
@@ -145,29 +187,21 @@
     <section id="services" class="page-hero" aria-labelledby="services-h">
       <div class="container">
         <h2 id="services-h">Services</h2>
-        <p>We specialize in custom cabinetry and fine carpentry that elevates every space — kitchens, living rooms, home offices, and more.</p>
+        <p>We design and build custom cabinetry, kitchen installations, built-ins, trim, and office solutions tailored to Pittsburgh homes.</p>
       </div>
     </section>
 
-    <!-- OUR WORK (inline, featured + expand + optional tabs) -->
+    <!-- OUR WORK (dynamic from ./dist/gallery.json) -->
     <section id="work" class="page-hero" aria-labelledby="work-h">
       <div class="container">
         <h2 id="work-h">Our Work</h2>
-        <p class="muted">A curated look at recent cabinetry and carpentry. Click any image to open the gallery.</p>
+        <p class="muted">Click any image to open the gallery. Use the filters to view a specific category.</p>
 
-        <!-- Optional category tabs (remove if not needed) -->
         <div class="tabs" id="workTabs" role="tablist" aria-label="Filter projects">
-          <button class="tab active" data-filter="all" role="tab" aria-selected="true" type="button">All</button>
-          <button class="tab" data-filter="Kitchens" role="tab" aria-selected="false" type="button">Kitchens</button>
-          <button class="tab" data-filter="Built-ins" role="tab" aria-selected="false" type="button">Built-ins</button>
-          <button class="tab" data-filter="Trim" role="tab" aria-selected="false" type="button">Trim</button>
+          <!-- Filter pills inserted by JS -->
         </div>
 
-        <section id="workGrid" class="photo-grid" aria-label="Gallery Grid"></section>
-
-        <div class="work-actions">
-          <button id="toggleAll" class="btn" type="button" aria-expanded="false">See all</button>
-        </div>
+        <div id="sections"><!-- Category sections inserted here --></div>
 
         <p id="workEmpty" class="muted hidden" role="status">No photos found.</p>
       </div>
@@ -177,7 +211,7 @@
     <section id="about" class="page-hero" aria-labelledby="about-h">
       <div class="container">
         <h2 id="about-h">About</h2>
-        <p>Pittsburgh Prestige Remodeling is a licensed & insured contractor with a focus on cabinetry and carpentry. We believe true craftsmanship lies in the details — from hand-built cabinets to finish carpentry that transforms entire rooms. Based in Pittsburgh, we take pride in delivering Black & Gold quality with clear communication and dependable timelines.</p>
+        <p>Pittsburgh Prestige Remodeling is a licensed & insured contractor focused on cabinetry and carpentry. From hand-built cabinets to finish trim, we deliver Black & Gold quality with clear communication and dependable timelines.</p>
       </div>
     </section>
 
@@ -196,6 +230,7 @@
               <option>Custom Cabinetry</option>
               <option>Finish Carpentry</option>
               <option>Kitchen / Living Spaces</option>
+              <option>Office / Built-ins</option>
               <option>Other</option>
             </select>
           </label>
@@ -216,25 +251,6 @@
   <!-- Fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
-  <!-- ===== Inline gallery data (edit filenames/tags). Images must exist at /gallery/originals/ ===== -->
-  <script type="application/json" id="our-work-data">
-  {
-    "baseDir": "/gallery/originals/",
-    "photos": [
-      { "file": "IMG_7920_1600.jpg", "alt": "Kitchen built-ins – Mt. Lebanon", "tags": ["Kitchens"] },
-      { "file": "IMG_7918_1600.jpg", "alt": "Custom entertainment center – Shadyside", "tags": ["Built-ins"] },
-      { "file": "IMG_7905_1600.jpg", "alt": "Crown & trim package – Squirrel Hill", "tags": ["Trim"] },
-      { "file": "IMG_7897_1600.jpg", "alt": "Mudroom lockers – Fox Chapel", "tags": ["Built-ins"] },
-      { "file": "IMG_7889_1600.jpg", "alt": "Kitchen hutch with glass fronts", "tags": ["Kitchens"] },
-      { "file": "IMG_7882_1600.jpg", "alt": "Office shelving wall", "tags": ["Built-ins"] },
-
-      { "file": "IMG_7874_1600.jpg", "alt": "Stair railing & newel", "tags": ["Trim"] },
-      { "file": "IMG_7866_1600.jpg", "alt": "Closet system – Upper St. Clair", "tags": ["Built-ins"] },
-      { "file": "IMG_7853_1600.jpg", "alt": "Paneled island – Wexford", "tags": ["Kitchens"] }
-    ]
-  }
-  </script>
-
   <script>
     // ---- Theme + header ----
     (function initBasics(){
@@ -251,113 +267,187 @@
       }
     })();
 
-    // ---- Gallery helpers ----
-    const USE_EXTERNAL_MANIFEST = true;  // if /gallery/imagePaths.json exists, we merge it in
+    // ------- Portfolio from ./dist/gallery.json (generated by optimizer) -------
+    const MANIFEST_URL = "./dist/gallery.json";
+    // const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"];
 
-    function readInlineData(){
-      try{ return JSON.parse(document.getElementById('our-work-data')?.textContent||'{}'); }
-      catch{ return { baseDir:'/gallery/originals/', photos:[] }; }
+    function el(t,attrs={},...kids){
+      const n=document.createElement(t);
+      Object.entries(attrs).forEach(([k,v])=>{
+        if(k==="class") n.className=v;
+        else if(k.startsWith("on")) n.addEventListener(k.slice(2),v);
+        else n.setAttribute(k,v);
+      });
+      kids.forEach(c=>n.appendChild(typeof c==="string"?document.createTextNode(c):c));
+      return n;
+    }
+    function titleCase(k){ return k.replace(/(^.|-.)/g,s=>s.toUpperCase()); }
+
+    function pickBestSource(sources){
+      if(!sources||!sources.length) return null;
+      const vw = Math.min(1600, Math.max(window.innerWidth, 800));
+      const sorted=[...sources].sort((a,b)=>a.width-b.width);
+      let best=sorted.find(s=>s.width>=vw) || sorted[sorted.length-1];
+      return best.webp;
     }
 
-    async function loadExternal(){
-      try{
-        const res = await fetch('/gallery/imagePaths.json', { cache:'no-cache' });
-        if(!res.ok) return null;
-        const man = await res.json();
-        // Accept {photos:[{path|url|src, alt, tags?}]} or {categories:{...}}
-        if (Array.isArray(man.photos)){
-          return man.photos.map(p=>({ file: p.path||p.url||p.src, alt:p.alt||'', tags:p.tags||[] }));
-        }
-        const out=[]; const cats=man.categories||{};
-        Object.values(cats).forEach(arr=>(arr||[]).forEach(item=>{
-          const simple=item.path||item.url||item.src;
-          let file=simple;
-          if(!file && item.variants?.jpg){
-            const widths=Object.keys(item.variants.jpg).map(n=>+n).sort((a,b)=>a-b);
-            file=item.variants.jpg[String(widths.pop())];
-          }
-          if(file) out.push({ file, alt:item.alt||'', tags:item.tags||[] });
-        }));
-        return out;
-      }catch{ return null; }
+    function buildFilters(keys){
+      const tabs=document.getElementById("workTabs");
+      const all=el("button",{class:"tab active","data-cat":"all",role:"tab","aria-selected":"true",type:"button"},"All");
+      tabs.appendChild(all);
+      const order = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
+      order.forEach(k=>{
+        tabs.appendChild(el("button",{class:"tab","data-cat":k,role:"tab","aria-selected":"false",type:"button"},titleCase(k)));
+      });
     }
 
-    function buildUrl(baseDir,file){
-      if(!file) return '';
-      if(/^https?:\/\//i.test(file) || file.startsWith('/')) return file;
-      const base=baseDir.endsWith('/')?baseDir:baseDir+'/';
-      return base+file.replace(/^\/+/, '');
-    }
+    function render(manifest){
+      const keys = Object.keys(manifest.categories||{});
+      if(!keys.length){ document.getElementById("workEmpty").classList.remove("hidden"); return; }
+      buildFilters(keys);
 
-    function renderWork(items){
-      const grid=document.getElementById('workGrid');
-      const empty=document.getElementById('workEmpty');
-      const btn=document.getElementById('toggleAll');
-      const tabs=document.getElementById('workTabs');
+      const container = document.getElementById("sections");
+      const ordered = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
 
-      if(!items.length){ empty.classList.remove('hidden'); grid.innerHTML=''; return; }
-      empty.classList.add('hidden');
+      ordered.forEach(cat=>{
+        const sec = el("section",{"data-cat":cat});
+        sec.appendChild(el("h3",{}, titleCase(cat)));
+        const grid = el("div",{class:"photo-grid"});
 
-      let showingAll=false;
-      let active='all';
-
-      function current(){ return items.filter(p=>active==='all' ? true : (p.tags||[]).includes(active)); }
-
-      function draw(){
-        const photos=current();
-        const slice=showingAll?photos:photos.slice(0,6);
-        grid.innerHTML='';
-        slice.forEach(p=>{
-          const a=document.createElement('a'); a.href=p.full; a.setAttribute('data-fancybox','OurWork');
-          if(p.alt) a.setAttribute('data-caption', p.alt);
-          const tile=document.createElement('div'); tile.className='photo';
-          const img=document.createElement('img'); img.className='thumb'; img.loading='lazy'; img.decoding='async';
-          img.src=p.thumb; img.alt=p.alt||'Project photo';
-          img.onerror=()=>{ img.alt='Image not found'; tile.style.outline='2px solid #c33'; console.error('[OurWork] 404:', img.src); };
-          tile.appendChild(img); a.appendChild(tile); grid.appendChild(a);
+        (manifest.categories[cat]||[]).forEach(item=>{
+          const thumb = `./dist/${item.thumb}`;
+          const large = pickBestSource(item.sources) ? `./dist/${pickBestSource(item.sources)}` : thumb;
+          const a = el("a",{"data-fancybox":"work","data-caption":item.title||"", href:large});
+          const card = el("div",{class:"card"});
+          const img = el("img",{alt:item.title||"Project photo", loading:"lazy", decoding:"async"});
+          img.src = thumb;
+          card.appendChild(img);
+          card.appendChild(el("div",{class:"meta"}, item.title||""));
+          a.appendChild(card);
+          grid.appendChild(a);
         });
-        Fancybox.bind('[data-fancybox="OurWork"]',{Thumbs:{autoStart:false},Toolbar:{display:['close']},Images:{zoom:false,click:false,wheel:false}});
-        btn.textContent=showingAll?'Show less':'See all';
-        btn.setAttribute('aria-expanded', String(showingAll));
-        btn.classList.toggle('hidden', photos.length<=6);
-      }
 
-      btn.addEventListener('click',()=>{ showingAll=!showingAll; draw(); });
-
-      if(tabs){
-        tabs.addEventListener('click',(e)=>{
-          const t=e.target.closest('.tab'); if(!t) return;
-          tabs.querySelectorAll('.tab').forEach(x=>{x.classList.remove('active'); x.setAttribute('aria-selected','false');});
-          t.classList.add('active'); t.setAttribute('aria-selected','true');
-          active=t.dataset.filter||'all'; showingAll=false; draw();
-        });
-      }
-      draw();
-    }
-
-    (async function bootWork(){
-      const inline = readInlineData();
-      // Start with inline list (always works)
-      let list = (inline.photos||[]).map(p=>{
-        const url = buildUrl(inline.baseDir||'/gallery/originals/', p.file);
-        return { alt:p.alt||'', tags:p.tags||[], thumb:url, full:url };
+        sec.appendChild(grid);
+        container.appendChild(sec);
       });
 
-      // Merge external manifest if present
-      if (USE_EXTERNAL_MANIFEST){
-        const ext = await loadExternal();
-        if (ext && ext.length){
-          const extras = ext.map(p=>{
-            const url = buildUrl('', p.file);
-            return { alt:p.alt||'', tags:p.tags||[], thumb:url, full:url };
-          });
-          // Deduplicate by URL
-          const seen=new Set(list.map(x=>x.full));
-          extras.forEach(x=>{ if(!seen.has(x.full)) list.push(x); });
-        }
+      // filter behavior
+      const tabs=document.getElementById("workTabs");
+      tabs.addEventListener("click",(e)=>{
+        const btn=e.target.closest(".tab"); if(!btn) return;
+        tabs.querySelectorAll(".tab").forEach(b=>{b.classList.remove("active"); b.setAttribute("aria-selected","false");});
+        btn.classList.add("active"); btn.setAttribute("aria-selected","true");
+        const cat=btn.getAttribute("data-cat");
+        document.querySelectorAll('#sections section[data-cat]').forEach(s=>{
+          s.classList.toggle("hidden", cat!=="all" && s.getAttribute("data-cat")!==cat);
+        });
+      });
+    }
+
+    (async function bootstrap(){
+      try{
+        const res = await fetch(MANIFEST_URL, {cache:"no-store"});
+        if(!res.ok) throw new Error("manifest not found");
+        const data = await res.json();
+        render(data);
+      }catch(e){
+        console.error(e);
+        document.getElementById("workEmpty").classList.remove("hidden");
       }
-      renderWork(list);
     })();
+  // --- Robust manifest locator (root or relative) ---
+  const CANDIDATE_MANIFESTS = ["/dist/gallery.json","./dist/gallery.json"];
+  const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"]; // matches your folders
+
+  async function fetchFirst(paths){
+    for (const p of paths){
+      try { const r = await fetch(p, {cache:"no-store"}); if (r.ok) return r.json(); } catch {}
+    }
+    throw new Error("gallery.json not found at /dist or ./dist");
+  }
+
+  function el(t,attrs={},...kids){
+    const n=document.createElement(t);
+    Object.entries(attrs).forEach(([k,v])=>{
+      if(k==="class") n.className=v;
+      else if(k.startsWith("on")) n.addEventListener(k.slice(2),v);
+      else n.setAttribute(k,v);
+    });
+    kids.forEach(c=>n.appendChild(typeof c==="string"?document.createTextNode(c):c));
+    return n;
+  }
+  function titleCase(k){ return k.replace(/(^.|-.)/g,s=>s.toUpperCase()); }
+  function pickBestSource(sources){
+    if(!sources||!sources.length) return null;
+    const vw = Math.min(1600, Math.max(window.innerWidth, 800));
+    const sorted=[...sources].sort((a,b)=>a.width-b.width);
+    return (sorted.find(s=>s.width>=vw) || sorted[sorted.length-1]).webp;
+  }
+
+  function buildFilters(keys){
+    const tabs=document.getElementById("workTabs");
+    const all=el("button",{class:"tab active","data-cat":"all",role:"tab","aria-selected":"true",type:"button"},"All");
+    tabs.appendChild(all);
+    const order = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
+    order.forEach(k=>{
+      tabs.appendChild(el("button",{class:"tab","data-cat":k,role:"tab","aria-selected":"false",type:"button"},titleCase(k)));
+    });
+  }
+
+  function render(manifest){
+    const keys = Object.keys(manifest.categories||{});
+    if(!keys.length){ document.getElementById("workEmpty").classList.remove("hidden"); return; }
+    buildFilters(keys);
+
+    const container = document.getElementById("sections");
+    const ordered = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
+
+    ordered.forEach(cat=>{
+      const sec = el("section",{"data-cat":cat});
+      sec.appendChild(el("h3",{}, titleCase(cat)));
+      const grid = el("div",{class:"photo-grid"});
+
+      (manifest.categories[cat]||[]).forEach(item=>{
+        const thumb = `./dist/${item.thumb}`;
+        const bigRel = pickBestSource(item.sources) || item.thumb;
+        const big = `./dist/${bigRel}`;
+        const a = el("a",{"data-fancybox":"work","data-caption":item.title||"", href:big});
+        const card = el("div",{class:"card"});
+        const img = el("img",{alt:item.title||"Project photo", loading:"lazy", decoding:"async", src:thumb});
+        card.appendChild(img);
+        card.appendChild(el("div",{class:"meta"}, item.title||""));
+        a.appendChild(card);
+        grid.appendChild(a);
+      });
+
+      sec.appendChild(grid);
+      container.appendChild(sec);
+    });
+
+    // Filter behavior
+    const tabs=document.getElementById("workTabs");
+    tabs.addEventListener("click",(e)=>{
+      const btn=e.target.closest(".tab"); if(!btn) return;
+      tabs.querySelectorAll(".tab").forEach(b=>{b.classList.remove("active"); b.setAttribute("aria-selected","false");});
+      btn.classList.add("active"); btn.setAttribute("aria-selected","true");
+      const cat=btn.getAttribute("data-cat");
+      document.querySelectorAll('#sections section[data-cat]').forEach(s=>{
+        s.classList.toggle("hidden", cat!=="all" && s.getAttribute("data-cat")!==cat);
+      });
+    });
+  }
+
+  (async function bootstrap(){
+    try{
+      const data = await fetchFirst(CANDIDATE_MANIFESTS);
+      render(data);
+    }catch(err){
+      console.error(err);
+      const msg = document.getElementById("workEmpty");
+      msg.textContent = "Gallery not built yet. Run: node process-gallery.mjs \"./gallery\" \"./dist\"";
+      msg.classList.remove("hidden");
+    }
+  })();
   </script>
 </body>
 </html>
