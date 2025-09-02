@@ -37,17 +37,17 @@
       --bg:#0b0f17; --panel:#111926; --panel-2:#0d1522; --line:#1b2533;
       --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30); --cta:#FFB612; --cta-ink:#0b0f17;
       --container:min(1200px,92vw);
-      --glass-bg: rgba(255,255,255,0.05);     /* card glass */
-      --glass-line: rgba(255,255,255,0.10);   /* subtle border */
-      --img-opacity: .94;                     /* how much bg shows through */
-      --blend-mode: multiply;                 /* multiply/soft-light/overlay */
+      --glass-bg: rgba(255,255,255,0.05);
+      --glass-line: rgba(255,255,255,0.10);
+      --img-opacity:.94;
+      --blend-mode:multiply;
     }
     [data-theme="light"]{
       --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb; --line:#e6ebf2; --cta:#101820; --cta-ink:#ffffff;
       --glass-bg: rgba(16,24,32,0.05);
       --glass-line: rgba(16,24,32,0.08);
-      --img-opacity: .98;
-      --blend-mode: normal; /* keep photos true in light */
+      --img-opacity:.98;
+      --blend-mode:normal;
     }
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink)}
@@ -60,10 +60,9 @@
     .site-header{
       position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
       padding:14px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
-      box-shadow:0 1px 12px rgba(0,0,0,.35);border-bottom:1px solid var(--line)
+      box-shadow:0 1px 12px rgba(0,0,0,.35);border-bottom:1px solid var(--line);
     }
     .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
-    /* no-stretch logo */
     .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;aspect-ratio:auto}
     .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap}
     .site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0}
@@ -84,65 +83,109 @@
       .menu-toggle.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
 
-    /* Hero */
-    .hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
-      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;background:
-      radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
-      radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%),
-      linear-gradient(120deg, #0b0f17 0%, #0d1522 50%, #101820 100%)}
-    .liquid-glass{padding:30px;border-radius:28px;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 60px rgba(0,0,0,.55);text-align:center}
+    /* Buttons (add focus-visible) */
+    .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
+      font-size:1rem;transition:transform .12s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+    /* Hero with dynamic background */
+    .hero{
+      position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
+      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;
+      background-size:cover;background-position:center;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
+        radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%),
+        linear-gradient(120deg, rgba(11,15,23,.88) 0%, rgba(13,21,34,.55) 45%, rgba(16,24,32,.66) 100%);
+      pointer-events:none;
+      mix-blend-mode:overlay;
+    }
+    .liquid-glass{
+      position:relative; z-index:1;
+      padding:30px;border-radius:28px;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 60px rgba(0,0,0,.55);text-align:center;
+    }
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 12px;color:#fff}
     .hero p{font-size:1.1rem;margin:0 0 18px;color:#dfe8ff}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-    .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
-      font-size:1rem;transition:transform .12s ease}
-    .btn:hover{transform:translateY(-1px);}
 
     /* Sections */
     .page-hero{padding:42px 0 10px}
     .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
     .page-hero p{margin:0 0 24px;color:var(--muted)}
 
-    /* Filters + Grid */
+    /* Filters + Grid (category-only) */
     .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}
     .tab{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
     .tab.active{background:var(--accent);color:#0b0f17}
+    .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
 
-    /* ==== BG-through photo cards ==== */
+    /* BG-through cards */
     .card{
-      position:relative;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-line);
-      border-radius: 16px;
-      overflow:hidden;
-      box-shadow: 0 8px 28px rgba(0,0,0,.28);
-      backdrop-filter: blur(6px) saturate(135%);
+      position:relative;background:var(--glass-bg);border:1px solid var(--glass-line);
+      border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(6px) saturate(135%);
     }
-    /* let the site background influence the image slightly */
     .card img{
-      width:100%; height:240px; object-fit:cover; display:block;
-      mix-blend-mode: var(--blend-mode);
-      opacity: var(--img-opacity);
-      transition: opacity .2s ease, transform .2s ease;
+      width:100%;height:240px;object-fit:cover;display:block;
+      mix-blend-mode:var(--blend-mode);opacity:var(--img-opacity);
+      transition:opacity .2s ease, transform .2s ease;
     }
-    /* subtle highlight overlay to sell the glass effect */
-    .card::before{
-      content:""; position:absolute; inset:0;
-      background: radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,.08), transparent 55%),
-                  radial-gradient(120% 80% at 0% 100%, rgba(255,255,255,.06), transparent 55%);
-      pointer-events:none;
-    }
-    .card:hover img{ opacity:1; transform:scale(1.01); }
-    .card .meta{padding:10px 12px;color:var(--muted);font-size:.9rem}
+    .card:hover img{opacity:1;transform:scale(1.01)}
+    .card .meta{display:none} /* no filenames */
 
-    /* Fancybox should show true colors (no blending) */
-    .fancybox__container img{ mix-blend-mode: normal !important; opacity:1 !important; }
+    /* Fancybox true colors */
+    .fancybox__container img{mix-blend-mode:normal !important;opacity:1 !important;}
 
     .hidden{display:none!important}
+
+    /* === Modern form fields === */
+    .contact-form {
+      --field-bg: var(--panel);
+      --field-border: var(--line);
+      --field-ink: var(--ink);
+      --field-muted: var(--muted);
+      --ring: rgba(255,182,18,.18);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 780px;
+    }
+    @media (max-width: 720px){ .contact-form { grid-template-columns: 1fr; } }
+    .field { position: relative; }
+    .field.full { grid-column: 1 / -1; }
+    .input,.textarea,.select{
+      width:100%;border:1px solid var(--field-border);background:var(--field-bg);color:var(--field-ink);
+      border-radius:12px;padding:16px 14px;font:inherit;outline:none;transition:border-color .15s, box-shadow .15s, background .15s;
+    }
+    .select{appearance:none;padding-right:40px;background-image:
+      linear-gradient(45deg, transparent 50%, var(--field-muted) 50%),
+      linear-gradient(135deg, var(--field-muted) 50%, transparent 50%),
+      linear-gradient(to right, transparent, transparent);
+      background-position: calc(100% - 24px) calc(50% - 4px), calc(100% - 16px) calc(50% - 4px), 0 0;
+      background-size: 8px 8px, 8px 8px, 100% 100%;
+      background-repeat: no-repeat;
+    }
+    .input::placeholder,.textarea::placeholder{color:transparent}
+    .input:focus,.textarea:focus,.select:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
+    .flabel{
+      position:absolute;left:12px;top:50%;transform:translateY(-50%);padding:0 6px;color:var(--field-muted);
+      background:var(--bg);pointer-events:none;transition:transform .15s,color .15s,top .15s,opacity .15s;border-radius:6px;
+    }
+    .input:not(:placeholder-shown)+.flabel,
+    .textarea:not(:placeholder-shown)+.flabel,
+    .select.filled+.flabel,
+    .input:focus+.flabel,.textarea:focus+.flabel,.select:focus+.flabel{
+      top:0;transform:translateY(-50%) scale(.9);color:var(--accent);opacity:.95;
+    }
+    .help{grid-column:1 / -1;font-size:.9rem;color:var(--muted)}
+    .form-actions{grid-column:1 / -1;display:flex;gap:12px;align-items:center;justify-content:flex-start;margin-top:6px}
 
     /* Footer */
     .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 0 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
@@ -218,14 +261,14 @@
       </div>
     </section>
 
-    <!-- OUR WORK (dynamic from ./dist/gallery.json) -->
+    <!-- OUR WORK (category-only from ./dist/gallery.json) -->
     <section id="work" class="page-hero" aria-labelledby="work-h">
       <div class="container">
         <h2 id="work-h">Our Work</h2>
-        <p class="muted">Click any image to open the gallery. Use the filters to view a specific category.</p>
+        <p class="muted">Choose a category to view photos.</p>
 
-        <div class="tabs" id="workTabs" role="tablist" aria-label="Filter projects"></div>
-        <div id="sections"></div>
+        <div class="tabs" id="workTabs" aria-label="Filter projects"></div>
+        <div id="grid" class="photo-grid"></div>
         <p id="workEmpty" class="muted hidden" role="status">No photos found.</p>
       </div>
     </section>
@@ -242,24 +285,41 @@
     <section id="contact" class="page-hero" aria-labelledby="contact-h">
       <div class="container">
         <h2 id="contact-h">Request a Quote</h2>
-        <p>Fill out the form below and we’ll get back to you with a personalized estimate.</p>
-        <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" style="display:grid;gap:16px;max-width:680px">
-          <label> Name * <input type="text" name="name" required autocomplete="name"></label>
-          <label> Email * <input type="email" name="email" required autocomplete="email"></label>
-          <label> Phone <input type="tel" name="phone" inputmode="tel" autocomplete="tel"></label>
-          <label> Project Type *
-            <select name="project" required>
-              <option value="">-- Select --</option>
+        <p>Tell us about your space and goals—We’ll follow up with a tailored estimate.</p>
+
+        <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" novalidate>
+          <div class="field">
+            <input class="input" type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
+            <label class="flabel" for="name">Name *</label>
+          </div>
+          <div class="field">
+            <input class="input" type="email" id="email" name="email" placeholder=" " autocomplete="email" required />
+            <label class="flabel" for="email">Email *</label>
+          </div>
+          <div class="field">
+            <input class="input" type="tel" id="phone" name="phone" placeholder=" " inputmode="tel" autocomplete="tel" />
+            <label class="flabel" for="phone">Phone</label>
+          </div>
+          <div class="field">
+            <select class="select" id="project" name="project" required oninput="this.classList.toggle('filled', !!this.value)" onblur="this.classList.toggle('filled', !!this.value)">
+              <option value="" disabled selected></option>
               <option>Custom Cabinetry</option>
               <option>Finish Carpentry</option>
               <option>Kitchen / Living Spaces</option>
               <option>Office / Built-ins</option>
               <option>Other</option>
             </select>
-          </label>
-          <label> Message * <textarea name="message" rows="5" required placeholder="Tell us about your space, timeline, and budget."></textarea></label>
+            <label class="flabel" for="project">Project Type *</label>
+          </div>
+          <div class="field full">
+            <textarea class="textarea" id="message" name="message" rows="6" placeholder=" " required></textarea>
+            <label class="flabel" for="message">Message *</label>
+          </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div><button class="btn" type="submit">Send Request</button></div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Send Request</button>
+            <span class="help">We usually reply within 1–2 business days.</span>
+          </div>
         </form>
       </div>
     </section>
@@ -285,12 +345,16 @@
 
       const mt=document.getElementById('menuToggle'),nav=document.getElementById('navbar');
       if(mt&&nav){
-        mt.addEventListener('click',()=>{const open=nav.classList.toggle('open');mt.classList.toggle('open');mt.setAttribute('aria-expanded',String(open));if(window.innerWidth<=960)document.body.classList.toggle('no-scroll',open);});
-        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mt.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll');}));
+        mt.addEventListener('click',()=>{const open=nav.classList.toggle('open');mt.classList.toggle('open');mt.setAttribute('aria-expanded',String(open));
+          if(window.innerWidth<=960)document.body.classList.toggle('no-scroll',open);
+        });
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+          nav.classList.remove('open');mt.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll');
+        }));
       }
     })();
 
-    // ------- Portfolio (single loader) -------
+    // ------- Portfolio (category-only) + dynamic hero -------
     const CANDIDATE_MANIFESTS = ["/dist/gallery.json","./dist/gallery.json"];
     const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"];
 
@@ -311,72 +375,76 @@
       kids.forEach(c=>n.appendChild(typeof c==="string"?document.createTextNode(c):c));
       return n;
     }
-    function titleCase(k){ return k.replace(/(^.|-.)/g,s=>s.toUpperCase()); }
+    const titleCase = k => k.replace(/(^.|-.)/g,s=>s.toUpperCase());
 
-    function pickBestSource(sources){
+    function chooseBest(sources){
       if(!sources||!sources.length) return null;
-      const vw = Math.min(1600, Math.max(window.innerWidth, 800));
+      const vw = Math.min(1600, Math.max(window.innerWidth, 1000));
       const sorted=[...sources].sort((a,b)=>a.width-b.width);
-      return (sorted.find(s=>s.width>=vw) || sorted[sorted.length-1]).webp;
+      const pick = (sorted.find(s=>s.width>=vw) || sorted[sorted.length-1]).webp;
+      return `./dist/${pick}`;
     }
 
-    function buildFilters(keys){
+    function buildTabs(keys){
       const tabs=document.getElementById("workTabs");
-      const all=el("button",{class:"tab active","data-cat":"all",role:"tab","aria-selected":"true",type:"button"},"All");
-      tabs.appendChild(all);
       const order = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
-      order.forEach(k=>{
-        tabs.appendChild(el("button",{class:"tab","data-cat":k,role:"tab","aria-selected":"false",type:"button"},titleCase(k)));
+      order.forEach((k,i)=>{
+        const b=el("button",{class:"tab"+(i===0?" active":""),"data-cat":k,type:"button"},titleCase(k));
+        tabs.appendChild(b);
+      });
+      return order[0] || null;
+    }
+
+    function drawCategory(manifest, cat){
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      const items = (manifest.categories?.[cat] || []);
+      if(!items.length){ document.getElementById("workEmpty").classList.remove("hidden"); return; }
+      document.getElementById("workEmpty").classList.add("hidden");
+
+      items.forEach(item=>{
+        const thumb = `./dist/${item.thumb}`;
+        const big   = chooseBest(item.sources) || thumb;
+        const a = el("a",{"data-fancybox":"work", href:big});
+        const card = el("div",{class:"card"});
+        const img  = el("img",{alt:"Project photo", loading:"lazy", decoding:"async", src:thumb});
+        card.appendChild(img);
+        a.appendChild(card);
+        grid.appendChild(a);
       });
     }
 
-    function render(manifest){
-      const keys = Object.keys(manifest.categories||{});
-      if(!keys.length){ document.getElementById("workEmpty").classList.remove("hidden"); return; }
-      buildFilters(keys);
-
-      const container = document.getElementById("sections");
-      const ordered = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
-
-      ordered.forEach(cat=>{
-        const sec = el("section",{"data-cat":cat});
-        sec.appendChild(el("h3",{}, titleCase(cat)));
-        const grid = el("div",{class:"photo-grid"});
-
-        (manifest.categories[cat]||[]).forEach(item=>{
-          const thumb = `./dist/${item.thumb}`;
-          const bigRel = pickBestSource(item.sources) || item.thumb;
-          const big = `./dist/${bigRel}`;
-          const a = el("a",{"data-fancybox":"work","data-caption":item.title||"", href:big});
-          const card = el("div",{class:"card"});
-          const img = el("img",{alt:item.title||"Project photo", loading:"lazy", decoding:"async", src:thumb});
-          card.appendChild(img);
-          card.appendChild(el("div",{class:"meta"}, item.title||""));
-          a.appendChild(card);
-          grid.appendChild(a);
-        });
-
-        sec.appendChild(grid);
-        container.appendChild(sec);
-      });
-
-      // Filter behavior
-      const tabs=document.getElementById("workTabs");
-      tabs.addEventListener("click",(e)=>{
-        const btn=e.target.closest(".tab"); if(!btn) return;
-        tabs.querySelectorAll(".tab").forEach(b=>{b.classList.remove("active"); b.setAttribute("aria-selected","false");});
-        btn.classList.add("active"); btn.setAttribute("aria-selected","true");
-        const cat=btn.getAttribute("data-cat");
-        document.querySelectorAll('#sections section[data-cat]').forEach(s=>{
-          s.classList.toggle("hidden", cat!=="all" && s.getAttribute("data-cat")!==cat);
-        });
-      });
+    function randomHeroFrom(manifest){
+      const all = Object.values(manifest.categories||{}).flat();
+      if(!all.length) return;
+      const pick = all[Math.floor(Math.random()*all.length)];
+      const url  = chooseBest(pick.sources) || `./dist/${pick.thumb}`;
+      const hero = document.querySelector(".hero");
+      hero.style.backgroundImage = `url('${url}')`;
     }
 
     (async function bootstrap(){
       try{
-        const data = await fetchFirst(CANDIDATE_MANIFESTS);
-        render(data);
+        const manifest = await fetchFirst(CANDIDATE_MANIFESTS);
+
+        // Random hero background each reload
+        randomHeroFrom(manifest);
+
+        // Tabs (no “All” option) + default to first category
+        const keys = Object.keys(manifest.categories||{});
+        const firstCat = buildTabs(keys);
+        if(firstCat) drawCategory(manifest, firstCat);
+
+        // Category switching
+        const tabs=document.getElementById("workTabs");
+        tabs.addEventListener("click",(e)=>{
+          const btn=e.target.closest(".tab"); if(!btn) return;
+          const cat=btn.getAttribute("data-cat");
+          tabs.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+          btn.classList.add("active");
+          drawCategory(manifest, cat);
+        });
+
       }catch(err){
         console.error(err);
         const msg = document.getElementById("workEmpty");
