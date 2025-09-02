@@ -37,9 +37,17 @@
       --bg:#0b0f17; --panel:#111926; --panel-2:#0d1522; --line:#1b2533;
       --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30); --cta:#FFB612; --cta-ink:#0b0f17;
       --container:min(1200px,92vw);
+      --glass-bg: rgba(255,255,255,0.05);     /* card glass */
+      --glass-line: rgba(255,255,255,0.10);   /* subtle border */
+      --img-opacity: .94;                     /* how much bg shows through */
+      --blend-mode: multiply;                 /* multiply/soft-light/overlay */
     }
     [data-theme="light"]{
       --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb; --line:#e6ebf2; --cta:#101820; --cta-ink:#ffffff;
+      --glass-bg: rgba(16,24,32,0.05);
+      --glass-line: rgba(16,24,32,0.08);
+      --img-opacity: .98;
+      --blend-mode: normal; /* keep photos true in light */
     }
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink)}
@@ -55,11 +63,9 @@
       box-shadow:0 1px 12px rgba(0,0,0,.35);border-bottom:1px solid var(--line)
     }
     .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
-    /* FIX: prevent logo stretching */
-    .brand img{
-      max-height:40px; height:auto; width:auto; object-fit:contain; aspect-ratio:auto;
-    }
-    .brand span{font-size:1.02rem;text-transform:uppercase; white-space:nowrap;}
+    /* no-stretch logo */
+    .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;aspect-ratio:auto}
+    .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap}
     .site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0}
     .site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;color:var(--ink);transition:.2s;border:1px solid transparent}
     .site-nav a:hover,[aria-current="page"]{background:var(--accent);color:var(--cta-ink)}
@@ -105,9 +111,37 @@
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.25)}
-    .card img{width:100%;height:240px;object-fit:cover;display:block}
+
+    /* ==== BG-through photo cards ==== */
+    .card{
+      position:relative;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.28);
+      backdrop-filter: blur(6px) saturate(135%);
+    }
+    /* let the site background influence the image slightly */
+    .card img{
+      width:100%; height:240px; object-fit:cover; display:block;
+      mix-blend-mode: var(--blend-mode);
+      opacity: var(--img-opacity);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    /* subtle highlight overlay to sell the glass effect */
+    .card::before{
+      content:""; position:absolute; inset:0;
+      background: radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,.08), transparent 55%),
+                  radial-gradient(120% 80% at 0% 100%, rgba(255,255,255,.06), transparent 55%);
+      pointer-events:none;
+    }
+    .card:hover img{ opacity:1; transform:scale(1.01); }
     .card .meta{padding:10px 12px;color:var(--muted);font-size:.9rem}
+
+    /* Fancybox should show true colors (no blending) */
+    .fancybox__container img{ mix-blend-mode: normal !important; opacity:1 !important; }
+
     .hidden{display:none!important}
 
     /* Footer */
@@ -138,7 +172,6 @@
   <header class="site-header" id="header">
     <div class="container" style="display:flex;align-items:center;justify-content:space-between">
       <a href="#top" class="brand" aria-label="Pittsburgh Prestige Remodeling home">
-        <!-- FIX: remove conflicting width/height; let CSS control size -->
         <img src="assets/ppr_logo.png" alt="Pittsburgh Prestige Remodeling logo" />
         <span>Pittsburgh Prestige Remodeling</span>
       </a>
@@ -257,7 +290,7 @@
       }
     })();
 
-    // ------- Portfolio (single, non-duplicated loader) -------
+    // ------- Portfolio (single loader) -------
     const CANDIDATE_MANIFESTS = ["/dist/gallery.json","./dist/gallery.json"];
     const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"];
 
