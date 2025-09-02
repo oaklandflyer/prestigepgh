@@ -56,34 +56,55 @@
     section{scroll-margin-top:96px}
     .container{width:var(--container);margin-inline:auto}
 
-    /* Header */
+    /* ===== Header / Nav ===== */
     .site-header{
-      position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
-      padding:14px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
-      box-shadow:0 1px 12px rgba(0,0,0,.35);border-bottom:1px solid var(--line);
+      position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:center;
+      padding:12px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid var(--line)
     }
+    .site-header .inner{width:var(--container);display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
     .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;aspect-ratio:auto}
     .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap}
-    .site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0}
-    .site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;color:var(--ink);transition:.2s;border:1px solid transparent}
-    .site-nav a:hover,[aria-current="page"]{background:var(--accent);color:var(--cta-ink)}
-    .menu-toggle{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer}
-    .menu-toggle .bar{display:block;width:26px;height:3px;margin:5px auto;background:var(--ink);border-radius:2px;transition:.3s}
-    .theme-toggle{margin-left:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
-    @media (max-width:960px){
-      .menu-toggle{display:block}
-      .site-nav{position:fixed;right:0;top:74px;width:min(72vw,380px);height:calc(100dvh - 74px);background:var(--panel);transform:translateX(100%);
-        transition:.24s cubic-bezier(.4,2.2,.3,1);box-shadow:-2px 0 18px rgba(0,0,0,.38);border-left:1px solid var(--line)}
-      .site-nav.open{transform:translateX(0)}
-      .site-nav ul{flex-direction:column;padding:26px;gap:12px}
-      body.no-scroll{overflow:hidden}
-      .menu-toggle.open .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .menu-toggle.open .bar:nth-child(2){opacity:0}
-      .menu-toggle.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-    }
 
-    /* Buttons (add focus-visible) */
+    /* desktop nav */
+    nav.site-nav{display:flex}
+    nav.site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0;align-items:center}
+    nav.site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;border:1px solid transparent}
+    nav.site-nav a:hover,[aria-current="page"]{background:var(--accent);color:var(--cta-ink)}
+
+    /* hamburger */
+    .menu-toggle{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;border-radius:10px}
+    .menu-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .menu-toggle .bar{display:block;width:26px;height:3px;margin:5px auto;background:var(--ink);border-radius:2px;transition:.3s}
+    .menu-toggle.open .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+    .menu-toggle.open .bar:nth-child(2){opacity:0}
+    .menu-toggle.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+    /* mobile drawer */
+    @media (max-width:960px){ nav.site-nav{display:none} .menu-toggle{display:block} }
+    .drawer{position:fixed;top:0;right:0;height:100dvh;width:min(80vw,360px);background:var(--panel);border-left:1px solid var(--line);
+      transform:translateX(100%);transition:transform .24s cubic-bezier(.4,2.2,.3,1);z-index:1001;display:flex;flex-direction:column}
+    .drawer.open{transform:translateX(0)}
+    .drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line)}
+    .drawer nav ul{list-style:none;margin:0;padding:12px;display:flex;flex-direction:column;gap:8px}
+    .drawer nav a{padding:12px 14px;border-radius:10px;font-weight:800}
+    .drawer nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+    /* overlay */
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:1000}
+    .overlay.show{opacity:1;pointer-events:auto}
+    body.no-scroll{overflow:hidden}
+
+    /* Floating theme toggle */
+    .floating-theme{position:fixed;right:16px;bottom:16px;z-index:1100;width:52px;height:52px;border-radius:999px;border:1px solid var(--line);
+      background:radial-gradient(120% 120% at 100% 0%, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
+      display:grid;place-items:center;cursor:pointer}
+    .floating-theme:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .floating-theme svg{width:22px;height:22px;display:block}
+
+    /* Buttons */
     .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
       font-size:1rem;transition:transform .12s ease}
     .btn:hover{transform:translateY(-1px)}
@@ -92,8 +113,7 @@
     /* Hero with dynamic background */
     .hero{
       position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
-      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;
-      background-size:cover;background-position:center;
+      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;background-size:cover;background-position:center;
     }
     .hero::before{
       content:""; position:absolute; inset:0;
@@ -101,8 +121,7 @@
         radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
         radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%),
         linear-gradient(120deg, rgba(11,15,23,.88) 0%, rgba(13,21,34,.55) 45%, rgba(16,24,32,.66) 100%);
-      pointer-events:none;
-      mix-blend-mode:overlay;
+      pointer-events:none; mix-blend-mode:overlay;
     }
     .liquid-glass{
       position:relative; z-index:1;
@@ -187,6 +206,22 @@
     .help{grid-column:1 / -1;font-size:.9rem;color:var(--muted)}
     .form-actions{grid-column:1 / -1;display:flex;gap:12px;align-items:center;justify-content:flex-start;margin-top:6px}
 
+    /* === Testimonials === */
+    .testimonials { padding: 12px 0 0 }
+    .t-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
+    @media (max-width:1100px){ .t-grid{ grid-template-columns:repeat(2,1fr) } }
+    @media (max-width:640px){ .t-grid{ grid-template-columns:1fr } }
+    .t-card{
+      position:relative;background:var(--panel);border:1px solid var(--line);
+      border-radius:16px;padding:18px 18px 16px;box-shadow:0 6px 24px rgba(0,0,0,.24)
+    }
+    .t-quote{ margin:0 0 12px; color:var(--ink); line-height:1.55 }
+    .t-quote:before{ content:"“"; font-family:serif; font-size:2rem; line-height:1; color:var(--accent); margin-right:6px }
+    .t-author{ font-weight:800 }
+    .t-meta{ color:var(--muted); font-size:.95rem }
+    .stars{ display:flex; gap:2px; margin:0 0 8px }
+    .stars svg{ width:18px; height:18px; fill:var(--accent) }
+
     /* Footer */
     .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 0 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
   </style>
@@ -212,31 +247,58 @@
 <body>
   <a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 
+  <!-- Mobile overlay -->
+  <div class="overlay" id="navOverlay" hidden></div>
+
+  <!-- Header -->
   <header class="site-header" id="header">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+    <div class="inner">
       <a href="#top" class="brand" aria-label="Pittsburgh Prestige Remodeling home">
         <img src="assets/ppr_logo.png" alt="Pittsburgh Prestige Remodeling logo" />
         <span>Pittsburgh Prestige Remodeling</span>
       </a>
 
-      <nav id="navbar" class="site-nav" aria-label="Main">
+      <!-- Desktop nav -->
+      <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="#top" aria-current="page">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Our Work</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <div style="display:flex;align-items:center;gap:10px">
-        <button id="themeToggle" class="theme-toggle" aria-pressed="true" aria-label="Toggle dark mode" type="button">Dark</button>
-        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false" type="button">
-          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
-      </div>
+      <!-- Mobile hamburger -->
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile drawer -->
+  <aside id="mobileDrawer" class="drawer" aria-hidden="true">
+    <header>
+      <strong>Menu</strong>
+      <button id="closeDrawer" class="menu-toggle" aria-label="Close menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </header>
+    <nav aria-label="Mobile">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Floating dark/light toggle -->
+  <button id="floatingTheme" class="floating-theme" aria-label="Toggle dark mode" aria-pressed="true"></button>
 
   <main id="main" tabindex="-1">
     <!-- HERO -->
@@ -270,6 +332,16 @@
         <div class="tabs" id="workTabs" aria-label="Filter projects"></div>
         <div id="grid" class="photo-grid"></div>
         <p id="workEmpty" class="muted hidden" role="status">No photos found.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="page-hero testimonials" aria-labelledby="testimonials-h">
+      <div class="container">
+        <h2 id="testimonials-h">Testimonials</h2>
+        <p class="muted">A few words from recent Pittsburgh projects.</p>
+        <div id="tGrid" class="t-grid" aria-live="polite"></div>
+        <p id="tEmpty" class="muted hidden" role="status">No testimonials yet.</p>
       </div>
     </section>
 
@@ -335,26 +407,78 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
   <script>
-    // ---- Theme + header ----
-    (function initBasics(){
-      const root=document.documentElement,btn=document.getElementById('themeToggle');
-      const setTheme=(t)=>{root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'Dark':'Light';btn.setAttribute('aria-pressed',String(t==='dark'));};
-      setTheme(localStorage.getItem('ppr-theme')||'dark');
-      btn.addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';setTheme(next);localStorage.setItem('ppr-theme',next);});
-      const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+    /* ---------- Basics: year ---------- */
+    (function(){ const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear(); })();
 
-      const mt=document.getElementById('menuToggle'),nav=document.getElementById('navbar');
-      if(mt&&nav){
-        mt.addEventListener('click',()=>{const open=nav.classList.toggle('open');mt.classList.toggle('open');mt.setAttribute('aria-expanded',String(open));
-          if(window.innerWidth<=960)document.body.classList.toggle('no-scroll',open);
-        });
-        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-          nav.classList.remove('open');mt.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll');
-        }));
+    /* ---------- Floating theme toggle ---------- */
+    (function(){
+      const root=document.documentElement;
+      const btn=document.getElementById('floatingTheme');
+      function icon(theme){
+        return theme==='dark'
+          ? '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
+          : '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.45 10.45l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM12 4V1h-0v3h0zm0 19v-3h0v3h0zM4 12H1v0h3v0zm19 0h-3v0h3v0zM6.76 19.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM17.24 4.84l1.42-1.42 1.79 1.8-1.41 1.41-1.8-1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>';
       }
+      function setTheme(t){
+        root.setAttribute('data-theme',t);
+        localStorage.setItem('ppr-theme',t);
+        btn.innerHTML = icon(t);
+        btn.setAttribute('aria-pressed', String(t==='dark'));
+        btn.title = t==='dark' ? 'Dark mode' : 'Light mode';
+      }
+      const saved = localStorage.getItem('ppr-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', ()=> setTheme((root.getAttribute('data-theme')||'dark')==='dark'?'light':'dark'));
     })();
 
-    // ------- Portfolio (category-only) + dynamic hero -------
+    /* ---------- Mobile drawer + overlay + focus trap ---------- */
+    (function(){
+      const menuToggle = document.getElementById('menuToggle');
+      const drawer = document.getElementById('mobileDrawer');
+      const closeDrawerBtn = document.getElementById('closeDrawer');
+      const overlay = document.getElementById('navOverlay');
+      let lastFocused = null;
+
+      function focusables(rootEl){
+        return rootEl.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      }
+      function openDrawer(){
+        lastFocused = document.activeElement;
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden','false');
+        overlay.classList.add('show'); overlay.hidden = false;
+        menuToggle.classList.add('open'); menuToggle.setAttribute('aria-expanded','true');
+        document.body.classList.add('no-scroll');
+        const f = focusables(drawer); if(f.length) f[0].focus();
+        document.addEventListener('keydown', onKey);
+      }
+      function closeDrawer(){
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden','true');
+        overlay.classList.remove('show'); overlay.hidden = true;
+        menuToggle.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false');
+        document.body.classList.remove('no-scroll');
+        document.removeEventListener('keydown', onKey);
+        if(lastFocused) lastFocused.focus();
+      }
+      function onKey(e){
+        if(e.key==='Escape'){ closeDrawer(); return; }
+        if(e.key==='Tab'){
+          const f = Array.from(focusables(drawer)); if(!f.length) return;
+          const first=f[0], last=f[f.length-1];
+          if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+          else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+        }
+      }
+      menuToggle.addEventListener('click', ()=> drawer.classList.contains('open')? closeDrawer(): openDrawer());
+      closeDrawerBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeDrawer));
+      window.addEventListener('resize', ()=>{ if(window.innerWidth>960 && drawer.classList.contains('open')) closeDrawer(); });
+    })();
+
+    /* ------- Portfolio (category-only) + dynamic hero ------- */
     const CANDIDATE_MANIFESTS = ["/dist/gallery.json","./dist/gallery.json"];
     const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"];
 
@@ -423,19 +547,14 @@
       hero.style.backgroundImage = `url('${url}')`;
     }
 
-    (async function bootstrap(){
+    (async function bootstrapWork(){
       try{
         const manifest = await fetchFirst(CANDIDATE_MANIFESTS);
-
-        // Random hero background each reload
         randomHeroFrom(manifest);
-
-        // Tabs (no “All” option) + default to first category
         const keys = Object.keys(manifest.categories||{});
         const firstCat = buildTabs(keys);
         if(firstCat) drawCategory(manifest, firstCat);
 
-        // Category switching
         const tabs=document.getElementById("workTabs");
         tabs.addEventListener("click",(e)=>{
           const btn=e.target.closest(".tab"); if(!btn) return;
@@ -444,7 +563,6 @@
           btn.classList.add("active");
           drawCategory(manifest, cat);
         });
-
       }catch(err){
         console.error(err);
         const msg = document.getElementById("workEmpty");
@@ -452,6 +570,195 @@
         msg.classList.remove("hidden");
       }
     })();
+
+    /* ---------- Testimonials loader (Top 3) ---------- */
+    (async function testimonials(){
+      const GRID = document.getElementById('tGrid');
+      const EMPTY = document.getElementById('tEmpty');
+
+      // 1) Your share link (make sure it's publicly accessible)
+      const GOOGLE_SHARE = "https://share.google/pgMVnTZB3r1gutMuG";
+      // 2) Local JSON fallback: /dist/testimonials.json
+      const CANDIDATES = [ GOOGLE_SHARE, "/dist/testimonials.json", "./dist/testimonials.json" ];
+
+      function starSvg(){ return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>'; }
+
+      function render(reviews){
+        GRID.innerHTML = "";
+        const top = reviews
+          .filter(r => r.text && r.author)
+          .sort((a,b)=> (b.rating||5) - (a.rating||5))
+          .slice(0,3);
+
+        if(!top.length){ EMPTY.classList.remove('hidden'); return; }
+        EMPTY.classList.add('hidden');
+
+        top.forEach(r=>{
+          const card = document.createElement('article');
+          card.className = 't-card';
+          const stars = document.createElement('div');
+          stars.className = 'stars';
+          const rating = Math.max(0, Math.min(5, Number(r.rating||5)));
+          stars.innerHTML = Array.from({length:Math.round(rating)}, starSvg).map(fn=>fn()).join('');
+          const q = document.createElement('p'); q.className='t-quote'; q.textContent = r.text;
+          const a = document.createElement('div'); a.className='t-author'; a.textContent = r.author || 'Client';
+          const m = document.createElement('div'); m.className='t-meta'; m.textContent = [r.location, r.source].filter(Boolean).join(' • ');
+          card.append(stars, q, a, m);
+          GRID.appendChild(card);
+        });
+
+        // Build JSON-LD Review + AggregateRating
+        try{
+          const ld = {
+            "@context":"https://schema.org",
+            "@type":"Product",
+            "name":"Custom cabinetry & carpentry services",
+            "brand": { "@type":"Brand", "name":"Pittsburgh Prestige Remodeling" },
+            "aggregateRating":{
+              "@type":"AggregateRating",
+              "ratingValue": (top.reduce((s,r)=>s+(Number(r.rating||5)),0)/top.length).toFixed(2),
+              "reviewCount": top.length
+            },
+            "review": top.map(r=>({
+              "@type":"Review",
+              "reviewBody": r.text,
+              "reviewRating": { "@type":"Rating", "ratingValue": r.rating || 5, "bestRating":"5" },
+              "author": { "@type":"Person", "name": r.author || "Client" }
+            }))
+          };
+          const s = document.createElement('script');
+          s.type = "application/ld+json";
+          s.textContent = JSON.stringify(ld);
+          document.head.appendChild(s);
+        }catch(e){ console.warn("LD JSON error", e); }
+      }
+
+      async function tryFetch(url){
+        try{
+          const res = await fetch(url, {cache:"no-store"});
+          if(!res.ok) return null;
+          const ctype = res.headers.get("content-type")||"";
+          if(ctype.includes("application/json")) return await res.json();
+          // simple text/CSV fallback parser: expects lines like
+          // "text" | author | location | rating
+          const txt = await res.text();
+          const lines = txt.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+          const parsed = lines.map(l=>{
+            // split by pipe or comma, handle quoted text
+            const m = l.match(/^\"(.+?)\"\\s*[|,]\\s*(.+?)(?:\\s*[|,]\\s*([^|,]+))?(?:\\s*[|,]\\s*(\\d(?:\\.\\d)?))?$/);
+            if(m) return { text:m[1], author:m[2], location:m[3]||"", rating:Number(m[4]||5) };
+            return null;
+          }).filter(Boolean);
+          if(parsed.length) return parsed;
+          return null;
+        }catch{ return null; }
+      }
+
+      let data = null;
+      for(const u of CANDIDATES){
+        data = await tryFetch(u);
+        if(data) break;
+      }
+
+      // Normalize into array of {text,author,location,rating,source}
+      let reviews = [];
+      if(Array.isArray(data)){
+        reviews = data.map(r=>({
+          text: r.text || r.quote || r.review || "",
+          author: r.author || r.name || r.reviewer || "",
+          location: r.location || r.city || "",
+          rating: Number(r.rating || r.stars || 5),
+          source: r.source || ""
+        }));
+      }else if(data && data.reviews){
+        reviews = (data.reviews||[]).map(r=>({
+          text:r.text, author:r.author, location:r.location||"", rating:Number(r.rating||5), source:r.source||""
+        }));
+      }
+
+      // If nothing loaded, you can quickly add a local file:
+      // /dist/testimonials.json  ->  [{ "text":"...", "author":"...", "location":"...", "rating":5 }, ...]
+      render(reviews);
+    })();
+  /* ---------- Testimonials: fixed top 3 ---------- */
+  (function testimonials(){
+    const GRID = document.getElementById('tGrid');
+    const EMPTY = document.getElementById('tEmpty');
+
+    const REVIEWS = [
+      {
+        author: "Matt Oxenreiter",
+        rating: 5,
+        text: "Mike and Iso were the best! We couldn’t be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!"
+      },
+      {
+        author: "S.R. Duerr",
+        rating: 5,
+        text: "I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident. They even came up with better ways of doing things than I had thought. Trim looks great, outlets fixed, new outdoor railings—and they turned a basic chicken coop idea into a beautiful, rock-solid “chicken hotel.” Thank you Mike and Iso!!"
+      },
+      {
+        author: "Jack Rice",
+        rating: 5,
+        text: "I’ve worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. From start to finish: exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail—consistently beyond expectations."
+      }
+    ];
+
+    function starSvg(){ return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>'; }
+
+    function render(reviews){
+      GRID.innerHTML = "";
+      if(!reviews.length){ EMPTY.classList.remove('hidden'); return; }
+      EMPTY.classList.add('hidden');
+
+      reviews.forEach(r=>{
+        const card = document.createElement('article');
+        card.className = 't-card';
+
+        const stars = document.createElement('div');
+        stars.className = 'stars';
+        stars.innerHTML = Array.from({length:Math.round(Math.max(0,Math.min(5,Number(r.rating||5))))}, starSvg).map(fn=>fn()).join('');
+
+        const q = document.createElement('p');
+        q.className='t-quote';
+        q.textContent = r.text;
+
+        const a = document.createElement('div');
+        a.className='t-author';
+        a.textContent = r.author || 'Client';
+
+        card.append(stars, q, a);
+        GRID.appendChild(card);
+      });
+
+      // JSON-LD (AggregateRating + Reviews)
+      try{
+        const avg = (reviews.reduce((s,r)=>s+(Number(r.rating||5)),0)/reviews.length).toFixed(2);
+        const ld = {
+          "@context":"https://schema.org",
+          "@type":"Product",
+          "name":"Custom cabinetry & carpentry services",
+          "brand": { "@type":"Brand", "name":"Pittsburgh Prestige Remodeling" },
+          "aggregateRating":{
+            "@type":"AggregateRating",
+            "ratingValue": avg,
+            "reviewCount": reviews.length
+          },
+          "review": reviews.map(r=>({
+            "@type":"Review",
+            "reviewBody": r.text,
+            "reviewRating": { "@type":"Rating", "ratingValue": r.rating || 5, "bestRating":"5" },
+            "author": { "@type":"Person", "name": r.author || "Client" }
+          }))
+        };
+        const s = document.createElement('script');
+        s.type = "application/ld+json";
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+      }catch(e){ console.warn("LD JSON error", e); }
+    }
+
+    render(REVIEWS);
+  })();
   </script>
 </body>
 </html>
