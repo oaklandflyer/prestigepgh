@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-29T18:52:45.803Z",
+  "generatedAt": "2025-09-02T15:10:50.618Z",
   "categories": {
     "cabinetry": [
       {
@@ -175,13 +175,1265 @@
           {
             "width": 800,
             "webp": "gallery/cabinetry/PPR-8-800.webp"
+        }
+      ]
+    },
+    {
+      "title": "20211014 175434",
+        "base": "20211014_175434",
+        "original": "cabinetry\\20211014_175434.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20211014_175434-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20211014_175434-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20211014_175434-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20211014_175434-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20211029 164000",
+        "base": "20211029_164000",
+        "original": "cabinetry\\20211029_164000.jpg",
+        "width": 3997,
+        "height": 2997,
+        "thumb": "thumbs/cabinetry/20211029_164000-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20211029_164000-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20211029_164000-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20211029_164000-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20211101 151934",
+        "base": "20211101_151934",
+        "original": "cabinetry\\20211101_151934.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20211101_151934-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20211101_151934-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20211101_151934-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20211101_151934-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20211104 095016",
+        "base": "20211104_095016",
+        "original": "cabinetry\\20211104_095016.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20211104_095016-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20211104_095016-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20211104_095016-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20211104_095016-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220218 122448",
+        "base": "20220218_122448",
+        "original": "cabinetry\\20220218_122448.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20220218_122448-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20220218_122448-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20220218_122448-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20220218_122448-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220416 163754",
+        "base": "20220416_163754",
+        "original": "cabinetry\\20220416_163754.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20220416_163754-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20220416_163754-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20220416_163754-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20220416_163754-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220416 163759",
+        "base": "20220416_163759",
+        "original": "cabinetry\\20220416_163759.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20220416_163759-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20220416_163759-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20220416_163759-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20220416_163759-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220614 150000",
+        "base": "20220614_150000",
+        "original": "cabinetry\\20220614_150000.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20220614_150000-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20220614_150000-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20220614_150000-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20220614_150000-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220614 150146",
+        "base": "20220614_150146",
+        "original": "cabinetry\\20220614_150146.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/cabinetry/20220614_150146-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/20220614_150146-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/20220614_150146-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/20220614_150146-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7191",
+        "base": "IMG_7191",
+        "original": "cabinetry\\IMG_7191.JPG",
+        "width": 1024,
+        "height": 768,
+        "thumb": "thumbs/cabinetry/IMG_7191-thumb.webp",
+        "sources": [
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7191-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7343",
+        "base": "IMG_7343",
+        "original": "cabinetry\\IMG_7343.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7343-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7343-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7343-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7343-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7531",
+        "base": "IMG_7531",
+        "original": "cabinetry\\IMG_7531.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7531-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7531-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7531-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7531-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7536",
+        "base": "IMG_7536",
+        "original": "cabinetry\\IMG_7536.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7536-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7536-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7536-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7536-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7542",
+        "base": "IMG_7542",
+        "original": "cabinetry\\IMG_7542.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7542-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7542-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7542-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7542-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7660",
+        "base": "IMG_7660",
+        "original": "cabinetry\\IMG_7660.JPG",
+        "width": 1024,
+        "height": 768,
+        "thumb": "thumbs/cabinetry/IMG_7660-thumb.webp",
+        "sources": [
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7660-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7707",
+        "base": "IMG_7707",
+        "original": "cabinetry\\IMG_7707.JPG",
+        "width": 1600,
+        "height": 1200,
+        "thumb": "thumbs/cabinetry/IMG_7707-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7707-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7707-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7707-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7709",
+        "base": "IMG_7709",
+        "original": "cabinetry\\IMG_7709.JPG",
+        "width": 1600,
+        "height": 1200,
+        "thumb": "thumbs/cabinetry/IMG_7709-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7709-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7709-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7709-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7728",
+        "base": "IMG_7728",
+        "original": "cabinetry\\IMG_7728.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7728-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7728-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7728-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7728-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7733",
+        "base": "IMG_7733",
+        "original": "cabinetry\\IMG_7733.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7733-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7733-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7733-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7733-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7734",
+        "base": "IMG_7734",
+        "original": "cabinetry\\IMG_7734.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7734-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7734-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7734-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7734-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7735",
+        "base": "IMG_7735",
+        "original": "cabinetry\\IMG_7735.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7735-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7735-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7735-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7735-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7758",
+        "base": "IMG_7758",
+        "original": "cabinetry\\IMG_7758.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7758-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7758-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7758-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7758-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7916",
+        "base": "IMG_7916",
+        "original": "cabinetry\\IMG_7916.JPEG",
+        "width": 1673,
+        "height": 1255,
+        "thumb": "thumbs/cabinetry/IMG_7916-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7916-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7916-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7916-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7923",
+        "base": "IMG_7923",
+        "original": "cabinetry\\IMG_7923.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_7923-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_7923-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_7923-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_7923-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8383",
+        "base": "IMG_8383",
+        "original": "cabinetry\\IMG_8383.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_8383-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_8383-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_8383-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_8383-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8386",
+        "base": "IMG_8386",
+        "original": "cabinetry\\IMG_8386.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_8386-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_8386-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_8386-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_8386-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8399",
+        "base": "IMG_8399",
+        "original": "cabinetry\\IMG_8399.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_8399-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_8399-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_8399-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_8399-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8462",
+        "base": "IMG_8462",
+        "original": "cabinetry\\IMG_8462.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/cabinetry/IMG_8462-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_8462-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_8462-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_8462-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 9311",
+        "base": "IMG_9311",
+        "original": "cabinetry\\IMG_9311.JPEG",
+        "width": 2578,
+        "height": 1220,
+        "thumb": "thumbs/cabinetry/IMG_9311-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/cabinetry/IMG_9311-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/cabinetry/IMG_9311-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/cabinetry/IMG_9311-800.webp"
           }
         ]
       }
     ],
-    "inprogress": [],
-    "kitchens": [],
-    "office": [],
-    "structural": []
+    "inprogress": [
+      {
+        "title": "20211101 151923",
+        "base": "20211101_151923",
+        "original": "inprogress\\20211101_151923.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/inprogress/20211101_151923-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/inprogress/20211101_151923-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/20211101_151923-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/20211101_151923-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220825 085401",
+        "base": "20220825_085401",
+        "original": "inprogress\\20220825_085401.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/inprogress/20220825_085401-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/inprogress/20220825_085401-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/20220825_085401-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/20220825_085401-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 5654",
+        "base": "IMG_5654",
+        "original": "inprogress\\IMG_5654.JPEG",
+        "width": 1536,
+        "height": 2048,
+        "thumb": "thumbs/inprogress/IMG_5654-thumb.webp",
+        "sources": [
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/IMG_5654-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/IMG_5654-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 5655",
+        "base": "IMG_5655",
+        "original": "inprogress\\IMG_5655.JPEG",
+        "width": 1536,
+        "height": 2048,
+        "thumb": "thumbs/inprogress/IMG_5655-thumb.webp",
+        "sources": [
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/IMG_5655-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/IMG_5655-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 5657",
+        "base": "IMG_5657",
+        "original": "inprogress\\IMG_5657.JPEG",
+        "width": 1536,
+        "height": 2048,
+        "thumb": "thumbs/inprogress/IMG_5657-thumb.webp",
+        "sources": [
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/IMG_5657-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/IMG_5657-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7757",
+        "base": "IMG_7757",
+        "original": "inprogress\\IMG_7757.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/inprogress/IMG_7757-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/inprogress/IMG_7757-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/IMG_7757-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/IMG_7757-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7763",
+        "base": "IMG_7763",
+        "original": "inprogress\\IMG_7763.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/inprogress/IMG_7763-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/inprogress/IMG_7763-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/IMG_7763-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/IMG_7763-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8835",
+        "base": "IMG_8835",
+        "original": "inprogress\\IMG_8835.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/inprogress/IMG_8835-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/inprogress/IMG_8835-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/inprogress/IMG_8835-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/inprogress/IMG_8835-800.webp"
+          }
+        ]
+      }
+    ],
+    "kitchens": [
+      {
+        "title": "20220614 150206",
+        "base": "20220614_150206",
+        "original": "kitchens\\20220614_150206.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/kitchens/20220614_150206-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/20220614_150206-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/20220614_150206-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/20220614_150206-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220614 150301",
+        "base": "20220614_150301",
+        "original": "kitchens\\20220614_150301.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/kitchens/20220614_150301-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/20220614_150301-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/20220614_150301-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/20220614_150301-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20230307 155946",
+        "base": "20230307_155946",
+        "original": "kitchens\\20230307_155946.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/kitchens/20230307_155946-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/20230307_155946-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/20230307_155946-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/20230307_155946-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20230307 155950",
+        "base": "20230307_155950",
+        "original": "kitchens\\20230307_155950.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/kitchens/20230307_155950-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/20230307_155950-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/20230307_155950-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/20230307_155950-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20230307 160021",
+        "base": "20230307_160021",
+        "original": "kitchens\\20230307_160021.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/kitchens/20230307_160021-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/20230307_160021-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/20230307_160021-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/20230307_160021-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7532",
+        "base": "IMG_7532",
+        "original": "kitchens\\IMG_7532.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7532-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7532-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7532-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7532-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7535",
+        "base": "IMG_7535",
+        "original": "kitchens\\IMG_7535.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7535-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7535-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7535-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7535-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7537",
+        "base": "IMG_7537",
+        "original": "kitchens\\IMG_7537.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7537-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7537-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7537-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7537-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7539",
+        "base": "IMG_7539",
+        "original": "kitchens\\IMG_7539.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7539-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7539-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7539-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7539-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7540",
+        "base": "IMG_7540",
+        "original": "kitchens\\IMG_7540.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7540-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7540-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7540-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7540-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7541",
+        "base": "IMG_7541",
+        "original": "kitchens\\IMG_7541.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7541-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7541-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7541-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7541-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7706",
+        "base": "IMG_7706",
+        "original": "kitchens\\IMG_7706.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7706-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7706-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7706-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7706-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7730",
+        "base": "IMG_7730",
+        "original": "kitchens\\IMG_7730.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7730-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7730-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7730-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7730-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7731",
+        "base": "IMG_7731",
+        "original": "kitchens\\IMG_7731.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7731-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7731-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7731-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7731-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 7732",
+        "base": "IMG_7732",
+        "original": "kitchens\\IMG_7732.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_7732-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_7732-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_7732-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_7732-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8385",
+        "base": "IMG_8385",
+        "original": "kitchens\\IMG_8385.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_8385-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_8385-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_8385-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_8385-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "IMG 8522",
+        "base": "IMG_8522",
+        "original": "kitchens\\IMG_8522.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/kitchens/IMG_8522-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/kitchens/IMG_8522-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/kitchens/IMG_8522-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/kitchens/IMG_8522-800.webp"
+          }
+        ]
+      }
+    ],
+    "office": [
+      {
+        "title": "IMG 8388",
+        "base": "IMG_8388",
+        "original": "office\\IMG_8388.JPEG",
+        "width": 2048,
+        "height": 1536,
+        "thumb": "thumbs/office/IMG_8388-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/office/IMG_8388-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/office/IMG_8388-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/office/IMG_8388-800.webp"
+          }
+        ]
+      }
+    ],
+    "structural": [
+      {
+        "title": "20220317 143928",
+        "base": "20220317_143928",
+        "original": "structural\\20220317_143928.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/structural/20220317_143928-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/structural/20220317_143928-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/structural/20220317_143928-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/structural/20220317_143928-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220317 143935",
+        "base": "20220317_143935",
+        "original": "structural\\20220317_143935.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/structural/20220317_143935-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/structural/20220317_143935-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/structural/20220317_143935-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/structural/20220317_143935-800.webp"
+          }
+        ]
+      },
+      {
+        "title": "20220317 143948",
+        "base": "20220317_143948",
+        "original": "structural\\20220317_143948.jpg",
+        "width": 4032,
+        "height": 3024,
+        "thumb": "thumbs/structural/20220317_143948-thumb.webp",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "gallery/structural/20220317_143948-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "gallery/structural/20220317_143948-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "gallery/structural/20220317_143948-800.webp"
+          }
+        ]
+      }
+    ]
   }
 }
