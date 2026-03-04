@@ -5,32 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Pittsburgh Prestige Remodeling – Custom Cabinetry & Fine Carpentry</title>
-  <meta name="description" content="Pittsburgh Prestige Remodeling specializes in custom cabinetry, built-ins, kitchens, and fine carpentry across the Pittsburgh area. Licensed, insured, and Pittsburgh-proud craftsmanship." />
+  <meta name="description" content="Pittsburgh Prestige Remodeling specializes in custom cabinetry, built-ins, kitchens, and fine carpentry across the Pittsburgh area." />
   <meta name="keywords" content="Pittsburgh Prestige Remodeling, Pittsburgh cabinetry, custom cabinets Pittsburgh, Pittsburgh carpenter, kitchen cabinetry, built-ins, fine carpentry" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b0f17" />
   <link rel="canonical" href="https://prestigepgh.com/" />
 
-  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/ppr_icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/ppr_icon.png">
   <link rel="apple-touch-icon" href="/assets/ppr_icon.png">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Pittsburgh Prestige Remodeling – Custom Cabinetry & Fine Carpentry" />
   <meta property="og:description" content="Custom cabinetry and fine carpentry in Pittsburgh: kitchens, built-ins, trim, offices, and more." />
   <meta property="og:url" content="https://prestigepgh.com/" />
   <meta property="og:image" content="https://prestigepgh.com/assets/og-preview.jpg" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Pittsburgh Prestige Remodeling – Custom Cabinetry & Fine Carpentry" />
   <meta name="twitter:description" content="Pittsburgh Prestige Remodeling: handcrafted cabinetry, kitchens, built-ins, and trim." />
   <meta name="twitter:image" content="https://prestigepgh.com/assets/og-preview.jpg" />
 
-  <!-- Fonts + Fancybox -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -67,8 +62,7 @@
       display:flex;align-items:center;justify-content:center;
       padding:12px clamp(16px,4vw,64px);
       background:rgba(11,15,23,.88);backdrop-filter:saturate(140%) blur(12px);
-      border-bottom:1px solid var(--line);
-      transition:background .2s;
+      border-bottom:1px solid var(--line);transition:background .2s;
     }
     .site-header .inner{width:var(--container);display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.04em;min-width:0}
@@ -88,7 +82,6 @@
     .menu-toggle.open .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
     .menu-toggle.open .bar:nth-child(2){opacity:0}
     .menu-toggle.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-
     @media(max-width:960px){nav.site-nav{display:none}.menu-toggle{display:block}}
 
     .drawer{
@@ -108,7 +101,6 @@
     .nav-overlay.show{opacity:1;pointer-events:auto}
     body.no-scroll{overflow:hidden}
 
-    /* ===== Theme toggle ===== */
     .floating-theme{
       position:fixed;right:16px;bottom:16px;z-index:1100;width:52px;height:52px;
       border-radius:999px;border:1px solid var(--line);
@@ -120,7 +112,6 @@
     .floating-theme svg{width:22px;height:22px;display:block}
     [data-theme="light"] .brand img{transform:translateY(1px)}
 
-    /* ===== Buttons ===== */
     .btn{
       background:var(--cta);color:var(--cta-ink);font-weight:900;
       padding:11px 28px;border-radius:999px;border:2px solid transparent;
@@ -132,68 +123,81 @@
     .btn:active{transform:translateY(0)}
     .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-    /* ===== Hero ===== */
+    /* ===== Hero with crossfade slideshow ===== */
     .hero{
       position:relative;min-height:65vh;display:flex;align-items:center;justify-content:center;
       border-radius:0 0 var(--radius) var(--radius);
       box-shadow:var(--shadow);overflow:hidden;margin-top:72px;
-      background-size:cover;background-position:center;background-color:#0d1522;
-      transition:background-image .4s ease;
+      background-color:#0d1522;
     }
+    /* Two background layers for crossfade */
+    .hero-bg{
+      position:absolute;inset:0;
+      background-size:cover;background-position:center;
+      transition:opacity 1.2s ease;
+    }
+    .hero-bg.layer-a{ z-index:0; opacity:1; }
+    .hero-bg.layer-b{ z-index:1; opacity:0; }
+    .hero-bg.layer-b.active{ opacity:1; }
+    .hero-bg.layer-a.fading{ opacity:0; }
+
     .hero::before{
-      content:"";position:absolute;inset:0;
+      content:"";position:absolute;inset:0;z-index:2;
       background:
         radial-gradient(60% 60% at 110% -10%,rgba(255,182,18,.14) 0,rgba(255,182,18,0) 60%),
         radial-gradient(60% 60% at -10% 110%,rgba(255,182,18,.08) 0,rgba(255,182,18,0) 60%),
-        linear-gradient(120deg,rgba(11,15,23,.90) 0%,rgba(13,21,34,.55) 45%,rgba(16,24,32,.68) 100%);
+        linear-gradient(120deg,rgba(11,15,23,.82) 0%,rgba(13,21,34,.45) 45%,rgba(16,24,32,.60) 100%);
       pointer-events:none;
     }
+    .hero-content{
+      position:relative;z-index:3;
+      width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding-bottom:90px; /* room for stats strip */
+    }
     .liquid-glass{
-      position:relative;z-index:1;
       padding:36px 40px;border-radius:28px;
       background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.15);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 24px 70px rgba(0,0,0,.60);
-      text-align:center;max-width:680px;
+      text-align:center;max-width:660px;width:100%;
     }
-    .hero-kicker{
-      display:inline-flex;align-items:center;gap:.5rem;
-      padding:.35rem .85rem;border-radius:999px;
-      border:1px solid rgba(255,182,18,.30);background:rgba(255,182,18,.08);
-      color:rgba(255,182,18,.90);font-weight:800;font-size:.82rem;
-      margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase;
-    }
-    .hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2.4s ease infinite}
-    @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(255,182,18,.20)}50%{box-shadow:0 0 0 8px rgba(255,182,18,.05)}}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 12px;color:#fff;line-height:1.1}
-    .hero p{font-size:1.05rem;margin:0 0 8px;color:#dfe8ff;line-height:1.65}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 12px;color:#fff;line-height:1.1;text-align:center}
+    .hero p{font-size:1.05rem;margin:0 0 8px;color:#dfe8ff;line-height:1.65;text-align:center}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-    /* ===== Stats strip ===== */
-    .stats-strip{
-      border-top:1px solid rgba(255,255,255,.07);
-      border-bottom:1px solid rgba(255,255,255,.07);
-      padding:1.8rem 0;margin-top:2.5rem;
+    /* Slideshow dots */
+    .hero-dots{
+      display:flex;gap:8px;justify-content:center;margin-top:18px;
     }
-    .stats-inner{display:flex;gap:2.5rem;flex-wrap:wrap}
+    .hero-dot{
+      width:8px;height:8px;border-radius:50%;
+      background:rgba(255,255,255,.30);border:none;cursor:pointer;padding:0;
+      transition:background .3s,transform .3s;
+    }
+    .hero-dot.active{background:var(--accent);transform:scale(1.3)}
+
+    /* Stats strip */
+    .hero-stats{
+      position:absolute;bottom:0;left:0;right:0;z-index:3;
+      background:rgba(11,15,23,.75);backdrop-filter:blur(8px);
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .stats-inner{display:flex;gap:2.5rem;flex-wrap:wrap;padding:1.3rem 0}
     .stat-num{font-size:1.9rem;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.02em}
     .stat-label{font-size:.78rem;color:var(--muted);margin-top:.3rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
     @media(max-width:640px){.stats-inner{gap:1.5rem}}
 
-    /* ===== Sections ===== */
     .page-hero{padding:52px 0 16px}
     .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 8px}
     [data-theme="light"] .page-hero h2{color:var(--ink)}
     .page-hero p{margin:0 0 24px;color:var(--muted);line-height:1.65}
 
-    /* ===== Services cards ===== */
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
     @media(max-width:960px){.services-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:580px){.services-grid{grid-template-columns:1fr}}
     .service-card{
       background:var(--glass-bg);border:1px solid var(--glass-line);
-      border-radius:16px;padding:24px;
-      box-shadow:0 8px 28px rgba(0,0,0,.22);
+      border-radius:16px;padding:24px;box-shadow:0 8px 28px rgba(0,0,0,.22);
       transition:border-color .2s,transform .2s,box-shadow .2s;
     }
     .service-card:hover{border-color:rgba(255,182,18,.30);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.32)}
@@ -202,13 +206,11 @@
     .service-card p{color:var(--muted);font-size:.9rem;line-height:1.6;margin:0}
     .service-line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,182,18,.50),transparent);margin-top:1.2rem}
 
-    /* ===== Gallery tabs + grid ===== */
     .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 20px}
     .tab{
       border:1px solid var(--line);background:var(--panel);color:var(--ink);
       padding:8px 16px;border-radius:999px;font-weight:800;font-size:.88rem;
-      cursor:pointer;transition:background .15s,border-color .15s,color .15s;
-      font-family:inherit;
+      cursor:pointer;transition:background .15s,border-color .15s,color .15s;font-family:inherit;
     }
     .tab:hover{border-color:rgba(255,182,18,.40);background:var(--panel-2)}
     .tab.active{background:var(--accent);color:#0b0f17;border-color:var(--accent)}
@@ -221,8 +223,7 @@
     .card{
       position:relative;background:var(--glass-bg);border:1px solid var(--glass-line);
       border-radius:16px;overflow:hidden;
-      box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(6px) saturate(135%);
-      cursor:pointer;
+      box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(6px) saturate(135%);cursor:pointer;
     }
     .card img{
       width:100%;height:240px;object-fit:cover;display:block;
@@ -232,7 +233,6 @@
     .card:hover img{opacity:1;transform:scale(1.03)}
     .fancybox__container img{mix-blend-mode:normal!important;opacity:1!important}
 
-    /* Gallery loading */
     .gallery-loading{
       display:flex;align-items:center;gap:.75rem;
       padding:2.5rem 0;color:var(--muted);font-size:.9rem;font-weight:700;
@@ -244,7 +244,6 @@
     }
     @keyframes spin{to{transform:rotate(360deg)}}
 
-    /* ===== Testimonials ===== */
     .testimonials{padding:12px 0 0}
     .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media(max-width:1100px){.t-grid{grid-template-columns:repeat(2,1fr)}}
@@ -261,11 +260,9 @@
     .stars{display:flex;gap:2px;margin:0 0 10px}
     .stars svg{width:16px;height:16px;fill:var(--accent)}
 
-    /* ===== Contact form ===== */
     .contact-form{
       --field-bg:var(--panel);--field-border:var(--line);
-      --field-ink:var(--ink);--field-muted:var(--muted);
-      --ring:rgba(255,182,18,.18);
+      --field-ink:var(--ink);--field-muted:var(--muted);--ring:rgba(255,182,18,.18);
       display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:780px;
     }
     @media(max-width:720px){.contact-form{grid-template-columns:1fr}}
@@ -278,9 +275,7 @@
     }
     .select{
       appearance:none;padding-right:40px;
-      background-image:
-        linear-gradient(45deg,transparent 50%,var(--field-muted) 50%),
-        linear-gradient(135deg,var(--field-muted) 50%,transparent 50%);
+      background-image:linear-gradient(45deg,transparent 50%,var(--field-muted) 50%),linear-gradient(135deg,var(--field-muted) 50%,transparent 50%);
       background-position:calc(100% - 24px) calc(50% - 4px),calc(100% - 16px) calc(50% - 4px);
       background-size:8px 8px,8px 8px;background-repeat:no-repeat;
     }
@@ -292,10 +287,8 @@
       pointer-events:none;transition:transform .15s,color .15s,top .15s,opacity .15s;border-radius:6px;
     }
     .textarea~.flabel{top:20px;transform:none}
-    .input:not(:placeholder-shown)+.flabel,
-    .textarea:not(:placeholder-shown)+.flabel,
-    .select.filled+.flabel,
-    .input:focus+.flabel,.textarea:focus+.flabel,.select:focus+.flabel{
+    .input:not(:placeholder-shown)+.flabel,.textarea:not(:placeholder-shown)+.flabel,
+    .select.filled+.flabel,.input:focus+.flabel,.textarea:focus+.flabel,.select:focus+.flabel{
       top:0;transform:translateY(-50%) scale(.9);color:var(--accent);opacity:.95;
     }
     .textarea:focus~.flabel,.textarea:not(:placeholder-shown)~.flabel{
@@ -308,23 +301,19 @@
     .form-status.ok{color:rgba(80,220,140,.9)}
     .form-status.err{color:rgba(255,140,140,.9)}
 
-    /* ===== Footer ===== */
     .site-footer{
       background:#080c12;color:#8fa0be;padding:48px 0 36px;
-      border-top:1px solid var(--line);margin-top:80px;text-align:center;
-      font-size:.9rem;
+      border-top:1px solid var(--line);margin-top:80px;text-align:center;font-size:.9rem;
     }
     .site-footer a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
     .site-footer a:hover{opacity:.8}
 
-    /* ===== Reduced motion ===== */
     @media(prefers-reduced-motion:reduce){
       *{transition:none!important;animation:none!important}
       html{scroll-behavior:auto}
     }
   </style>
 
-  <!-- Schema -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://prestigepgh.com/#business","name":"Pittsburgh Prestige Remodeling","url":"https://prestigepgh.com/","image":"https://prestigepgh.com/assets/og-preview.jpg","logo":"https://prestigepgh.com/assets/ppr_logo.png","description":"Custom cabinetry, built-ins, and fine carpentry serving the Pittsburgh area.","address":{"@type":"PostalAddress","addressLocality":"Pittsburgh","addressRegion":"PA","addressCountry":"US"},"areaServed":"Pittsburgh","sameAs":[]}
   </script>
@@ -332,10 +321,8 @@
 
 <body>
   <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
-
   <div class="nav-overlay" id="navOverlay" hidden></div>
 
-  <!-- Header -->
   <header class="site-header" id="header">
     <div class="inner">
       <a href="#top" class="brand" aria-label="Pittsburgh Prestige Remodeling home">
@@ -358,7 +345,6 @@
     </div>
   </header>
 
-  <!-- Mobile drawer -->
   <aside id="mobileDrawer" class="drawer" aria-hidden="true" aria-modal="true" role="dialog">
     <header>
       <strong>Menu</strong>
@@ -384,21 +370,25 @@
 
     <!-- HERO -->
     <section class="hero" id="top" aria-label="Hero">
-      <div class="container">
+      <!-- Crossfade background layers -->
+      <div class="hero-bg layer-a" id="heroBgA"></div>
+      <div class="hero-bg layer-b" id="heroBgB"></div>
+
+      <div class="hero-content container">
         <div class="liquid-glass">
-          <div class="hero-kicker"><i aria-hidden="true"></i> Licensed & Insured • Pittsburgh, PA</div>
           <h1>Pittsburgh Prestige Remodeling</h1>
           <p>Custom cabinetry, built-ins, and fine carpentry — Pittsburgh-proud craftsmanship that lasts.</p>
           <div class="hero-btns">
             <a href="#work" class="btn">See Our Work</a>
             <a href="#contact" class="btn" style="background:transparent;border-color:rgba(255,255,255,.30);color:#fff;box-shadow:none">Get a Quote</a>
           </div>
+          <!-- Slideshow dots injected by JS -->
+          <div class="hero-dots" id="heroDots"></div>
         </div>
       </div>
 
-      <!-- Stats strip inside hero background area -->
-      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(11,15,23,.72);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08)">
-        <div class="container stats-strip" style="margin-top:0;border:none;padding:1.4rem 0">
+      <div class="hero-stats">
+        <div class="container">
           <div class="stats-inner">
             <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom builds</div></div>
             <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Quote turnaround</div></div>
@@ -455,7 +445,7 @@
       </div>
     </section>
 
-    <!-- OUR WORK — Supabase powered -->
+    <!-- OUR WORK -->
     <section id="work" class="page-hero" aria-labelledby="work-h">
       <div class="container">
         <h2 id="work-h">Our Work</h2>
@@ -517,7 +507,7 @@
     <section id="about" class="page-hero" aria-labelledby="about-h">
       <div class="container">
         <h2 id="about-h">About</h2>
-        <p>Pittsburgh Prestige Remodeling is a licensed & insured contractor focused on cabinetry and carpentry. From hand-built cabinets to finish trim, we deliver Black & Gold quality with clear communication and dependable timelines.</p>
+        <p>Pittsburgh Prestige Remodeling is a contractor focused on cabinetry and carpentry. From hand-built cabinets to finish trim, we deliver Black & Gold quality with clear communication and dependable timelines.</p>
       </div>
     </section>
 
@@ -570,129 +560,75 @@
   <footer class="site-footer">
     <div class="container">
       <p style="margin-bottom:.5rem">© <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
-      <p style="font-size:.82rem;opacity:.6">Licensed & Insured · Pittsburgh, PA · <a href="#contact">Request a Quote</a></p>
+      <p style="font-size:.82rem;opacity:.6">Pittsburgh, PA · <a href="#contact">Request a Quote</a></p>
     </div>
   </footer>
 
-  <!-- Fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
-  <!-- Main scripts -->
   <script>
-    /* Year */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* Theme toggle + logo swap */
+    /* Theme toggle */
     (function(){
-      const root = document.documentElement;
-      const btn  = document.getElementById('floatingTheme');
-      const logo = document.getElementById('brandLogo');
-      function icon(t){ return t==='dark'
-        ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
-        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-      }
-      function swapLogo(t){
-        if(!logo) return;
-        const src = t==='dark' ? logo.dataset.dark : logo.dataset.light;
-        if(src && !logo.src.endsWith(src)){ const i=new Image(); i.onload=()=>logo.src=src; i.onerror=()=>{}; i.src=src; }
-      }
-      function setTheme(t){
-        root.setAttribute('data-theme',t);
-        localStorage.setItem('ppr-theme',t);
-        btn.innerHTML = icon(t);
-        btn.setAttribute('aria-pressed', String(t==='dark'));
-        btn.title = t==='dark' ? 'Switch to light mode' : 'Switch to dark mode';
-        swapLogo(t);
-      }
-      const saved = localStorage.getItem('ppr-theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
-      setTheme(saved || (prefersDark ? 'dark' : 'light'));
-      btn.addEventListener('click', () => setTheme(root.getAttribute('data-theme')==='dark' ? 'light' : 'dark'));
+      const root=document.documentElement,btn=document.getElementById('floatingTheme'),logo=document.getElementById('brandLogo');
+      function icon(t){return t==='dark'
+        ?'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
+        :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';}
+      function swapLogo(t){if(!logo)return;const src=t==='dark'?logo.dataset.dark:logo.dataset.light;if(src&&!logo.src.endsWith(src)){const i=new Image();i.onload=()=>logo.src=src;i.onerror=()=>{};i.src=src;}}
+      function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('ppr-theme',t);btn.innerHTML=icon(t);btn.setAttribute('aria-pressed',String(t==='dark'));btn.title=t==='dark'?'Switch to light mode':'Switch to dark mode';swapLogo(t);}
+      const saved=localStorage.getItem('ppr-theme');
+      setTheme(saved||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+      btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
     })();
 
     /* Mobile drawer */
     (function(){
-      const toggle  = document.getElementById('menuToggle');
-      const drawer  = document.getElementById('mobileDrawer');
-      const closeBtn= document.getElementById('closeDrawer');
-      const overlay = document.getElementById('navOverlay');
-      let lastFocus = null;
-      function focusables(el){ return el.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])'); }
-      function open(){
-        lastFocus = document.activeElement;
-        drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
-        overlay.classList.add('show'); overlay.hidden = false;
-        toggle.classList.add('open'); toggle.setAttribute('aria-expanded','true');
-        document.body.classList.add('no-scroll');
-        const f=focusables(drawer); if(f.length) f[0].focus();
-        document.addEventListener('keydown', onKey);
-      }
-      function close(){
-        drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true');
-        overlay.classList.remove('show'); overlay.hidden = true;
-        toggle.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
-        document.body.classList.remove('no-scroll');
-        document.removeEventListener('keydown', onKey);
-        if(lastFocus) lastFocus.focus();
-      }
-      function onKey(e){
-        if(e.key==='Escape'){ close(); return; }
-        if(e.key==='Tab'){
-          const f=Array.from(focusables(drawer));
-          if(!f.length) return;
-          if(e.shiftKey && document.activeElement===f[0]){ e.preventDefault(); f[f.length-1].focus(); }
-          else if(!e.shiftKey && document.activeElement===f[f.length-1]){ e.preventDefault(); f[0].focus(); }
-        }
-      }
-      toggle.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
-      closeBtn.addEventListener('click', close);
-      overlay.addEventListener('click', close);
-      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-      window.addEventListener('resize', () => { if(window.innerWidth>960) close(); });
+      const toggle=document.getElementById('menuToggle'),drawer=document.getElementById('mobileDrawer'),closeBtn=document.getElementById('closeDrawer'),overlay=document.getElementById('navOverlay');
+      let lastFocus=null;
+      function focusables(el){return el.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])');}
+      function open(){lastFocus=document.activeElement;drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');overlay.classList.add('show');overlay.hidden=false;toggle.classList.add('open');toggle.setAttribute('aria-expanded','true');document.body.classList.add('no-scroll');const f=focusables(drawer);if(f.length)f[0].focus();document.addEventListener('keydown',onKey);}
+      function close(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');overlay.classList.remove('show');overlay.hidden=true;toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll');document.removeEventListener('keydown',onKey);if(lastFocus)lastFocus.focus();}
+      function onKey(e){if(e.key==='Escape'){close();return;}if(e.key==='Tab'){const f=Array.from(focusables(drawer));if(!f.length)return;if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus();}}}
+      toggle.addEventListener('click',()=>drawer.classList.contains('open')?close():open());
+      closeBtn.addEventListener('click',close);overlay.addEventListener('click',close);
+      drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+      window.addEventListener('resize',()=>{if(window.innerWidth>960)close();});
     })();
 
     /* Contact form AJAX */
     (function(){
-      const form   = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-      const btn    = document.getElementById('submitBtn');
-      if(!form) return;
-      form.addEventListener('submit', async e => {
-        e.preventDefault();
-        if(!form.checkValidity()){ form.reportValidity(); return; }
-        btn.textContent = 'Sending…'; btn.disabled = true;
+      const form=document.getElementById('contactForm'),status=document.getElementById('formStatus'),btn=document.getElementById('submitBtn');
+      if(!form)return;
+      form.addEventListener('submit',async e=>{
+        e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}
+        btn.textContent='Sending…';btn.disabled=true;
         try{
-          const res = await fetch(form.action, { method:'POST', headers:{'Accept':'application/json'}, body: new FormData(form) });
-          if(res.ok){
-            status.textContent = '✓ Sent! We\'ll get back to you within 1–2 business days.';
-            status.className = 'form-status show ok';
-            form.reset();
-          } else {
-            status.textContent = 'Something went wrong. Please try again.';
-            status.className = 'form-status show err';
-          }
-        } catch {
-          status.textContent = 'Network error. Please check your connection.';
-          status.className = 'form-status show err';
-        }
-        btn.textContent = 'Send Request'; btn.disabled = false;
+          const res=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
+          if(res.ok){status.textContent='✓ Sent! We\'ll get back to you within 1–2 business days.';status.className='form-status show ok';form.reset();}
+          else{status.textContent='Something went wrong. Please try again.';status.className='form-status show err';}
+        }catch{status.textContent='Network error. Please check your connection.';status.className='form-status show err';}
+        btn.textContent='Send Request';btn.disabled=false;
       });
     })();
   </script>
 
-  <!-- Gallery — Supabase -->
+  <!-- Gallery + Hero Slideshow — Supabase -->
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-    // ⚠️ REPLACE WITH YOUR REAL ANON KEY — Supabase → Settings → API → anon public
+    // ⚠️ GET THIS FROM: Supabase → Settings → API → anon public (starts with eyJ...)
     const SUPABASE_URL      = 'https://myrormkykiqmaexkzygv.supabase.co';
-    const SUPABASE_ANON_KEY = 'sb_publishable_lfWNel7sUH1vpcVqHLRYAQ_m-hwo1j8';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cm9ybWt5a2lxbWFleGt6eWd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTg1OTQsImV4cCI6MjA4ODIzNDU5NH0.S0oD1hg3a3f7ObZ9PLR4PzlxSMOj7rfjyJYhnhNRub8';
 
-    const supabase  = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    const tabs      = document.getElementById('workTabs');
-    const grid      = document.getElementById('grid');
-    const empty     = document.getElementById('workEmpty');
-    const loading   = document.getElementById('workLoading');
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const tabs     = document.getElementById('workTabs');
+    const grid     = document.getElementById('grid');
+    const empty    = document.getElementById('workEmpty');
+    const loading  = document.getElementById('workLoading');
+    const bgA      = document.getElementById('heroBgA');
+    const bgB      = document.getElementById('heroBgB');
+    const dotsEl   = document.getElementById('heroDots');
 
     try {
       const [catRes, photoRes] = await Promise.all([
@@ -705,36 +641,81 @@
       const categories = catRes.data || [];
       const allPhotos  = photoRes.data || [];
 
+      // ── Hero Slideshow ──────────────────────────────────────────
+      if (allPhotos.length) {
+        // Shuffle photos and cap at 10 for the slideshow
+        const shuffled = [...allPhotos].sort(() => Math.random() - 0.5).slice(0, 10);
+        let current = 0;
+        let useLayerB = false;
+
+        // Build dots
+        shuffled.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', `Photo ${i + 1}`);
+          dot.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(dot);
+        });
+
+        function setActiveDot(idx) {
+          dotsEl.querySelectorAll('.hero-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+
+        function goTo(idx) {
+          const url = `url('${shuffled[idx].url}')`;
+          if (!useLayerB) {
+            // A is visible, load new into B then fade B in, fade A out
+            bgB.style.backgroundImage = url;
+            bgB.classList.add('active');
+            bgA.classList.add('fading');
+            setTimeout(() => {
+              bgA.classList.remove('fading');
+              bgA.style.backgroundImage = url;
+              bgB.classList.remove('active');
+            }, 1300);
+          } else {
+            bgA.style.backgroundImage = url;
+            bgB.classList.add('active'); // keep B visible while A loads
+            setTimeout(() => {
+              bgB.classList.remove('active');
+            }, 1300);
+          }
+          useLayerB = !useLayerB;
+          current = idx;
+          setActiveDot(idx);
+        }
+
+        // Set initial background
+        bgA.style.backgroundImage = `url('${shuffled[0].url}')`;
+
+        // Auto-advance every 30 seconds
+        setInterval(() => {
+          goTo((current + 1) % shuffled.length);
+        }, 30000);
+      }
+
+      // ── Gallery tabs ────────────────────────────────────────────
       if (!categories.length) {
         empty.textContent = 'Gallery coming soon — check back shortly.';
         empty.classList.remove('hidden');
-        return;
-      }
-
-      // Set a random hero background from uploaded photos
-      if (allPhotos.length) {
-        const pick = allPhotos[Math.floor(Math.random() * allPhotos.length)];
-        document.querySelector('.hero').style.backgroundImage = `url('${pick.url}')`;
-      }
-
-      // Build category tabs
-      categories.forEach((cat, i) => {
-        const btn = document.createElement('button');
-        btn.className = 'tab' + (i === 0 ? ' active' : '');
-        btn.textContent = cat.name;
-        btn.dataset.id  = cat.id;
-        btn.type = 'button';
-        btn.setAttribute('role', 'tab');
-        btn.addEventListener('click', () => {
-          tabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          showCategory(cat.id);
+      } else {
+        categories.forEach((cat, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'tab' + (i === 0 ? ' active' : '');
+          btn.textContent = cat.name.charAt(0).toUpperCase() + cat.name.slice(1);
+          btn.dataset.id  = cat.id;
+          btn.type = 'button';
+          btn.setAttribute('role', 'tab');
+          btn.addEventListener('click', () => {
+            tabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            showCategory(cat.id);
+          });
+          tabs.appendChild(btn);
         });
-        tabs.appendChild(btn);
-      });
 
-      // Show first category
-      showCategory(categories[0].id);
+        showCategory(categories[0].id);
+      }
 
       function showCategory(catId) {
         grid.innerHTML = '';
@@ -743,26 +724,25 @@
         empty.classList.add('hidden');
 
         photos.forEach(photo => {
-          const a    = document.createElement('a');
-          a.href     = photo.url;
+          const a = document.createElement('a');
+          a.href  = photo.url;
           a.setAttribute('data-fancybox', 'work');
           a.setAttribute('data-caption', photo.categories?.name || '');
 
           const card = document.createElement('div');
           card.className = 'card';
 
-          const img   = document.createElement('img');
-          img.src     = photo.url;
-          img.alt     = `${photo.categories?.name || 'Project'} photo`;
-          img.loading = 'lazy';
-          img.decoding= 'async';
+          const img    = document.createElement('img');
+          img.src      = photo.url;
+          img.alt      = `${photo.categories?.name || 'Project'} photo`;
+          img.loading  = 'lazy';
+          img.decoding = 'async';
 
           card.appendChild(img);
           a.appendChild(card);
           grid.appendChild(a);
         });
 
-        // Rebind Fancybox after DOM update
         if (window.Fancybox) {
           Fancybox.unbind('[data-fancybox="work"]');
           Fancybox.bind('[data-fancybox="work"]', { groupAll: false });

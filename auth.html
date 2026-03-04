@@ -11,7 +11,7 @@
   <p>Redirecting…</p>
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
-    const supabase = createClient('https://myrormkykiqmaexkzygv.supabase.co', 'sb_publishable_lfWNel7sUH1vpcVqHLRYAQ_m-hwo1j8');
+    const supabase = createClient('https://myrormkykiqmaexkzygv.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cm9ybWt5a2lxbWFleGt6eWd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTg1OTQsImV4cCI6MjA4ODIzNDU5NH0.S0oD1hg3a3f7ObZ9PLR4PzlxSMOj7rfjyJYhnhNRub8');
     const { data: { session } } = await supabase.auth.getSession();
     window.location.href = session ? 'admin.html' : 'login.html';
   </script>
