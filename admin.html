@@ -399,7 +399,8 @@
         if (upErr) { toast(`Failed: ${file.name}`, 'err'); done++; continue; }
 
         const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(filename);
-        await supabase.from('photos').insert({ url: publicUrl, filename, category_id: catId });
+        const { error: dbErr } = await supabase.from('photos').insert({ url: publicUrl, filename, category_id: parseInt(catId) });
+if (dbErr) { toast(`DB error: ${dbErr.message}`, 'err'); console.error('Insert error:', dbErr); done++; continue; }
 
         done++;
         bar.style.width = `${(done / files.length) * 100}%`;
