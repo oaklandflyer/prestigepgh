@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery Migration | Pittsburgh Prestige Remodeling</title>
+  <style>
+    body { font-family: monospace; background: #0b0f17; color: #d6deff; padding: 2rem; line-height: 1.8; }
+    h1 { color: #FFB612; margin-bottom: .5rem; }
+    .sub { color: #9fb0d0; margin-bottom: 2rem; font-size: .9rem; }
+    .btn {
+      background: #FFB612; color: #0b0f17; font: bold 1rem monospace;
+      border: none; padding: .75rem 2rem; border-radius: 999px;
+      cursor: pointer; margin-bottom: 2rem;
+      transition: opacity .15s;
+    }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
+    #log { max-width: 860px; }
+    #log p { margin: 0; padding: .1rem 0; }
+    .ok   { color: #50dc8c; }
+    .err  { color: #ff8c8c; }
+    .info { color: #9fb0d0; }
+    .head { color: #FFB612; margin-top: .8rem; }
+    .done { color: #50dc8c; font-size: 1.1rem; font-weight: bold; margin-top: 1.5rem; }
+    a { color: #FFB612; }
+    code { background: rgba(255,255,255,.08); padding: .1rem .4rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <h1>🛠 Gallery Migration Tool</h1>
+  <p class="sub">
+    Reads your existing <code>dist/gallery.json</code> and registers all photos into Supabase.<br>
+    Photos stay on the server — nothing gets re-uploaded.
+  </p>
+
+  <button class="btn" id="runBtn">▶ Run Migration</button>
+  <div id="log"></div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    // ⚠️ REPLACE WITH YOUR REAL eyJ... ANON KEY
+    const SUPABASE_URL      = 'https://myrormkykiqmaexkzygv.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_lfWNel7sUH1vpcVqHLRYAQ_m-hwo1j8';
+    const SITE_BASE         = 'https://prestigepgh.com/dist';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // ── Logging helpers ───────────────────────────────────────────
+    const logEl = document.getElementById('log');
+    function line(msg, cls = 'info') {
+      const p = document.createElement('p');
+      p.className = cls;
+      p.innerHTML = msg;
+      logEl.appendChild(p);
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+    function spacer() { line(''); }
+
+    // ── Main ──────────────────────────────────────────────────────
+    document.getElementById('runBtn').addEventListener('click', async () => {
+      const btn = document.getElementById('runBtn');
+      btn.disabled = true;
+      logEl.innerHTML = '';
+
+      // 1. Auth check
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        line('❌ Not logged in. Open <a href="login.html">login.html</a> first, then return here.', 'err');
+        btn.disabled = false;
+        return;
+      }
+      line(`✓ Signed in as ${session.user.email}`, 'ok');
+
+      // 2. Fetch gallery.json
+      spacer();
+      line('Fetching dist/gallery.json…');
+      let manifest;
+      try {
+        const res = await fetch('/dist/gallery.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        manifest = await res.json();
+      } catch (e) {
+        line(`❌ Could not load gallery.json: ${e.message}`, 'err');
+        btn.disabled = false;
+        return;
+      }
+
+      const catNames = Object.keys(manifest.categories || {});
+      if (!catNames.length) {
+        line('❌ No categories found in gallery.json.', 'err');
+        btn.disabled = false;
+        return;
+      }
+      line(`✓ Found ${catNames.length} categories: ${catNames.join(', ')}`, 'ok');
+
+      // 3. Process each category
+      let totalInserted = 0;
+      let totalSkipped  = 0;
+      let totalFailed   = 0;
+
+      for (const catName of catNames) {
+        spacer();
+        line(`📁 Category: <strong>${catName}</strong>`, 'head');
+
+        // Upsert category (safe to re-run)
+        const { data: catRow, error: catErr } = await supabase
+          .from('categories')
+          .upsert({ name: catName }, { onConflict: 'name' })
+          .select('id, name')
+          .single();
+
+        if (catErr || !catRow) {
+          line(`  ❌ Could not create/find category: ${catErr?.message}`, 'err');
+          continue;
+        }
+        line(`  ✓ Category ready — id: ${catRow.id}`, 'ok');
+
+        const photos = manifest.categories[catName] || [];
+        line(`  📸 ${photos.length} photo(s) to process`, 'info');
+
+        // Fetch existing filenames for this category to avoid dupes
+        const { data: existing } = await supabase
+          .from('photos')
+          .select('filename')
+          .eq('category_id', catRow.id);
+        const existingSet = new Set((existing || []).map(r => r.filename));
+
+        for (const photo of photos) {
+          // Pick best available source URL (highest resolution webp)
+          const sources  = (photo.sources || []).sort((a, b) => b.width - a.width);
+          const bestPath = sources.length ? sources[0].webp : photo.thumb;
+          const url      = `${SITE_BASE}/${bestPath}`;
+          const filename = bestPath; // use relative path as unique key
+
+          if (existingSet.has(filename)) {
+            line(`    ⏭ Skipped (already exists): ${photo.base}`, 'info');
+            totalSkipped++;
+            continue;
+          }
+
+          const { error: insertErr } = await supabase.from('photos').insert({
+            url,
+            filename,
+            category_id: catRow.id
+          });
+
+          if (insertErr) {
+            line(`    ❌ Failed: ${photo.base} — ${insertErr.message}`, 'err');
+            totalFailed++;
+          } else {
+            line(`    ✓ Inserted: ${photo.base}`, 'ok');
+            totalInserted++;
+          }
+        }
+      }
+
+      // 4. Summary
+      spacer();
+      if (totalFailed === 0) {
+        line(`🎉 Migration complete! ${totalInserted} inserted, ${totalSkipped} skipped (already existed).`, 'done');
+        line('You can now delete migrate.html and push to GitHub.', 'info');
+      } else {
+        line(`⚠️ Done with errors. Inserted: ${totalInserted} | Skipped: ${totalSkipped} | Failed: ${totalFailed}`, 'err');
+        line('Check the errors above and re-run — it is safe to run multiple times.', 'info');
+      }
+
+      btn.textContent = '✓ Done — Run Again?';
+      btn.disabled = false;
+    });
+  </script>
+</body>
+</html>
