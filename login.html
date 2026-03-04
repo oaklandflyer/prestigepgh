@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Pittsburgh Prestige Remodeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/ppr_icon.png">
+  <style>
+    :root { --accent:#FFB612; --bg:#0b0f17; --panel:#111926; --ink:#d6deff; --muted:#9fb0d0; --line:#1b2533; --radius:18px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 2.8rem 2.2rem; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .logo { display: flex; align-items: center; gap: .75rem; margin-bottom: 2rem; }
+    .logo img { height: 36px; object-fit: contain; }
+    h1 { font-size: 1.5rem; font-weight: 900; margin-bottom: .35rem; }
+    .sub { color: var(--muted); font-size: .9rem; margin-bottom: 1.8rem; }
+    label { display: block; font-weight: 800; font-size: .88rem; margin-bottom: .5rem; color: var(--ink); }
+    input {
+      width: 100%; background: rgba(0,0,0,.3); border: 1px solid var(--line);
+      color: var(--ink); border-radius: 12px; padding: .9rem 1rem;
+      font: inherit; margin-bottom: 1.1rem; outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,182,18,.15); }
+    .btn { width: 100%; padding: .92rem; background: var(--accent); color: #0b0f17; font: inherit; font-weight: 900; font-size: 1rem; border: none; border-radius: 999px; cursor: pointer; transition: transform .12s; }
+    .btn:hover { transform: translateY(-1px); }
+    .error { display: none; color: rgba(255,140,140,.9); font-size: .88rem; font-weight: 700; margin-top: .9rem; }
+    .error.show { display: block; }
+    .back { display: block; text-align: center; margin-top: 1.3rem; color: var(--muted); font-size: .88rem; transition: color .15s; }
+    .back:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="assets/ppr_logo.png" alt="PPR Logo" onerror="this.style.display='none'">
+    </div>
+    <h1>Admin Login</h1>
+    <p class="sub">Sign in to manage your gallery and categories.</p>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="you@email.com" autocomplete="email" />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" />
+
+    <button class="btn" id="loginBtn">Sign In</button>
+    <div class="error" id="err"></div>
+    <a class="back" href="index.html">← Back to site</a>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    const SUPABASE_URL      = 'https://myrormkykiqmaexkzygv.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_lfWNel7sUH1vpcVqHLRYAQ_m-hwo1j8';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) window.location.href = 'admin.html';
+
+    const err = document.getElementById('err');
+    document.getElementById('loginBtn').addEventListener('click', async () => {
+      const email    = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      err.classList.remove('show');
+      if (!email || !password) { err.textContent = 'Please enter your email and password.'; err.classList.add('show'); return; }
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) { err.textContent = 'Incorrect email or password.'; err.classList.add('show'); }
+      else window.location.href = 'admin.html';
+    });
+    document.getElementById('password').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('loginBtn').click(); });
+  </script>
+</body>
+</html>

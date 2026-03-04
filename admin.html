@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Pittsburgh Prestige Remodeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/ppr_icon.png">
+  <style>
+    :root { --accent:#FFB612; --bg:#0b0f17; --panel:#111926; --panel2:#0d1522; --ink:#d6deff; --muted:#9fb0d0; --line:#1b2533; --radius:16px; --danger:rgba(255,100,100,.85); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; padding: 0 0 4rem; }
+
+    /* Topbar */
+    .topbar { background: var(--panel); border-bottom: 1px solid var(--line); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .topbar-inner { width: min(1100px, 92vw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .topbar-left { display: flex; align-items: center; gap: .75rem; }
+    .topbar-left img { height: 32px; object-fit: contain; }
+    .topbar-left strong { font-weight: 900; font-size: 1rem; }
+
+    .wrap { width: min(1100px, 92vw); margin: 2rem auto; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: .4rem; padding: .7rem 1.2rem; border-radius: 999px; font: inherit; font-weight: 800; font-size: .9rem; cursor: pointer; border: 1px solid transparent; transition: transform .12s, background .14s; text-decoration: none; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-accent { background: var(--accent); color: #0b0f17; }
+    .btn-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+    .btn-ghost:hover { background: rgba(255,255,255,.05); }
+    .btn-danger { background: transparent; border-color: rgba(255,100,100,.25); color: var(--danger); }
+    .btn-danger:hover { background: rgba(255,100,100,.08); }
+    .btn-sm { padding: .45rem .85rem; font-size: .82rem; }
+
+    /* Section headers */
+    .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; flex-wrap: wrap; gap: .75rem; }
+    .section-head h2 { font-size: 1.2rem; font-weight: 900; }
+    .count { color: var(--muted); font-size: .88rem; }
+
+    /* Panel */
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; margin-bottom: 2rem; }
+
+    /* Categories */
+    .cat-list { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .2rem; }
+    .cat-chip {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--panel2); border: 1px solid var(--line);
+      border-radius: 999px; padding: .42rem .85rem .42rem 1rem;
+      font-weight: 800; font-size: .88rem;
+    }
+    .cat-chip button { background: none; border: none; cursor: pointer; color: var(--muted); font-size: 1rem; line-height: 1; padding: 0; transition: color .15s; }
+    .cat-chip button:hover { color: var(--danger); }
+
+    .add-cat-row { display: flex; gap: .6rem; margin-top: 1rem; }
+    .add-cat-row input {
+      flex: 1; background: rgba(0,0,0,.3); border: 1px solid var(--line); color: var(--ink);
+      border-radius: 12px; padding: .7rem 1rem; font: inherit; outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .add-cat-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,182,18,.12); }
+
+    /* Upload */
+    .upload-select { margin-bottom: 1rem; }
+    .upload-select select {
+      width: 100%; background: rgba(0,0,0,.3); border: 1px solid var(--line);
+      color: var(--ink); border-radius: 12px; padding: .8rem 1rem;
+      font: inherit; font-weight: 700; outline: none; cursor: pointer;
+      transition: border-color .15s;
+    }
+    .upload-select select:focus { border-color: var(--accent); }
+
+    .drop-zone {
+      border: 2px dashed rgba(255,182,18,.30); border-radius: var(--radius);
+      padding: 2.5rem; text-align: center; cursor: pointer;
+      background: rgba(255,182,18,.03);
+      transition: border-color .15s, background .15s;
+    }
+    .drop-zone:hover, .drop-zone.drag { border-color: var(--accent); background: rgba(255,182,18,.07); }
+    .drop-zone .icon { font-size: 2.4rem; margin-bottom: .6rem; }
+    .drop-zone p { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+    #fileInput { display: none; }
+
+    /* Progress */
+    .progress-wrap { display: none; margin: 1rem 0; }
+    .progress-wrap.show { display: block; }
+    .progress-label { font-size: .85rem; color: var(--muted); font-weight: 700; margin-bottom: .4rem; }
+    .progress-bg { background: rgba(255,255,255,.08); border-radius: 999px; height: 7px; overflow: hidden; }
+    .progress-bar { height: 100%; background: var(--accent); border-radius: 999px; width: 0%; transition: width .2s; }
+
+    /* Photo grid */
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .9rem; }
+    .photo-card {
+      position: relative; border-radius: 12px; overflow: hidden;
+      aspect-ratio: 4/3; background: var(--panel2);
+      border: 1px solid var(--line);
+    }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s; }
+    .photo-card:hover img { transform: scale(1.03); }
+    .photo-card .overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,.55);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: .4rem; opacity: 0; transition: opacity .18s;
+    }
+    .photo-card:hover .overlay { opacity: 1; }
+    .photo-card .cat-badge {
+      position: absolute; bottom: .5rem; left: .5rem;
+      background: rgba(11,15,23,.82); border: 1px solid var(--line);
+      border-radius: 999px; padding: .2rem .6rem;
+      font-size: .72rem; font-weight: 800; color: var(--accent);
+    }
+
+    /* Filter tabs */
+    .filter-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .filter-tab { border: 1px solid var(--line); background: var(--panel2); color: var(--ink); padding: .45rem 1rem; border-radius: 999px; font-weight: 800; font-size: .82rem; cursor: pointer; transition: background .14s; }
+    .filter-tab.active { background: var(--accent); color: #0b0f17; border-color: var(--accent); }
+
+    .empty { text-align: center; padding: 3rem; color: var(--muted); }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--panel); border: 1px solid var(--line); color: var(--ink);
+      padding: .7rem 1.4rem; border-radius: 999px; font-weight: 800; font-size: .9rem;
+      transition: transform .22s ease; z-index: 999; white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    .toast.ok { border-color: rgba(255,182,18,.5); color: var(--accent); }
+    .toast.err { border-color: rgba(255,140,140,.4); color: rgba(255,140,140,.9); }
+
+    #pageLoading { text-align: center; padding: 4rem; color: var(--muted); }
+    .spinner { width: 22px; height: 22px; border: 2px solid rgba(255,182,18,.2); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <img src="assets/ppr_logo.png" alt="" onerror="this.style.display='none'">
+        <strong>Prestige Admin</strong>
+      </div>
+      <div style="display:flex;gap:.6rem;">
+        <a class="btn btn-ghost btn-sm" href="index.html" target="_blank">View Site ↗</a>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="pageLoading">
+    <div class="spinner"></div> Loading…
+  </div>
+
+  <div class="wrap" id="pageContent" style="display:none">
+
+    <!-- CATEGORIES -->
+    <div class="panel">
+      <div class="section-head">
+        <h2>Categories</h2>
+        <span class="count" id="catCount"></span>
+      </div>
+      <div class="cat-list" id="catList"></div>
+      <div class="add-cat-row">
+        <input type="text" id="newCatInput" placeholder="New category name…" maxlength="60" />
+        <button class="btn btn-accent btn-sm" id="addCatBtn">+ Add</button>
+      </div>
+    </div>
+
+    <!-- UPLOAD -->
+    <div class="panel">
+      <div class="section-head"><h2>Upload Photos</h2></div>
+      <div class="upload-select">
+        <select id="uploadCategory">
+          <option value="" disabled selected>Select a category first…</option>
+        </select>
+      </div>
+      <div class="drop-zone" id="dropZone">
+        <div class="icon">📸</div>
+        <strong>Drop photos here or click to upload</strong>
+        <p>JPG, PNG, WEBP — multiple files supported</p>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-label" id="progressLabel">Uploading…</div>
+        <div class="progress-bg"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+    </div>
+
+    <!-- PHOTOS -->
+    <div class="panel">
+      <div class="section-head">
+        <h2>All Photos</h2>
+        <span class="count" id="photoCount"></span>
+      </div>
+      <div class="filter-tabs" id="filterTabs"></div>
+      <div class="photo-grid" id="photoGrid"></div>
+      <div class="empty" id="photoEmpty" style="display:none">No photos yet. Upload some above.</div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const SUPABASE_URL      = 'https://myrormkykiqmaexkzygv.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_lfWNel7sUH1vpcVqHLRYAQ_m-hwo1j8';
+    const BUCKET = 'work';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Auth guard
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) { window.location.href = 'login.html'; }
+
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      window.location.href = 'login.html';
+    });
+
+    // State
+    let categories = [];
+    let allPhotos  = [];
+    let activeFilter = 'all';
+
+    // Toast
+    let toastTimer;
+    function toast(msg, type = '') {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.className = 'toast show ' + type;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // ── Load everything ──────────────────────────────────────────
+    async function loadAll() {
+      const [catRes, photoRes] = await Promise.all([
+        supabase.from('categories').select('*').order('name'),
+        supabase.from('photos').select('*, categories(name)').order('created_at', { ascending: false })
+      ]);
+      categories = catRes.data || [];
+      allPhotos  = photoRes.data || [];
+
+      document.getElementById('pageLoading').style.display = 'none';
+      document.getElementById('pageContent').style.display = 'block';
+
+      renderCategories();
+      renderUploadSelect();
+      renderFilterTabs();
+      renderPhotos();
+    }
+
+    // ── Categories ───────────────────────────────────────────────
+    function renderCategories() {
+      const list = document.getElementById('catList');
+      document.getElementById('catCount').textContent = `${categories.length} categor${categories.length !== 1 ? 'ies' : 'y'}`;
+      if (!categories.length) { list.innerHTML = '<span style="color:var(--muted);font-size:.88rem">No categories yet.</span>'; return; }
+      list.innerHTML = '';
+      categories.forEach(cat => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip';
+        chip.innerHTML = `<span>${cat.name}</span><button data-id="${cat.id}" aria-label="Delete ${cat.name}">✕</button>`;
+        chip.querySelector('button').addEventListener('click', () => deleteCategory(cat));
+        list.appendChild(chip);
+      });
+    }
+
+    async function deleteCategory(cat) {
+      const photoCount = allPhotos.filter(p => p.category_id === cat.id).length;
+      if (!confirm(`Delete "${cat.name}"? This will also delete ${photoCount} photo(s). Cannot be undone.`)) return;
+
+      // Delete photos from storage first
+      const toDelete = allPhotos.filter(p => p.category_id === cat.id);
+      if (toDelete.length) {
+        await supabase.storage.from(BUCKET).remove(toDelete.map(p => p.filename));
+      }
+      await supabase.from('categories').delete().eq('id', cat.id);
+      toast(`"${cat.name}" deleted.`, 'ok');
+      loadAll();
+    }
+
+    document.getElementById('addCatBtn').addEventListener('click', addCategory);
+    document.getElementById('newCatInput').addEventListener('keydown', e => { if (e.key === 'Enter') addCategory(); });
+
+    async function addCategory() {
+      const input = document.getElementById('newCatInput');
+      const name  = input.value.trim();
+      if (!name) return;
+      if (categories.find(c => c.name.toLowerCase() === name.toLowerCase())) {
+        toast('That category already exists.', 'err'); return;
+      }
+      const { error } = await supabase.from('categories').insert({ name });
+      if (error) { toast('Failed to add category.', 'err'); return; }
+      input.value = '';
+      toast(`"${name}" added!`, 'ok');
+      loadAll();
+    }
+
+    // ── Upload select ─────────────────────────────────────────────
+    function renderUploadSelect() {
+      const sel = document.getElementById('uploadCategory');
+      const current = sel.value;
+      sel.innerHTML = '<option value="" disabled>Select a category first…</option>';
+      categories.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat.id;
+        opt.textContent = cat.name;
+        if (String(cat.id) === current) opt.selected = true;
+        sel.appendChild(opt);
+      });
+    }
+
+    // ── Filter tabs ───────────────────────────────────────────────
+    function renderFilterTabs() {
+      const tabs = document.getElementById('filterTabs');
+      tabs.innerHTML = '';
+      const allBtn = document.createElement('button');
+      allBtn.className = 'filter-tab' + (activeFilter === 'all' ? ' active' : '');
+      allBtn.textContent = `All (${allPhotos.length})`;
+      allBtn.addEventListener('click', () => { activeFilter = 'all'; renderFilterTabs(); renderPhotos(); });
+      tabs.appendChild(allBtn);
+
+      categories.forEach(cat => {
+        const count = allPhotos.filter(p => p.category_id === cat.id).length;
+        const btn = document.createElement('button');
+        btn.className = 'filter-tab' + (activeFilter === cat.id ? ' active' : '');
+        btn.textContent = `${cat.name} (${count})`;
+        btn.addEventListener('click', () => { activeFilter = cat.id; renderFilterTabs(); renderPhotos(); });
+        tabs.appendChild(btn);
+      });
+    }
+
+    // ── Photo grid ────────────────────────────────────────────────
+    function renderPhotos() {
+      const grid  = document.getElementById('photoGrid');
+      const empty = document.getElementById('photoEmpty');
+      document.getElementById('photoCount').textContent = `${allPhotos.length} photo${allPhotos.length !== 1 ? 's' : ''}`;
+
+      const filtered = activeFilter === 'all'
+        ? allPhotos
+        : allPhotos.filter(p => p.category_id === activeFilter);
+
+      grid.innerHTML = '';
+      if (!filtered.length) { empty.style.display = 'block'; return; }
+      empty.style.display = 'none';
+
+      filtered.forEach(photo => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        const catName = photo.categories?.name || 'Uncategorized';
+        card.innerHTML = `
+          <img src="${photo.url}" alt="Project photo" loading="lazy" />
+          <div class="overlay">
+            <button class="btn btn-danger btn-sm" data-id="${photo.id}" data-file="${photo.filename}">Delete</button>
+          </div>
+          <span class="cat-badge">${catName}</span>
+        `;
+        card.querySelector('[data-id]').addEventListener('click', async (e) => {
+          e.stopPropagation();
+          if (!confirm('Delete this photo? Cannot be undone.')) return;
+          const { id, file } = e.currentTarget.dataset;
+          await supabase.storage.from(BUCKET).remove([file]);
+          await supabase.from('photos').delete().eq('id', id);
+          toast('Photo deleted.', 'ok');
+          loadAll();
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    // ── Upload ────────────────────────────────────────────────────
+    const dropZone  = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
+    dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('drag'); handleFiles(e.dataTransfer.files); });
+    fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+    async function handleFiles(files) {
+      const catId = document.getElementById('uploadCategory').value;
+      if (!catId) { toast('Please select a category first.', 'err'); return; }
+      if (!files || !files.length) return;
+
+      const wrap  = document.getElementById('progressWrap');
+      const bar   = document.getElementById('progressBar');
+      const label = document.getElementById('progressLabel');
+      wrap.classList.add('show');
+
+      let done = 0;
+      for (const file of files) {
+        const ext      = file.name.split('.').pop();
+        const filename = `${Date.now()}-${Math.random().toString(36).slice(2,7)}.${ext}`;
+        label.textContent = `Uploading ${file.name}…`;
+
+        const { error: upErr } = await supabase.storage.from(BUCKET).upload(filename, file, { cacheControl: '3600', upsert: false });
+        if (upErr) { toast(`Failed: ${file.name}`, 'err'); done++; continue; }
+
+        const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(filename);
+        await supabase.from('photos').insert({ url: publicUrl, filename, category_id: catId });
+
+        done++;
+        bar.style.width = `${(done / files.length) * 100}%`;
+      }
+
+      label.textContent = 'Done!';
+      setTimeout(() => { wrap.classList.remove('show'); bar.style.width = '0%'; }, 1500);
+      toast(`${done} photo${done !== 1 ? 's' : ''} uploaded!`, 'ok');
+      fileInput.value = '';
+      loadAll();
+    }
+
+    // Boot
+    loadAll();
+  </script>
+</body>
+</html>

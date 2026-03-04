@@ -42,17 +42,16 @@
       --bg:#0b0f17; --panel:#111926; --panel-2:#0d1522; --line:#1b2533;
       --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30); --cta:#FFB612; --cta-ink:#0b0f17;
       --container:min(1200px,92vw);
-      --glass-bg: rgba(255,255,255,0.05);
-      --glass-line: rgba(255,255,255,0.10);
+      --glass-bg:rgba(255,255,255,0.05);
+      --glass-line:rgba(255,255,255,0.10);
       --img-opacity:.94;
       --blend-mode:multiply;
     }
     [data-theme="light"]{
-      --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb; --line:#e6ebf2; --cta:#101820; --cta-ink:#ffffff;
-      --glass-bg: rgba(16,24,32,0.05);
-      --glass-line: rgba(16,24,32,0.08);
-      --img-opacity:.98;
-      --blend-mode:normal;
+      --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb;
+      --line:#e6ebf2; --cta:#101820; --cta-ink:#ffffff;
+      --glass-bg:rgba(16,24,32,0.05); --glass-line:rgba(16,24,32,0.08);
+      --img-opacity:.98; --blend-mode:normal;
     }
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink)}
@@ -60,33 +59,29 @@
     a{color:inherit;text-decoration:none}
     section{scroll-margin-top:96px}
     .container{width:var(--container);margin-inline:auto}
+    .hidden{display:none!important}
 
-    /* ===== Header / Nav ===== */
+    /* ===== Header ===== */
     .site-header{
-      position:fixed;inset-inline:0;top:0;z-index:1000;display:flex;align-items:center;justify-content:center;
-      padding:12px clamp(16px,4vw,64px);background:rgba(11,15,23,.85);backdrop-filter:saturate(140%) blur(10px);
-      border-bottom:1px solid var(--line)
+      position:fixed;inset-inline:0;top:0;z-index:1000;
+      display:flex;align-items:center;justify-content:center;
+      padding:12px clamp(16px,4vw,64px);
+      background:rgba(11,15,23,.88);backdrop-filter:saturate(140%) blur(12px);
+      border-bottom:1px solid var(--line);
+      transition:background .2s;
     }
     .site-header .inner{width:var(--container);display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.04em;min-width:0}
     .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;display:block}
     .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    @media (max-width:560px){
-      .site-header{padding:10px 14px}
-      .brand img{max-height:32px}
-      .brand span{display:none} /* unclutter mobile */
-    }
-    @media (max-width:360px){
-      .brand img{max-height:28px}
-    }
+    @media(max-width:560px){.site-header{padding:10px 14px}.brand img{max-height:32px}.brand span{display:none}}
+    @media(max-width:360px){.brand img{max-height:28px}}
 
     nav.site-nav{display:flex}
     nav.site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0;align-items:center}
-    nav.site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;border:1px solid transparent}
-    nav.site-nav a:hover,
-    nav.site-nav a[aria-current="page"]{background:var(--accent);color:var(--cta-ink)}
+    nav.site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;border:1px solid transparent;transition:background .15s,color .15s}
+    nav.site-nav a:hover,nav.site-nav a[aria-current="page"]{background:var(--accent);color:var(--cta-ink)}
 
-    /* hamburger */
     .menu-toggle{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;border-radius:10px}
     .menu-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .menu-toggle .bar{display:block;width:26px;height:3px;margin:5px auto;background:var(--ink);border-radius:2px;transition:.3s}
@@ -94,198 +89,259 @@
     .menu-toggle.open .bar:nth-child(2){opacity:0}
     .menu-toggle.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-    /* mobile drawer */
-    @media (max-width:960px){ nav.site-nav{display:none} .menu-toggle{display:block} }
-    .drawer{position:fixed;top:0;right:0;height:100dvh;width:min(80vw,360px);background:var(--panel);border-left:1px solid var(--line);
-      transform:translateX(100%);transition:transform .24s cubic-bezier(.4,2.2,.3,1);z-index:1001;display:flex;flex-direction:column}
+    @media(max-width:960px){nav.site-nav{display:none}.menu-toggle{display:block}}
+
+    .drawer{
+      position:fixed;top:0;right:0;height:100dvh;width:min(80vw,360px);
+      background:var(--panel);border-left:1px solid var(--line);
+      transform:translateX(100%);transition:transform .24s cubic-bezier(.4,2.2,.3,1);
+      z-index:1001;display:flex;flex-direction:column
+    }
     .drawer.open{transform:translateX(0)}
     .drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line)}
     .drawer nav ul{list-style:none;margin:0;padding:12px;display:flex;flex-direction:column;gap:8px}
-    .drawer nav a{padding:12px 14px;border-radius:10px;font-weight:800}
+    .drawer nav a{padding:12px 14px;border-radius:10px;font-weight:800;display:block;transition:background .15s}
+    .drawer nav a:hover{background:var(--panel-2)}
     .drawer[aria-hidden="false"]{visibility:visible}
 
-    /* overlay */
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:1000}
-    .overlay.show{opacity:1;pointer-events:auto}
+    .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:1000}
+    .nav-overlay.show{opacity:1;pointer-events:auto}
     body.no-scroll{overflow:hidden}
 
-    /* Floating theme toggle */
-    .floating-theme{position:fixed;right:16px;bottom:16px;z-index:1100;width:52px;height:52px;border-radius:999px;border:1px solid var(--line);
-      background:radial-gradient(120% 120% at 100% 0%, rgba(255,255,255,.10), rgba(255,255,255,.04));
-      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
-      display:grid;place-items:center;cursor:pointer}
+    /* ===== Theme toggle ===== */
+    .floating-theme{
+      position:fixed;right:16px;bottom:16px;z-index:1100;width:52px;height:52px;
+      border-radius:999px;border:1px solid var(--line);
+      background:radial-gradient(120% 120% at 100% 0%,rgba(255,255,255,.10),rgba(255,255,255,.04));
+      box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.12);
+      display:grid;place-items:center;cursor:pointer
+    }
     .floating-theme:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     .floating-theme svg{width:22px;height:22px;display:block}
-    /* tiny visual nudge if your light logo’s canvas is different */
     [data-theme="light"] .brand img{transform:translateY(1px)}
 
-    /* Buttons */
-    .btn{background:var(--cta);color:var(--cta-ink);font-weight:900;padding:11px 28px;border-radius:999px;border:2px solid transparent;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
-      font-size:1rem;transition:transform .12s ease}
-    .btn:hover{transform:translateY(-1px)}
+    /* ===== Buttons ===== */
+    .btn{
+      background:var(--cta);color:var(--cta-ink);font-weight:900;
+      padding:11px 28px;border-radius:999px;border:2px solid transparent;
+      cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
+      font-size:1rem;font-family:inherit;transition:transform .12s ease,box-shadow .12s ease;
+      display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.50)}
+    .btn:active{transform:translateY(0)}
     .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-    /* Hero with dynamic background */
+    /* ===== Hero ===== */
     .hero{
-      position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;border-radius:0 0 var(--radius) var(--radius);
-      box-shadow:var(--shadow);overflow:hidden;margin-top:92px;background-size:cover;background-position:center;
+      position:relative;min-height:65vh;display:flex;align-items:center;justify-content:center;
+      border-radius:0 0 var(--radius) var(--radius);
+      box-shadow:var(--shadow);overflow:hidden;margin-top:72px;
+      background-size:cover;background-position:center;background-color:#0d1522;
+      transition:background-image .4s ease;
     }
     .hero::before{
-      content:""; position:absolute; inset:0;
+      content:"";position:absolute;inset:0;
       background:
-        radial-gradient(60% 60% at 110% -10%, rgba(255,182,18,.12) 0, rgba(255,182,18,0) 60%),
-        radial-gradient(60% 60% at -10% 110%, rgba(255,182,18,.08) 0, rgba(255,182,18,0) 60%),
-        linear-gradient(120deg, rgba(11,15,23,.88) 0%, rgba(13,21,34,.55) 45%, rgba(16,24,32,.66) 100%);
-      pointer-events:none; mix-blend-mode:overlay;
+        radial-gradient(60% 60% at 110% -10%,rgba(255,182,18,.14) 0,rgba(255,182,18,0) 60%),
+        radial-gradient(60% 60% at -10% 110%,rgba(255,182,18,.08) 0,rgba(255,182,18,0) 60%),
+        linear-gradient(120deg,rgba(11,15,23,.90) 0%,rgba(13,21,34,.55) 45%,rgba(16,24,32,.68) 100%);
+      pointer-events:none;
     }
     .liquid-glass{
-      position:relative; z-index:1;
-      padding:30px;border-radius:28px;background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 60px rgba(0,0,0,.55);text-align:center;
+      position:relative;z-index:1;
+      padding:36px 40px;border-radius:28px;
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 24px 70px rgba(0,0,0,.60);
+      text-align:center;max-width:680px;
     }
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 12px;color:#fff}
-    .hero p{font-size:1.1rem;margin:0 0 18px;color:#dfe8ff}
-    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .hero-kicker{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.35rem .85rem;border-radius:999px;
+      border:1px solid rgba(255,182,18,.30);background:rgba(255,182,18,.08);
+      color:rgba(255,182,18,.90);font-weight:800;font-size:.82rem;
+      margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase;
+    }
+    .hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2.4s ease infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(255,182,18,.20)}50%{box-shadow:0 0 0 8px rgba(255,182,18,.05)}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 12px;color:#fff;line-height:1.1}
+    .hero p{font-size:1.05rem;margin:0 0 8px;color:#dfe8ff;line-height:1.65}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-    /* Sections */
-    .page-hero{padding:42px 0 10px}
-    .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
-    .page-hero p{margin:0 0 24px;color:var(--muted)}
+    /* ===== Stats strip ===== */
+    .stats-strip{
+      border-top:1px solid rgba(255,255,255,.07);
+      border-bottom:1px solid rgba(255,255,255,.07);
+      padding:1.8rem 0;margin-top:2.5rem;
+    }
+    .stats-inner{display:flex;gap:2.5rem;flex-wrap:wrap}
+    .stat-num{font-size:1.9rem;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.02em}
+    .stat-label{font-size:.78rem;color:var(--muted);margin-top:.3rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    @media(max-width:640px){.stats-inner{gap:1.5rem}}
 
-    /* Filters + Grid (category-only) */
-    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}
-    .tab{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
-    .tab.active{background:var(--accent);color:#0b0f17}
+    /* ===== Sections ===== */
+    .page-hero{padding:52px 0 16px}
+    .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 8px}
+    [data-theme="light"] .page-hero h2{color:var(--ink)}
+    .page-hero p{margin:0 0 24px;color:var(--muted);line-height:1.65}
+
+    /* ===== Services cards ===== */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+    @media(max-width:960px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:580px){.services-grid{grid-template-columns:1fr}}
+    .service-card{
+      background:var(--glass-bg);border:1px solid var(--glass-line);
+      border-radius:16px;padding:24px;
+      box-shadow:0 8px 28px rgba(0,0,0,.22);
+      transition:border-color .2s,transform .2s,box-shadow .2s;
+    }
+    .service-card:hover{border-color:rgba(255,182,18,.30);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.32)}
+    .service-icon{font-size:1.8rem;margin-bottom:.85rem}
+    .service-card h3{font-weight:900;font-size:1rem;margin:0 0 8px;letter-spacing:.01em}
+    .service-card p{color:var(--muted);font-size:.9rem;line-height:1.6;margin:0}
+    .service-line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,182,18,.50),transparent);margin-top:1.2rem}
+
+    /* ===== Gallery tabs + grid ===== */
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 20px}
+    .tab{
+      border:1px solid var(--line);background:var(--panel);color:var(--ink);
+      padding:8px 16px;border-radius:999px;font-weight:800;font-size:.88rem;
+      cursor:pointer;transition:background .15s,border-color .15s,color .15s;
+      font-family:inherit;
+    }
+    .tab:hover{border-color:rgba(255,182,18,.40);background:var(--panel-2)}
+    .tab.active{background:var(--accent);color:#0b0f17;border-color:var(--accent)}
     .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media (max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
 
-    /* BG-through cards */
+    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
+
     .card{
       position:relative;background:var(--glass-bg);border:1px solid var(--glass-line);
-      border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(6px) saturate(135%);
+      border-radius:16px;overflow:hidden;
+      box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(6px) saturate(135%);
+      cursor:pointer;
     }
     .card img{
       width:100%;height:240px;object-fit:cover;display:block;
       mix-blend-mode:var(--blend-mode);opacity:var(--img-opacity);
-      transition:opacity .2s ease, transform .2s ease;
+      transition:opacity .22s ease,transform .22s ease;
     }
-    .card:hover img{opacity:1;transform:scale(1.01)}
-    .card .meta{display:none}
+    .card:hover img{opacity:1;transform:scale(1.03)}
+    .fancybox__container img{mix-blend-mode:normal!important;opacity:1!important}
 
-    /* Fancybox true colors */
-    .fancybox__container img{mix-blend-mode:normal !important;opacity:1 !important;}
-
-    .hidden{display:none!important}
-
-    /* === Modern form fields === */
-    .contact-form {
-      --field-bg: var(--panel);
-      --field-border: var(--line);
-      --field-ink: var(--ink);
-      --field-muted: var(--muted);
-      --ring: rgba(255,182,18,.18);
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      max-width: 780px;
+    /* Gallery loading */
+    .gallery-loading{
+      display:flex;align-items:center;gap:.75rem;
+      padding:2.5rem 0;color:var(--muted);font-size:.9rem;font-weight:700;
     }
-    @media (max-width: 720px){ .contact-form { grid-template-columns: 1fr; } }
-    .field { position: relative; }
-    .field.full { grid-column: 1 / -1; }
+    .spinner{
+      width:20px;height:20px;
+      border:2px solid rgba(255,182,18,.20);border-top-color:var(--accent);
+      border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* ===== Testimonials ===== */
+    .testimonials{padding:12px 0 0}
+    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:1100px){.t-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.t-grid{grid-template-columns:1fr}}
+    .t-card{
+      position:relative;background:var(--panel);border:1px solid var(--line);
+      border-radius:16px;padding:20px 20px 18px;box-shadow:0 6px 24px rgba(0,0,0,.24);
+      transition:border-color .2s,transform .2s;
+    }
+    .t-card:hover{border-color:rgba(255,182,18,.25);transform:translateY(-2px)}
+    .t-quote{margin:0 0 12px;color:var(--ink);line-height:1.60;font-size:.95rem}
+    .t-quote:before{content:"\201C";font-family:serif;font-size:2rem;line-height:1;color:var(--accent);margin-right:6px;vertical-align:-.2em}
+    .t-author{font-weight:900;font-size:.9rem}
+    .stars{display:flex;gap:2px;margin:0 0 10px}
+    .stars svg{width:16px;height:16px;fill:var(--accent)}
+
+    /* ===== Contact form ===== */
+    .contact-form{
+      --field-bg:var(--panel);--field-border:var(--line);
+      --field-ink:var(--ink);--field-muted:var(--muted);
+      --ring:rgba(255,182,18,.18);
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:780px;
+    }
+    @media(max-width:720px){.contact-form{grid-template-columns:1fr}}
+    .field{position:relative}
+    .field.full{grid-column:1 / -1}
     .input,.textarea,.select{
-      width:100%;border:1px solid var(--field-border);background:var(--field-bg);color:var(--field-ink);
-      border-radius:12px;padding:16px 14px;font:inherit;outline:none;transition:border-color .15s, box-shadow .15s, background .15s;
+      width:100%;border:1px solid var(--field-border);background:var(--field-bg);
+      color:var(--field-ink);border-radius:12px;padding:16px 14px;font:inherit;
+      outline:none;transition:border-color .15s,box-shadow .15s,background .15s;
     }
-    .select{appearance:none;padding-right:40px;background-image:
-      linear-gradient(45deg, transparent 50%, var(--field-muted) 50%),
-      linear-gradient(135deg, var(--field-muted) 50%, transparent 50%),
-      linear-gradient(to right, transparent, transparent);
-      background-position: calc(100% - 24px) calc(50% - 4px), calc(100% - 16px) calc(50% - 4px), 0 0;
-      background-size: 8px 8px, 8px 8px, 100% 100%;
-      background-repeat: no-repeat;
+    .select{
+      appearance:none;padding-right:40px;
+      background-image:
+        linear-gradient(45deg,transparent 50%,var(--field-muted) 50%),
+        linear-gradient(135deg,var(--field-muted) 50%,transparent 50%);
+      background-position:calc(100% - 24px) calc(50% - 4px),calc(100% - 16px) calc(50% - 4px);
+      background-size:8px 8px,8px 8px;background-repeat:no-repeat;
     }
     .input::placeholder,.textarea::placeholder{color:transparent}
     .input:focus,.textarea:focus,.select:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
     .flabel{
-      position:absolute;left:12px;top:50%;transform:translateY(-50%);padding:0 6px;color:var(--field-muted);
-      background:var(--bg);pointer-events:none;transition:transform .15s,color .15s,top .15s,opacity .15s;border-radius:6px;
+      position:absolute;left:12px;top:50%;transform:translateY(-50%);
+      padding:0 6px;color:var(--field-muted);background:var(--bg);
+      pointer-events:none;transition:transform .15s,color .15s,top .15s,opacity .15s;border-radius:6px;
     }
+    .textarea~.flabel{top:20px;transform:none}
     .input:not(:placeholder-shown)+.flabel,
     .textarea:not(:placeholder-shown)+.flabel,
     .select.filled+.flabel,
     .input:focus+.flabel,.textarea:focus+.flabel,.select:focus+.flabel{
       top:0;transform:translateY(-50%) scale(.9);color:var(--accent);opacity:.95;
     }
-    .help{grid-column:1 / -1;font-size:.9rem;color:var(--muted)}
-    .form-actions{grid-column:1 / -1;display:flex;gap:12px;align-items:center;justify-content:flex-start;margin-top:6px}
-
-    /* === Testimonials === */
-    .testimonials { padding: 12px 0 0 }
-    .t-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-    @media (max-width:1100px){ .t-grid{ grid-template-columns:repeat(2,1fr) } }
-    @media (max-width:640px){ .t-grid{ grid-template-columns:1fr } }
-    .t-card{
-      position:relative;background:var(--panel);border:1px solid var(--line);
-      border-radius:16px;padding:18px 18px 16px;box-shadow:0 6px 24px rgba(0,0,0,.24)
+    .textarea:focus~.flabel,.textarea:not(:placeholder-shown)~.flabel{
+      top:0;transform:translateY(-50%) scale(.9);color:var(--accent);opacity:.95;
     }
-    .t-quote{ margin:0 0 12px; color:var(--ink); line-height:1.55 }
-    .t-quote:before{ content:"“"; font-family:serif; font-size:2rem; line-height:1; color:var(--accent); margin-right:6px }
-    .t-author{ font-weight:800 }
-    .stars{ display:flex; gap:2px; margin:0 0 8px }
-    .stars svg{ width:18px; height:18px; fill:var(--accent) }
+    .help{grid-column:1 / -1;font-size:.88rem;color:var(--muted)}
+    .form-actions{grid-column:1 / -1;display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+    .form-status{font-size:.9rem;font-weight:700;display:none}
+    .form-status.show{display:block}
+    .form-status.ok{color:rgba(80,220,140,.9)}
+    .form-status.err{color:rgba(255,140,140,.9)}
 
-    /* Footer */
-    .site-footer{background:#0b0f17;color:#f0f4ff;padding:48px 0 36px;border-top:1px solid var(--line);margin-top:80px;text-align:center}
+    /* ===== Footer ===== */
+    .site-footer{
+      background:#080c12;color:#8fa0be;padding:48px 0 36px;
+      border-top:1px solid var(--line);margin-top:80px;text-align:center;
+      font-size:.9rem;
+    }
+    .site-footer a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+    .site-footer a:hover{opacity:.8}
+
+    /* ===== Reduced motion ===== */
+    @media(prefers-reduced-motion:reduce){
+      *{transition:none!important;animation:none!important}
+      html{scroll-behavior:auto}
+    }
   </style>
 
-  <!-- Schema (logo helps Google show it in search) -->
+  <!-- Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://prestigepgh.com/#business",
-    "name": "Pittsburgh Prestige Remodeling",
-    "url": "https://prestigepgh.com/",
-    "image": "https://prestigepgh.com/assets/og-preview.jpg",
-    "logo": "https://prestigepgh.com/assets/ppr_logo.png",
-    "description": "Custom cabinetry, built-ins, and fine carpentry serving the Pittsburgh area.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Pittsburgh", "addressRegion": "PA", "addressCountry": "US" },
-    "areaServed": "Pittsburgh",
-    "sameAs": []
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "@id":"https://prestigepgh.com/#org",
-    "name":"Pittsburgh Prestige Remodeling",
-    "url":"https://prestigepgh.com/",
-    "logo":"https://prestigepgh.com/assets/ppr_logo.png"
-  }
+  {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://prestigepgh.com/#business","name":"Pittsburgh Prestige Remodeling","url":"https://prestigepgh.com/","image":"https://prestigepgh.com/assets/og-preview.jpg","logo":"https://prestigepgh.com/assets/ppr_logo.png","description":"Custom cabinetry, built-ins, and fine carpentry serving the Pittsburgh area.","address":{"@type":"PostalAddress","addressLocality":"Pittsburgh","addressRegion":"PA","addressCountry":"US"},"areaServed":"Pittsburgh","sameAs":[]}
   </script>
 </head>
-<body>
-  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 
-  <!-- Mobile overlay -->
-  <div class="overlay" id="navOverlay" hidden></div>
+<body>
+  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+
+  <div class="nav-overlay" id="navOverlay" hidden></div>
 
   <!-- Header -->
   <header class="site-header" id="header">
     <div class="inner">
       <a href="#top" class="brand" aria-label="Pittsburgh Prestige Remodeling home">
-        <img id="brandLogo"
-             src="assets/ppr_logo.png"
-             data-dark="assets/ppr_logo.png"
-             data-light="assets/ppr_logo_light.png"
-             alt="Pittsburgh Prestige Remodeling logo" />
+        <img id="brandLogo" src="assets/ppr_logo.png" data-dark="assets/ppr_logo.png" data-light="assets/ppr_logo_light.png" alt="Pittsburgh Prestige Remodeling logo" />
         <span>Pittsburgh Prestige Remodeling</span>
       </a>
-
-      <!-- Desktop nav -->
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="#top" aria-current="page">Home</a></li>
@@ -296,8 +352,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- Mobile hamburger -->
       <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
@@ -324,19 +378,32 @@
     </nav>
   </aside>
 
-  <!-- Floating dark/light toggle -->
   <button id="floatingTheme" class="floating-theme" aria-label="Toggle dark mode" aria-pressed="true"></button>
 
   <main id="main" tabindex="-1">
+
     <!-- HERO -->
-    <section class="hero" id="top">
+    <section class="hero" id="top" aria-label="Hero">
       <div class="container">
         <div class="liquid-glass">
+          <div class="hero-kicker"><i aria-hidden="true"></i> Licensed & Insured • Pittsburgh, PA</div>
           <h1>Pittsburgh Prestige Remodeling</h1>
           <p>Custom cabinetry, built-ins, and fine carpentry — Pittsburgh-proud craftsmanship that lasts.</p>
           <div class="hero-btns">
-            <a href="#services" class="btn">View Services</a>
             <a href="#work" class="btn">See Our Work</a>
+            <a href="#contact" class="btn" style="background:transparent;border-color:rgba(255,255,255,.30);color:#fff;box-shadow:none">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip inside hero background area -->
+      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(11,15,23,.72);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08)">
+        <div class="container stats-strip" style="margin-top:0;border:none;padding:1.4rem 0">
+          <div class="stats-inner">
+            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom builds</div></div>
+            <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Quote turnaround</div></div>
+            <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Rated by clients</div></div>
+            <div class="stat"><div class="stat-num">PGH</div><div class="stat-label">Pittsburgh proud</div></div>
           </div>
         </div>
       </div>
@@ -347,28 +414,68 @@
       <div class="container">
         <h2 id="services-h">Services</h2>
         <p>We design and build custom cabinetry, kitchen installations, built-ins, trim, and office solutions tailored to Pittsburgh homes.</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🪵</div>
+            <h3>Custom Cabinetry</h3>
+            <p>Hand-built cabinets crafted to your exact specs — kitchens, bathrooms, mudrooms, and beyond.</p>
+            <div class="service-line"></div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Built-ins & Shelving</h3>
+            <p>Floor-to-ceiling built-ins, entertainment centers, and custom shelving that become part of your home.</p>
+            <div class="service-line"></div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✂️</div>
+            <h3>Finish Carpentry & Trim</h3>
+            <p>Crown molding, wainscoting, coffered ceilings, and detail trim work done with precision.</p>
+            <div class="service-line"></div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🍳</div>
+            <h3>Kitchen Installations</h3>
+            <p>Complete kitchen builds from layout planning to final install — including islands and pantries.</p>
+            <div class="service-line"></div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Office & Study Solutions</h3>
+            <p>Custom desks, built-in bookshelves, and home office cabinetry designed for how you work.</p>
+            <div class="service-line"></div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Structural Carpentry</h3>
+            <p>Framing, decks, porches, and structural additions — built to last with Pittsburgh weather in mind.</p>
+            <div class="service-line"></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- OUR WORK (category-only from ./dist/gallery.json) -->
+    <!-- OUR WORK — Supabase powered -->
     <section id="work" class="page-hero" aria-labelledby="work-h">
       <div class="container">
         <h2 id="work-h">Our Work</h2>
-        <p class="muted">Choose a category to view photos.</p>
-
-        <div class="tabs" id="workTabs" aria-label="Filter projects"></div>
-        <div id="grid" class="photo-grid"></div>
-        <p id="workEmpty" class="muted hidden" role="status">No photos found.</p>
+        <p>Choose a category to view photos of completed projects.</p>
+        <div class="tabs" id="workTabs" aria-label="Filter projects by category" role="tablist"></div>
+        <div class="gallery-loading" id="workLoading" aria-live="polite">
+          <span class="spinner" role="status" aria-label="Loading photos"></span>
+          Loading gallery…
+        </div>
+        <div id="grid" class="photo-grid" aria-live="polite"></div>
+        <p id="workEmpty" class="hidden" style="color:var(--muted);padding:2rem 0" role="status">No photos found.</p>
       </div>
     </section>
 
-    <!-- TESTIMONIALS (static, no-JS needed) -->
+    <!-- TESTIMONIALS -->
     <section id="testimonials" class="page-hero testimonials" aria-labelledby="testimonials-h">
       <div class="container">
         <h2 id="testimonials-h">Testimonials</h2>
-        <p class="muted">A few words from recent Pittsburgh projects.</p>
-
-        <div id="tGrid" class="t-grid" aria-live="polite">
+        <p>A few words from recent Pittsburgh projects.</p>
+        <div class="t-grid">
           <article class="t-card">
             <div class="stars">
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
@@ -377,10 +484,9 @@
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
             </div>
-            <p class="t-quote">Mike and Iso were the best! We couldn’t be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!</p>
+            <p class="t-quote">Mike and Iso were the best! We couldn't be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!</p>
             <div class="t-author">Matt Oxenreiter</div>
           </article>
-
           <article class="t-card">
             <div class="stars">
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
@@ -389,10 +495,9 @@
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
             </div>
-            <p class="t-quote">I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident. They even came up with better ways of doing things than I had thought. Trim looks great, outlets fixed, new outdoor railings—and they turned a basic chicken coop idea into a beautiful, rock-solid “chicken hotel.” Thank you Mike and Iso!!</p>
+            <p class="t-quote">I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident. They even came up with better ways of doing things than I had thought. Trim looks great, outlets fixed, new outdoor railings — and they turned a basic chicken coop idea into a beautiful, rock-solid "chicken hotel." Thank you Mike and Iso!!</p>
             <div class="t-author">S.R. Duerr</div>
           </article>
-
           <article class="t-card">
             <div class="stars">
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
@@ -401,12 +506,10 @@
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
             </div>
-            <p class="t-quote">I’ve worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. From start to finish: exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail—consistently beyond expectations.</p>
+            <p class="t-quote">I've worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. From start to finish: exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail — consistently beyond expectations.</p>
             <div class="t-author">Jack Rice</div>
           </article>
         </div>
-
-        <p id="tEmpty" class="muted hidden" role="status">No testimonials yet.</p>
       </div>
     </section>
 
@@ -422,9 +525,8 @@
     <section id="contact" class="page-hero" aria-labelledby="contact-h">
       <div class="container">
         <h2 id="contact-h">Request a Quote</h2>
-        <p>Tell us about your space and goals—We’ll follow up with a tailored estimate.</p>
-
-        <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" novalidate>
+        <p>Tell us about your space and goals — we'll follow up with a tailored estimate.</p>
+        <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" id="contactForm" novalidate>
           <div class="field">
             <input class="input" type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
             <label class="flabel" for="name">Name *</label>
@@ -438,7 +540,9 @@
             <label class="flabel" for="phone">Phone</label>
           </div>
           <div class="field">
-            <select class="select" id="project" name="project" required oninput="this.classList.toggle('filled', !!this.value)" onblur="this.classList.toggle('filled', !!this.value)">
+            <select class="select" id="project" name="project" required
+              oninput="this.classList.toggle('filled',!!this.value)"
+              onblur="this.classList.toggle('filled',!!this.value)">
               <option value="" disabled selected></option>
               <option>Custom Cabinetry</option>
               <option>Finish Carpentry</option>
@@ -454,9 +558,10 @@
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-actions">
-            <button class="btn" type="submit">Send Request</button>
+            <button class="btn" type="submit" id="submitBtn">Send Request</button>
             <span class="help">We usually reply within 1–2 business days.</span>
           </div>
+          <div class="form-status" id="formStatus" aria-live="polite" role="status"></div>
         </form>
       </div>
     </section>
@@ -464,179 +569,213 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
+      <p style="margin-bottom:.5rem">© <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
+      <p style="font-size:.82rem;opacity:.6">Licensed & Insured · Pittsburgh, PA · <a href="#contact">Request a Quote</a></p>
     </div>
   </footer>
 
   <!-- Fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
+  <!-- Main scripts -->
   <script>
     /* Year */
-    (function(){ const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear(); })();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     /* Theme toggle + logo swap */
     (function(){
-      const root=document.documentElement;
-      const btn=document.getElementById('floatingTheme');
-      const logo=document.getElementById('brandLogo');
-
-      function icon(theme){
-        return theme==='dark'
-          ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
-          : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0 6v-3M12 3V0m9 12h3M0 12h3m15.364 6.364 2.121 2.121M3.515 3.515 5.636 5.636m0 12.728-2.121 2.121M20.485 3.515 18.364 5.636"/></svg>';
+      const root = document.documentElement;
+      const btn  = document.getElementById('floatingTheme');
+      const logo = document.getElementById('brandLogo');
+      function icon(t){ return t==='dark'
+        ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
       }
-      function swapLogo(theme){
+      function swapLogo(t){
         if(!logo) return;
-        const target = theme==='dark' ? (logo.dataset.dark || logo.src) : (logo.dataset.light || logo.src);
-        if(logo.src.endsWith(target)) return;
-        const i=new Image(); i.onload=()=>{ logo.src=target; }; i.onerror=()=>{ if(theme!=='dark'){ logo.src=logo.dataset.dark||logo.src; } }; i.src=target;
+        const src = t==='dark' ? logo.dataset.dark : logo.dataset.light;
+        if(src && !logo.src.endsWith(src)){ const i=new Image(); i.onload=()=>logo.src=src; i.onerror=()=>{}; i.src=src; }
       }
       function setTheme(t){
         root.setAttribute('data-theme',t);
         localStorage.setItem('ppr-theme',t);
         btn.innerHTML = icon(t);
         btn.setAttribute('aria-pressed', String(t==='dark'));
-        btn.title = t==='dark' ? 'Dark mode' : 'Light mode';
+        btn.title = t==='dark' ? 'Switch to light mode' : 'Switch to dark mode';
         swapLogo(t);
       }
       const saved = localStorage.getItem('ppr-theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
       setTheme(saved || (prefersDark ? 'dark' : 'light'));
-      btn.addEventListener('click', ()=> setTheme((root.getAttribute('data-theme')||'dark')==='dark'?'light':'dark'));
+      btn.addEventListener('click', () => setTheme(root.getAttribute('data-theme')==='dark' ? 'light' : 'dark'));
     })();
 
-    /* Mobile drawer + overlay + focus trap */
+    /* Mobile drawer */
     (function(){
-      const menuToggle = document.getElementById('menuToggle');
-      const drawer = document.getElementById('mobileDrawer');
-      const closeDrawerBtn = document.getElementById('closeDrawer');
+      const toggle  = document.getElementById('menuToggle');
+      const drawer  = document.getElementById('mobileDrawer');
+      const closeBtn= document.getElementById('closeDrawer');
       const overlay = document.getElementById('navOverlay');
-      let lastFocused = null;
-
-      function focusables(rootEl){
-        return rootEl.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
-      }
-      function openDrawer(){
-        lastFocused = document.activeElement;
-        drawer.classList.add('open');
-        drawer.setAttribute('aria-hidden','false');
+      let lastFocus = null;
+      function focusables(el){ return el.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])'); }
+      function open(){
+        lastFocus = document.activeElement;
+        drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
         overlay.classList.add('show'); overlay.hidden = false;
-        menuToggle.classList.add('open'); menuToggle.setAttribute('aria-expanded','true');
+        toggle.classList.add('open'); toggle.setAttribute('aria-expanded','true');
         document.body.classList.add('no-scroll');
-        const f = focusables(drawer); if(f.length) f[0].focus();
+        const f=focusables(drawer); if(f.length) f[0].focus();
         document.addEventListener('keydown', onKey);
       }
-      function closeDrawer(){
-        drawer.classList.remove('open');
-        drawer.setAttribute('aria-hidden','true');
+      function close(){
+        drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true');
         overlay.classList.remove('show'); overlay.hidden = true;
-        menuToggle.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false');
+        toggle.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
         document.body.classList.remove('no-scroll');
         document.removeEventListener('keydown', onKey);
-        if(lastFocused) lastFocused.focus();
+        if(lastFocus) lastFocus.focus();
       }
       function onKey(e){
-        if(e.key==='Escape'){ closeDrawer(); return; }
+        if(e.key==='Escape'){ close(); return; }
         if(e.key==='Tab'){
-          const f = Array.from(focusables(drawer)); if(!f.length) return;
-          const first=f[0], last=f[f.length-1];
-          if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
-          else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+          const f=Array.from(focusables(drawer));
+          if(!f.length) return;
+          if(e.shiftKey && document.activeElement===f[0]){ e.preventDefault(); f[f.length-1].focus(); }
+          else if(!e.shiftKey && document.activeElement===f[f.length-1]){ e.preventDefault(); f[0].focus(); }
         }
       }
-      menuToggle.addEventListener('click', ()=> drawer.classList.contains('open')? closeDrawer(): openDrawer());
-      closeDrawerBtn.addEventListener('click', closeDrawer);
-      overlay.addEventListener('click', closeDrawer);
-      drawer.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeDrawer));
-      window.addEventListener('resize', ()=>{ if(window.innerWidth>960 && drawer.classList.contains('open')) closeDrawer(); });
+      toggle.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+      closeBtn.addEventListener('click', close);
+      overlay.addEventListener('click', close);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      window.addEventListener('resize', () => { if(window.innerWidth>960) close(); });
     })();
 
-    /* Portfolio (category-only) + dynamic hero */
-    const CANDIDATE_MANIFESTS = ["/dist/gallery.json","./dist/gallery.json"];
-    const CATEGORY_ORDER = ["kitchens","cabinetry","office","structural","inprogress"];
-
-    async function fetchFirst(paths){
-      for (const p of paths){
-        try { const r = await fetch(p, {cache:"no-store"}); if (r.ok) return r.json(); } catch {}
-      }
-      throw new Error("gallery.json not found at /dist or ./dist");
-    }
-    function el(t,attrs={},...kids){
-      const n=document.createElement(t);
-      Object.entries(attrs).forEach(([k,v])=>{
-        if(k==="class") n.className=v;
-        else if(k.startsWith("on")) n.addEventListener(k.slice(2),v);
-        else n.setAttribute(k,v);
+    /* Contact form AJAX */
+    (function(){
+      const form   = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const btn    = document.getElementById('submitBtn');
+      if(!form) return;
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        if(!form.checkValidity()){ form.reportValidity(); return; }
+        btn.textContent = 'Sending…'; btn.disabled = true;
+        try{
+          const res = await fetch(form.action, { method:'POST', headers:{'Accept':'application/json'}, body: new FormData(form) });
+          if(res.ok){
+            status.textContent = '✓ Sent! We\'ll get back to you within 1–2 business days.';
+            status.className = 'form-status show ok';
+            form.reset();
+          } else {
+            status.textContent = 'Something went wrong. Please try again.';
+            status.className = 'form-status show err';
+          }
+        } catch {
+          status.textContent = 'Network error. Please check your connection.';
+          status.className = 'form-status show err';
+        }
+        btn.textContent = 'Send Request'; btn.disabled = false;
       });
-      kids.forEach(c=>n.appendChild(typeof c==="string"?document.createTextNode(c):c));
-      return n;
-    }
-    const titleCase = k => k.replace(/(^.|-.)/g,s=>s.toUpperCase());
-    function chooseBest(sources){
-      if(!sources||!sources.length) return null;
-      const vw = Math.min(1600, Math.max(window.innerWidth, 1000));
-      const sorted=[...sources].sort((a,b)=>a.width-b.width);
-      const pick = (sorted.find(s=>s.width>=vw) || sorted[sorted.length-1]).webp;
-      return `./dist/${pick}`;
-    }
-    function buildTabs(keys){
-      const tabs=document.getElementById("workTabs");
-      const order = CATEGORY_ORDER.filter(k=>keys.includes(k)).concat(keys.filter(k=>!CATEGORY_ORDER.includes(k)));
-      order.forEach((k,i)=>{
-        const b=el("button",{class:"tab"+(i===0?" active":""),"data-cat":k,type:"button"},titleCase(k));
-        tabs.appendChild(b);
-      });
-      return order[0] || null;
-    }
-    function drawCategory(manifest, cat){
-      const grid = document.getElementById("grid");
-      grid.innerHTML = "";
-      const items = (manifest.categories?.[cat] || []);
-      if(!items.length){ document.getElementById("workEmpty").classList.remove("hidden"); return; }
-      document.getElementById("workEmpty").classList.add("hidden");
-
-      items.forEach(item=>{
-        const thumb = `./dist/${item.thumb}`;
-        const big   = chooseBest(item.sources) || thumb;
-        const a = el("a",{"data-fancybox":"work", href:big});
-        const card = el("div",{class:"card"});
-        const img  = el("img",{alt:"Project photo", loading:"lazy", decoding:"async", src:thumb});
-        card.appendChild(img);
-        a.appendChild(card);
-        grid.appendChild(a);
-      });
-    }
-    function randomHeroFrom(manifest){
-      const all = Object.values(manifest.categories||{}).flat();
-      if(!all.length) return;
-      const pick = all[Math.floor(Math.random()*all.length)];
-      const url  = chooseBest(pick.sources) || `./dist/${pick.thumb}`;
-      const hero = document.querySelector(".hero");
-      hero.style.backgroundImage = `url('${url}')`;
-    }
-    (async function bootstrapWork(){
-      try{
-        const manifest = await fetchFirst(CANDIDATE_MANIFESTS);
-        randomHeroFrom(manifest);
-        const keys = Object.keys(manifest.categories||{});
-        const firstCat = buildTabs(keys);
-        if(firstCat) drawCategory(manifest, firstCat);
-        const tabs=document.getElementById("workTabs");
-        tabs.addEventListener("click",(e)=>{
-          const btn=e.target.closest(".tab"); if(!btn) return;
-          const cat=btn.getAttribute("data-cat");
-          tabs.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
-          btn.classList.add("active");
-          drawCategory(manifest, cat);
-        });
-      }catch(err){
-        console.error(err);
-        const msg = document.getElementById("workEmpty");
-        msg.textContent = "Gallery not built yet. Run: node process-gallery.mjs \"./gallery\" \"./dist\"";
-        msg.classList.remove("hidden");
-      }
     })();
   </script>
+
+  <!-- Gallery — Supabase -->
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    // ⚠️ REPLACE WITH YOUR REAL ANON KEY — Supabase → Settings → API → anon public
+    const SUPABASE_URL      = 'https://myrormkykiqmaexkzygv.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_lfWNel7sUH1vpcVqHLRYAQ_m-hwo1j8';
+
+    const supabase  = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const tabs      = document.getElementById('workTabs');
+    const grid      = document.getElementById('grid');
+    const empty     = document.getElementById('workEmpty');
+    const loading   = document.getElementById('workLoading');
+
+    try {
+      const [catRes, photoRes] = await Promise.all([
+        supabase.from('categories').select('*').order('name'),
+        supabase.from('photos').select('*, categories(name)').order('created_at', { ascending: false })
+      ]);
+
+      loading.style.display = 'none';
+
+      const categories = catRes.data || [];
+      const allPhotos  = photoRes.data || [];
+
+      if (!categories.length) {
+        empty.textContent = 'Gallery coming soon — check back shortly.';
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      // Set a random hero background from uploaded photos
+      if (allPhotos.length) {
+        const pick = allPhotos[Math.floor(Math.random() * allPhotos.length)];
+        document.querySelector('.hero').style.backgroundImage = `url('${pick.url}')`;
+      }
+
+      // Build category tabs
+      categories.forEach((cat, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'tab' + (i === 0 ? ' active' : '');
+        btn.textContent = cat.name;
+        btn.dataset.id  = cat.id;
+        btn.type = 'button';
+        btn.setAttribute('role', 'tab');
+        btn.addEventListener('click', () => {
+          tabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          showCategory(cat.id);
+        });
+        tabs.appendChild(btn);
+      });
+
+      // Show first category
+      showCategory(categories[0].id);
+
+      function showCategory(catId) {
+        grid.innerHTML = '';
+        const photos = allPhotos.filter(p => p.category_id === catId);
+        if (!photos.length) { empty.classList.remove('hidden'); return; }
+        empty.classList.add('hidden');
+
+        photos.forEach(photo => {
+          const a    = document.createElement('a');
+          a.href     = photo.url;
+          a.setAttribute('data-fancybox', 'work');
+          a.setAttribute('data-caption', photo.categories?.name || '');
+
+          const card = document.createElement('div');
+          card.className = 'card';
+
+          const img   = document.createElement('img');
+          img.src     = photo.url;
+          img.alt     = `${photo.categories?.name || 'Project'} photo`;
+          img.loading = 'lazy';
+          img.decoding= 'async';
+
+          card.appendChild(img);
+          a.appendChild(card);
+          grid.appendChild(a);
+        });
+
+        // Rebind Fancybox after DOM update
+        if (window.Fancybox) {
+          Fancybox.unbind('[data-fancybox="work"]');
+          Fancybox.bind('[data-fancybox="work"]', { groupAll: false });
+        }
+      }
+
+    } catch(err) {
+      loading.style.display = 'none';
+      empty.textContent = 'Gallery failed to load. Please refresh.';
+      empty.classList.remove('hidden');
+      console.error('Gallery error:', err);
+    }
+  </script>
+
 </body>
 </html>
