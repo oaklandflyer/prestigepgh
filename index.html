@@ -308,6 +308,9 @@
     .site-footer a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
     .site-footer a:hover{opacity:.8}
 
+    @media(max-width:640px){
+      #about .container > div { grid-template-columns: 1fr !important; }
+    }
     @media(prefers-reduced-motion:reduce){
       *{transition:none!important;animation:none!important}
       html{scroll-behavior:auto}
@@ -377,7 +380,8 @@
       <div class="hero-content container">
         <div class="liquid-glass">
           <h1>Pittsburgh Prestige Remodeling</h1>
-          <p>Custom cabinetry, built-ins, and fine carpentry — Pittsburgh-proud craftsmanship that lasts.</p>
+          <p style="font-style:italic;color:rgba(255,182,18,.85);font-weight:800;font-size:.95rem;margin-bottom:.5rem;letter-spacing:.04em">Elegance, Hand Crafted</p>
+          <p>Custom cabinetry, built-ins, and fine carpentry — Pittsburgh's trusted specialists since 2020.</p>
           <div class="hero-btns">
             <a href="#work" class="btn">See Our Work</a>
             <a href="#contact" class="btn" style="background:transparent;border-color:rgba(255,255,255,.30);color:#fff;box-shadow:none">Get a Quote</a>
@@ -394,6 +398,7 @@
             <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Quote turnaround</div></div>
             <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Rated by clients</div></div>
             <div class="stat"><div class="stat-num">PGH</div><div class="stat-label">Pittsburgh proud</div></div>
+            <div class="stat"><div class="stat-num">'20</div><div class="stat-label">Est. 2020</div></div>
           </div>
         </div>
       </div>
@@ -503,11 +508,51 @@
       </div>
     </section>
 
+    <!-- CTA after testimonials -->
+    <div style="text-align:center;padding:2.5rem 0 0">
+      <div class="container">
+        <p style="color:var(--muted);font-size:1rem;margin-bottom:1rem">Ready to start your project?</p>
+        <a href="#contact" class="btn">Get a Free Quote</a>
+      </div>
+    </div>
+
     <!-- ABOUT -->
     <section id="about" class="page-hero" aria-labelledby="about-h">
       <div class="container">
         <h2 id="about-h">About</h2>
-        <p>Pittsburgh Prestige Remodeling is a contractor focused on cabinetry and carpentry. From hand-built cabinets to finish trim, we deliver Black & Gold quality with clear communication and dependable timelines.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;max-width:900px">
+          <div>
+            <p style="color:var(--muted);line-height:1.75;margin-bottom:1rem">
+              Pittsburgh Prestige Remodeling was founded in 2020 by <strong style="color:var(--ink)">Michael Allen</strong>, a lifelong craftsman with a passion for building things that last. What started as a one-man operation has grown into a trusted name across the Pittsburgh area — known for precision, reliability, and work that speaks for itself.
+            </p>
+            <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">
+              From hand-built kitchen cabinets to custom built-ins and finish trim, every project is approached with the same standard: <em style="color:var(--ink)">Elegance, Hand Crafted.</em> We're licensed, insured, and Pittsburgh-proud.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:.6rem">
+              <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.6rem;color:var(--accent);font-weight:800;font-size:.95rem">
+                <span style="font-size:1.1rem">📞</span> 412-315-9189
+              </a>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">2020</div>
+              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Est.</div>
+            </div>
+            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">5★</div>
+              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Rated</div>
+            </div>
+            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">100%</div>
+              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Custom</div>
+            </div>
+            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">PGH</div>
+              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Proud</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -515,7 +560,10 @@
     <section id="contact" class="page-hero" aria-labelledby="contact-h">
       <div class="container">
         <h2 id="contact-h">Request a Quote</h2>
-        <p>Tell us about your space and goals — we'll follow up with a tailored estimate.</p>
+        <p>Tell us about your space and goals — we'll follow up with a free, tailored estimate.</p>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;margin-top:-.25rem">
+          <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:800;font-size:.95rem;text-decoration:none">📞 412-315-9189</a>
+        </div>also reach us directly at <a href="/cdn-cgi/l/email-protection#016c60686f6c606f6c686a643641666c60686d2f626e6c" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px"><span class="__cf_email__" data-cfemail="98f5f9f1f6f5f9f6f5f1f3fdafd8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a></p>
         <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" id="contactForm" novalidate>
           <div class="field">
             <input class="input" type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
@@ -560,11 +608,12 @@
   <footer class="site-footer">
     <div class="container">
       <p style="margin-bottom:.5rem">© <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
-      <p style="font-size:.82rem;opacity:.6">Pittsburgh, PA · <a href="#contact">Request a Quote</a></p>
+      <p style="font-size:.82rem;opacity:.6;margin-bottom:.3rem">Michael Allen · Founder &amp; Lead Carpenter</p>
+      <p style="font-size:.82rem;opacity:.6">Pittsburgh, PA · <a href="tel:4123159189">412-315-9189</a> · <a href="#contact">Request a Free Quote</a></p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -768,6 +817,37 @@
       empty.classList.remove('hidden');
       console.error('Gallery error:', err);
     }
+  </script>
+
+
+  <!-- Scroll spy: highlight active nav section -->
+  <script>
+    (function(){
+      const sections = ['top','services','work','testimonials','about','contact'];
+      const navLinks = document.querySelectorAll('nav.site-nav a');
+      function getActive(){
+        const scrollY = window.scrollY + 120;
+        let active = 'top';
+        for(const id of sections){
+          const el = document.getElementById(id);
+          if(el && el.offsetTop <= scrollY) active = id;
+        }
+        return active;
+      }
+      function update(){
+        const active = getActive();
+        navLinks.forEach(a => {
+          const href = a.getAttribute('href').replace('#','');
+          if(href === active){
+            a.setAttribute('aria-current','page');
+          } else {
+            a.removeAttribute('aria-current');
+          }
+        });
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
   </script>
 
 </body>
