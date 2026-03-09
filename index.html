@@ -699,9 +699,22 @@
         empty.textContent = 'Gallery coming soon — check back shortly.';
         empty.classList.remove('hidden');
       } else {
-        categories.forEach((cat, i) => {
+        // All tab first
+        const allBtn = document.createElement('button');
+        allBtn.className = 'tab active';
+        allBtn.textContent = 'All';
+        allBtn.type = 'button';
+        allBtn.setAttribute('role', 'tab');
+        allBtn.addEventListener('click', () => {
+          tabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+          allBtn.classList.add('active');
+          showCategory('all');
+        });
+        tabs.appendChild(allBtn);
+
+        categories.forEach((cat) => {
           const btn = document.createElement('button');
-          btn.className = 'tab' + (i === 0 ? ' active' : '');
+          btn.className = 'tab';
           btn.textContent = cat.name.charAt(0).toUpperCase() + cat.name.slice(1);
           btn.dataset.id  = cat.id;
           btn.type = 'button';
@@ -714,12 +727,12 @@
           tabs.appendChild(btn);
         });
 
-        showCategory(categories[0].id);
+        showCategory('all');
       }
 
       function showCategory(catId) {
         grid.innerHTML = '';
-        const photos = allPhotos.filter(p => p.category_id === catId);
+        const photos = catId === 'all' ? allPhotos : allPhotos.filter(p => p.category_id === catId);
         if (!photos.length) { empty.classList.remove('hidden'); return; }
         empty.classList.add('hidden');
 

@@ -12,7 +12,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; padding: 0 0 4rem; }
 
-    /* Topbar */
     .topbar { background: var(--panel); border-bottom: 1px solid var(--line); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
     .topbar-inner { width: min(1100px, 92vw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .topbar-left { display: flex; align-items: center; gap: .75rem; }
@@ -21,7 +20,6 @@
 
     .wrap { width: min(1100px, 92vw); margin: 2rem auto; }
 
-    /* Buttons */
     .btn { display: inline-flex; align-items: center; gap: .4rem; padding: .7rem 1.2rem; border-radius: 999px; font: inherit; font-weight: 800; font-size: .9rem; cursor: pointer; border: 1px solid transparent; transition: transform .12s, background .14s; text-decoration: none; }
     .btn:hover { transform: translateY(-1px); }
     .btn-accent { background: var(--accent); color: #0b0f17; }
@@ -31,55 +29,31 @@
     .btn-danger:hover { background: rgba(255,100,100,.08); }
     .btn-sm { padding: .45rem .85rem; font-size: .82rem; }
 
-    /* Section headers */
     .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; flex-wrap: wrap; gap: .75rem; }
     .section-head h2 { font-size: 1.2rem; font-weight: 900; }
     .count { color: var(--muted); font-size: .88rem; }
 
-    /* Panel */
     .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; margin-bottom: 2rem; }
 
-    /* Categories */
     .cat-list { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .2rem; }
-    .cat-chip {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--panel2); border: 1px solid var(--line);
-      border-radius: 999px; padding: .42rem .85rem .42rem 1rem;
-      font-weight: 800; font-size: .88rem;
-    }
+    .cat-chip { display: inline-flex; align-items: center; gap: .5rem; background: var(--panel2); border: 1px solid var(--line); border-radius: 999px; padding: .42rem .85rem .42rem 1rem; font-weight: 800; font-size: .88rem; }
     .cat-chip button { background: none; border: none; cursor: pointer; color: var(--muted); font-size: 1rem; line-height: 1; padding: 0; transition: color .15s; }
     .cat-chip button:hover { color: var(--danger); }
 
     .add-cat-row { display: flex; gap: .6rem; margin-top: 1rem; }
-    .add-cat-row input {
-      flex: 1; background: rgba(0,0,0,.3); border: 1px solid var(--line); color: var(--ink);
-      border-radius: 12px; padding: .7rem 1rem; font: inherit; outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
+    .add-cat-row input { flex: 1; background: rgba(0,0,0,.3); border: 1px solid var(--line); color: var(--ink); border-radius: 12px; padding: .7rem 1rem; font: inherit; outline: none; transition: border-color .15s, box-shadow .15s; }
     .add-cat-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,182,18,.12); }
 
-    /* Upload */
     .upload-select { margin-bottom: 1rem; }
-    .upload-select select {
-      width: 100%; background: rgba(0,0,0,.3); border: 1px solid var(--line);
-      color: var(--ink); border-radius: 12px; padding: .8rem 1rem;
-      font: inherit; font-weight: 700; outline: none; cursor: pointer;
-      transition: border-color .15s;
-    }
-    .upload-select select:focus { border-color: var(--accent); }
+    .upload-select select, .cat-reassign-select { width: 100%; background: rgba(0,0,0,.3); border: 1px solid var(--line); color: var(--ink); border-radius: 12px; padding: .8rem 1rem; font: inherit; font-weight: 700; outline: none; cursor: pointer; transition: border-color .15s; }
+    .upload-select select:focus, .cat-reassign-select:focus { border-color: var(--accent); }
 
-    .drop-zone {
-      border: 2px dashed rgba(255,182,18,.30); border-radius: var(--radius);
-      padding: 2.5rem; text-align: center; cursor: pointer;
-      background: rgba(255,182,18,.03);
-      transition: border-color .15s, background .15s;
-    }
+    .drop-zone { border: 2px dashed rgba(255,182,18,.30); border-radius: var(--radius); padding: 2.5rem; text-align: center; cursor: pointer; background: rgba(255,182,18,.03); transition: border-color .15s, background .15s; }
     .drop-zone:hover, .drop-zone.drag { border-color: var(--accent); background: rgba(255,182,18,.07); }
     .drop-zone .icon { font-size: 2.4rem; margin-bottom: .6rem; }
     .drop-zone p { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
     #fileInput { display: none; }
 
-    /* Progress */
     .progress-wrap { display: none; margin: 1rem 0; }
     .progress-wrap.show { display: block; }
     .progress-label { font-size: .85rem; color: var(--muted); font-weight: 700; margin-bottom: .4rem; }
@@ -87,41 +61,29 @@
     .progress-bar { height: 100%; background: var(--accent); border-radius: 999px; width: 0%; transition: width .2s; }
 
     /* Photo grid */
-    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .9rem; }
-    .photo-card {
-      position: relative; border-radius: 12px; overflow: hidden;
-      aspect-ratio: 4/3; background: var(--panel2);
-      border: 1px solid var(--line);
-    }
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .photo-card { position: relative; border-radius: 12px; overflow: hidden; background: var(--panel2); border: 1px solid var(--line); display: flex; flex-direction: column; }
+    .photo-card .thumb-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s; }
     .photo-card:hover img { transform: scale(1.03); }
-    .photo-card .overlay {
-      position: absolute; inset: 0; background: rgba(0,0,0,.55);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: .4rem; opacity: 0; transition: opacity .18s;
-    }
+    .photo-card .overlay { position: absolute; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .18s; }
     .photo-card:hover .overlay { opacity: 1; }
-    .photo-card .cat-badge {
-      position: absolute; bottom: .5rem; left: .5rem;
-      background: rgba(11,15,23,.82); border: 1px solid var(--line);
-      border-radius: 999px; padding: .2rem .6rem;
-      font-size: .72rem; font-weight: 800; color: var(--accent);
-    }
 
-    /* Filter tabs */
+    /* Category reassign row below each photo */
+    .photo-footer { padding: .6rem .7rem; display: flex; align-items: center; gap: .5rem; border-top: 1px solid var(--line); background: var(--panel2); }
+    .photo-footer select { flex: 1; background: transparent; border: none; color: var(--ink); font: inherit; font-size: .78rem; font-weight: 700; outline: none; cursor: pointer; padding: .2rem 0; }
+    .photo-footer select:focus { color: var(--accent); }
+    .photo-footer .save-cat-btn { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; font: inherit; font-size: .72rem; font-weight: 800; padding: .2rem .6rem; cursor: pointer; white-space: nowrap; transition: border-color .15s, color .15s; flex-shrink: 0; }
+    .photo-footer .save-cat-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .photo-footer .save-cat-btn.saved { border-color: rgba(80,220,140,.5); color: rgba(80,220,140,.9); }
+
     .filter-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
     .filter-tab { border: 1px solid var(--line); background: var(--panel2); color: var(--ink); padding: .45rem 1rem; border-radius: 999px; font-weight: 800; font-size: .82rem; cursor: pointer; transition: background .14s; }
     .filter-tab.active { background: var(--accent); color: #0b0f17; border-color: var(--accent); }
 
     .empty { text-align: center; padding: 3rem; color: var(--muted); }
 
-    /* Toast */
-    .toast {
-      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(80px);
-      background: var(--panel); border: 1px solid var(--line); color: var(--ink);
-      padding: .7rem 1.4rem; border-radius: 999px; font-weight: 800; font-size: .9rem;
-      transition: transform .22s ease; z-index: 999; white-space: nowrap;
-    }
+    .toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--panel); border: 1px solid var(--line); color: var(--ink); padding: .7rem 1.4rem; border-radius: 999px; font-weight: 800; font-size: .9rem; transition: transform .22s ease; z-index: 999; white-space: nowrap; }
     .toast.show { transform: translateX(-50%) translateY(0); }
     .toast.ok { border-color: rgba(255,182,18,.5); color: var(--accent); }
     .toast.err { border-color: rgba(255,140,140,.4); color: rgba(255,140,140,.9); }
@@ -133,7 +95,6 @@
 </head>
 <body>
 
-  <!-- Topbar -->
   <div class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
@@ -177,7 +138,7 @@
       <div class="drop-zone" id="dropZone">
         <div class="icon">📸</div>
         <strong>Drop photos here or click to upload</strong>
-        <p>JPG, PNG, WEBP — multiple files supported</p>
+        <p>JPG, PNG, WEBP — auto-compressed before upload</p>
         <input type="file" id="fileInput" accept="image/*" multiple />
       </div>
       <div class="progress-wrap" id="progressWrap">
@@ -192,6 +153,7 @@
         <h2>All Photos</h2>
         <span class="count" id="photoCount"></span>
       </div>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:1rem">Use the dropdown under each photo to reassign its category — no re-uploading needed.</p>
       <div class="filter-tabs" id="filterTabs"></div>
       <div class="photo-grid" id="photoGrid"></div>
       <div class="empty" id="photoEmpty" style="display:none">No photos yet. Upload some above.</div>
@@ -210,7 +172,6 @@
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Auth guard
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) { window.location.href = 'login.html'; }
 
@@ -219,12 +180,10 @@
       window.location.href = 'login.html';
     });
 
-    // State
     let categories = [];
     let allPhotos  = [];
     let activeFilter = 'all';
 
-    // Toast
     let toastTimer;
     function toast(msg, type = '') {
       const t = document.getElementById('toast');
@@ -233,7 +192,6 @@
       toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
     }
 
-    // ── Load everything ──────────────────────────────────────────
     async function loadAll() {
       const [catRes, photoRes] = await Promise.all([
         supabase.from('categories').select('*').order('name'),
@@ -251,16 +209,16 @@
       renderPhotos();
     }
 
-    // ── Categories ───────────────────────────────────────────────
     function renderCategories() {
       const list = document.getElementById('catList');
       document.getElementById('catCount').textContent = `${categories.length} categor${categories.length !== 1 ? 'ies' : 'y'}`;
       if (!categories.length) { list.innerHTML = '<span style="color:var(--muted);font-size:.88rem">No categories yet.</span>'; return; }
       list.innerHTML = '';
       categories.forEach(cat => {
+        const count = allPhotos.filter(p => p.category_id === cat.id).length;
         const chip = document.createElement('div');
         chip.className = 'cat-chip';
-        chip.innerHTML = `<span>${cat.name}</span><button data-id="${cat.id}" aria-label="Delete ${cat.name}">✕</button>`;
+        chip.innerHTML = `<span>${cat.name} <span style="color:var(--muted);font-weight:600">(${count})</span></span><button data-id="${cat.id}" aria-label="Delete ${cat.name}">✕</button>`;
         chip.querySelector('button').addEventListener('click', () => deleteCategory(cat));
         list.appendChild(chip);
       });
@@ -269,8 +227,6 @@
     async function deleteCategory(cat) {
       const photoCount = allPhotos.filter(p => p.category_id === cat.id).length;
       if (!confirm(`Delete "${cat.name}"? This will also delete ${photoCount} photo(s). Cannot be undone.`)) return;
-
-      // Delete photos from storage first
       const toDelete = allPhotos.filter(p => p.category_id === cat.id);
       if (toDelete.length) {
         await supabase.storage.from(BUCKET).remove(toDelete.map(p => p.filename));
@@ -297,7 +253,6 @@
       loadAll();
     }
 
-    // ── Upload select ─────────────────────────────────────────────
     function renderUploadSelect() {
       const sel = document.getElementById('uploadCategory');
       const current = sel.value;
@@ -311,7 +266,6 @@
       });
     }
 
-    // ── Filter tabs ───────────────────────────────────────────────
     function renderFilterTabs() {
       const tabs = document.getElementById('filterTabs');
       tabs.innerHTML = '';
@@ -320,7 +274,6 @@
       allBtn.textContent = `All (${allPhotos.length})`;
       allBtn.addEventListener('click', () => { activeFilter = 'all'; renderFilterTabs(); renderPhotos(); });
       tabs.appendChild(allBtn);
-
       categories.forEach(cat => {
         const count = allPhotos.filter(p => p.category_id === cat.id).length;
         const btn = document.createElement('button');
@@ -331,7 +284,6 @@
       });
     }
 
-    // ── Photo grid ────────────────────────────────────────────────
     function renderPhotos() {
       const grid  = document.getElementById('photoGrid');
       const empty = document.getElementById('photoEmpty');
@@ -348,28 +300,63 @@
       filtered.forEach(photo => {
         const card = document.createElement('div');
         card.className = 'photo-card';
-        const catName = photo.categories?.name || 'Uncategorized';
+
+        // Build category options for this photo
+        const optionsHtml = categories.map(cat =>
+          `<option value="${cat.id}" ${cat.id === photo.category_id ? 'selected' : ''}>${cat.name}</option>`
+        ).join('');
+
         card.innerHTML = `
-          <img src="${photo.url}" alt="Project photo" loading="lazy" />
-          <div class="overlay">
-            <button class="btn btn-danger btn-sm" data-id="${photo.id}" data-file="${photo.filename}">Delete</button>
+          <div class="thumb-wrap">
+            <img src="${photo.url}" alt="Project photo" loading="lazy" />
+            <div class="overlay">
+              <button class="btn btn-danger btn-sm del-btn" data-id="${photo.id}" data-file="${photo.filename}">Delete</button>
+            </div>
           </div>
-          <span class="cat-badge">${catName}</span>
+          <div class="photo-footer">
+            <select class="cat-reassign-select" data-photo-id="${photo.id}">${optionsHtml}</select>
+            <button class="save-cat-btn" data-photo-id="${photo.id}">Move</button>
+          </div>
         `;
-        card.querySelector('[data-id]').addEventListener('click', async (e) => {
+
+        // Delete
+        card.querySelector('.del-btn').addEventListener('click', async (e) => {
           e.stopPropagation();
           if (!confirm('Delete this photo? Cannot be undone.')) return;
           const { id, file } = e.currentTarget.dataset;
           await supabase.storage.from(BUCKET).remove([file]);
-          await supabase.from('photos').delete().eq('id', id);
+          const { error } = await supabase.from('photos').delete().eq('id', id);
+          if (error) { toast('Delete failed.', 'err'); return; }
           toast('Photo deleted.', 'ok');
           loadAll();
         });
+
+        // Reassign category
+        card.querySelector('.save-cat-btn').addEventListener('click', async (e) => {
+          const photoId  = parseInt(e.currentTarget.dataset.photoId);
+          const selectEl = card.querySelector('.cat-reassign-select');
+          const newCatId = parseInt(selectEl.value);
+          const { error } = await supabase.from('photos').update({ category_id: newCatId }).eq('id', photoId);
+          if (error) { toast('Failed to move photo.', 'err'); console.error(error); return; }
+          const btn = e.currentTarget;
+          btn.textContent = '✓';
+          btn.classList.add('saved');
+          setTimeout(() => { btn.textContent = 'Move'; btn.classList.remove('saved'); }, 1500);
+          // Update local state without full reload for speed
+          const p = allPhotos.find(x => x.id === photoId);
+          if (p) {
+            p.category_id = newCatId;
+            p.categories = { name: categories.find(c => c.id === newCatId)?.name || '' };
+          }
+          renderFilterTabs();
+          renderCategories();
+        });
+
         grid.appendChild(card);
       });
     }
 
-    // ── Upload ────────────────────────────────────────────────────
+    // Upload
     const dropZone  = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
 
@@ -378,6 +365,35 @@
     dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
     dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('drag'); handleFiles(e.dataTransfer.files); });
     fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+    // ── Image compression via Canvas API ────────────────────────
+    // Mirrors your Sharp pipeline: resizes to max 1600px, compresses to JPEG 80%
+    function compressImage(file, maxWidth = 1600, quality = 0.80) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          // Calculate new dimensions keeping aspect ratio
+          let { width, height } = img;
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width  = maxWidth;
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width  = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          canvas.toBlob(blob => {
+            if (!blob) { reject(new Error('Canvas compression failed')); return; }
+            resolve(blob);
+          }, 'image/jpeg', quality);
+        };
+        img.onerror = () => reject(new Error('Failed to load image'));
+        img.src = url;
+      });
+    }
 
     async function handleFiles(files) {
       const catId = document.getElementById('uploadCategory').value;
@@ -391,16 +407,30 @@
 
       let done = 0;
       for (const file of files) {
-        const ext      = file.name.split('.').pop();
-        const filename = `${Date.now()}-${Math.random().toString(36).slice(2,7)}.${ext}`;
+        label.textContent = `Compressing ${file.name}…`;
+
+        // Compress before upload
+        let compressed;
+        try {
+          compressed = await compressImage(file);
+          const savedPct = Math.round((1 - compressed.size / file.size) * 100);
+          console.log(`${file.name}: ${(file.size/1024/1024).toFixed(1)}MB → ${(compressed.size/1024/1024).toFixed(1)}MB (${savedPct}% smaller)`);
+        } catch(e) {
+          console.warn('Compression failed, using original:', e);
+          compressed = file;
+        }
+
+        const filename = `${Date.now()}-${Math.random().toString(36).slice(2,7)}.jpg`;
         label.textContent = `Uploading ${file.name}…`;
 
-        const { error: upErr } = await supabase.storage.from(BUCKET).upload(filename, file, { cacheControl: '3600', upsert: false });
-        if (upErr) { toast(`Failed: ${file.name}`, 'err'); done++; continue; }
+        const { error: upErr } = await supabase.storage.from(BUCKET).upload(filename, compressed, {
+          contentType: 'image/jpeg', cacheControl: '3600', upsert: false
+        });
+        if (upErr) { toast(`Storage error: ${upErr.message}`, 'err'); console.error('Storage error:', upErr); done++; bar.style.width = `${(done / files.length) * 100}%`; continue; }
 
         const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(filename);
         const { error: dbErr } = await supabase.from('photos').insert({ url: publicUrl, filename, category_id: parseInt(catId) });
-if (dbErr) { toast(`DB error: ${dbErr.message}`, 'err'); console.error('Insert error:', dbErr); done++; continue; }
+        if (dbErr) { toast(`DB error: ${dbErr.message}`, 'err'); console.error('Insert error:', dbErr); done++; bar.style.width = `${(done / files.length) * 100}%`; continue; }
 
         done++;
         bar.style.width = `${(done / files.length) * 100}%`;
@@ -413,7 +443,6 @@ if (dbErr) { toast(`DB error: ${dbErr.message}`, 'err'); console.error('Insert e
       loadAll();
     }
 
-    // Boot
     loadAll();
   </script>
 </body>
