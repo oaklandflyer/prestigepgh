@@ -28,19 +28,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
 
   <style>
+    /* ── TOKENS ── */
     :root{
-      --primary:#101820; --accent:#FFB612; --ink:#d6deff; --muted:#9fb0d0;
+      --accent:#FFB612; --ink:#d6deff; --muted:#9fb0d0;
       --bg:#0b0f17; --panel:#111926; --panel-2:#0d1522; --line:#1b2533;
-      --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30); --cta:#FFB612; --cta-ink:#0b0f17;
+      --radius:18px; --shadow:0 10px 40px rgba(0,0,0,.30);
+      --cta:#FFB612; --cta-ink:#0b0f17;
       --container:min(1200px,92vw);
       --glass-bg:rgba(255,255,255,0.05);
       --glass-line:rgba(255,255,255,0.10);
-      --img-opacity:.94;
-      --blend-mode:multiply;
+      --img-opacity:.94; --blend-mode:multiply;
     }
     [data-theme="light"]{
       --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb;
@@ -49,6 +50,7 @@
       --img-opacity:.98; --blend-mode:normal;
     }
     *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{margin:0;padding:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--ink)}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
@@ -56,24 +58,24 @@
     .container{width:var(--container);margin-inline:auto}
     .hidden{display:none!important}
 
-    /* ===== Header ===== */
+    /* ── HEADER ── */
     .site-header{
       position:fixed;inset-inline:0;top:0;z-index:1000;
       display:flex;align-items:center;justify-content:center;
       padding:12px clamp(16px,4vw,64px);
       background:rgba(11,15,23,.88);backdrop-filter:saturate(140%) blur(12px);
-      border-bottom:1px solid var(--line);transition:background .2s;
+      border-bottom:1px solid var(--line);transition:background .2s,padding .25s;
     }
+    .site-header.scrolled{padding:8px clamp(16px,4vw,64px)}
     .site-header .inner{width:var(--container);display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.04em;min-width:0}
     .brand img{max-height:40px;height:auto;width:auto;object-fit:contain;display:block}
     .brand span{font-size:1.02rem;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     @media(max-width:560px){.site-header{padding:10px 14px}.brand img{max-height:32px}.brand span{display:none}}
-    @media(max-width:360px){.brand img{max-height:28px}}
 
     nav.site-nav{display:flex}
-    nav.site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,28px);margin:0;padding:0;align-items:center}
-    nav.site-nav a{font-weight:800;padding:10px 14px;border-radius:999px;border:1px solid transparent;transition:background .15s,color .15s}
+    nav.site-nav ul{list-style:none;display:flex;gap:clamp(10px,2vw,24px);margin:0;padding:0;align-items:center}
+    nav.site-nav a{font-weight:800;font-size:.78rem;letter-spacing:.05em;padding:8px 14px;border-radius:999px;border:1px solid transparent;transition:background .15s,color .15s;text-transform:uppercase}
     nav.site-nav a:hover,nav.site-nav a[aria-current="page"]{background:var(--accent);color:var(--cta-ink)}
 
     .menu-toggle{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;border-radius:10px}
@@ -95,12 +97,11 @@
     .drawer nav ul{list-style:none;margin:0;padding:12px;display:flex;flex-direction:column;gap:8px}
     .drawer nav a{padding:12px 14px;border-radius:10px;font-weight:800;display:block;transition:background .15s}
     .drawer nav a:hover{background:var(--panel-2)}
-    .drawer[aria-hidden="false"]{visibility:visible}
-
     .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:1000}
     .nav-overlay.show{opacity:1;pointer-events:auto}
     body.no-scroll{overflow:hidden}
 
+    /* ── THEME TOGGLE ── */
     .floating-theme{
       position:fixed;right:16px;bottom:16px;z-index:1100;width:52px;height:52px;
       border-radius:999px;border:1px solid var(--line);
@@ -108,166 +109,275 @@
       box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.12);
       display:grid;place-items:center;cursor:pointer
     }
-    .floating-theme:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     .floating-theme svg{width:22px;height:22px;display:block}
-    [data-theme="light"] .brand img{transform:translateY(1px)}
 
+    /* ── BUTTONS ── */
     .btn{
       background:var(--cta);color:var(--cta-ink);font-weight:900;
       padding:11px 28px;border-radius:999px;border:2px solid transparent;
       cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.40);
-      font-size:1rem;font-family:inherit;transition:transform .12s ease,box-shadow .12s ease;
-      display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;
+      font-size:.88rem;font-family:inherit;letter-spacing:.05em;text-transform:uppercase;
+      transition:transform .12s ease,box-shadow .12s ease;
+      display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
     }
     .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.50)}
     .btn:active{transform:translateY(0)}
-    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .btn-ghost{
+      background:transparent;color:var(--ink);border-color:rgba(255,255,255,.20);
+      box-shadow:none;
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.38)}
 
-    /* ===== Hero with crossfade slideshow ===== */
+    /* ── EYEBROW LABEL ── */
+    .eyebrow{
+      font-size:.67rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:.85rem;
+      display:flex;align-items:center;gap:.6rem;
+    }
+    .eyebrow::before{content:'';display:block;width:22px;height:1.5px;background:var(--accent);flex-shrink:0}
+
+    /* ── HERO ── */
     .hero{
-      position:relative;min-height:65vh;display:flex;align-items:center;justify-content:center;
-      border-radius:0 0 var(--radius) var(--radius);
-      box-shadow:var(--shadow);overflow:hidden;margin-top:72px;
-      background-color:#0d1522;
+      position:relative;min-height:100vh;display:flex;align-items:center;
+      overflow:hidden;isolation:isolate;background-color:#090c13;
     }
     .hero-bg{
-      position:absolute;inset:0;
+      position:absolute;inset:0;z-index:0;
       background-size:cover;background-position:center;
-      transition:opacity 1.2s ease;
+      transition:opacity 1.4s ease;opacity:0;
     }
-    .hero-bg.layer-a{ z-index:0; opacity:1; }
-    .hero-bg.layer-b{ z-index:1; opacity:0; }
-    .hero-bg.layer-b.active{ opacity:1; }
-    .hero-bg.layer-a.fading{ opacity:0; }
-
-    .hero::before{
-      content:"";position:absolute;inset:0;z-index:2;
+    .hero-bg.is-active{opacity:1}
+    .hero-overlay{
+      position:absolute;inset:0;z-index:1;pointer-events:none;
       background:
-        radial-gradient(60% 60% at 110% -10%,rgba(255,182,18,.14) 0,rgba(255,182,18,0) 60%),
-        radial-gradient(60% 60% at -10% 110%,rgba(255,182,18,.08) 0,rgba(255,182,18,0) 60%),
-        linear-gradient(120deg,rgba(11,15,23,.82) 0%,rgba(13,21,34,.45) 45%,rgba(16,24,32,.60) 100%);
-      pointer-events:none;
+        radial-gradient(55% 55% at 110% -5%,rgba(255,182,18,.10) 0,transparent 60%),
+        linear-gradient(155deg,rgba(9,12,19,.88) 0%,rgba(13,21,34,.55) 48%,rgba(16,24,32,.72) 100%);
     }
-    .hero-content{
-      position:relative;z-index:3;
-      width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding-bottom:90px;
+    .hero-inner{
+      position:relative;z-index:2;width:var(--container);
+      padding:8rem 0 7rem;
+      display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
     }
-    .liquid-glass{
-      padding:36px 40px;border-radius:28px;
-      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.15);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 24px 70px rgba(0,0,0,.60);
-      text-align:center;max-width:660px;width:100%;
+    @media(max-width:860px){
+      .hero-inner{grid-template-columns:1fr;padding:6.5rem 0 5.5rem}
+      .hero-right{display:none}
     }
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 12px;color:#fff;line-height:1.1;text-align:center}
-    .hero p{font-size:1.05rem;margin:0 0 8px;color:#dfe8ff;line-height:1.65;text-align:center}
-    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-    .hero-dots{display:flex;gap:8px;justify-content:center;margin-top:18px;}
+    .hero-left{opacity:0;animation:fadeUp .75s .15s ease forwards}
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.04;
+      margin:0 0 18px;color:#fff;
+    }
+    .hero h1 em{font-style:italic;color:var(--accent)}
+    .hero-sub{
+      font-size:1rem;font-weight:400;line-height:1.78;
+      color:rgba(255,255,255,.62);max-width:430px;margin-bottom:2.2rem;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.5rem}
+    .hero-proof{
+      padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);
+      display:flex;align-items:center;gap:1rem;
+    }
+    .hero-stars{color:var(--accent);font-size:.95rem;letter-spacing:.06em}
+    .hero-proof-text{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.55}
+    .hero-proof-text strong{color:rgba(255,255,255,.82);font-weight:600}
+    .hero-dots{display:flex;gap:8px;margin-top:1.6rem}
     .hero-dot{
-      width:8px;height:8px;border-radius:50%;
-      background:rgba(255,255,255,.30);border:none;cursor:pointer;padding:0;
+      width:7px;height:7px;border-radius:50%;
+      background:rgba(255,255,255,.22);border:none;cursor:pointer;padding:0;
       transition:background .3s,transform .3s;
     }
-    .hero-dot.active{background:var(--accent);transform:scale(1.3)}
+    .hero-dot.active{background:var(--accent);transform:scale(1.45)}
 
+    /* Right stat cards */
+    .hero-right{
+      display:flex;flex-direction:column;gap:12px;align-items:flex-end;
+      opacity:0;animation:fadeUp .75s .45s ease forwards;
+    }
+    .h-stat{
+      background:rgba(255,182,18,.07);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,182,18,.16);
+      padding:1.2rem 1.8rem;text-align:center;min-width:158px;border-radius:16px;
+    }
+    .h-stat-num{
+      font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;
+      color:var(--accent);line-height:1;
+    }
+    .h-stat-label{
+      font-size:.63rem;font-weight:700;letter-spacing:.15em;
+      text-transform:uppercase;color:var(--muted);margin-top:.35rem;
+    }
+
+    /* Bottom stats strip */
     .hero-stats{
       position:absolute;bottom:0;left:0;right:0;z-index:3;
-      background:rgba(11,15,23,.75);backdrop-filter:blur(8px);
-      border-top:1px solid rgba(255,255,255,.08);
+      background:rgba(9,12,19,.82);backdrop-filter:blur(8px);
+      border-top:1px solid rgba(255,255,255,.06);
     }
-    .stats-inner{display:flex;gap:2.5rem;flex-wrap:wrap;padding:1.3rem 0}
-    .stat-num{font-size:1.9rem;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.02em}
-    .stat-label{font-size:.78rem;color:var(--muted);margin-top:.3rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-    @media(max-width:640px){.stats-inner{gap:1.5rem}}
+    .stats-inner{display:flex;gap:2rem;flex-wrap:wrap;padding:1.1rem 0;align-items:center}
+    .stat-divider{width:1px;height:28px;background:var(--line);flex-shrink:0}
+    .stat-num{font-size:1.6rem;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.02em}
+    .stat-label{font-size:.67rem;color:var(--muted);margin-top:.22rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    @media(max-width:640px){.stats-inner{gap:1rem}.stat-divider{display:none}}
 
-    .page-hero{padding:52px 0 16px}
-    .page-hero h2{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 8px}
-    [data-theme="light"] .page-hero h2{color:var(--ink)}
-    .page-hero p{margin:0 0 24px;color:var(--muted);line-height:1.65}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
-    @media(max-width:960px){.services-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:580px){.services-grid{grid-template-columns:1fr}}
-    .service-card{
-      background:var(--glass-bg);border:1px solid var(--glass-line);
-      border-radius:16px;padding:24px;box-shadow:0 8px 28px rgba(0,0,0,.22);
-      transition:border-color .2s,transform .2s,box-shadow .2s;
+    /* ── MARQUEE ── */
+    .marquee-strip{background:var(--accent);padding:.6rem 0;overflow:hidden;white-space:nowrap}
+    .marquee-inner{display:inline-flex;animation:marquee 26s linear infinite}
+    .marquee-item{font-size:.75rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:#0b0f17;padding:0 1.5rem}
+    .marquee-sep{color:rgba(0,0,0,.22);padding:0 .25rem}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ── SECTIONS ── */
+    .sec{padding:72px 0 28px}
+    .sec-head{margin-bottom:2.8rem}
+    .sec-head h2{
+      font-family:'Playfair Display',serif;font-weight:700;
+      font-size:clamp(1.9rem,4vw,2.7rem);margin:0 0 10px;color:#fff;line-height:1.08;
     }
-    .service-card:hover{border-color:rgba(255,182,18,.30);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.32)}
-    .service-icon{font-size:1.8rem;margin-bottom:.85rem}
-    .service-card h3{font-weight:900;font-size:1rem;margin:0 0 8px;letter-spacing:.01em}
-    .service-card p{color:var(--muted);font-size:.9rem;line-height:1.6;margin:0}
-    .service-line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,182,18,.50),transparent);margin-top:1.2rem}
+    [data-theme="light"] .sec-head h2{color:var(--ink)}
+    .sec-head p{margin:0;color:var(--muted);line-height:1.72;max-width:580px}
 
-    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 20px}
+    /* ── SERVICES ── */
+    .services-wrap{
+      display:grid;grid-template-columns:280px 1fr;gap:3.5rem;align-items:start;
+    }
+    @media(max-width:900px){.services-wrap{grid-template-columns:1fr}}
+    .services-intro p{font-size:.9rem;line-height:1.78;color:var(--muted);margin-top:.8rem}
+
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    @media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+
+    .svc-card{
+      background:var(--panel);padding:2rem 1.8rem;
+      position:relative;overflow:hidden;transition:background .2s;
+    }
+    .svc-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:var(--accent);transform:scaleX(0);transform-origin:left;
+      transition:transform .3s ease;
+    }
+    .svc-card:hover{background:var(--panel-2)}
+    .svc-card:hover::before{transform:scaleX(1)}
+    .svc-num{
+      font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;
+      color:rgba(255,182,18,.09);line-height:1;margin-bottom:.75rem;display:block;
+    }
+    .svc-icon{font-size:1.45rem;margin-bottom:.85rem;display:block}
+    .svc-card h3{font-weight:900;font-size:.95rem;margin:0 0 9px;letter-spacing:.03em;text-transform:uppercase}
+    .svc-card p{color:var(--muted);font-size:.87rem;line-height:1.72;margin:0 0 1.1rem}
+    .svc-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+    .stag{
+      font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--accent);border:1px solid rgba(255,182,18,.22);
+      padding:.18rem .55rem;border-radius:4px;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-hdr{
+      display:flex;align-items:flex-end;justify-content:space-between;
+      flex-wrap:wrap;gap:12px;margin-bottom:8px;
+    }
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
     .tab{
-      border:1px solid var(--line);background:var(--panel);color:var(--ink);
-      padding:8px 16px;border-radius:999px;font-weight:800;font-size:.88rem;
+      border:1px solid var(--line);background:var(--panel);color:var(--muted);
+      padding:7px 18px;border-radius:999px;font-weight:800;font-size:.75rem;
+      letter-spacing:.07em;text-transform:uppercase;
       cursor:pointer;transition:background .15s,border-color .15s,color .15s;font-family:inherit;
     }
-    .tab:hover{border-color:rgba(255,182,18,.40);background:var(--panel-2)}
+    .tab:hover{border-color:rgba(255,182,18,.4);background:var(--panel-2);color:var(--ink)}
     .tab.active{background:var(--accent);color:#0b0f17;border-color:var(--accent)}
-    .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    /* Gallery panel — JS measures and sets px height for reliable animation */
+    #galleryPanel{overflow:hidden;transition:height .42s cubic-bezier(.4,0,.2,1),opacity .36s ease;opacity:1}
+    #galleryPanel.gp-closing{opacity:0}
+
+    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     @media(max-width:1100px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.photo-grid{grid-template-columns:1fr;gap:12px}}
+    @media(max-width:640px){.photo-grid{grid-template-columns:1fr;gap:10px}}
 
     .card{
-      position:relative;background:var(--glass-bg);border:1px solid var(--glass-line);
-      border-radius:16px;overflow:hidden;
-      box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(6px) saturate(135%);cursor:pointer;
+      background:var(--panel);border-radius:12px;overflow:hidden;cursor:pointer;
+      box-shadow:0 6px 22px rgba(0,0,0,.28);
+      transition:transform .2s ease,box-shadow .2s ease;
     }
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(0,0,0,.42)}
     .card img{
-      width:100%;height:240px;object-fit:cover;display:block;
+      width:100%;height:230px;object-fit:cover;display:block;
       mix-blend-mode:var(--blend-mode);opacity:var(--img-opacity);
       transition:opacity .22s ease,transform .22s ease;
     }
-    .card:hover img{opacity:1;transform:scale(1.03)}
+    .card:hover img{opacity:1;transform:scale(1.045)}
     .fancybox__container img{mix-blend-mode:normal!important;opacity:1!important}
 
-    .gallery-loading{
-      display:flex;align-items:center;gap:.75rem;
-      padding:2.5rem 0;color:var(--muted);font-size:.9rem;font-weight:700;
-    }
-    .spinner{
-      width:20px;height:20px;
-      border:2px solid rgba(255,182,18,.20);border-top-color:var(--accent);
-      border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;
-    }
-    /* Gallery collapse */
-    #galleryPanel{
-      overflow:hidden;
-      transition:max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s ease;
-      max-height:9000px;
-      opacity:1;
-    }
-    #galleryPanel.collapsed{
-      max-height:0;
-      opacity:0;
-    }
-    #galleryToggle:hover{border-color:rgba(255,182,18,.40)!important;background:var(--panel-2)!important;}
-
+    .gallery-loading{display:flex;align-items:center;gap:.75rem;padding:2.5rem 0;color:var(--muted);font-size:.9rem;font-weight:700}
+    .spinner{width:20px;height:20px;border:2px solid rgba(255,182,18,.20);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
     @keyframes spin{to{transform:rotate(360deg)}}
 
-    .testimonials{padding:12px 0 0}
-    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media(max-width:1100px){.t-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.t-grid{grid-template-columns:1fr}}
-    .t-card{
-      position:relative;background:var(--panel);border:1px solid var(--line);
-      border-radius:16px;padding:20px 20px 18px;box-shadow:0 6px 24px rgba(0,0,0,.24);
-      transition:border-color .2s,transform .2s;
+    #showMoreBtn{
+      display:block;margin:26px auto 0;
+      background:transparent;color:var(--ink);border-color:var(--line);box-shadow:none;font-size:.78rem;
     }
-    .t-card:hover{border-color:rgba(255,182,18,.25);transform:translateY(-2px)}
-    .t-quote{margin:0 0 12px;color:var(--ink);line-height:1.60;font-size:.95rem}
-    .t-quote:before{content:"\201C";font-family:serif;font-size:2rem;line-height:1;color:var(--accent);margin-right:6px;vertical-align:-.2em}
-    .t-author{font-weight:900;font-size:.9rem}
-    .stars{display:flex;gap:2px;margin:0 0 10px}
-    .stars svg{width:16px;height:16px;fill:var(--accent)}
+    #showMoreBtn:hover{background:var(--panel);border-color:var(--accent);color:var(--accent)}
 
+    /* ── TESTIMONIALS ── */
+    .t-layout{display:grid;grid-template-columns:1fr 2.2fr;gap:4rem;align-items:start}
+    @media(max-width:860px){.t-layout{grid-template-columns:1fr;gap:2rem}}
+    .t-left p{font-size:.9rem;color:var(--muted);line-height:1.76;margin:1rem 0 1.5rem}
+    .review-link{
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-size:.73rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--accent);border-bottom:1px solid rgba(255,182,18,.28);padding-bottom:.18rem;
+      transition:border-color .2s;
+    }
+    .review-link:hover{border-color:var(--accent)}
+    .t-cards{display:flex;flex-direction:column;gap:12px}
+    .t-card{
+      background:var(--panel);border-left:2.5px solid var(--accent);
+      padding:1.5rem 1.8rem;transition:background .2s,transform .2s;
+    }
+    .t-card:hover{background:var(--panel-2);transform:translateX(3px)}
+    .t-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem}
+    .t-name{font-size:.86rem;font-weight:900;letter-spacing:.04em;color:var(--ink)}
+    .t-role{font-size:.7rem;color:var(--muted);margin-top:.18rem}
+    .t-stars{color:var(--accent);font-size:.78rem;letter-spacing:.05em}
+    .t-quote{font-size:.88rem;font-weight:400;font-style:italic;line-height:1.76;color:var(--muted);margin:0}
+
+    /* ── CTA BAND ── */
+    .cta-band{
+      background:var(--panel);margin:60px 0 0;padding:3.5rem 4rem;
+      display:flex;flex-wrap:wrap;gap:2rem;
+      align-items:center;justify-content:space-between;
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    }
+    @media(max-width:680px){.cta-band{padding:2.5rem;flex-direction:column;align-items:stretch}}
+    .cta-band h3{
+      font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);
+      margin:0;color:#fff;line-height:1.1;
+    }
+    [data-theme="light"] .cta-band h3{color:var(--ink)}
+    .cta-band p{margin:.5rem 0 0;color:var(--muted);font-size:.88rem}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* ── ABOUT ── */
+    .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;max-width:940px}
+    @media(max-width:720px){.about-layout{grid-template-columns:1fr}}
+    .about-text p{color:var(--muted);line-height:1.8;margin-bottom:1rem}
+    .about-text strong{color:var(--ink)}
+    .about-creds{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1.4rem 0}
+    @media(max-width:500px){.about-creds{grid-template-columns:1fr}}
+    .cred{display:flex;align-items:flex-start;gap:.55rem}
+    .cred-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:.55rem;flex-shrink:0}
+    .cred-txt{font-size:.82rem;font-weight:600;line-height:1.5;color:var(--ink)}
+    .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .a-stat{background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center}
+    .a-stat-num{font-size:1.7rem;font-weight:900;color:var(--accent);line-height:1}
+    .a-stat-lbl{font-size:.68rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-top:.28rem}
+
+    /* ── CONTACT ── */
     .contact-form{
       --field-bg:var(--panel);--field-border:var(--line);
       --field-ink:var(--ink);--field-muted:var(--muted);--ring:rgba(255,182,18,.18);
@@ -275,11 +385,11 @@
     }
     @media(max-width:720px){.contact-form{grid-template-columns:1fr}}
     .field{position:relative}
-    .field.full{grid-column:1 / -1}
+    .field.full{grid-column:1/-1}
     .input,.textarea,.select{
       width:100%;border:1px solid var(--field-border);background:var(--field-bg);
-      color:var(--field-ink);border-radius:12px;padding:16px 14px;font:inherit;
-      outline:none;transition:border-color .15s,box-shadow .15s,background .15s;
+      color:var(--field-ink);border-radius:10px;padding:16px 14px;font:inherit;
+      outline:none;transition:border-color .15s,box-shadow .15s;
     }
     .select{
       appearance:none;padding-right:40px;
@@ -292,36 +402,55 @@
     .flabel{
       position:absolute;left:12px;top:50%;transform:translateY(-50%);
       padding:0 6px;color:var(--field-muted);background:var(--bg);
-      pointer-events:none;transition:transform .15s,color .15s,top .15s,opacity .15s;border-radius:6px;
+      pointer-events:none;transition:transform .15s,color .15s,top .15s;border-radius:6px;
     }
     .textarea~.flabel{top:20px;transform:none}
     .input:not(:placeholder-shown)+.flabel,.textarea:not(:placeholder-shown)+.flabel,
     .select.filled+.flabel,.input:focus+.flabel,.textarea:focus+.flabel,.select:focus+.flabel{
-      top:0;transform:translateY(-50%) scale(.9);color:var(--accent);opacity:.95;
+      top:0;transform:translateY(-50%) scale(.88);color:var(--accent);
     }
     .textarea:focus~.flabel,.textarea:not(:placeholder-shown)~.flabel{
-      top:0;transform:translateY(-50%) scale(.9);color:var(--accent);opacity:.95;
+      top:0;transform:translateY(-50%) scale(.88);color:var(--accent);
     }
-    .help{grid-column:1 / -1;font-size:.88rem;color:var(--muted)}
-    .form-actions{grid-column:1 / -1;display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+    .help{grid-column:1/-1;font-size:.85rem;color:var(--muted)}
+    .form-actions{grid-column:1/-1;display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
     .form-status{font-size:.9rem;font-weight:700;display:none}
     .form-status.show{display:block}
     .form-status.ok{color:rgba(80,220,140,.9)}
     .form-status.err{color:rgba(255,140,140,.9)}
 
+    /* ── FOOTER ── */
     .site-footer{
-      background:#080c12;color:#8fa0be;padding:48px 0 36px;
-      border-top:1px solid var(--line);margin-top:80px;text-align:center;font-size:.9rem;
+      background:#060810;color:#8fa0be;padding:48px 0 36px;
+      border-top:1px solid var(--line);margin-top:80px;font-size:.88rem;
     }
-    .site-footer a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
-    .site-footer a:hover{opacity:.8}
+    .footer-top{
+      display:flex;justify-content:space-between;align-items:flex-start;
+      flex-wrap:wrap;gap:2rem;
+      padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid var(--line);
+    }
+    .footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+    .footer-brand span{color:var(--accent)}
+    .footer-tagline{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+    .footer-links{display:flex;flex-direction:column;gap:.4rem;text-align:right}
+    .footer-links a{color:var(--muted);transition:color .15s}
+    .footer-links a:hover{color:var(--accent)}
+    .footer-links span{font-size:.75rem;color:#3a4655}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:.76rem;color:#3a4655}
+    .footer-meta{font-size:.74rem;color:#3a4655}
 
-    @media(max-width:640px){
-      #about .container > div { grid-template-columns: 1fr !important; }
-    }
+    /* ── SCROLL REVEAL ── */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-d1{transition-delay:.1s}
+    .reveal-d2{transition-delay:.2s}
+    .reveal-d3{transition-delay:.3s}
+
     @media(prefers-reduced-motion:reduce){
       *{transition:none!important;animation:none!important}
       html{scroll-behavior:auto}
+      .hero-left,.hero-right{opacity:1!important}
     }
   </style>
 
@@ -331,7 +460,7 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+  <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
   <div class="nav-overlay" id="navOverlay" hidden></div>
 
   <header class="site-header" id="header">
@@ -345,7 +474,7 @@
           <li><a href="#top" aria-current="page">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Our Work</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -368,7 +497,7 @@
         <li><a href="#top">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Our Work</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -379,98 +508,162 @@
 
   <main id="main" tabindex="-1">
 
-    <!-- HERO -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="top" aria-label="Hero">
-      <div class="hero-bg layer-a" id="heroBgA"></div>
-      <div class="hero-bg layer-b" id="heroBgB"></div>
+      <div class="hero-bg" id="heroBgA" aria-hidden="true"></div>
+      <div class="hero-bg" id="heroBgB" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="hero-content container">
-        <div class="liquid-glass">
-          <h1>Pittsburgh Prestige Remodeling</h1>
-          <p style="font-style:italic;color:rgba(255,182,18,.85);font-weight:800;font-size:.95rem;margin-bottom:.5rem;letter-spacing:.04em">Elegance, Hand Crafted</p>
-          <p>Custom cabinetry, built-ins, and fine carpentry — Pittsburgh's trusted specialists since 2020.</p>
-          <div class="hero-btns">
-            <a href="#work" class="btn">See Our Work</a>
-            <a href="#contact" class="btn" style="background:transparent;border-color:rgba(255,255,255,.30);color:#fff;box-shadow:none">Get a Quote</a>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <div class="eyebrow" style="margin-bottom:1.1rem">Pittsburgh Fine Carpentry &amp; Cabinetry</div>
+            <h1>Crafted With <em>Precision.</em><br>Built to Last.</h1>
+            <p class="hero-sub">Custom cabinetry, built-ins, and fine carpentry — Pittsburgh's trusted specialists since 2020.</p>
+            <div class="hero-actions">
+              <a href="#work" class="btn">See Our Work</a>
+              <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+            </div>
+            <div class="hero-proof">
+              <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="hero-proof-text">
+                <strong>5-star rated by Pittsburgh homeowners</strong><br>
+                Licensed &amp; insured &middot; Est. 2020
+              </div>
+            </div>
+            <div class="hero-dots" id="heroDots"></div>
           </div>
-          <div class="hero-dots" id="heroDots"></div>
+
+          <div class="hero-right" aria-hidden="true">
+            <div class="h-stat">
+              <div class="h-stat-num">100%</div>
+              <div class="h-stat-label">Custom Builds</div>
+            </div>
+            <div class="h-stat">
+              <div class="h-stat-num">48hr</div>
+              <div class="h-stat-label">Quote Turnaround</div>
+            </div>
+            <div class="h-stat">
+              <div class="h-stat-num">5&#9733;</div>
+              <div class="h-stat-label">Client Rating</div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="hero-stats">
         <div class="container">
           <div class="stats-inner">
-            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom builds</div></div>
-            <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Quote turnaround</div></div>
-            <div class="stat"><div class="stat-num">5&#9733;</div><div class="stat-label">Rated by clients</div></div>
-            <div class="stat"><div class="stat-num">PGH</div><div class="stat-label">Pittsburgh proud</div></div>
-            <div class="stat"><div class="stat-num">'20</div><div class="stat-label">Est. 2020</div></div>
+            <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Quote</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><div class="stat-num">5&#9733;</div><div class="stat-label">Rated</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><div class="stat-num">PGH</div><div class="stat-label">Proud</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><div class="stat-num">'20</div><div class="stat-label">Est.</div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="page-hero" aria-labelledby="services-h">
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">Custom Cabinetry</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Kitchen Builds</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Built-ins &amp; Shelving</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Finish Carpentry</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Structural Work</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Pittsburgh, PA</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Licensed &amp; Insured</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Custom Cabinetry</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Kitchen Builds</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Built-ins &amp; Shelving</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Finish Carpentry</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Structural Work</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Pittsburgh, PA</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Licensed &amp; Insured</span><span class="marquee-sep">·</span>
+      </div>
+    </div>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="sec reveal" aria-labelledby="svc-h">
       <div class="container">
-        <h2 id="services-h">Services</h2>
-        <p>We design and build custom cabinetry, kitchen installations, built-ins, trim, and office solutions tailored to Pittsburgh homes.</p>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">&#129395;</div>
-            <h3>Custom Cabinetry</h3>
-            <p>Hand-built cabinets crafted to your exact specs — kitchens, bathrooms, mudrooms, and beyond.</p>
-            <div class="service-line"></div>
+        <div class="services-wrap">
+          <div class="services-intro">
+            <div class="eyebrow">What We Do</div>
+            <h2 id="svc-h" style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.6rem);margin:0;color:#fff;line-height:1.08">Fine Craft,<br>Every Project.</h2>
+            <p>From hand-built kitchen cabinets to full structural additions — every job is approached with the same standard: <em style="color:var(--ink)">Elegance, Hand Crafted.</em></p>
           </div>
-          <div class="service-card">
-            <div class="service-icon">&#127968;</div>
-            <h3>Built-ins &amp; Shelving</h3>
-            <p>Floor-to-ceiling built-ins, entertainment centers, and custom shelving that become part of your home.</p>
-            <div class="service-line"></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">&#9986;&#65039;</div>
-            <h3>Finish Carpentry &amp; Trim</h3>
-            <p>Crown molding, wainscoting, coffered ceilings, and detail trim work done with precision.</p>
-            <div class="service-line"></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">&#127859;</div>
-            <h3>Kitchen Installations</h3>
-            <p>Complete kitchen builds from layout planning to final install — including islands and pantries.</p>
-            <div class="service-line"></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">&#128188;</div>
-            <h3>Office &amp; Study Solutions</h3>
-            <p>Custom desks, built-in bookshelves, and home office cabinetry designed for how you work.</p>
-            <div class="service-line"></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">&#128295;</div>
-            <h3>Structural Carpentry</h3>
-            <p>Framing, decks, porches, and structural additions — built to last with Pittsburgh weather in mind.</p>
-            <div class="service-line"></div>
+          <div class="svc-grid">
+            <div class="svc-card reveal reveal-d1">
+              <span class="svc-num">01</span>
+              <span class="svc-icon">&#129395;</span>
+              <h3>Custom Cabinetry</h3>
+              <p>Hand-built cabinets crafted to your exact specs — kitchens, bathrooms, mudrooms, and beyond.</p>
+              <div class="svc-tags"><span class="stag">Kitchens</span><span class="stag">Bathrooms</span><span class="stag">Mudrooms</span></div>
+            </div>
+            <div class="svc-card reveal reveal-d2">
+              <span class="svc-num">02</span>
+              <span class="svc-icon">&#127968;</span>
+              <h3>Built-ins &amp; Shelving</h3>
+              <p>Floor-to-ceiling built-ins, entertainment centers, and custom shelving that become part of your home.</p>
+              <div class="svc-tags"><span class="stag">Entertainment</span><span class="stag">Libraries</span></div>
+            </div>
+            <div class="svc-card reveal reveal-d1">
+              <span class="svc-num">03</span>
+              <span class="svc-icon">&#9986;&#65039;</span>
+              <h3>Finish Carpentry</h3>
+              <p>Crown molding, wainscoting, coffered ceilings, and detail trim work done with precision.</p>
+              <div class="svc-tags"><span class="stag">Crown Molding</span><span class="stag">Trim</span></div>
+            </div>
+            <div class="svc-card reveal reveal-d2">
+              <span class="svc-num">04</span>
+              <span class="svc-icon">&#127859;</span>
+              <h3>Kitchen Installations</h3>
+              <p>Complete kitchen builds from layout planning to final install — including islands and pantries.</p>
+              <div class="svc-tags"><span class="stag">Full Builds</span><span class="stag">Islands</span></div>
+            </div>
+            <div class="svc-card reveal reveal-d1">
+              <span class="svc-num">05</span>
+              <span class="svc-icon">&#128188;</span>
+              <h3>Office &amp; Study</h3>
+              <p>Custom desks, built-in bookshelves, and home office cabinetry designed for how you work.</p>
+              <div class="svc-tags"><span class="stag">Home Office</span><span class="stag">Desks</span></div>
+            </div>
+            <div class="svc-card reveal reveal-d2">
+              <span class="svc-num">06</span>
+              <span class="svc-icon">&#128295;</span>
+              <h3>Structural Carpentry</h3>
+              <p>Framing, decks, porches, and structural additions — built to last with Pittsburgh weather in mind.</p>
+              <div class="svc-tags"><span class="stag">Decks</span><span class="stag">Porches</span></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- OUR WORK -->
-    <section id="work" class="page-hero" aria-labelledby="work-h">
+    <!-- ===== OUR WORK ===== -->
+    <section id="work" class="sec" aria-labelledby="work-h" style="padding-bottom:72px">
       <div class="container">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:4px">
-          <h2 id="work-h" style="margin:0">Our Work</h2>
-          <button id="galleryToggle" class="btn" style="font-size:.85rem;padding:8px 20px;background:var(--panel);color:var(--ink);border-color:var(--line);box-shadow:none" aria-expanded="true" aria-controls="galleryPanel">
-            <svg id="galleryChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;transition:transform .3s"><polyline points="18 15 12 9 6 15"/></svg>
-            <span id="galleryToggleLabel">Collapse Gallery</span>
+        <div class="gallery-hdr">
+          <div>
+            <div class="eyebrow">Portfolio</div>
+            <h2 id="work-h" style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.6rem);margin:0;color:#fff;line-height:1.08">Our Work</h2>
+          </div>
+          <button id="galleryToggle" class="btn btn-ghost" style="font-size:.74rem;padding:8px 20px;margin-bottom:4px;letter-spacing:.07em" aria-expanded="true" aria-controls="galleryPanel">
+            <svg id="galleryChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;transition:transform .35s;flex-shrink:0"><polyline points="18 15 12 9 6 15"/></svg>
+            <span id="galleryToggleLabel">Collapse</span>
           </button>
         </div>
-        <p>Choose a category to view photos of completed projects.</p>
-        <div id="galleryPanel">
-          <div class="tabs" id="workTabs" aria-label="Filter projects by category" role="tablist"></div>
+        <p style="color:var(--muted);margin:8px 0 0;line-height:1.7">Choose a category to browse completed projects.</p>
+
+        <div id="galleryPanel" style="margin-top:20px">
+          <div class="tabs" id="workTabs" aria-label="Filter by category" role="tablist"></div>
           <div class="gallery-loading" id="workLoading" aria-live="polite">
-            <span class="spinner" role="status" aria-label="Loading photos"></span>
+            <span class="spinner" role="status" aria-label="Loading"></span>
             Loading gallery&hellip;
           </div>
           <div id="grid" class="photo-grid" aria-live="polite"></div>
@@ -479,106 +672,110 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="page-hero testimonials" aria-labelledby="testimonials-h">
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="sec reveal" aria-labelledby="t-h">
       <div class="container">
-        <h2 id="testimonials-h">Testimonials</h2>
-        <p>A few words from recent Pittsburgh projects.</p>
-        <div class="t-grid">
-          <article class="t-card">
-            <div class="stars">
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-            </div>
-            <p class="t-quote">Mike and Iso were the best! We couldn't be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!</p>
-            <div class="t-author">Matt Oxenreiter</div>
-          </article>
-          <article class="t-card">
-            <div class="stars">
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-            </div>
-            <p class="t-quote">I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident. They even came up with better ways of doing things than I had thought. Trim looks great, outlets fixed, new outdoor railings — and they turned a basic chicken coop idea into a beautiful, rock-solid "chicken hotel." Thank you Mike and Iso!!</p>
-            <div class="t-author">S.R. Duerr</div>
-          </article>
-          <article class="t-card">
-            <div class="stars">
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.21 1.193-5.939 5.79 1.402 8.168L12 18.896l-7.341 3.873 1.402-8.168L.122 9.211l8.21-1.193L12 .587z"/></svg>
-            </div>
-            <p class="t-quote">I've worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. From start to finish: exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail — consistently beyond expectations.</p>
-            <div class="t-author">Jack Rice</div>
-          </article>
+        <div class="t-layout">
+          <div class="t-left">
+            <div class="eyebrow">Reviews</div>
+            <h2 id="t-h" style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.4rem);margin:0;color:#fff;line-height:1.08">What Clients<br>Say</h2>
+            <p>Verified 5-star reviews from real Pittsburgh homeowners and property owners.</p>
+            <a href="#contact" class="review-link">Get a free quote
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="t-cards reveal reveal-d1">
+            <article class="t-card">
+              <div class="t-hdr">
+                <div>
+                  <div class="t-name">Matt Oxenreiter</div>
+                  <div class="t-role">Back Porch Addition &middot; Pittsburgh</div>
+                </div>
+                <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+              <p class="t-quote">Mike and Iso were the best! We couldn't be happier with their fine craftsmanship on our back porch addition. Their attention to detail on the nickel board herringbone ceiling, arched openings and column trim was above and beyond our expectations!! Absolute pleasure to work with!</p>
+            </article>
+            <article class="t-card">
+              <div class="t-hdr">
+                <div>
+                  <div class="t-name">S.R. Duerr</div>
+                  <div class="t-role">Duplex Renovation &middot; Pittsburgh</div>
+                </div>
+                <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+              <p class="t-quote">I hired Mike and his team for several jobs around my duplex. They were considerate and kind and worked with excellence. Their precision and attention to detail is evident — trim looks great, new outdoor railings, and they turned a basic chicken coop idea into a beautiful, rock-solid "chicken hotel." Thank you!</p>
+            </article>
+            <article class="t-card">
+              <div class="t-hdr">
+                <div>
+                  <div class="t-name">Jack Rice</div>
+                  <div class="t-role">Repeat Client &middot; Pittsburgh</div>
+                </div>
+                <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+              <p class="t-quote">I've worked with Pittsburgh Prestige Remodeling time and time again and cannot recommend them highly enough. Exceptional skill, professionalism, top-notch craftsmanship, and attention to every detail — consistently beyond expectations.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA after testimonials -->
-    <div style="text-align:center;padding:2.5rem 0 0">
-      <div class="container">
-        <p style="color:var(--muted);font-size:1rem;margin-bottom:1rem">Ready to start your project?</p>
-        <a href="#contact" class="btn">Get a Free Quote</a>
+    <!-- ===== CTA BAND ===== -->
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <div class="eyebrow">Ready?</div>
+          <h3>Let's Build Something <em style="font-style:italic;color:var(--accent)">Exceptional.</em></h3>
+          <p>Free estimates &middot; 48-hour response &middot; Pittsburgh &amp; surrounding areas</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#contact" class="btn">Get a Free Quote</a>
+          <a href="tel:4123159189" class="btn btn-ghost">&#128222; 412-315-9189</a>
+        </div>
       </div>
     </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="page-hero" aria-labelledby="about-h">
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="sec reveal" aria-labelledby="about-h">
       <div class="container">
-        <h2 id="about-h">About</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;max-width:900px">
-          <div>
-            <p style="color:var(--muted);line-height:1.75;margin-bottom:1rem">
-              Pittsburgh Prestige Remodeling was founded in 2020 by <strong style="color:var(--ink)">Michael Allen</strong>, a lifelong craftsman with a passion for building things that last. What started as a one-man operation has grown into a trusted name across the Pittsburgh area — known for precision, reliability, and work that speaks for itself.
-            </p>
-            <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem">
-              From hand-built kitchen cabinets to custom built-ins and finish trim, every project is approached with the same standard: <em style="color:var(--ink)">Elegance, Hand Crafted.</em> We're licensed, insured, and Pittsburgh-proud.
-            </p>
-            <div style="display:flex;flex-direction:column;gap:.6rem">
-              <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.6rem;color:var(--accent);font-weight:800;font-size:.95rem">
-                <span style="font-size:1.1rem">&#128222;</span> 412-315-9189
-              </a>
+        <div class="eyebrow">About</div>
+        <h2 id="about-h" style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 2rem;color:#fff;line-height:1.08">Built by a Craftsman,<br>Trusted by Pittsburgh.</h2>
+        <div class="about-layout">
+          <div class="about-text">
+            <p>Pittsburgh Prestige Remodeling was founded in 2020 by <strong>Michael Allen</strong>, a lifelong craftsman with a passion for building things that last. What started as a one-man operation has grown into a trusted name across the Pittsburgh area — known for precision, reliability, and work that speaks for itself.</p>
+            <p>From hand-built kitchen cabinets to custom built-ins and finish trim, every project is approached with the same standard: <strong><em>Elegance, Hand Crafted.</em></strong> We're licensed, insured, and Pittsburgh-proud.</p>
+            <div class="about-creds">
+              <div class="cred"><div class="cred-dot"></div><div class="cred-txt">Licensed &amp; Insured</div></div>
+              <div class="cred"><div class="cred-dot"></div><div class="cred-txt">Established 2020</div></div>
+              <div class="cred"><div class="cred-dot"></div><div class="cred-txt">5-Star Rated</div></div>
+              <div class="cred"><div class="cred-dot"></div><div class="cred-txt">Free Estimates</div></div>
+              <div class="cred"><div class="cred-dot"></div><div class="cred-txt">48hr Quote Turnaround</div></div>
+              <div class="cred"><div class="cred-dot"></div><div class="cred-txt">Pittsburgh Proud</div></div>
             </div>
+            <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.6rem;color:var(--accent);font-weight:900;font-size:.95rem;letter-spacing:.03em">
+              &#128222; 412-315-9189
+            </a>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
-            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
-              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">2020</div>
-              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Est.</div>
-            </div>
-            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
-              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">5&#9733;</div>
-              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Rated</div>
-            </div>
-            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
-              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">100%</div>
-              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Custom</div>
-            </div>
-            <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
-              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">PGH</div>
-              <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Proud</div>
-            </div>
+          <div class="about-stats">
+            <div class="a-stat"><div class="a-stat-num">2020</div><div class="a-stat-lbl">Est.</div></div>
+            <div class="a-stat"><div class="a-stat-num">5&#9733;</div><div class="a-stat-lbl">Rated</div></div>
+            <div class="a-stat"><div class="a-stat-num">100%</div><div class="a-stat-lbl">Custom</div></div>
+            <div class="a-stat"><div class="a-stat-num">PGH</div><div class="a-stat-lbl">Proud</div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="page-hero" aria-labelledby="contact-h">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="sec" aria-labelledby="contact-h">
       <div class="container">
-        <h2 id="contact-h">Request a Quote</h2>
-        <p>Tell us about your space and goals — we'll follow up with a free, tailored estimate.</p>
-        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;margin-top:-.25rem">
-          <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:800;font-size:.95rem;text-decoration:none">&#128222; 412-315-9189</a>
+        <div class="eyebrow">Contact</div>
+        <h2 id="contact-h" style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 10px;color:#fff;line-height:1.08">Request a Quote</h2>
+        <p style="color:var(--muted);margin:0 0 1.5rem;line-height:1.7">Tell us about your space and goals — we'll follow up with a free, tailored estimate.</p>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.8rem">
+          <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:900;font-size:.95rem">&#128222; 412-315-9189</a>
+          <a href="mailto:pittsburghprestigeremodeling@gmail.com" style="color:var(--accent);font-weight:700;font-size:.9rem">pittsburghprestigeremodeling@gmail.com</a>
         </div>
-        <p>You can also reach us directly at <a href="mailto:pittsburghprestigeremodeling@gmail.com" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">pittsburghprestigeremodeling@gmail.com</a></p>
         <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" id="contactForm" novalidate>
           <div class="field">
             <input class="input" type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
@@ -606,7 +803,7 @@
             <label class="flabel" for="project">Project Type *</label>
           </div>
           <div class="field full">
-            <textarea class="textarea" id="message" name="message" rows="6" placeholder=" " required></textarea>
+            <textarea class="textarea" id="message" name="message" rows="5" placeholder=" " required></textarea>
             <label class="flabel" for="message">Message *</label>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -622,9 +819,21 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p style="margin-bottom:.5rem">&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
-      <p style="font-size:.82rem;opacity:.6;margin-bottom:.3rem">Michael Allen &middot; Founder &amp; Lead Carpenter</p>
-      <p style="font-size:.82rem;opacity:.6">Pittsburgh, PA &middot; <a href="tel:4123159189">412-315-9189</a> &middot; <a href="#contact">Request a Free Quote</a></p>
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Pittsburgh Prestige <span>Remodeling</span></div>
+          <div class="footer-tagline">Elegance, Hand Crafted</div>
+        </div>
+        <div class="footer-links">
+          <a href="tel:4123159189">412-315-9189</a>
+          <a href="mailto:pittsburghprestigeremodeling@gmail.com">pittsburghprestigeremodeling@gmail.com</a>
+          <span>Pittsburgh, PA</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
+        <p class="footer-meta">Michael Allen &middot; Founder &amp; Lead Carpenter</p>
+      </div>
     </div>
   </footer>
 
@@ -633,272 +842,344 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* Theme toggle */
+    /* ── Theme toggle ── */
     (function(){
-      const root=document.documentElement,btn=document.getElementById('floatingTheme'),logo=document.getElementById('brandLogo');
+      var root=document.documentElement,btn=document.getElementById('floatingTheme'),logo=document.getElementById('brandLogo');
       function icon(t){return t==='dark'
         ?'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13.65A9 9 0 1 1 10.35 2.36 7 7 0 1 0 21.64 13.65z"/></svg>'
         :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';}
-      function swapLogo(t){if(!logo)return;const src=t==='dark'?logo.dataset.dark:logo.dataset.light;if(src&&!logo.src.endsWith(src)){const i=new Image();i.onload=()=>logo.src=src;i.onerror=()=>{};i.src=src;}}
+      function swapLogo(t){if(!logo)return;var src=t==='dark'?logo.dataset.dark:logo.dataset.light;if(src&&!logo.src.endsWith(src)){var i=new Image();i.onload=function(){logo.src=src};i.src=src;}}
       function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('ppr-theme',t);btn.innerHTML=icon(t);btn.setAttribute('aria-pressed',String(t==='dark'));btn.title=t==='dark'?'Switch to light mode':'Switch to dark mode';swapLogo(t);}
-      const saved=localStorage.getItem('ppr-theme');
+      var saved=localStorage.getItem('ppr-theme');
       setTheme(saved||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
-      btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+      btn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
     })();
 
-    /* Mobile drawer */
+    /* ── Header scroll shrink ── */
     (function(){
-      const toggle=document.getElementById('menuToggle'),drawer=document.getElementById('mobileDrawer'),closeBtn=document.getElementById('closeDrawer'),overlay=document.getElementById('navOverlay');
-      let lastFocus=null;
-      function focusables(el){return el.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])');}
-      function open(){lastFocus=document.activeElement;drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');overlay.classList.add('show');overlay.hidden=false;toggle.classList.add('open');toggle.setAttribute('aria-expanded','true');document.body.classList.add('no-scroll');const f=focusables(drawer);if(f.length)f[0].focus();document.addEventListener('keydown',onKey);}
+      var h=document.getElementById('header');
+      window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+    })();
+
+    /* ── Mobile drawer ── */
+    (function(){
+      var toggle=document.getElementById('menuToggle'),drawer=document.getElementById('mobileDrawer'),closeBtn=document.getElementById('closeDrawer'),overlay=document.getElementById('navOverlay');
+      var lastFocus=null;
+      function open(){lastFocus=document.activeElement;drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');overlay.classList.add('show');overlay.hidden=false;toggle.classList.add('open');toggle.setAttribute('aria-expanded','true');document.body.classList.add('no-scroll');document.addEventListener('keydown',onKey);}
       function close(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');overlay.classList.remove('show');overlay.hidden=true;toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll');document.removeEventListener('keydown',onKey);if(lastFocus)lastFocus.focus();}
-      function onKey(e){if(e.key==='Escape'){close();return;}if(e.key==='Tab'){const f=Array.from(focusables(drawer));if(!f.length)return;if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus();}}}
-      toggle.addEventListener('click',()=>drawer.classList.contains('open')?close():open());
+      function onKey(e){if(e.key==='Escape')close();}
+      toggle.addEventListener('click',function(){drawer.classList.contains('open')?close():open();});
       closeBtn.addEventListener('click',close);overlay.addEventListener('click',close);
-      drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
-      window.addEventListener('resize',()=>{if(window.innerWidth>960)close();});
+      drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+      window.addEventListener('resize',function(){if(window.innerWidth>960)close();});
     })();
 
-    /* Contact form AJAX */
+    /* ── Contact form ── */
     (function(){
-      const form=document.getElementById('contactForm'),status=document.getElementById('formStatus'),btn=document.getElementById('submitBtn');
+      var form=document.getElementById('contactForm'),status=document.getElementById('formStatus'),btn=document.getElementById('submitBtn');
       if(!form)return;
-      form.addEventListener('submit',async e=>{
+      form.addEventListener('submit',async function(e){
         e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}
         btn.textContent='Sending\u2026';btn.disabled=true;
         try{
-          const res=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
-          if(res.ok){status.textContent='\u2713 Sent! We\'ll get back to you within 1\u20132 business days.';status.className='form-status show ok';form.reset();}
-          else{status.textContent='Something went wrong. Please try again.';status.className='form-status show err';}
-        }catch{status.textContent='Network error. Please check your connection.';status.className='form-status show err';}
+          var res=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
+          if(res.ok){status.textContent='\u2713 Sent! We\'ll be in touch within 1\u20132 business days.';status.className='form-status show ok';form.reset();}
+          else{status.textContent='Something went wrong. Please try again or call us directly.';status.className='form-status show err';}
+        }catch(err){status.textContent='Network error. Please check your connection.';status.className='form-status show err';}
         btn.textContent='Send Request';btn.disabled=false;
       });
     })();
-  </script>
 
-  <!-- Gallery + Hero Slideshow — gallery.json -->
-  <script>
-    (async function () {
-      const tabs    = document.getElementById('workTabs');
-      const grid    = document.getElementById('grid');
-      const empty   = document.getElementById('workEmpty');
-      const loading = document.getElementById('workLoading');
-      const bgA     = document.getElementById('heroBgA');
-      const bgB     = document.getElementById('heroBgB');
-      const dotsEl  = document.getElementById('heroDots');
-
-      // ── Collapse toggle ─────────────────────────────────────────
-      var panel        = document.getElementById('galleryPanel');
-      var toggleBtn    = document.getElementById('galleryToggle');
-      var toggleLabel  = document.getElementById('galleryToggleLabel');
-      var chevron      = document.getElementById('galleryChevron');
-      var isExpanded   = true;
-
-      toggleBtn.addEventListener('click', function() {
-        isExpanded = !isExpanded;
-        panel.classList.toggle('collapsed', !isExpanded);
-        toggleBtn.setAttribute('aria-expanded', String(isExpanded));
-        toggleLabel.textContent = isExpanded ? 'Collapse Gallery' : 'View Gallery';
-        chevron.style.transform = isExpanded ? '' : 'rotate(180deg)';
-      });
-
-      try {
-        const res = await fetch('dist/gallery.json');
-        if (!res.ok) throw new Error('Failed to load gallery.json');
-        const manifest = await res.json();
-
-        loading.style.display = 'none';
-
-        // Only allow these two categories — exact lowercase match
-        var ALLOWED = ['interior', 'exterior'];
-
-        // Deduplicate by base filename within each category, then build allPhotos
-        // A photo's unique key is its `base` field (e.g. "interior/my_photo")
-        var seen = {};
-        var allPhotos = [];
-
-        ALLOWED.forEach(function(catName) {
-          var entries = manifest.categories[catName] || [];
-          entries.forEach(function(photo) {
-            var key = catName + '/' + photo.base;
-            if (!seen[key]) {
-              seen[key] = true;
-              allPhotos.push(Object.assign({}, photo, { categoryName: catName }));
-            }
-          });
-        });
-
-        // Pick the largest available WebP source for full-size lightbox view
-        function bestSrc(photo) {
-          if (photo.sources && photo.sources.length) {
-            var sorted = photo.sources.slice().sort(function(a, b) { return b.width - a.width; });
-            return 'dist/' + sorted[0].webp;
-          }
-          return 'dist/' + photo.thumb;
-        }
-
-        // Use the 400px thumbnail for grid cards
-        function thumbSrc(photo) {
-          return 'dist/' + photo.thumb;
-        }
-
-        // ── Hero Slideshow ──────────────────────────────────────────
-        if (allPhotos.length) {
-          var shuffled = allPhotos.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 10);
-          var current = 0;
-          var useLayerB = false;
-
-          shuffled.forEach(function(_, i) {
-            var dot = document.createElement('button');
-            dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', 'Photo ' + (i + 1));
-            dot.addEventListener('click', function() { goTo(i); });
-            dotsEl.appendChild(dot);
-          });
-
-          function setActiveDot(idx) {
-            dotsEl.querySelectorAll('.hero-dot').forEach(function(d, i) {
-              d.classList.toggle('active', i === idx);
-            });
-          }
-
-          function goTo(idx) {
-            var url = "url('" + bestSrc(shuffled[idx]) + "')";
-            if (!useLayerB) {
-              bgB.style.backgroundImage = url;
-              bgB.classList.add('active');
-              bgA.classList.add('fading');
-              setTimeout(function() {
-                bgA.classList.remove('fading');
-                bgA.style.backgroundImage = url;
-                bgB.classList.remove('active');
-              }, 1300);
-            } else {
-              bgA.style.backgroundImage = url;
-              bgB.classList.add('active');
-              setTimeout(function() { bgB.classList.remove('active'); }, 1300);
-            }
-            useLayerB = !useLayerB;
-            current = idx;
-            setActiveDot(idx);
-          }
-
-          bgA.style.backgroundImage = "url('" + bestSrc(shuffled[0]) + "')";
-          setInterval(function() { goTo((current + 1) % shuffled.length); }, 30000);
-        }
-
-        // ── Gallery tabs ────────────────────────────────────────────
-        if (!allPhotos.length) {
-          empty.textContent = 'Gallery coming soon \u2014 check back shortly.';
-          empty.classList.remove('hidden');
-        } else {
-          // All tab
-          var allBtn = document.createElement('button');
-          allBtn.className = 'tab active';
-          allBtn.textContent = 'All';
-          allBtn.type = 'button';
-          allBtn.setAttribute('role', 'tab');
-          allBtn.addEventListener('click', function() {
-            tabs.querySelectorAll('.tab').forEach(function(b) { b.classList.remove('active'); });
-            allBtn.classList.add('active');
-            showCategory('all');
-          });
-          tabs.appendChild(allBtn);
-
-          // Only add a tab if that category actually has photos
-          ALLOWED.forEach(function(catName) {
-            var hasPhotos = allPhotos.some(function(p) { return p.categoryName === catName; });
-            if (!hasPhotos) return;
-            var btn = document.createElement('button');
-            btn.className = 'tab';
-            btn.textContent = catName.charAt(0).toUpperCase() + catName.slice(1);
-            btn.dataset.cat = catName;
-            btn.type = 'button';
-            btn.setAttribute('role', 'tab');
-            btn.addEventListener('click', function() {
-              tabs.querySelectorAll('.tab').forEach(function(b) { b.classList.remove('active'); });
-              btn.classList.add('active');
-              showCategory(catName);
-            });
-            tabs.appendChild(btn);
-          });
-
-          showCategory('all');
-        }
-
-        function showCategory(catName) {
-          grid.innerHTML = '';
-          var photos = catName === 'all'
-            ? allPhotos
-            : allPhotos.filter(function(p) { return p.categoryName === catName; });
-
-          if (!photos.length) { empty.classList.remove('hidden'); return; }
-          empty.classList.add('hidden');
-
-          photos.forEach(function(photo) {
-            var a = document.createElement('a');
-            a.href = bestSrc(photo);
-            a.setAttribute('data-fancybox', 'work');
-            a.setAttribute('data-caption', photo.categoryName.charAt(0).toUpperCase() + photo.categoryName.slice(1));
-
-            var card = document.createElement('div');
-            card.className = 'card';
-
-            var img    = document.createElement('img');
-            img.src      = thumbSrc(photo);
-            img.alt      = photo.categoryName + ' project photo';
-            img.loading  = 'lazy';
-            img.decoding = 'async';
-
-            card.appendChild(img);
-            a.appendChild(card);
-            grid.appendChild(a);
-          });
-
-          if (window.Fancybox) {
-            Fancybox.unbind('[data-fancybox="work"]');
-            Fancybox.bind('[data-fancybox="work"]', { groupAll: false });
-          }
-        }
-
-      } catch (err) {
-        loading.style.display = 'none';
-        empty.textContent = 'Gallery failed to load. Please refresh.';
-        empty.classList.remove('hidden');
-        console.error('Gallery error:', err);
-      }
-    })();
-  </script>
-
-  <!-- Scroll spy: highlight active nav section -->
-  <script>
+    /* ── Scroll reveal ── */
     (function(){
-      var sections = ['top','services','work','testimonials','about','contact'];
-      var navLinks = document.querySelectorAll('nav.site-nav a');
-      function getActive(){
-        var scrollY = window.scrollY + 120;
-        var active = 'top';
-        for(var i=0;i<sections.length;i++){
-          var el = document.getElementById(sections[i]);
-          if(el && el.offsetTop <= scrollY) active = sections[i];
-        }
-        return active;
-      }
+      var els=document.querySelectorAll('.reveal');
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+      },{threshold:0.08});
+      els.forEach(function(el){obs.observe(el);});
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var sections=['top','services','work','testimonials','about','contact'];
+      var navLinks=document.querySelectorAll('nav.site-nav a');
       function update(){
-        var active = getActive();
+        var scrollY=window.scrollY+130;
+        var active='top';
+        sections.forEach(function(id){var el=document.getElementById(id);if(el&&el.offsetTop<=scrollY)active=id;});
         navLinks.forEach(function(a){
-          var href = a.getAttribute('href').replace('#','');
-          if(href === active){
-            a.setAttribute('aria-current','page');
-          } else {
-            a.removeAttribute('aria-current');
-          }
+          var href=a.getAttribute('href').replace('#','');
+          if(href===active)a.setAttribute('aria-current','page');
+          else a.removeAttribute('aria-current');
         });
       }
-      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('scroll',update,{passive:true});
       update();
     })();
+  </script>
+
+  <!-- ===== GALLERY + HERO SLIDESHOW ===== -->
+  <script>
+  (function() {
+    var ALLOWED = ['interior','exterior'];
+    var PREVIEW = 12;
+
+    var tabsEl   = document.getElementById('workTabs');
+    var grid     = document.getElementById('grid');
+    var emptyEl  = document.getElementById('workEmpty');
+    var loading  = document.getElementById('workLoading');
+    var bgA      = document.getElementById('heroBgA');
+    var bgB      = document.getElementById('heroBgB');
+    var dotsEl   = document.getElementById('heroDots');
+    var panel    = document.getElementById('galleryPanel');
+    var togBtn   = document.getElementById('galleryToggle');
+    var togLabel = document.getElementById('galleryToggleLabel');
+    var chevron  = document.getElementById('galleryChevron');
+
+    /* ── Gallery collapse: JS-driven pixel height for reliable animation ── */
+    var panelOpen = true;
+
+    function openPanel(){
+      // Temporarily auto so we can measure
+      panel.style.height = panel.scrollHeight + 'px';
+      panel.classList.remove('gp-closing');
+      panel.addEventListener('transitionend', function done(){
+        panel.style.height = ''; // restore auto after opening
+        panel.removeEventListener('transitionend', done);
+      });
+      togBtn.setAttribute('aria-expanded','true');
+      togLabel.textContent = 'Collapse';
+      chevron.style.transform = '';
+      panelOpen = true;
+    }
+
+    function closePanel(){
+      // Pin to current px height so CSS transition has a concrete from-value
+      panel.style.height = panel.scrollHeight + 'px';
+      panel.classList.add('gp-closing');
+      // One frame delay lets the browser register the from-height
+      panel.getBoundingClientRect();
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          panel.style.height = '0px';
+        });
+      });
+      togBtn.setAttribute('aria-expanded','false');
+      togLabel.textContent = 'View Gallery';
+      chevron.style.transform = 'rotate(180deg)';
+      panelOpen = false;
+    }
+
+    togBtn.addEventListener('click', function(){
+      if (panelOpen) closePanel(); else openPanel();
+    });
+
+    /* ── Src helpers ── */
+    function bestSrc(photo){
+      if (photo.sources && photo.sources.length){
+        var s = photo.sources.slice().sort(function(a,b){return b.width-a.width;});
+        return 'dist/' + s[0].webp;
+      }
+      return photo.thumb ? 'dist/' + photo.thumb : '';
+    }
+    function thumbSrc(photo){
+      if (photo.thumb) return 'dist/' + photo.thumb;
+      if (photo.sources && photo.sources.length){
+        var s = photo.sources.slice().sort(function(a,b){return a.width-b.width;});
+        return 'dist/' + s[0].webp;
+      }
+      return '';
+    }
+
+    /* ── Hero crossfade slideshow ── */
+    function initSlideshow(allPhotos){
+      // Only PPR- or Melissa- named files show in the hero background
+      var pool = allPhotos.filter(function(p){
+        return /^(PPR|Melissa)/i.test(p.base || '');
+      });
+      if (!pool.length) pool = allPhotos; // fallback: use anything
+      if (!pool.length) return;
+
+      var shuffled = pool.slice().sort(function(){return Math.random()-.5;}).slice(0,10);
+      var current = 0;
+      var activeLayer = bgA, nextLayer = bgB;
+
+      // Load first image
+      bgA.style.backgroundImage = "url('" + bestSrc(shuffled[0]) + "')";
+      bgA.classList.add('is-active');
+
+      // Dots
+      shuffled.forEach(function(_,i){
+        var dot = document.createElement('button');
+        dot.className = 'hero-dot' + (i===0?' active':'');
+        dot.setAttribute('aria-label','Photo '+(i+1));
+        (function(idx){ dot.addEventListener('click',function(){ goTo(idx); }); })(i);
+        dotsEl.appendChild(dot);
+      });
+
+      function setDot(idx){
+        dotsEl.querySelectorAll('.hero-dot').forEach(function(d,i){d.classList.toggle('active',i===idx);});
+      }
+
+      function goTo(idx){
+        nextLayer.style.backgroundImage = "url('" + bestSrc(shuffled[idx]) + "')";
+        nextLayer.classList.add('is-active');
+        activeLayer.classList.remove('is-active');
+        var tmp = activeLayer; activeLayer = nextLayer; nextLayer = tmp;
+        current = idx;
+        setDot(idx);
+      }
+
+      // Advance every 8 seconds
+      setInterval(function(){ goTo((current+1)%shuffled.length); }, 8000);
+    }
+
+    /* ── Card factory ── */
+    function makeCard(photo){
+      var a = document.createElement('a');
+      a.href = bestSrc(photo);
+      a.setAttribute('data-fancybox','work');
+      a.setAttribute('data-caption', photo._cat.charAt(0).toUpperCase()+photo._cat.slice(1));
+      var card = document.createElement('div');
+      card.className = 'card';
+      var img = document.createElement('img');
+      img.src = thumbSrc(photo);
+      img.alt = photo._cat + ' project photo';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      card.appendChild(img);
+      a.appendChild(card);
+      return a;
+    }
+
+    function rebind(){
+      if (window.Fancybox){
+        Fancybox.unbind('[data-fancybox="work"]');
+        Fancybox.bind('[data-fancybox="work"]',{groupAll:false});
+      }
+    }
+
+    /* ── Render with Show All / Show Less ── */
+    function showCategory(photos){
+      grid.innerHTML = '';
+      var old = document.getElementById('showMoreBtn');
+      if (old) old.remove();
+
+      if (!photos.length){ emptyEl.classList.remove('hidden'); return; }
+      emptyEl.classList.add('hidden');
+
+      var visible = photos.slice(0, PREVIEW);
+      var rest    = photos.slice(PREVIEW);
+
+      visible.forEach(function(p){ grid.appendChild(makeCard(p)); });
+
+      var hiddenEls = rest.map(function(p){
+        var el = makeCard(p);
+        el.style.display = 'none';
+        grid.appendChild(el);
+        return el;
+      });
+
+      rebind();
+
+      if (rest.length){
+        var btn = document.createElement('button');
+        btn.id = 'showMoreBtn';
+        btn.className = 'btn';
+        btn.type = 'button';
+        btn.textContent = 'Show All ' + photos.length + ' Photos';
+        btn.setAttribute('aria-expanded','false');
+
+        btn.addEventListener('click', function(){
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          if (!expanded){
+            hiddenEls.forEach(function(el){ el.style.display = ''; });
+            btn.textContent = 'Show Less';
+            btn.setAttribute('aria-expanded','true');
+            // After expanding, reset panel height so collapse works
+            if (panelOpen) panel.style.height = '';
+            rebind();
+          } else {
+            hiddenEls.forEach(function(el){ el.style.display = 'none'; });
+            btn.textContent = 'Show All ' + photos.length + ' Photos';
+            btn.setAttribute('aria-expanded','false');
+            document.getElementById('work').scrollIntoView({behavior:'smooth',block:'start'});
+            if (panelOpen) panel.style.height = '';
+            rebind();
+          }
+        });
+
+        grid.insertAdjacentElement('afterend', btn);
+      }
+    }
+
+    /* ── Fetch gallery.json ── */
+    fetch('dist/gallery.json')
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(data){
+        loading.style.display = 'none';
+
+        var cats = data.categories || {};
+        var seen = {}, allPhotos = [];
+
+        ALLOWED.forEach(function(cat){
+          (cats[cat] || []).forEach(function(photo){
+            var key = cat+'/'+photo.base;
+            if (!seen[key]){ seen[key]=true; allPhotos.push(Object.assign({},photo,{_cat:cat})); }
+          });
+        });
+
+        initSlideshow(allPhotos);
+
+        if (!allPhotos.length){
+          emptyEl.textContent = 'Gallery coming soon \u2014 check back shortly.';
+          emptyEl.classList.remove('hidden');
+          return;
+        }
+
+        // All tab
+        var allBtn = document.createElement('button');
+        allBtn.className = 'tab active';
+        allBtn.textContent = 'All';
+        allBtn.type = 'button';
+        allBtn.setAttribute('role','tab');
+        allBtn.addEventListener('click', function(){
+          tabsEl.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
+          allBtn.classList.add('active');
+          showCategory(allPhotos);
+          if (panelOpen) panel.style.height = '';
+        });
+        tabsEl.appendChild(allBtn);
+
+        // Category tabs
+        ALLOWED.forEach(function(cat){
+          var catPhotos = allPhotos.filter(function(p){return p._cat===cat;});
+          if (!catPhotos.length) return;
+          var btn = document.createElement('button');
+          btn.className = 'tab';
+          btn.textContent = cat.charAt(0).toUpperCase()+cat.slice(1);
+          btn.type = 'button';
+          btn.setAttribute('role','tab');
+          (function(cp){
+            btn.addEventListener('click', function(){
+              tabsEl.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
+              btn.classList.add('active');
+              showCategory(cp);
+              if (panelOpen) panel.style.height = '';
+            });
+          })(catPhotos);
+          tabsEl.appendChild(btn);
+        });
+
+        showCategory(allPhotos);
+      })
+      .catch(function(err){
+        loading.style.display = 'none';
+        emptyEl.textContent = 'Gallery failed to load. Please refresh.';
+        emptyEl.classList.remove('hidden');
+        console.error('Gallery error:',err);
+      });
+  })();
   </script>
 
 </body>
