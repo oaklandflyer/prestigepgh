@@ -41,7 +41,7 @@
       --container:min(1200px,92vw);
       --glass-bg:rgba(255,255,255,0.05);
       --glass-line:rgba(255,255,255,0.10);
-      --img-opacity:.94; --blend-mode:multiply;
+      --img-opacity:1; --blend-mode:normal;
     }
     [data-theme="light"]{
       --ink:#0e1420; --muted:#47556e; --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f7fb;
@@ -774,7 +774,7 @@
         <p style="color:var(--muted);margin:0 0 1.5rem;line-height:1.7">Tell us about your space and goals — we'll follow up with a free, tailored estimate.</p>
         <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.8rem">
           <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:900;font-size:.95rem">&#128222; 412-315-9189</a>
-          <a href="mailto:pittsburghprestigeremodeling@gmail.com" style="color:var(--accent);font-weight:700;font-size:.9rem">pittsburghprestigeremodeling@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#27574e535354455255404f57554254534e404255424a4843424b4e494067404a464e4b0944484a" style="color:var(--accent);font-weight:700;font-size:.9rem"><span class="__cf_email__" data-cfemail="17677e636364756265707f67657264637e707265727a7873727b7e797057707a767e7b3974787a">[email&#160;protected]</span></a>
         </div>
         <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" id="contactForm" novalidate>
           <div class="field">
@@ -826,18 +826,19 @@
         </div>
         <div class="footer-links">
           <a href="tel:4123159189">412-315-9189</a>
-          <a href="mailto:pittsburghprestigeremodeling@gmail.com">pittsburghprestigeremodeling@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#17677e636364756265707f67657264637e707265727a7873727b7e797057707a767e7b3974787a"><span class="__cf_email__" data-cfemail="b6c6dfc2c2c5d4c3c4d1dec6c4d3c5c2dfd1d3c4d3dbd9d2d3dadfd8d1f6d1dbd7dfda98d5d9db">[email&#160;protected]</span></a>
           <span>Pittsburgh, PA</span>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
         <p class="footer-meta">Michael Allen &middot; Founder &amp; Lead Carpenter</p>
+        <p class="footer-meta" style="margin-top:.4rem">Photography &amp; website by <a href="https://www.asfvisualsllc.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">ASF Visuals LLC</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -1165,22 +1166,4 @@
               tabsEl.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
               btn.classList.add('active');
               showCategory(cp);
-              if (panelOpen) panel.style.height = '';
-            });
-          })(catPhotos);
-          tabsEl.appendChild(btn);
-        });
-
-        showCategory(allPhotos);
-      })
-      .catch(function(err){
-        loading.style.display = 'none';
-        emptyEl.textContent = 'Gallery failed to load. Please refresh.';
-        emptyEl.classList.remove('hidden');
-        console.error('Gallery error:',err);
-      });
-  })();
-  </script>
-
-</body>
-</html>
+        
