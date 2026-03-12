@@ -979,15 +979,15 @@
     function bestSrc(photo){
       if (photo.sources && photo.sources.length){
         var s = photo.sources.slice().sort(function(a,b){return b.width-a.width;});
-        return 'dist/' + s[0].webp;
+        return s[0].webp;
       }
-      return photo.thumb ? 'dist/' + photo.thumb : '';
+      return s.length ? s[s.length-1].webp : '';
     }
     function thumbSrc(photo){
-      if (photo.thumb) return 'dist/' + photo.thumb;
+      
       if (photo.sources && photo.sources.length){
         var s = photo.sources.slice().sort(function(a,b){return a.width-b.width;});
-        return 'dist/' + s[0].webp;
+        return s[0].webp;
       }
       return '';
     }
@@ -1115,7 +1115,7 @@
     }
 
     /* ── Fetch gallery.json ── */
-    fetch('dist/gallery.json')
+    fetch('gallery.json')
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(data){
         loading.style.display = 'none';
@@ -1166,4 +1166,24 @@
               tabsEl.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
               btn.classList.add('active');
               showCategory(cp);
-        
+                      if (panelOpen) panel.style.height = '';
+            });
+          })(catPhotos);
+          tabsEl.appendChild(btn);
+        });
+
+        // Show all photos by default
+        showCategory(allPhotos);
+      })
+      .catch(function(err){
+        loading.style.display = 'none';
+        emptyEl.textContent = 'Gallery failed to load. Please refresh or try again later.';
+        emptyEl.classList.remove('hidden');
+        console.error('Gallery load error:', err);
+      });
+
+  })();
+  </script>
+
+</body>
+</html>
