@@ -130,7 +130,6 @@
       box-shadow:var(--shadow);overflow:hidden;margin-top:72px;
       background-color:#0d1522;
     }
-    /* Two background layers for crossfade */
     .hero-bg{
       position:absolute;inset:0;
       background-size:cover;background-position:center;
@@ -152,7 +151,7 @@
     .hero-content{
       position:relative;z-index:3;
       width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding-bottom:90px; /* room for stats strip */
+      padding-bottom:90px;
     }
     .liquid-glass{
       padding:36px 40px;border-radius:28px;
@@ -165,10 +164,7 @@
     .hero p{font-size:1.05rem;margin:0 0 8px;color:#dfe8ff;line-height:1.65;text-align:center}
     .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-    /* Slideshow dots */
-    .hero-dots{
-      display:flex;gap:8px;justify-content:center;margin-top:18px;
-    }
+    .hero-dots{display:flex;gap:8px;justify-content:center;margin-top:18px;}
     .hero-dot{
       width:8px;height:8px;border-radius:50%;
       background:rgba(255,255,255,.30);border:none;cursor:pointer;padding:0;
@@ -176,7 +172,6 @@
     }
     .hero-dot.active{background:var(--accent);transform:scale(1.3)}
 
-    /* Stats strip */
     .hero-stats{
       position:absolute;bottom:0;left:0;right:0;z-index:3;
       background:rgba(11,15,23,.75);backdrop-filter:blur(8px);
@@ -242,6 +237,19 @@
       border:2px solid rgba(255,182,18,.20);border-top-color:var(--accent);
       border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;
     }
+    /* Gallery collapse */
+    #galleryPanel{
+      overflow:hidden;
+      transition:max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+      max-height:9000px;
+      opacity:1;
+    }
+    #galleryPanel.collapsed{
+      max-height:0;
+      opacity:0;
+    }
+    #galleryToggle:hover{border-color:rgba(255,182,18,.40)!important;background:var(--panel-2)!important;}
+
     @keyframes spin{to{transform:rotate(360deg)}}
 
     .testimonials{padding:12px 0 0}
@@ -373,7 +381,6 @@
 
     <!-- HERO -->
     <section class="hero" id="top" aria-label="Hero">
-      <!-- Crossfade background layers -->
       <div class="hero-bg layer-a" id="heroBgA"></div>
       <div class="hero-bg layer-b" id="heroBgB"></div>
 
@@ -386,7 +393,6 @@
             <a href="#work" class="btn">See Our Work</a>
             <a href="#contact" class="btn" style="background:transparent;border-color:rgba(255,255,255,.30);color:#fff;box-shadow:none">Get a Quote</a>
           </div>
-          <!-- Slideshow dots injected by JS -->
           <div class="hero-dots" id="heroDots"></div>
         </div>
       </div>
@@ -396,7 +402,7 @@
           <div class="stats-inner">
             <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom builds</div></div>
             <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Quote turnaround</div></div>
-            <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Rated by clients</div></div>
+            <div class="stat"><div class="stat-num">5&#9733;</div><div class="stat-label">Rated by clients</div></div>
             <div class="stat"><div class="stat-num">PGH</div><div class="stat-label">Pittsburgh proud</div></div>
             <div class="stat"><div class="stat-num">'20</div><div class="stat-label">Est. 2020</div></div>
           </div>
@@ -411,37 +417,37 @@
         <p>We design and build custom cabinetry, kitchen installations, built-ins, trim, and office solutions tailored to Pittsburgh homes.</p>
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">🪵</div>
+            <div class="service-icon">&#129395;</div>
             <h3>Custom Cabinetry</h3>
             <p>Hand-built cabinets crafted to your exact specs — kitchens, bathrooms, mudrooms, and beyond.</p>
             <div class="service-line"></div>
           </div>
           <div class="service-card">
-            <div class="service-icon">🏠</div>
-            <h3>Built-ins & Shelving</h3>
+            <div class="service-icon">&#127968;</div>
+            <h3>Built-ins &amp; Shelving</h3>
             <p>Floor-to-ceiling built-ins, entertainment centers, and custom shelving that become part of your home.</p>
             <div class="service-line"></div>
           </div>
           <div class="service-card">
-            <div class="service-icon">✂️</div>
-            <h3>Finish Carpentry & Trim</h3>
+            <div class="service-icon">&#9986;&#65039;</div>
+            <h3>Finish Carpentry &amp; Trim</h3>
             <p>Crown molding, wainscoting, coffered ceilings, and detail trim work done with precision.</p>
             <div class="service-line"></div>
           </div>
           <div class="service-card">
-            <div class="service-icon">🍳</div>
+            <div class="service-icon">&#127859;</div>
             <h3>Kitchen Installations</h3>
             <p>Complete kitchen builds from layout planning to final install — including islands and pantries.</p>
             <div class="service-line"></div>
           </div>
           <div class="service-card">
-            <div class="service-icon">💼</div>
-            <h3>Office & Study Solutions</h3>
+            <div class="service-icon">&#128188;</div>
+            <h3>Office &amp; Study Solutions</h3>
             <p>Custom desks, built-in bookshelves, and home office cabinetry designed for how you work.</p>
             <div class="service-line"></div>
           </div>
           <div class="service-card">
-            <div class="service-icon">🔧</div>
+            <div class="service-icon">&#128295;</div>
             <h3>Structural Carpentry</h3>
             <p>Framing, decks, porches, and structural additions — built to last with Pittsburgh weather in mind.</p>
             <div class="service-line"></div>
@@ -453,15 +459,23 @@
     <!-- OUR WORK -->
     <section id="work" class="page-hero" aria-labelledby="work-h">
       <div class="container">
-        <h2 id="work-h">Our Work</h2>
-        <p>Choose a category to view photos of completed projects.</p>
-        <div class="tabs" id="workTabs" aria-label="Filter projects by category" role="tablist"></div>
-        <div class="gallery-loading" id="workLoading" aria-live="polite">
-          <span class="spinner" role="status" aria-label="Loading photos"></span>
-          Loading gallery…
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:4px">
+          <h2 id="work-h" style="margin:0">Our Work</h2>
+          <button id="galleryToggle" class="btn" style="font-size:.85rem;padding:8px 20px;background:var(--panel);color:var(--ink);border-color:var(--line);box-shadow:none" aria-expanded="true" aria-controls="galleryPanel">
+            <svg id="galleryChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;transition:transform .3s"><polyline points="18 15 12 9 6 15"/></svg>
+            <span id="galleryToggleLabel">Collapse Gallery</span>
+          </button>
         </div>
-        <div id="grid" class="photo-grid" aria-live="polite"></div>
-        <p id="workEmpty" class="hidden" style="color:var(--muted);padding:2rem 0" role="status">No photos found.</p>
+        <p>Choose a category to view photos of completed projects.</p>
+        <div id="galleryPanel">
+          <div class="tabs" id="workTabs" aria-label="Filter projects by category" role="tablist"></div>
+          <div class="gallery-loading" id="workLoading" aria-live="polite">
+            <span class="spinner" role="status" aria-label="Loading photos"></span>
+            Loading gallery&hellip;
+          </div>
+          <div id="grid" class="photo-grid" aria-live="polite"></div>
+          <p id="workEmpty" class="hidden" style="color:var(--muted);padding:2rem 0" role="status">No photos found.</p>
+        </div>
       </div>
     </section>
 
@@ -530,7 +544,7 @@
             </p>
             <div style="display:flex;flex-direction:column;gap:.6rem">
               <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.6rem;color:var(--accent);font-weight:800;font-size:.95rem">
-                <span style="font-size:1.1rem">📞</span> 412-315-9189
+                <span style="font-size:1.1rem">&#128222;</span> 412-315-9189
               </a>
             </div>
           </div>
@@ -540,7 +554,7 @@
               <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Est.</div>
             </div>
             <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
-              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">5★</div>
+              <div style="font-size:1.8rem;font-weight:900;color:var(--accent)">5&#9733;</div>
               <div style="font-size:.75rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem">Rated</div>
             </div>
             <div style="background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:14px;padding:1.2rem;text-align:center">
@@ -562,8 +576,9 @@
         <h2 id="contact-h">Request a Quote</h2>
         <p>Tell us about your space and goals — we'll follow up with a free, tailored estimate.</p>
         <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;margin-top:-.25rem">
-          <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:800;font-size:.95rem;text-decoration:none">📞 412-315-9189</a>
-        </div>also reach us directly at <a href="mailto:pittsburghprestigeremodeling@gmail.com" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">pittsburghprestigeremodeling@gmail.com</a></p>
+          <a href="tel:4123159189" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:800;font-size:.95rem;text-decoration:none">&#128222; 412-315-9189</a>
+        </div>
+        <p>You can also reach us directly at <a href="mailto:pittsburghprestigeremodeling@gmail.com" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">pittsburghprestigeremodeling@gmail.com</a></p>
         <form action="https://formspree.io/f/xdklggrp" method="POST" class="contact-form" id="contactForm" novalidate>
           <div class="field">
             <input class="input" type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
@@ -607,13 +622,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p style="margin-bottom:.5rem">© <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
-      <p style="font-size:.82rem;opacity:.6;margin-bottom:.3rem">Michael Allen · Founder &amp; Lead Carpenter</p>
-      <p style="font-size:.82rem;opacity:.6">Pittsburgh, PA · <a href="tel:4123159189">412-315-9189</a> · <a href="#contact">Request a Free Quote</a></p>
+      <p style="margin-bottom:.5rem">&copy; <span id="year"></span> Pittsburgh Prestige Remodeling. All rights reserved.</p>
+      <p style="font-size:.82rem;opacity:.6;margin-bottom:.3rem">Michael Allen &middot; Founder &amp; Lead Carpenter</p>
+      <p style="font-size:.82rem;opacity:.6">Pittsburgh, PA &middot; <a href="tel:4123159189">412-315-9189</a> &middot; <a href="#contact">Request a Free Quote</a></p>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -651,10 +666,10 @@
       if(!form)return;
       form.addEventListener('submit',async e=>{
         e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}
-        btn.textContent='Sending…';btn.disabled=true;
+        btn.textContent='Sending\u2026';btn.disabled=true;
         try{
           const res=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
-          if(res.ok){status.textContent='✓ Sent! We\'ll get back to you within 1–2 business days.';status.className='form-status show ok';form.reset();}
+          if(res.ok){status.textContent='\u2713 Sent! We\'ll get back to you within 1\u20132 business days.';status.className='form-status show ok';form.reset();}
           else{status.textContent='Something went wrong. Please try again.';status.className='form-status show err';}
         }catch{status.textContent='Network error. Please check your connection.';status.className='form-status show err';}
         btn.textContent='Send Request';btn.disabled=false;
@@ -662,182 +677,218 @@
     })();
   </script>
 
-  <!-- Gallery + Hero Slideshow — Supabase -->
-  <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  <!-- Gallery + Hero Slideshow — gallery.json -->
+  <script>
+    (async function () {
+      const tabs    = document.getElementById('workTabs');
+      const grid    = document.getElementById('grid');
+      const empty   = document.getElementById('workEmpty');
+      const loading = document.getElementById('workLoading');
+      const bgA     = document.getElementById('heroBgA');
+      const bgB     = document.getElementById('heroBgB');
+      const dotsEl  = document.getElementById('heroDots');
 
-    // ⚠️ GET THIS FROM: Supabase → Settings → API → anon public (starts with eyJ...)
-    const SUPABASE_URL      = 'https://myrormkykiqmaexkzygv.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15cm9ybWt5a2lxbWFleGt6eWd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTg1OTQsImV4cCI6MjA4ODIzNDU5NH0.S0oD1hg3a3f7ObZ9PLR4PzlxSMOj7rfjyJYhnhNRub8';
+      // ── Collapse toggle ─────────────────────────────────────────
+      var panel        = document.getElementById('galleryPanel');
+      var toggleBtn    = document.getElementById('galleryToggle');
+      var toggleLabel  = document.getElementById('galleryToggleLabel');
+      var chevron      = document.getElementById('galleryChevron');
+      var isExpanded   = true;
 
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    const tabs     = document.getElementById('workTabs');
-    const grid     = document.getElementById('grid');
-    const empty    = document.getElementById('workEmpty');
-    const loading  = document.getElementById('workLoading');
-    const bgA      = document.getElementById('heroBgA');
-    const bgB      = document.getElementById('heroBgB');
-    const dotsEl   = document.getElementById('heroDots');
+      toggleBtn.addEventListener('click', function() {
+        isExpanded = !isExpanded;
+        panel.classList.toggle('collapsed', !isExpanded);
+        toggleBtn.setAttribute('aria-expanded', String(isExpanded));
+        toggleLabel.textContent = isExpanded ? 'Collapse Gallery' : 'View Gallery';
+        chevron.style.transform = isExpanded ? '' : 'rotate(180deg)';
+      });
 
-    try {
-      const [catRes, photoRes] = await Promise.all([
-        supabase.from('categories').select('*').order('name'),
-        supabase.from('photos').select('*, categories(name)').order('created_at', { ascending: false })
-      ]);
+      try {
+        const res = await fetch('dist/gallery.json');
+        if (!res.ok) throw new Error('Failed to load gallery.json');
+        const manifest = await res.json();
 
-      loading.style.display = 'none';
+        loading.style.display = 'none';
 
-      const categories = catRes.data || [];
-      const allPhotos  = photoRes.data || [];
+        // Only allow these two categories — exact lowercase match
+        var ALLOWED = ['interior', 'exterior'];
 
-      // ── Hero Slideshow ──────────────────────────────────────────
-      if (allPhotos.length) {
-        // Shuffle photos and cap at 10 for the slideshow
-        const shuffled = [...allPhotos].sort(() => Math.random() - 0.5).slice(0, 10);
-        let current = 0;
-        let useLayerB = false;
+        // Deduplicate by base filename within each category, then build allPhotos
+        // A photo's unique key is its `base` field (e.g. "interior/my_photo")
+        var seen = {};
+        var allPhotos = [];
 
-        // Build dots
-        shuffled.forEach((_, i) => {
-          const dot = document.createElement('button');
-          dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', `Photo ${i + 1}`);
-          dot.addEventListener('click', () => goTo(i));
-          dotsEl.appendChild(dot);
-        });
-
-        function setActiveDot(idx) {
-          dotsEl.querySelectorAll('.hero-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
-        }
-
-        function goTo(idx) {
-          const url = `url('${shuffled[idx].url}')`;
-          if (!useLayerB) {
-            // A is visible, load new into B then fade B in, fade A out
-            bgB.style.backgroundImage = url;
-            bgB.classList.add('active');
-            bgA.classList.add('fading');
-            setTimeout(() => {
-              bgA.classList.remove('fading');
-              bgA.style.backgroundImage = url;
-              bgB.classList.remove('active');
-            }, 1300);
-          } else {
-            bgA.style.backgroundImage = url;
-            bgB.classList.add('active'); // keep B visible while A loads
-            setTimeout(() => {
-              bgB.classList.remove('active');
-            }, 1300);
-          }
-          useLayerB = !useLayerB;
-          current = idx;
-          setActiveDot(idx);
-        }
-
-        // Set initial background
-        bgA.style.backgroundImage = `url('${shuffled[0].url}')`;
-
-        // Auto-advance every 30 seconds
-        setInterval(() => {
-          goTo((current + 1) % shuffled.length);
-        }, 30000);
-      }
-
-      // ── Gallery tabs ────────────────────────────────────────────
-      if (!categories.length) {
-        empty.textContent = 'Gallery coming soon — check back shortly.';
-        empty.classList.remove('hidden');
-      } else {
-        // All tab first
-        const allBtn = document.createElement('button');
-        allBtn.className = 'tab active';
-        allBtn.textContent = 'All';
-        allBtn.type = 'button';
-        allBtn.setAttribute('role', 'tab');
-        allBtn.addEventListener('click', () => {
-          tabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-          allBtn.classList.add('active');
-          showCategory('all');
-        });
-        tabs.appendChild(allBtn);
-
-        categories.forEach((cat) => {
-          const btn = document.createElement('button');
-          btn.className = 'tab';
-          btn.textContent = cat.name.charAt(0).toUpperCase() + cat.name.slice(1);
-          btn.dataset.id  = cat.id;
-          btn.type = 'button';
-          btn.setAttribute('role', 'tab');
-          btn.addEventListener('click', () => {
-            tabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            showCategory(cat.id);
+        ALLOWED.forEach(function(catName) {
+          var entries = manifest.categories[catName] || [];
+          entries.forEach(function(photo) {
+            var key = catName + '/' + photo.base;
+            if (!seen[key]) {
+              seen[key] = true;
+              allPhotos.push(Object.assign({}, photo, { categoryName: catName }));
+            }
           });
-          tabs.appendChild(btn);
         });
 
-        showCategory('all');
-      }
-
-      function showCategory(catId) {
-        grid.innerHTML = '';
-        const photos = catId === 'all' ? allPhotos : allPhotos.filter(p => p.category_id === catId);
-        if (!photos.length) { empty.classList.remove('hidden'); return; }
-        empty.classList.add('hidden');
-
-        photos.forEach(photo => {
-          const a = document.createElement('a');
-          a.href  = photo.url;
-          a.setAttribute('data-fancybox', 'work');
-          a.setAttribute('data-caption', photo.categories?.name || '');
-
-          const card = document.createElement('div');
-          card.className = 'card';
-
-          const img    = document.createElement('img');
-          img.src      = photo.url;
-          img.alt      = `${photo.categories?.name || 'Project'} photo`;
-          img.loading  = 'lazy';
-          img.decoding = 'async';
-
-          card.appendChild(img);
-          a.appendChild(card);
-          grid.appendChild(a);
-        });
-
-        if (window.Fancybox) {
-          Fancybox.unbind('[data-fancybox="work"]');
-          Fancybox.bind('[data-fancybox="work"]', { groupAll: false });
+        // Pick the largest available WebP source for full-size lightbox view
+        function bestSrc(photo) {
+          if (photo.sources && photo.sources.length) {
+            var sorted = photo.sources.slice().sort(function(a, b) { return b.width - a.width; });
+            return 'dist/' + sorted[0].webp;
+          }
+          return 'dist/' + photo.thumb;
         }
+
+        // Use the 400px thumbnail for grid cards
+        function thumbSrc(photo) {
+          return 'dist/' + photo.thumb;
+        }
+
+        // ── Hero Slideshow ──────────────────────────────────────────
+        if (allPhotos.length) {
+          var shuffled = allPhotos.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 10);
+          var current = 0;
+          var useLayerB = false;
+
+          shuffled.forEach(function(_, i) {
+            var dot = document.createElement('button');
+            dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+            dot.addEventListener('click', function() { goTo(i); });
+            dotsEl.appendChild(dot);
+          });
+
+          function setActiveDot(idx) {
+            dotsEl.querySelectorAll('.hero-dot').forEach(function(d, i) {
+              d.classList.toggle('active', i === idx);
+            });
+          }
+
+          function goTo(idx) {
+            var url = "url('" + bestSrc(shuffled[idx]) + "')";
+            if (!useLayerB) {
+              bgB.style.backgroundImage = url;
+              bgB.classList.add('active');
+              bgA.classList.add('fading');
+              setTimeout(function() {
+                bgA.classList.remove('fading');
+                bgA.style.backgroundImage = url;
+                bgB.classList.remove('active');
+              }, 1300);
+            } else {
+              bgA.style.backgroundImage = url;
+              bgB.classList.add('active');
+              setTimeout(function() { bgB.classList.remove('active'); }, 1300);
+            }
+            useLayerB = !useLayerB;
+            current = idx;
+            setActiveDot(idx);
+          }
+
+          bgA.style.backgroundImage = "url('" + bestSrc(shuffled[0]) + "')";
+          setInterval(function() { goTo((current + 1) % shuffled.length); }, 30000);
+        }
+
+        // ── Gallery tabs ────────────────────────────────────────────
+        if (!allPhotos.length) {
+          empty.textContent = 'Gallery coming soon \u2014 check back shortly.';
+          empty.classList.remove('hidden');
+        } else {
+          // All tab
+          var allBtn = document.createElement('button');
+          allBtn.className = 'tab active';
+          allBtn.textContent = 'All';
+          allBtn.type = 'button';
+          allBtn.setAttribute('role', 'tab');
+          allBtn.addEventListener('click', function() {
+            tabs.querySelectorAll('.tab').forEach(function(b) { b.classList.remove('active'); });
+            allBtn.classList.add('active');
+            showCategory('all');
+          });
+          tabs.appendChild(allBtn);
+
+          // Only add a tab if that category actually has photos
+          ALLOWED.forEach(function(catName) {
+            var hasPhotos = allPhotos.some(function(p) { return p.categoryName === catName; });
+            if (!hasPhotos) return;
+            var btn = document.createElement('button');
+            btn.className = 'tab';
+            btn.textContent = catName.charAt(0).toUpperCase() + catName.slice(1);
+            btn.dataset.cat = catName;
+            btn.type = 'button';
+            btn.setAttribute('role', 'tab');
+            btn.addEventListener('click', function() {
+              tabs.querySelectorAll('.tab').forEach(function(b) { b.classList.remove('active'); });
+              btn.classList.add('active');
+              showCategory(catName);
+            });
+            tabs.appendChild(btn);
+          });
+
+          showCategory('all');
+        }
+
+        function showCategory(catName) {
+          grid.innerHTML = '';
+          var photos = catName === 'all'
+            ? allPhotos
+            : allPhotos.filter(function(p) { return p.categoryName === catName; });
+
+          if (!photos.length) { empty.classList.remove('hidden'); return; }
+          empty.classList.add('hidden');
+
+          photos.forEach(function(photo) {
+            var a = document.createElement('a');
+            a.href = bestSrc(photo);
+            a.setAttribute('data-fancybox', 'work');
+            a.setAttribute('data-caption', photo.categoryName.charAt(0).toUpperCase() + photo.categoryName.slice(1));
+
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var img    = document.createElement('img');
+            img.src      = thumbSrc(photo);
+            img.alt      = photo.categoryName + ' project photo';
+            img.loading  = 'lazy';
+            img.decoding = 'async';
+
+            card.appendChild(img);
+            a.appendChild(card);
+            grid.appendChild(a);
+          });
+
+          if (window.Fancybox) {
+            Fancybox.unbind('[data-fancybox="work"]');
+            Fancybox.bind('[data-fancybox="work"]', { groupAll: false });
+          }
+        }
+
+      } catch (err) {
+        loading.style.display = 'none';
+        empty.textContent = 'Gallery failed to load. Please refresh.';
+        empty.classList.remove('hidden');
+        console.error('Gallery error:', err);
       }
-
-    } catch(err) {
-      loading.style.display = 'none';
-      empty.textContent = 'Gallery failed to load. Please refresh.';
-      empty.classList.remove('hidden');
-      console.error('Gallery error:', err);
-    }
+    })();
   </script>
-
 
   <!-- Scroll spy: highlight active nav section -->
   <script>
     (function(){
-      const sections = ['top','services','work','testimonials','about','contact'];
-      const navLinks = document.querySelectorAll('nav.site-nav a');
+      var sections = ['top','services','work','testimonials','about','contact'];
+      var navLinks = document.querySelectorAll('nav.site-nav a');
       function getActive(){
-        const scrollY = window.scrollY + 120;
-        let active = 'top';
-        for(const id of sections){
-          const el = document.getElementById(id);
-          if(el && el.offsetTop <= scrollY) active = id;
+        var scrollY = window.scrollY + 120;
+        var active = 'top';
+        for(var i=0;i<sections.length;i++){
+          var el = document.getElementById(sections[i]);
+          if(el && el.offsetTop <= scrollY) active = sections[i];
         }
         return active;
       }
       function update(){
-        const active = getActive();
-        navLinks.forEach(a => {
-          const href = a.getAttribute('href').replace('#','');
+        var active = getActive();
+        navLinks.forEach(function(a){
+          var href = a.getAttribute('href').replace('#','');
           if(href === active){
             a.setAttribute('aria-current','page');
           } else {
