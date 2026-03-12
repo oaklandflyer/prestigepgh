@@ -1115,7 +1115,7 @@
     }
 
     /* ── Fetch gallery.json ── */
-    fetch('gallery.json')
+    fetch('dist/gallery.json')
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(data){
         loading.style.display = 'none';
