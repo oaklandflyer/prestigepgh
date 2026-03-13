@@ -2,947 +2,6 @@
   "categories": {
     "interior": [
       {
-        "base": "20211029_164000",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20211029_164000-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20211029_164000-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20211029_164000-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20211101_151923",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20211101_151923-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20211101_151923-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20211101_151923-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20211101_151934",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20211101_151934-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20211101_151934-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20211101_151934-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20211104_095016",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20211104_095016-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20211104_095016-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20211104_095016-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220218_122448",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220218_122448-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220218_122448-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220218_122448-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220317_143928",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220317_143928-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220317_143928-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220317_143928-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220317_143935",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220317_143935-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220317_143935-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220317_143935-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220317_143948",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220317_143948-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220317_143948-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220317_143948-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220416_163754",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220416_163754-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220416_163754-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220416_163754-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220416_163759",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220416_163759-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220416_163759-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220416_163759-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220614_150000",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220614_150000-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220614_150000-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220614_150000-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220614_150146",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220614_150146-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220614_150146-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220614_150146-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220614_150206",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220614_150206-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220614_150206-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220614_150206-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220614_150301",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220614_150301-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220614_150301-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220614_150301-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20220825_085401",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20220825_085401-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20220825_085401-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20220825_085401-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20230307_155946",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20230307_155946-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20230307_155946-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20230307_155946-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20230307_155950",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20230307_155950-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20230307_155950-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20230307_155950-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "20230307_160021",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/20230307_160021-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/20230307_160021-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/20230307_160021-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_5654",
-        "sources": [
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_5654-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_5654-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_5655",
-        "sources": [
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_5655-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_5655-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_5657",
-        "sources": [
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_5657-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_5657-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7191",
-        "sources": [
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7191-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7343",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7343-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7343-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7343-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7531",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7531-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7531-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7531-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7532",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7532-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7532-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7532-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7535",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7535-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7535-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7535-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7536",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7536-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7536-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7536-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7537",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7537-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7537-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7537-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7539",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7539-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7539-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7539-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7540",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7540-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7540-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7540-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7541",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7541-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7541-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7541-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7542",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7542-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7542-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7542-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7660",
-        "sources": [
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7660-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7706",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7706-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7706-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7706-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7707",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7707-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7707-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7707-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7709",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7709-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7709-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7709-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7728",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7728-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7728-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7728-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7730",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7730-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7730-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7730-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7731",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7731-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7731-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7731-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7732",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7732-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7732-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7732-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7733",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7733-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7733-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7733-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7734",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7734-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7734-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7734-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7735",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7735-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7735-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7735-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7757",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7757-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7757-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7757-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7758",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7758-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7758-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7758-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7763",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7763-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7763-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7763-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7916",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7916-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7916-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7916-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_7923",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_7923-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_7923-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_7923-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8383",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8383-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8383-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8383-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8385",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8385-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8385-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8385-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8386",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8386-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8386-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8386-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8388",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8388-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8388-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8388-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8399",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8399-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8399-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8399-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8462",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8462-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8462-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8462-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8522",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8522-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8522-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8522-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_8835",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_8835-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_8835-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_8835-800.webp"
-          }
-        ]
-      },
-      {
-        "base": "IMG_9311",
-        "sources": [
-          {
-            "width": 1600,
-            "webp": "dist/gallery/interior/IMG_9311-1600.webp"
-          },
-          {
-            "width": 1200,
-            "webp": "dist/gallery/interior/IMG_9311-1200.webp"
-          },
-          {
-            "width": 800,
-            "webp": "dist/gallery/interior/IMG_9311-800.webp"
-          }
-        ]
-      },
-      {
         "base": "Melissa_s-10",
         "sources": [
           {
@@ -2707,6 +1766,947 @@
           {
             "width": 800,
             "webp": "dist/gallery/interior/PPR10-27-53-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20211029_164000",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20211029_164000-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20211029_164000-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20211029_164000-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20211101_151923",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20211101_151923-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20211101_151923-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20211101_151923-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20211101_151934",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20211101_151934-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20211101_151934-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20211101_151934-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20211104_095016",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20211104_095016-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20211104_095016-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20211104_095016-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220218_122448",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220218_122448-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220218_122448-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220218_122448-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220317_143928",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220317_143928-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220317_143928-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220317_143928-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220317_143935",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220317_143935-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220317_143935-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220317_143935-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220317_143948",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220317_143948-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220317_143948-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220317_143948-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220416_163754",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220416_163754-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220416_163754-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220416_163754-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220416_163759",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220416_163759-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220416_163759-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220416_163759-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220614_150000",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220614_150000-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220614_150000-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220614_150000-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220614_150146",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220614_150146-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220614_150146-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220614_150146-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220614_150206",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220614_150206-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220614_150206-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220614_150206-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220614_150301",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220614_150301-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220614_150301-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220614_150301-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20220825_085401",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20220825_085401-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20220825_085401-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20220825_085401-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20230307_155946",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20230307_155946-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20230307_155946-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20230307_155946-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20230307_155950",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20230307_155950-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20230307_155950-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20230307_155950-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "20230307_160021",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/20230307_160021-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/20230307_160021-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/20230307_160021-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_5654",
+        "sources": [
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_5654-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_5654-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_5655",
+        "sources": [
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_5655-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_5655-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_5657",
+        "sources": [
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_5657-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_5657-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7191",
+        "sources": [
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7191-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7343",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7343-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7343-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7343-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7531",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7531-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7531-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7531-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7532",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7532-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7532-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7532-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7535",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7535-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7535-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7535-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7536",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7536-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7536-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7536-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7537",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7537-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7537-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7537-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7539",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7539-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7539-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7539-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7540",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7540-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7540-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7540-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7541",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7541-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7541-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7541-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7542",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7542-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7542-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7542-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7660",
+        "sources": [
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7660-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7706",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7706-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7706-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7706-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7707",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7707-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7707-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7707-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7709",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7709-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7709-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7709-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7728",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7728-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7728-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7728-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7730",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7730-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7730-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7730-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7731",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7731-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7731-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7731-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7732",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7732-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7732-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7732-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7733",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7733-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7733-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7733-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7734",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7734-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7734-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7734-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7735",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7735-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7735-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7735-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7757",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7757-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7757-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7757-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7758",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7758-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7758-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7758-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7763",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7763-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7763-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7763-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7916",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7916-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7916-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7916-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_7923",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_7923-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_7923-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_7923-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8383",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8383-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8383-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8383-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8385",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8385-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8385-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8385-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8386",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8386-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8386-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8386-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8388",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8388-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8388-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8388-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8399",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8399-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8399-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8399-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8462",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8462-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8462-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8462-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8522",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8522-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8522-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8522-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_8835",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_8835-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_8835-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_8835-800.webp"
+          }
+        ]
+      },
+      {
+        "base": "IMG_9311",
+        "sources": [
+          {
+            "width": 1600,
+            "webp": "dist/gallery/interior/IMG_9311-1600.webp"
+          },
+          {
+            "width": 1200,
+            "webp": "dist/gallery/interior/IMG_9311-1200.webp"
+          },
+          {
+            "width": 800,
+            "webp": "dist/gallery/interior/IMG_9311-800.webp"
           }
         ]
       }
